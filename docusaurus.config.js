@@ -124,7 +124,7 @@ const config = {
         darkTheme: darkCodeTheme,
       },
 
-      algolia: {
+      /* algolia: {
         // The application ID provided by Algolia
         appId: 'XDLT9MWMNF',
 
@@ -141,7 +141,7 @@ const config = {
 
         // optional: path for search page that enabled by default (`false` to disable it)
         searchPagePath: 'search',
-      },
+      },*/
     }),
 
   plugins: ['docusaurus-plugin-sass'],
