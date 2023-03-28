@@ -1,0 +1,61 @@
+---
+sidebar_position: 2
+---
+
+# Setting up a Client Script
+
+**Client Scripts** in Verza are HTML files, allowing them to draw UI components over the Verza interface, interacting with players, objects, and much more.
+
+To enhance your development experience and take advantage of additional features, we recommend using a framework like [Next.js](https://nextjs.org/) or [Remix](https://remix.run/).
+
+## Setup Project
+
+In this section, we'll guide you through setting up a `Client Script` project using [Next.js](https://nextjs.org/).
+
+1. **Install Next.js**: If you haven't already, please [visit the Next.js docs](https://nextjs.org/docs/getting-started) and follow the instructions to install **Next.js**.
+
+2. **Install Verza SDK**: Install the Verza SDK in your project:
+
+```bash
+npm install @verza/sdk
+```
+
+3. **Create a client script:** In the `pages` folder, create a new file called `client.js`. This file will serve as the starting point for your game mode's client-side script.
+
+Here's an example of a simple script that sends a welcome message to the game chat:
+
+```jsx
+import {useEffect} from 'react';
+
+import {EngineProvider, useEngine} from '@verza/sdk/react';
+
+const ClientScript = () => {
+  return (
+    <EngineProvider>
+      <Script />
+    </EngineProvider>
+  );
+};
+
+const Script = () => {
+  const engine = useEngine();
+
+  useEffect(() => {
+    engine.localPlayer.sendMessage('Welcome to my server!');
+  }, [engine]);
+
+  return null;
+};
+
+export default ClientScript;
+```
+
+4. **Start the development server:** Run the following command to start the development server:
+
+```bash
+npm run dev
+```
+
+5. **Add the script to your server:** Add the script to your server by going to the **Scripts** tab in your server's settings and clicking **Add Script**. Then, enter the URL of your script (`http://localhost:3000/client`)
+
+With these steps, you have set up a basic client script project using Next.js and the Verza SDK. You're now ready to explore the SDK features and start developing your game mode.

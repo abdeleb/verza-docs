@@ -123,6 +123,25 @@ const config = {
         theme: darkCodeTheme,
         darkTheme: darkCodeTheme,
       },
+
+      algolia: {
+        // The application ID provided by Algolia
+        appId: 'XDLT9MWMNF',
+
+        // Public API key: it is safe to commit it
+        apiKey: 'f01d7d104b535ea70b347359d026265e',
+
+        indexName: 'prod_VERZA',
+
+        // Optional: see doc section below
+        contextualSearch: true,
+
+        // Optional: Specify domains where the navigation should occur through window.location instead on history.push. Useful when our Algolia config crawls multiple documentation sites and we want to navigate with window.location.href to them.
+        //externalUrlRegex: 'external\\.com|domain\\.com',
+
+        // optional: path for search page that enabled by default (`false` to disable it)
+        searchPagePath: 'search',
+      },
     }),
 
   plugins: ['docusaurus-plugin-sass'],
