@@ -2,9 +2,8 @@
 
 ## 1. Introduction
 
-- Overview of Verza
-- Purpose and target audience
-- Getting started with Verza
+- Overview
+- Getting started
 
 ## 2. Setting Up the Development Environment
 
@@ -12,13 +11,13 @@
 - Installation and configuration
 - Creating a new project
 
-## 3. Verza SDK
+## 3. SDK
 
 - Overview of the SDK
 - Key components and classes
 - Basic concepts and terminology
 
-## 4. Building Game Modes
+## 4. Building Scripts
 
 - Scripting with JavaScript
 - Working with assets and resources
@@ -26,11 +25,9 @@
 - User input and controls
 - Networking and multiplayer
 
-## 5. Code Examples and Best Practices
+## 5. Advanced
 
-- Sample game modes and projects
-- Commonly used code patterns
-- Tips and tricks for optimizing performance
+- Optimizing performance
 
 ## 6. Debugging and Troubleshooting
 
