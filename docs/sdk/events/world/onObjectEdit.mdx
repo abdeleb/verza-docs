@@ -16,7 +16,7 @@ This event is triggered when an object is edited.
 ### Example
 
 ```js
-engine.objectManager.events.on('onObjectEdit', (object, type) => {
+engine.events.on('onObjectEdit', (object, type) => {
   console.log('Object edited:', object, 'Edit action:', type);
 });
 ```

@@ -1,0 +1,31 @@
+---
+hide_table_of_contents: true
+---
+
+import WebsocketServerTag from '@site/src/components/tags/WebsocketServerTag';
+
+Enables or disables message forwarding to scripts.
+
+It allows you to control the messages that Verza sends to players in the chat. By default, Verza will send all messages to the chat, but if you want to implement custom logic for the messages, you can set the `status` parameter to `true`. This will prevent Verza from forwarding the messages to the chat, so that you can handle them using your own custom logic.
+
+This method can be useful in a variety of situations, such as when you want to filter out certain types of messages or create your own chat moderation system.
+
+### Syntax
+
+```js
+engine.setForwardMessages(status);
+```
+
+### Parameters
+
+| Name     | Type      | Description |
+| -------- | --------- | ----------- |
+| `status` | `boolean` | Status      |
+
+### Example
+
+```js
+engine.setForwardMessages(true);
+```
+
+**Available on:** <WebsocketServerTag />
