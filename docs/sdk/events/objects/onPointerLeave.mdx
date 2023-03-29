@@ -1,0 +1,23 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+This event is triggered when the pointer leaves the bounds of an object.
+
+### Parameters
+
+| Name    | Type                 | Description              |
+| ------- | -------------------- | ------------------------ |
+| `event` | `ObjectPointerEvent` | The pointer event object |
+
+### Example
+
+```js
+object.events.on('onPointerLeave', event => {
+  console.log('Pointer left:', event);
+});
+```
+
+**Available on:** <ClientTag />

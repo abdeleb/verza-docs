@@ -1,0 +1,23 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+This event is triggered when a camera transition ends.
+
+### Parameters
+
+| Name | Type               | Description       |
+| ---- | ------------------ | ----------------- |
+| `id` | `number or string` | The transition ID |
+
+### Example
+
+```js
+engine.events.on('onCameraTransitionEnd', id => {
+  console.log('the camera transition with ID ' + id + ' has ended');
+});
+```
+
+**Available on:** <ClientTag />

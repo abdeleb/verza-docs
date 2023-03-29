@@ -1,0 +1,25 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import WebsocketServerTag from '@site/src/components/tags/WebsocketServerTag';
+
+This event is triggered when a player sends a message to the chat.
+
+### Parameters
+
+| Name       | Type     | Description                                     |
+| ---------- | -------- | ----------------------------------------------- |
+| `text`     | `string` | The message sent to the chat including commands |
+| `playerId` | `number` | Player Id of the player who sent the message    |
+
+### Example
+
+```js
+engine.events.on('onChat', (text, playerId) => {
+  console.log(`message`, text, 'from', playerId);
+});
+```
+
+**Available on:** <ClientTag /> <WebsocketServerTag />

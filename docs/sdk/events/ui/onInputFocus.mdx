@@ -1,0 +1,23 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+This event is triggered when an input element within the UI gains or loses focus.
+
+### Parameters
+
+| Name     | Type      | Description                                             |
+| -------- | --------- | ------------------------------------------------------- |
+| `status` | `boolean` | The focus status of the input element (true if focused) |
+
+### Example
+
+```js
+engine.events.on('onInputFocus', status => {
+  console.log('Input focus status:', status);
+});
+```
+
+**Available on:** <ClientTag />

@@ -1,0 +1,23 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+This event is triggered when a key event occurs.
+
+### Parameters
+
+| Name    | Type       | Description   |
+| ------- | ---------- | ------------- |
+| `event` | `KeyEvent` | The key event |
+
+### Example
+
+```js
+engine.events.on('onKeyEvent', event => {
+  console.log('Key event:', event);
+});
+```
+
+**Available on:** <ClientTag />

@@ -6,7 +6,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Verza',
+  title: 'Verza Docs',
   tagline: 'Documentation',
   favicon: 'img/favicon.png',
 
@@ -41,6 +41,16 @@ const config = {
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl: 'https://github.com/verzaio/verza-docs/tree/main',
+          sidebarItemsGenerator: async ({
+            defaultSidebarItemsGenerator,
+            ...args
+          }) => {
+            const sidebarItems = await defaultSidebarItemsGenerator(args);
+
+            //const sdk = sidebarItems.find(e => e.label === 'SDK');
+
+            return sidebarItems;
+          },
         },
         blog: {
           showReadingTime: true,
@@ -66,7 +76,7 @@ const config = {
         items: [
           {
             type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
+            sidebarId: 'docsSidebar',
             position: 'left',
             label: 'Docs',
           },

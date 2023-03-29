@@ -1,0 +1,17 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+This event is triggered when a dragged item leaves a drop target.
+
+### Example
+
+```js
+engine.events.on('onDragLeave', () => {
+  console.log('Dragged item left the drop target');
+});
+```
+
+**Available on:** <ClientTag />

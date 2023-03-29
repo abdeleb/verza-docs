@@ -1,0 +1,23 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+This event is triggered when the pointer is released after being pressed down on an object.
+
+### Parameters
+
+| Name    | Type                 | Description              |
+| ------- | -------------------- | ------------------------ |
+| `event` | `ObjectPointerEvent` | The pointer event object |
+
+### Example
+
+```js
+object.events.on('onPointerUp', event => {
+  console.log('Pointer released:', event);
+});
+```
+
+**Available on:** <ClientTag />

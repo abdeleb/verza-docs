@@ -1,0 +1,23 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+This event is triggered when the pointer is pressed down.
+
+### Parameters
+
+| Name    | Type           | Description       |
+| ------- | -------------- | ----------------- |
+| `event` | `PointerEvent` | The pointer event |
+
+### Example
+
+```js
+engine.events.on('onPointerMove', event => {
+  console.log('Pointer moved:', event);
+});
+```
+
+**Available on:** <ClientTag />

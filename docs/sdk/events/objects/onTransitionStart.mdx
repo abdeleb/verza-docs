@@ -1,0 +1,23 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+This event is triggered when a transition related to an object starts.
+
+### Parameters
+
+| Name | Type               | Description       |
+| ---- | ------------------ | ----------------- |
+| `id` | `number or string` | The transition ID |
+
+### Example
+
+```js
+object.events.on('onTransitionStart', id => {
+  console.log('Transition started:', id);
+});
+```
+
+**Available on:** <ClientTag />

@@ -1,0 +1,24 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+This event is triggered when a player's state changes.
+
+### Parameters
+
+| Name       | Type          | Description                      |
+| ---------- | ------------- | -------------------------------- |
+| `newState` | `PlayerState` | The new state of the player      |
+| `oldState` | `PlayerState` | The previous state of the player |
+
+### Example
+
+```js
+engine.localPlayer.events.on('onStateChange', (newState, oldState) => {
+  console.log('State changed: New state:', newState, 'Old state:', oldState);
+});
+```
+
+**Available on:** <ClientTag />

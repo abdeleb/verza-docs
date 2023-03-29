@@ -1,0 +1,17 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+This event is triggered when a dragged item is over a drop target.
+
+### Example
+
+```js
+engine.events.on('onDragOver', () => {
+  console.log('Dragged item is over the drop target');
+});
+```
+
+**Available on:** <ClientTag />

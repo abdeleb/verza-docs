@@ -1,0 +1,24 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+This event is triggered when a key is released.
+
+### Parameters
+
+| Name        | Type     | Description           |
+| ----------- | -------- | --------------------- |
+| `id`        | `string` | The ID of the toolbar |
+| `toolbarId` | `string` | The ID of the toolbar |
+
+### Example
+
+```js
+engine.events.on('onToolbarItemPress', (id, toolbarId) => {
+  console.log('Toolbar item pressed:', id, 'on toolbar:', toolbarId);
+});
+```
+
+**Available on:** <ClientTag />

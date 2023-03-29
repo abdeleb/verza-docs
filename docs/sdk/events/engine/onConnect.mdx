@@ -1,0 +1,18 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+This event is triggered when a script is connected to the server.
+
+### Example
+
+```js
+engine.events.on('onConnect', () => {
+  console.log('Script connected to server!');
+});
+```
+
+**Available on:** <ClientTag /> <ServerTag />

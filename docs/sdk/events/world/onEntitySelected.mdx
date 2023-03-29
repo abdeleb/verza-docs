@@ -1,0 +1,23 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+This event is triggered when an entity is selected.
+
+### Parameters
+
+| Name         | Type               | Description                          |
+| ------------ | ------------------ | ------------------------------------ |
+| `intersects` | `IntersectsResult` | The intersection result of selection |
+
+### Example
+
+```js
+engine.entityManager.events.on('onEntitySelected', intersects => {
+  console.log('Entity selected:', intersects);
+});
+```
+
+**Available on:** <ClientTag />

@@ -1,0 +1,17 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+This event is triggered when a dragged item enters a drop target.
+
+### Example
+
+```js
+engine.events.on('onDragEnter', () => {
+  console.log('Dragged item entered the drop target');
+});
+```
+
+**Available on:** <ClientTag />

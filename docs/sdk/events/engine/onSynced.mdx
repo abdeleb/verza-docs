@@ -1,0 +1,24 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+This event is triggered when a script is synced with the server.
+
+Usually when assets, player information, and other data is synced with the server.
+
+If you're using the `EngineProvider` (<ClientTag />) component, you don't need to worry about handling the `onSynced` event. This is because the component internally waits for the `onSynced` event to be triggered before rendering its children.
+
+### Example
+
+```js
+engine.events.on('onSynced', () => {
+  console.log('Script is fully synced with the server!');
+
+  // now you can use engine.localPlayer, engine.objects, etc safely.
+});
+```
+
+**Available on:** <ClientTag /> <ServerTag />

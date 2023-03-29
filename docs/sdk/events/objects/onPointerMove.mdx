@@ -1,0 +1,23 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+This event is triggered when the pointer moves over an object.
+
+### Parameters
+
+| Name    | Type                 | Description              |
+| ------- | -------------------- | ------------------------ |
+| `event` | `ObjectPointerEvent` | The pointer event object |
+
+### Example
+
+```js
+object.events.on('onPointerMove', event => {
+  console.log('Pointer moved:', event);
+});
+```
+
+**Available on:** <ClientTag />
