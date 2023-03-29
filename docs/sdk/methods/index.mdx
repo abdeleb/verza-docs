@@ -1,0 +1,51 @@
+import DocCardList from '@theme/DocCardList';
+
+# Methods
+
+Methods in Verza's SDK provide a powerful way to interact with various world elements, control the flow of your scripts, and build complex interactions. They are used to perform actions, retrieve information, and modify the game state according to your requirements.
+
+In this section, you'll find a comprehensive list of methods available in the Verza SDK, along with detailed descriptions and usage examples. Discover how to effectively utilize these methods to create engaging, interactive, and immersive experiences for your players within your scripts.
+
+<DocCardList />
+
+## Engine
+
+### Methods
+
+| Method                                                   | Description                                                    |
+| -------------------------------------------------------- | -------------------------------------------------------------- |
+| [engine.connectServer](./engine/connectServer)           | Connects a websocket server script to a Verza server instance. |
+| [engine.connectClient](./engine/connectClient)           | Connects a client script to a Verza server instance.           |
+| [engine.restartServer](./engine/restartServer)           | Restarts the server instance.                                  |
+| [engine.setForwardMessages](./engine/setForwardMessages) | Enables or disables message forwarding to scripts.             |
+| [engine.destroy](./engine/destroy)                       | Cleans up and releases engine resources.                       |
+
+### Properties
+
+| Name                               | Type              | Description                                         |
+| ---------------------------------- | ----------------- | --------------------------------------------------- |
+| `engine.network`                   | `NetworkManager`  | Manages network connections and communication.      |
+| `engine.api`                       | `ApiManager`      | Handles Verza's requests and responses.             |
+| `engine.ui`                        | `UIManager`       | Manages UI elements and interactions.               |
+| `engine.chat`                      | `ChatManager`     | Handles in-game chat functionality.                 |
+| `engine.commands`                  | `CommandsManager` | Manages command registration and execution.         |
+| `engine.camera`                    | `CameraManager`   | Controls camera settings and transitions.           |
+| `engine.streamer`                  | `StreamerManager` | Manages the streaming of objects and assets.        |
+| `engine.world`                     | `WorldManager`    | Controls world properties and environment settings. |
+| `engine.assets`                    | `AssetsManager`   | Manages assets loading and caching.                 |
+| `engine.events`                    | `EventsManager`   | Engine's events manager.                            |
+| `engine.params`                    | `EngineParams`    | Holds engine configuration parameters.              |
+| `engine.isServer`                  | `boolean`         | True if the script is running on the server.        |
+| `engine.isClient`                  | `boolean`         | True if the script is running on the client.        |
+| `engine.chunkSize`                 | `number`          | The size of the chunks used for streaming.          |
+| `engine.syncPlayers`               | `boolean`         | Indicates if player data is being synced.           |
+| `engine.syncPlayerUpdatesPriority` | `boolean`         | Determines the priority of player updates syncing.  |
+| `engine.syncPlayerUpdates`         | `boolean`         | Indicates if player updates are being synced.       |
+| `engine.syncPlayerControls`        | `boolean`         | Indicates if player controls are being synced.      |
+| `engine.syncCameraPosition`        | `boolean`         | Indicates if camera position is being synced.       |
+| `engine.synced`                    | `boolean`         | True if the engine is currently synced.             |
+| `engine.connected`                 | `boolean`         | True if the engine is currently connected.          |
+| `engine.localPlayerId`             | `number`          | The ID of the local player.                         |
+| `engine.localPlayer`               | `PlayerManager`   | A reference to the local player object.             |
+| `engine.players`                   | `PlayersManager`  | The manager for players.                            |
+| `engine.objects`                   | `ObjectsManager`  | The manager for objects.                            |

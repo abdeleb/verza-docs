@@ -1,0 +1,27 @@
+---
+hide_table_of_contents: true
+---
+
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+Restarts the server instance.
+
+### Syntax
+
+```js
+engine.restartServer(reason);
+```
+
+### Parameters
+
+| Name     | Type     | Description       |
+| -------- | -------- | ----------------- |
+| `reason` | `string` | Reason (optional) |
+
+### Example
+
+```js
+engine.restartServer('Server restarting, will be back in a moment!');
+```
+
+**Available on:** <ServerTag />
