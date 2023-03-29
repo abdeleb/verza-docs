@@ -1,0 +1,23 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+This event is triggered when the pointer enters the bounds of an object.
+
+### Parameters
+
+| Name    | Type                 | Description              |
+| ------- | -------------------- | ------------------------ |
+| `event` | `ObjectPointerEvent` | The pointer event object |
+
+### Example
+
+```js
+object.events.on('onPointerEnter', event => {
+  console.log('Pointer entered:', event);
+});
+```
+
+**Available on:** <ClientTag />

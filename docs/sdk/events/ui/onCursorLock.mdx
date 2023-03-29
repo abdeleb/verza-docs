@@ -1,0 +1,23 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+This event is triggered when the cursor is locked or unlocked.
+
+### Parameters
+
+| Name     | Type      | Description                                    |
+| -------- | --------- | ---------------------------------------------- |
+| `status` | `boolean` | The lock status of the cursor (true if locked) |
+
+### Example
+
+```js
+engine.events.on('onCursorLock', status => {
+  console.log('Cursor lock status:', status);
+});
+```
+
+**Available on:** <ClientTag />

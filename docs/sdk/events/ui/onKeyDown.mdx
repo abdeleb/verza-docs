@@ -1,0 +1,23 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+This event is triggered when a key is pressed down.
+
+### Parameters
+
+| Name    | Type       | Description   |
+| ------- | ---------- | ------------- |
+| `event` | `KeyEvent` | The key event |
+
+### Example
+
+```js
+engine.events.on('onKeyDown', event => {
+  console.log('Key pressed down:', event);
+});
+```
+
+**Available on:** <ClientTag />

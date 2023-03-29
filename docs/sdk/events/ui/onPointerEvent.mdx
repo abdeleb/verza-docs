@@ -1,0 +1,23 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+This event is triggered when a pointer event occurs.
+
+### Parameters
+
+| Name    | Type           | Description       |
+| ------- | -------------- | ----------------- |
+| `event` | `PointerEvent` | The pointer event |
+
+### Example
+
+```js
+engine.events.on('onPointerEvent', status => {
+  console.log('Pointer event:', event);
+});
+```
+
+**Available on:** <ClientTag />

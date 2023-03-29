@@ -1,0 +1,24 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+This event is triggered when an object is edited.
+
+### Parameters
+
+| Name     | Type                   | Description                                                                          |
+| -------- | ---------------------- | ------------------------------------------------------------------------------------ |
+| `object` | `ObjectManager`        | The object being edited                                                              |
+| `type`   | `ObjectEditActionType` | The type of edit action performed: `select` `unselect` `sync` `start` `update` `end` |
+
+### Example
+
+```js
+engine.objectManager.events.on('onObjectEdit', (object, type) => {
+  console.log('Object edited:', object, 'Edit action:', type);
+});
+```
+
+**Available on:** <ClientTag />

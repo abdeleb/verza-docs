@@ -1,0 +1,23 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+This event is triggered when a key is released.
+
+### Parameters
+
+| Name    | Type           | Description       |
+| ------- | -------------- | ----------------- |
+| `event` | `PointerEvent` | The pointer event |
+
+### Example
+
+```js
+engine.events.on('onKeyUp', event => {
+  console.log('Key released:', event);
+});
+```
+
+**Available on:** <ClientTag />

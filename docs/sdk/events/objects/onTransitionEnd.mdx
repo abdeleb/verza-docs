@@ -4,7 +4,7 @@ hide_table_of_contents: true
 
 import ClientTag from '@site/src/components/tags/ClientTag';
 
-This event is triggered when a camera transition starts.
+This event is triggered when a transition related to an object ends.
 
 ### Parameters
 
@@ -15,8 +15,8 @@ This event is triggered when a camera transition starts.
 ### Example
 
 ```js
-engine.events.on('onCameraTransitionStart', id => {
-  console.log('the camera transition with ID ' + id + ' has started');
+object.events.on('onCameraTransitionEnd', id => {
+  console.log('Transition ended:', id);
 });
 ```
 
