@@ -1,0 +1,34 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+Creates a new array with all entities that pass the provided test, similar to [`Array.filter`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter).
+
+### Syntax
+
+```js
+entities.filter(callback);
+```
+
+### Parameters
+
+| Name       | Type                                         | Description |
+| ---------- | -------------------------------------------- | ----------- |
+| `callback` | `(entity: EntityManager) => EntityManager[]` | Callback    |
+
+### Example
+
+```js
+const VIP_ROLE = 'role_2jd1TjKpCYjhFKDhw8hmTH';
+
+const vipPlayers = engine.players.filter(player =>
+  player.name.roles.includes(VIP_ROLE),
+);
+
+console.log('vip players', vipPlayers);
+```
+
+**Available on:** <ClientTag /> <ServerTag />

@@ -1,0 +1,24 @@
+```ts
+type EngineParams = {
+  name?: string;
+
+  webServer?: string;
+
+  accessToken?: string;
+
+  environment?: 'prod' | 'dev';
+
+  apiEndpoint?: string;
+
+  /* client script only */
+  syncPlayers?: boolean;
+
+  syncPlayerUpdatesPriority?: boolean;
+
+  syncPlayerUpdates?: boolean;
+
+  syncPlayerControls?: boolean;
+
+  syncCameraPosition?: boolean;
+};
+```

@@ -22,30 +22,65 @@ In this section, you'll find a comprehensive list of methods available in the Ve
 
 ### Properties
 
-| Name                               | Type              | Description                                         |
-| ---------------------------------- | ----------------- | --------------------------------------------------- |
-| `engine.network`                   | `NetworkManager`  | Manages network connections and communication.      |
-| `engine.api`                       | `ApiManager`      | Handles Verza's requests and responses.             |
-| `engine.ui`                        | `UIManager`       | Manages UI elements and interactions.               |
-| `engine.chat`                      | `ChatManager`     | Handles in-game chat functionality.                 |
-| `engine.commands`                  | `CommandsManager` | Manages command registration and execution.         |
-| `engine.camera`                    | `CameraManager`   | Controls camera settings and transitions.           |
-| `engine.streamer`                  | `StreamerManager` | Manages the streaming of objects and assets.        |
-| `engine.world`                     | `WorldManager`    | Controls world properties and environment settings. |
-| `engine.assets`                    | `AssetsManager`   | Manages assets loading and caching.                 |
-| `engine.events`                    | `EventsManager`   | Engine's events manager.                            |
-| `engine.params`                    | `EngineParams`    | Holds engine configuration parameters.              |
-| `engine.isServer`                  | `boolean`         | True if the script is running on the server.        |
-| `engine.isClient`                  | `boolean`         | True if the script is running on the client.        |
-| `engine.chunkSize`                 | `number`          | The size of the chunks used for streaming.          |
-| `engine.syncPlayers`               | `boolean`         | Indicates if player data is being synced.           |
-| `engine.syncPlayerUpdatesPriority` | `boolean`         | Determines the priority of player updates syncing.  |
-| `engine.syncPlayerUpdates`         | `boolean`         | Indicates if player updates are being synced.       |
-| `engine.syncPlayerControls`        | `boolean`         | Indicates if player controls are being synced.      |
-| `engine.syncCameraPosition`        | `boolean`         | Indicates if camera position is being synced.       |
-| `engine.synced`                    | `boolean`         | True if the engine is currently synced.             |
-| `engine.connected`                 | `boolean`         | True if the engine is currently connected.          |
-| `engine.localPlayerId`             | `number`          | The ID of the local player.                         |
-| `engine.localPlayer`               | `PlayerManager`   | A reference to the local player object.             |
-| `engine.players`                   | `PlayersManager`  | The manager for players.                            |
-| `engine.objects`                   | `ObjectsManager`  | The manager for objects.                            |
+| Name                               | Type                                      | Description                                         |
+| ---------------------------------- | ----------------------------------------- | --------------------------------------------------- |
+| `engine.network`                   | `NetworkManager`                          | Manages network connections and communication.      |
+| `engine.api`                       | `ApiManager`                              | Handles Verza's requests and responses.             |
+| `engine.ui`                        | `UIManager`                               | Manages UI elements and interactions.               |
+| `engine.chat`                      | `ChatManager`                             | Handles in-game chat functionality.                 |
+| `engine.commands`                  | `CommandsManager`                         | Manages command registration and execution.         |
+| `engine.camera`                    | `CameraManager`                           | Controls camera settings and transitions.           |
+| `engine.streamer`                  | `StreamerManager`                         | Manages the streaming of objects and assets.        |
+| `engine.world`                     | `WorldManager`                            | Controls world properties and environment settings. |
+| `engine.assets`                    | `AssetsManager`                           | Manages assets loading and caching.                 |
+| `engine.events`                    | `EventsManager`                           | Engine's events manager.                            |
+| `engine.params`                    | [`EngineParams`](/sdk/types/EngineParams) | Holds engine configuration parameters.              |
+| `engine.localPlayer`               | `PlayerManager`                           | A reference to the local player object.             |
+| `engine.players`                   | `PlayersManager`                          | The manager for players.                            |
+| `engine.objects`                   | `ObjectsManager`                          | The manager for objects.                            |
+| `engine.localPlayerId`             | `number`                                  | The ID of the local player.                         |
+| `engine.connected`                 | `boolean`                                 | True if the engine is currently connected.          |
+| `engine.synced`                    | `boolean`                                 | True if the engine is currently synced.             |
+| `engine.isServer`                  | `boolean`                                 | True if the script is running on the server.        |
+| `engine.isClient`                  | `boolean`                                 | True if the script is running on the client.        |
+| `engine.chunkSize`                 | `number`                                  | The size of the chunks used for streaming.          |
+| `engine.syncPlayers`               | `boolean`                                 | Indicates if player data is being synced.           |
+| `engine.syncPlayerUpdatesPriority` | `boolean`                                 | Determines the priority of player updates syncing.  |
+| `engine.syncPlayerUpdates`         | `boolean`                                 | Indicates if player updates are being synced.       |
+| `engine.syncPlayerControls`        | `boolean`                                 | Indicates if player controls are being synced.      |
+| `engine.syncCameraPosition`        | `boolean`                                 | Indicates if camera position is being synced.       |
+
+## Chat
+
+### Methods
+
+| Method                                           | Description                                                                               |
+| ------------------------------------------------ | ----------------------------------------------------------------------------------------- |
+| [chat.escapeText](./chat/escapeText)             | Escapes special characters in a message so that they are displayed correctly in the chat. |
+| [chat.sendMessageToAll](./chat/sendMessageToAll) | Sends a message to all players in the chat.                                               |
+| [chat.sendMessageTo](./chat/sendMessageTo)       | Sends a message to a specific player in the chat.                                         |
+
+## Entities
+
+### Methods
+
+| Method                                 | Description                                                                                                                                                                                                                                                        |
+| -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [entities.is](./entities/is)           | Checks whether an entity with the specified ID exists.                                                                                                                                                                                                             |
+| [entities.get](./entities/get)         | Retrieves the entity with the specified ID. Returns `null` if the entity does not exist.                                                                                                                                                                           |
+| [entities.destroy](./entities/destroy) | Destroys the entity with the specified ID.                                                                                                                                                                                                                         |
+| [entities.forEach](./entities/forEach) | Calls a provided function once for each entity, similar to [`Array.forEach`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach).                                                                                      |
+| [entities.map](./entities/map)         | Creates a new array with the results of calling a provided function on every entity, similar to [`Array.map`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map).                                                         |
+| [entities.some](./entities/some)       | Tests whether at least one entity passes the provided test, similar to [`Array.some`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some).                                                                                |
+| [entities.filter](./entities/filter)   | Creates a new array with all entities that pass the provided test, similar to [`Array.filter`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter).                                                                     |
+| [entities.find](./entities/find)       | Returns the first entity that satisfies the provided testing function or `null`, similar to [`Array.find`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find). If no entity matches the test, the method returns `null`. |
+
+### Properties
+
+| Name                   | Type                                  | Description                                                                                                |
+| ---------------------- | ------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `entities.type`        | [`EntityType`](/sdk/types/EntityType) | The type of entity managed by the entity manager.                                                          |
+| `entities.entities`    | `EntityManager[]`                     | An array containing all the entity managers for the specified entity type.                                 |
+| `entities.entitiesMap` | `Map<ID, EntityManager>`              | A map of entity managers indexed by their respective entity IDs.                                           |
+| `entities.streamed`    | `Map<ID, EntityManager>`              | A map of entity managers for entities that are currently being streamed to the player.                     |
+| `entities.events`      | `EventsManager`                       | An instance of the `EventsManager` class used to register and manage events for the specified entity type. |

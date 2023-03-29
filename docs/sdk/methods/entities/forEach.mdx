@@ -1,0 +1,30 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+Calls a provided function once for each entity, similar to [`Array.forEach`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach).
+
+### Syntax
+
+```js
+entities.forEach(callback);
+```
+
+### Parameters
+
+| Name       | Type                              | Description |
+| ---------- | --------------------------------- | ----------- |
+| `callback` | `(entity: EntityManager) => void` | Callback    |
+
+### Example
+
+```js
+engine.players.forEach(player => {
+  player.sendMessage('Hello!');
+});
+```
+
+**Available on:** <ClientTag /> <ServerTag />
