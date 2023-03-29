@@ -1,0 +1,82 @@
+import DocCardList from '@theme/DocCardList';
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+# Events
+
+Events are an essential part of Verza's SDK, allowing you to respond to specific actions or occurrences within your scripts. They enable communication between server and client scripts and provide a way to react to various in-game events, such as player actions, object interactions, and world updates.
+
+In this section, you'll find a comprehensive list of events supported by the Verza SDK, along with detailed descriptions and usage examples. Learn how to listen for and trigger events to create dynamic, interactive, and engaging game experiences for your players.
+
+<DocCardList />
+
+## Engine
+
+- [onConnect](./engine/onConnect)
+- [onDisconnect](./engine/onDisconnect)
+- [onSynced](./engine/onSynced)
+
+## Chat
+
+- [onChat](./chat/onChat)
+- [onCommand](./chat/onCommand)
+- [onCommandNotFound](./chat/onCommandNotFound)
+
+## Camera
+
+- [onCameraModeChange](./camera/onCameraModeChange)
+- [onCameraTransitionStart](./camera/onCameraTransitionStart)
+- [onCameraTransitionEnd](./camera/onCameraTransitionEnd)
+
+## Entities
+
+The following events apply to multiple entity types, such as players and objects.
+
+- [onCreate](./entities/onCreate)
+- [onDestroy](./entities/onDestroy)
+- [onStreamIn](./entities/onStreamIn)
+- [onStreamOut](./entities/onStreamOut)
+
+## Players
+
+- [onGenderChange](./players/onGenderChange)
+- [onControlChange](./players/onControlChange)
+- [onStateChange](./players/onStateChange)
+- [onStateAnimationChange](./players/onStateAnimationChange)
+- [onHeadMove](./players/onHeadMove)
+- [onClothesUpdate](./players/onClothesUpdate)
+
+```
+## Objects
+
+- [onPointerMove](./objects/onPointerMove)
+- [onPointerEnter](./objects/onPointerEnter)
+- [onPointerLeave](./objects/onPointerLeave)
+- [onPointerDown](./objects/onPointerDown)
+- [onPointerUp](./objects/onPointerUp)
+- [onTransitionStart](./objects/onTransitionStart)
+- [onTransitionEnd](./objects/onTransitionEnd)
+
+## World
+
+- [onEntitySelected](./world/onEntitySelected)
+- [onObjectEdit](./world/onObjectEdit)
+
+## UI
+
+- [onInputFocus](./onInputFocus)
+- [onCursorLock](./onCursorLock)
+- [onPointerEvent](./ui/onPointerEvent)
+- [onPointerMove](./ui/onPointerMove)
+- [onPointerDown](./ui/onPointerDown)
+- [onPointerUp](./ui/onPointerUp)
+- [onKeyEvent](./ui/onKeyEvent)
+- [onKeyDown](./ui/onKeyDown)
+- [onKeyUp](./ui/onKeyUp)
+- [onToolbarItemPress](./ui/onToolbarItemPress)
+- [onDragLeave](./ui/onDragLeave)
+- [onDragEnter](./ui/onDragEnter)
+- [onDragOver](./ui/onDragOver)
+- [onDrop](./ui/onDrop)
+```

@@ -1,0 +1,24 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+This event is triggered when the camera mode changes.
+
+### Parameters
+
+| Name      | Type                           | Description                                                      |
+| --------- | ------------------------------ | ---------------------------------------------------------------- |
+| `mode`    | `enum(global, player, static)` | The camera mode                                                  |
+| `instant` | `boolean`                      | Indicates whether the change is instant or involves a transition |
+
+### Example
+
+```js
+engine.events.on('onCameraModeChange', (mode, instant) => {
+  console.log('the camera mode has changed to', mode, 'instantly?', instant);
+});
+```
+
+**Available on:** <ClientTag />

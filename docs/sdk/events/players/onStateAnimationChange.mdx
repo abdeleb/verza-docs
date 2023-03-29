@@ -1,0 +1,21 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+This event is triggered when a player changes their state animation.
+
+### Parameters
+
+| Name   | Type     | Description                           |
+| ------ | -------- | ------------------------------------- |
+| `anim` | `number` | The new animation state of the player |
+
+### Example
+
+```js
+engine.localPlayer.events.on('onStateAnimationChange', anim => {
+  console.log('new animation state', anim);
+});
+```

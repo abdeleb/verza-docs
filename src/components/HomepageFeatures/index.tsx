@@ -12,32 +12,35 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
+    title: 'Powerful SDK',
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Feature-rich SDK for creating immersive game modes with JavaScript.
+        Explore the docs to harness Verza's capabilities.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
-    description: (
-      <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
-      </>
-    ),
-  },
-  {
-    title: 'Powered by React',
+    title: 'Real-time Multiplayer',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Experience immersive real-time multiplayer gaming with Verza's powerful
+        networking features.
+      </>
+    ),
+  },
+  {
+    title: 'Connect and Collaborate',
+    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    description: (
+      <>
+        Connect with skilled developers on Verza, exchange ideas, join our&nbsp;
+        <a target="_blank" href="https://discord.verza.io/">
+          Discord
+        </a>{' '}
+        and shape the future of gaming together.
       </>
     ),
   },

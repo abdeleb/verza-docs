@@ -35,3 +35,13 @@
     --ifm-footer-background-color: #17181c;
   }
 }
+
+.hide-children {
+  .menu__list {
+    display: none !important;
+  }
+
+  .menu__caret {
+    display: none;
+  }
+}

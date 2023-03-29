@@ -3,6 +3,7 @@
   "position": 2,
   "link": {
     "type": "generated-index",
+    "slug": "getting-started",
     "description": "Get started with Verza, the browser-based platform for creating custom game modes using JavaScript. Learn how to set up your development environment, create a new project, and explore the powerful Verza SDK."
   }
 }

@@ -1,0 +1,23 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+This event is triggered when a camera transition starts.
+
+### Parameters
+
+| Name | Type     | Description       |
+| ---- | -------- | ----------------- |
+| `id` | `number` | The transition ID |
+
+### Example
+
+```js
+engine.events.on('onCameraTransitionStart', id => {
+  console.log('the camera transition with ID ' + id + ' has started');
+});
+```
+
+**Available on:** <ClientTag />

@@ -1,0 +1,21 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+This event is triggered when a player moves their head.
+
+### Parameters
+
+| Name    | Type         | Description                  |
+| ------- | ------------ | ---------------------------- |
+| `euler` | `EulerArray` | The Euler angles of the head |
+
+### Example
+
+```js
+engine.localPlayer.events.on('onHeadMove', euler => {
+  console.log('Head moved: Euler angles:', euler);
+});
+```

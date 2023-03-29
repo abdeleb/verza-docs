@@ -1,0 +1,15 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+This event is triggered when a player updates their clothes.
+
+### Example
+
+```js
+engine.localPlayer.events.on('onClothesUpdate', () => {
+  console.log('Clothes updated');
+});
+```

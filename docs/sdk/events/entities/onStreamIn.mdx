@@ -1,0 +1,24 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+This event is triggered when an entity is streamed in.
+
+### Parameters
+
+| Name     | Type            | Description                           |
+| -------- | --------------- | ------------------------------------- |
+| `entity` | `EntityManager` | The entity that has been streamed in. |
+
+### Example
+
+```js
+engine.players.events.on('onStreamIn', player => {
+  console.log('A player has streamed in: ' + player.id);
+});
+```
+
+**Available on:** <ClientTag /> <ServerTag />

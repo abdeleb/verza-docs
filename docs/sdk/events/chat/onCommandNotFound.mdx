@@ -1,0 +1,25 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+This event is triggered when a command is not found in any script, including both server and client scripts.
+
+We recommend using a single `onCommandNotFound` handler across all your server scripts to avoid duplicate help/error messages.
+
+### Parameters
+
+| Name      | Type     | Description                                          |
+| --------- | -------- | ---------------------------------------------------- |
+| `command` | `string` | The command that was not found, excluding the slash. |
+
+### Example
+
+```js
+engine.events.on('onCommandNotFound', command => {
+  console.log(`command not found`, command);
+});
+```
+
+**Available on:** <ClientTag />

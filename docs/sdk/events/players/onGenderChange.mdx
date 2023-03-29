@@ -1,0 +1,23 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+This event is triggered when a player changes its gender.
+
+### Parameters
+
+| Name     | Type                 | Description                     |
+| -------- | -------------------- | ------------------------------- |
+| `gender` | `enum(male, female)` | The new gender of the character |
+
+### Example
+
+```js
+engine.localPlayer.events.on('onGenderChange', gender => {
+  console.log('new gender', gender);
+});
+```
+
+**Available on:** <ClientTag />

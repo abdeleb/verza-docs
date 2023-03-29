@@ -1,0 +1,33 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+This event is triggered when a player changes the state of a control.
+
+### Parameters
+
+| Name       | Type      | Description                                       |
+| ---------- | --------- | ------------------------------------------------- |
+| `control`  | `string`  | The name of the control that has changed          |
+| `newState` | `boolean` | The new state of the control (true for activated) |
+| `oldState` | `boolean` | The previous state of the control                 |
+
+### Example
+
+```js
+engine.localPlayer.events.on(
+  'onControlChange',
+  (control, newState, oldState) => {
+    console.log(
+      'Control changed:',
+      control,
+      'New state:',
+      newState,
+      'Old state:',
+      oldState,
+    );
+  },
+);
+```
