@@ -1,0 +1,27 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Checks if an object is currently being streamed.
+
+### Syntax
+
+```js
+object.isStreamed();
+```
+
+### Returns
+
+- `Promise<boolean>` - Whether the object is currently being streamed.
+
+### Example
+
+```js
+const isStreamed = await object.isStreamed();
+
+console.log('is streamed?', isStreamed);
+```
+
+**Available on:** <ClientTag />

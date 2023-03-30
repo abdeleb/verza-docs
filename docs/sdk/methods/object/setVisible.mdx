@@ -1,0 +1,28 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+Set whether or not the object is visible.
+
+### Syntax
+
+```js
+object.setVisible(visible);
+```
+
+### Parameters
+
+| Name      | Type      | Description                                                            |
+| --------- | --------- | ---------------------------------------------------------------------- |
+| `visible` | `boolean` | Determines whether the object is visible (`true`) or hidden (`false`). |
+
+### Example
+
+```js
+object.setVisible(false);
+```
+
+**Available on:** <ClientTag /> <ServerTag />

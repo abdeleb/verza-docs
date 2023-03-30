@@ -1,0 +1,30 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+Update data for the object.
+
+### Syntax
+
+```js
+object.setData(data);
+```
+
+### Parameters
+
+| Name    | Type         | Description    |
+| ------- | ------------ | -------------- |
+| `props` | `ObjectData` | Data to update |
+
+### Example
+
+```js
+object.setData({
+  collision: 'dynamic',
+});
+```
+
+**Available on:** <ClientTag /> <ServerTag />

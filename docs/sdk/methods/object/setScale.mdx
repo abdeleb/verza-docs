@@ -1,0 +1,28 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+Set the scale of the object.
+
+### Syntax
+
+```js
+object.setScale(scale);
+```
+
+### Parameters
+
+| Name       | Type                                                                         | Description   |
+| ---------- | ---------------------------------------------------------------------------- | ------------- |
+| `setScale` | [`Vector3`](/sdk/types/Vector3) or [`Vector3Array`](/sdk/types/Vector3Array) | The new scale |
+
+### Example
+
+```js
+object.setScale([3, 5, 3]);
+```
+
+**Available on:** <ClientTag /> <ServerTag />

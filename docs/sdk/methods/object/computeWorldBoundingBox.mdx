@@ -1,0 +1,25 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Compute the world bounding box of the object.
+
+### Syntax
+
+```js
+object.computeWorldBoundingBox();
+```
+
+### Returns
+
+- [`Promise<Box3>`](/sdk/types/Box3) - A promise that resolves with the bounding box of the object.
+
+### Example
+
+```js
+const boundingBox = await object.computeWorldBoundingBox();
+```
+
+**Available on:** <ClientTag />

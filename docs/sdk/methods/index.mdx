@@ -68,7 +68,6 @@ In this section, you'll find a comprehensive list of methods available in the Ve
 | -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | [entities.is](./entities/is)           | Checks whether an entity with the specified ID exists.                                                                                                                                                                                                             |
 | [entities.get](./entities/get)         | Retrieves the entity with the specified ID. Returns `null` if the entity does not exist.                                                                                                                                                                           |
-| [entities.destroy](./entities/destroy) | Destroys the entity with the specified ID.                                                                                                                                                                                                                         |
 | [entities.forEach](./entities/forEach) | Calls a provided function once for each entity, similar to [`Array.forEach`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach).                                                                                      |
 | [entities.map](./entities/map)         | Creates a new array with the results of calling a provided function on every entity, similar to [`Array.map`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map).                                                         |
 | [entities.some](./entities/some)       | Tests whether at least one entity passes the provided test, similar to [`Array.some`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some).                                                                                |
@@ -84,3 +83,74 @@ In this section, you'll find a comprehensive list of methods available in the Ve
 | `entities.entitiesMap` | `Map<ID, EntityManager>`              | A map of entity managers indexed by their respective entity IDs.                                           |
 | `entities.streamed`    | `Map<ID, EntityManager>`              | A map of entity managers for entities that are currently being streamed to the player.                     |
 | `entities.events`      | `EventsManager`                       | An instance of the `EventsManager` class used to register and manage events for the specified entity type. |
+
+## Objects
+
+### Methods
+
+| Method                                         | Description                                                                                      |
+| ---------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| [objects.create](./objects/create)             | Creates a new object with the specified properties.                                              |
+| [objects.resolve](./objects/resolve)           | Retrieves an object by its ID and returns a reference to the corresponding object manager.       |
+| [objects.edit](./objects/edit)                 | Begins editing the specified object.                                                             |
+| [objects.cancelEdit](./objects/cancelEdit)     | Cancels editing of the current object.                                                           |
+| [objects.setEditSnaps](./objects/setEditSnaps) | Enables or disables snap offset while editing objects.                                           |
+| [objects.setEditAxes](./objects/setEditAxes)   | Enables or disables the display of translation, rotation and scaling axes while editing objects. |
+
+### Properties
+
+| Name                    | Type            | Description                                                                                                      |
+| ----------------------- | --------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `objects.editingObject` | `ObjectManager` | A reference to the object manager for the object currently being edited, or `null` if no object is being edited. |
+
+## Object
+
+### Methods
+
+| Method                                                                 | Description                                                                     |
+| ---------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| [object.setPosition](./object/setPosition)                             | Set the position of the object.                                                 |
+| [object.setRotation](./object/setRotation)                             | Set the rotation of the object.                                                 |
+| [object.setScale](./object/setScale)                                   | Set the scale of the object.                                                    |
+| [object.setPositionFromWorldSpace](./object/setPositionFromWorldSpace) | Set the position of the object in world space.                                  |
+| [object.setRotationFromWorldSpace](./object/setRotationFromWorldSpace) | Set the rotation of the object in world space.                                  |
+| [object.setCollision](./object/setCollision)                           | Set the collision type of the object.                                           |
+| [object.setCollider](./object/setCollider)                             | Set the collider type of the object.                                            |
+| [object.setMass](./object/setMass)                                     | Set the mass of the object.                                                     |
+| [object.setVisible](./object/setVisible)                               | Set whether or not the object is visible.                                       |
+| [object.setData](./object/setData)                                     | Update data for the object.                                                     |
+| [object.setProps](./object/setProps)                                   | Updates type-specific properties for an object.                                 |
+| [object.computeBoundingBox](./object/computeBoundingBox)               | Compute the bounding box of the object.                                         |
+| [object.computeWorldBoundingBox](./object/computeWorldBoundingBox)     | Compute the world bounding box of the object.                                   |
+| [object.rerender](./object/rerender)                                   | Forces an object to re-render.                                                  |
+| [object.isStreamed](./object/isStreamed)                               | Checks if an object is currently being streamed.                                |
+| [object.waitForStream](./object/waitForStream)                         | Waits for an object to finish streaming.                                        |
+| [object.toData](./object/toData)                                       | Converts an object to its corresponding data representation.                    |
+| [object.clone](./object/clone)                                         | Creates a new object by cloning an existing object with the same properties.    |
+| [object.sync](./object/sync)                                           | Synchronizes an object's properties between the server and the client.          |
+| [object.save](./object/save)                                           | Saves an object to the Verza servers, making it permanent.                      |
+| [object.saveVolatile](./object/saveVolatile)                           | Same as `object.save` but with a delay.                                         |
+| [object.delete](./object/delete)                                       | Destroys and deletes an object from Verza servers (only for permanent objects). |
+| [object.destroy](./object/destroy)                                     | Destroys an object.                                                             |
+
+### Properties
+
+| Name                   | Type                                            | Description                                                                          |
+| ---------------------- | ----------------------------------------------- | ------------------------------------------------------------------------------------ |
+| `object.objectType`    | [`ObjectType`](/sdk/types/ObjectType)           | The type of the object.                                                              |
+| `object.location`      | [`Object3D`](/sdk/types/Object3D)               | The object's position, rotation, and scale.                                          |
+| `object.position`      | [`Vector3`](/sdk/types/Vector3)                 | The object's position.                                                               |
+| `object.rotation`      | [`Quaternion`](/sdk/types/Quaternion)           | The object's rotation.                                                               |
+| `object.scale`         | [`Vector3`](/sdk/types/Vector3)                 | The object's scale.                                                                  |
+| `object.worldLocation` | [`Promise<Object3D>`](/sdk/types/Object3D)      | A promise that resolves to the world location of the object.                         |
+| `object.permanent`     | `boolean`                                       | Whether the object is permanent or not.                                              |
+| `object.remote`        | `boolean`                                       | Whether the object is remote or not.                                                 |
+| `object.parentId`      | `string`                                        | The ID of the parent object.                                                         |
+| `object.parent`        | `ObjectManager`                                 | The parent object of this object, or `null` if this object has no parent.            |
+| `object.children`      | `Set<ObjectManager>`                            | The child objects of this object, represented as a set of `ObjectManager` instances. |
+| `object.userData`      | [`ObjectUserData`](/sdk/types/ObjectUserData)   | Custom user data attached to the object.                                             |
+| `props`                | `ObjectProps`                                   | The properties of the object, based on its type.                                     |
+| `data`                 | `ObjectData`                                    | The data of the object.                                                              |
+| `collision`            | [`EntityCollision`](/sdk/types/EntityCollision) | The collision type of the object.                                                    |
+| `collider`             | [`EntityCollider`](/sdk/types/EntityCollider)   | The collider type of the object.                                                     |
+| `object.mass`          | `number`                                        | The object's mass, used in physics calculations.                                     |

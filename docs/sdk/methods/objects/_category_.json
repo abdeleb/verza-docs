@@ -1,6 +1,6 @@
 {
-  "label": "Players",
-  "position": 3,
+  "label": "Objects",
+  "position": 4,
   "link": {
     "type": "generated-index"
   }
