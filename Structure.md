@@ -22,7 +22,7 @@
 - Scripting with JavaScript
 - Working with assets and resources
 - Physics and collision detection
-- User input and controls
+- Player input and controls
 - Networking and multiplayer
 
 ## 5. Advanced
@@ -69,7 +69,7 @@ Welcome to Verza! In this guide, we'll walk you through the process of setting u
 ## 3. Creating a Simple Game Mode
 
 - [Step-by-step guide to creating a basic game mode using the SDK](#creating-a-basic-game-mode)
-- [Examples of using SDK features like objects, user input, and player control](#using-sdk-features)
+- [Examples of using SDK features like objects, player input, and player control](#using-sdk-features)
 - [Tips for debugging and testing the game mode during development](#debugging-and-testing)
 
 ## 4. Deploying Your Game Mode

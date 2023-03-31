@@ -1,0 +1,30 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Waits for an object to finish streaming.
+
+### Syntax
+
+```js
+object.waitForStream();
+```
+
+### Returns
+
+- `Promise<void>` - A promise that resolves when the object is streamed in.
+
+### Example
+
+```js
+const object = engine.objects.create('box');
+
+await object.waitForStream();
+
+// The object is now streamed in
+object.position.set(0, 2, 0);
+```
+
+**Available on:** <ClientTag />

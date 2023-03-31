@@ -1,0 +1,30 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+Updates type-specific properties for an object.
+
+### Syntax
+
+```js
+object.setProps(props);
+```
+
+### Parameters
+
+| Name    | Type          | Description          |
+| ------- | ------------- | -------------------- |
+| `props` | `ObjectProps` | Properties to update |
+
+### Example
+
+```js
+object.setProps({
+  color: 'blue',
+});
+```
+
+**Available on:** <ClientTag /> <ServerTag />

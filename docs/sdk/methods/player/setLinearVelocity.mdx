@@ -1,0 +1,29 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+Sets the player's linear velocity.
+
+### Syntax
+
+```js
+player.setLinearVelocity(vector);
+```
+
+### Parameters
+
+| Name     | Type                                      | Description                 |
+| -------- | ----------------------------------------- | --------------------------- |
+| `vector` | [`Vector3Array`](/sdk/types/Vector3Array) | The linear velocity vector. |
+
+### Example
+
+```js
+// make it jump
+player.setLinearVelocity([0, 20, 0]);
+```
+
+**Available on:** <ClientTag /> <ServerTag />

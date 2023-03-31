@@ -1,0 +1,28 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+Adds torque to the object.
+
+### Syntax
+
+```js
+object.addTorque(vector);
+```
+
+### Parameters
+
+| Name     | Type                                      | Description                                  |
+| -------- | ----------------------------------------- | -------------------------------------------- |
+| `vector` | [`Vector3Array`](/sdk/types/Vector3Array) | The torque vector to be added to the object. |
+
+### Example
+
+```js
+object.addTorque([0, 20, 0]);
+```
+
+**Available on:** <ClientTag /> <ServerTag />

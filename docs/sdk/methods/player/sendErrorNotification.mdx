@@ -1,0 +1,28 @@
+---
+hide_table_of_contents: true
+---
+
+import ServerTag from '@site/src/components/tags/ServerTag';
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Sends an error notification to the player.
+
+### Syntax
+
+```js
+player.sendErrorNotification(message);
+```
+
+### Parameters
+
+| Name      | Type     | Description                            |
+| --------- | -------- | -------------------------------------- |
+| `message` | `string` | The notification to send to the player |
+
+### Example
+
+```js
+player.sendErrorNotification('You were removed from the Team #1');
+```
+
+**Available on:** <ClientTag /> <ServerTag />

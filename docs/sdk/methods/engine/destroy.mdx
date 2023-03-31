@@ -1,0 +1,26 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+Cleans up and releases engine resources.
+
+### Syntax
+
+```js
+engine.destroy();
+```
+
+### Example
+
+```js
+const engine = new EngineManager({
+  name: 'My Script',
+});
+
+engine.destroy();
+```
+
+**Available on:** <ClientTag /> <ServerTag />

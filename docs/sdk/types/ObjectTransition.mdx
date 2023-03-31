@@ -1,0 +1,14 @@
+```ts
+type ObjectTransition = {
+  id?: number | string;
+  to?: Vector3 | Vector3Array;
+  toRotation?: Quaternion | Euler | QuaternionArray | EulerArray;
+  from?: Vector3 | Vector3Array;
+  fromRotation?: Quaternion | Euler | QuaternionArray | EulerArray;
+  duration?: number;
+  speed?: number;
+  easing?: Easing;
+  cubicBezier?: [x1: number, y1: number, x2: number, y2: number];
+  loop?: boolean;
+};
+```

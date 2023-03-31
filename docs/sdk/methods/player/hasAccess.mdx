@@ -1,0 +1,36 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+Checks if the player has access to a certain command or action.
+
+### Syntax
+
+```js
+player.hasAccess(commandOrAction);
+```
+
+### Returns
+
+- `boolean` - Whether the player has access to the command or action.
+
+### Parameters
+
+| Name              | Type     | Description                         |
+| ----------------- | -------- | ----------------------------------- |
+| `commandOrAction` | `string` | The command or action to check for. |
+
+### Example
+
+```js
+// checks for an action
+player.hasAccess('+editor');
+
+// checks for a command
+player.hasAccess('/announce');
+```
+
+**Available on:** <ClientTag /> <ServerTag />

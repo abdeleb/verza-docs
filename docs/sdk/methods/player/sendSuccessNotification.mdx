@@ -1,0 +1,28 @@
+---
+hide_table_of_contents: true
+---
+
+import ServerTag from '@site/src/components/tags/ServerTag';
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Sends a success notification to the player.
+
+### Syntax
+
+```js
+player.sendSuccessNotification(message);
+```
+
+### Parameters
+
+| Name      | Type     | Description                            |
+| --------- | -------- | -------------------------------------- |
+| `message` | `string` | The notification to send to the player |
+
+### Example
+
+```js
+player.sendSuccessNotification('You entered the Team #1');
+```
+
+**Available on:** <ClientTag /> <ServerTag />

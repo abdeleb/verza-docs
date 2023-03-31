@@ -8,11 +8,11 @@ This event is triggered when a player changes the state of a control.
 
 ### Parameters
 
-| Name       | Type      | Description                                       |
-| ---------- | --------- | ------------------------------------------------- |
-| `control`  | `string`  | The name of the control that has changed          |
-| `newState` | `boolean` | The new state of the control (true for activated) |
-| `oldState` | `boolean` | The previous state of the control                 |
+| Name       | Type                                                | Description                                       |
+| ---------- | --------------------------------------------------- | ------------------------------------------------- |
+| `control`  | [`keyof PlayerControls`](/sdk/types/PlayerControls) | The name of the control that has changed          |
+| `newState` | `boolean`                                           | The new state of the control (true for activated) |
+| `oldState` | `boolean`                                           | The previous state of the control                 |
 
 ### Example
 

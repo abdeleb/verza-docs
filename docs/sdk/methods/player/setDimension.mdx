@@ -1,0 +1,29 @@
+---
+hide_table_of_contents: true
+---
+
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+Sets the player's dimension.
+
+Players can only see others in the same dimension.
+
+### Syntax
+
+```js
+player.setDimension(dimension);
+```
+
+### Parameters
+
+| Name        | Type     | Description                         |
+| ----------- | -------- | ----------------------------------- |
+| `dimension` | `number` | The dimension to set the player to. |
+
+### Example
+
+```js
+await player.setDimension(10000);
+```
+
+**Available on:** <ServerTag />

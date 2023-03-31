@@ -13,34 +13,34 @@ type FeatureItem = {
 const FeatureList: FeatureItem[] = [
   {
     title: 'Powerful SDK',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    Svg: require('@site/static/img/sections/1.svg').default,
     description: (
       <>
-        Feature-rich SDK for creating immersive game modes with JavaScript.
+        Feature-rich SDK for creating immersive experiences with JavaScript.
         Explore the docs to harness Verza's capabilities.
       </>
     ),
   },
   {
     title: 'Real-time Multiplayer',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    Svg: require('@site/static/img/sections/2.svg').default,
     description: (
       <>
-        Experience immersive real-time multiplayer gaming with Verza's powerful
-        networking features.
+        Experience immersive real-time multiplayer with Verza's powerful
+        networking features. Say goodbye to the hassle of networking.
       </>
     ),
   },
   {
     title: 'Connect and Collaborate',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    Svg: require('@site/static/img/sections/3.svg').default,
     description: (
       <>
         Connect with skilled developers on Verza, exchange ideas, join our&nbsp;
         <a target="_blank" href="https://discord.verza.io/">
           Discord
         </a>{' '}
-        and shape the future of gaming together.
+        and shape the future together.
       </>
     ),
   },

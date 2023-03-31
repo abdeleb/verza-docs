@@ -1,0 +1,27 @@
+---
+hide_table_of_contents: true
+---
+
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+Restarts the server instance.
+
+### Syntax
+
+```js
+engine.restartServer(reason);
+```
+
+### Parameters
+
+| Name     | Type     | Description                                                                                  |
+| -------- | -------- | -------------------------------------------------------------------------------------------- |
+| `reason` | `string` | An optional string message that will be logged by Verza for debugging or reference purposes. |
+
+### Example
+
+```js
+engine.restartServer('Server restarting, please wait...');
+```
+
+**Available on:** <ServerTag />

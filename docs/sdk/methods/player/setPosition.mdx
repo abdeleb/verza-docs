@@ -1,0 +1,28 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+Sets the player's position.
+
+### Syntax
+
+```js
+player.setPosition(position);
+```
+
+### Parameters
+
+| Name       | Type                                                                         | Description      |
+| ---------- | ---------------------------------------------------------------------------- | ---------------- |
+| `position` | [`Vector3`](/sdk/types/Vector3) or [`Vector3Array`](/sdk/types/Vector3Array) | The new position |
+
+### Example
+
+```js
+player.setPosition([0, 5, 0]);
+```
+
+**Available on:** <ClientTag /> <ServerTag />

@@ -1,0 +1,34 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+Tests whether at least one entity passes the provided test, similar to [`Array.some`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some).
+
+### Syntax
+
+```js
+entities.some(callback);
+```
+
+### Parameters
+
+| Name       | Type                                 | Description |
+| ---------- | ------------------------------------ | ----------- |
+| `callback` | `(entity: EntityManager) => boolean` | Callback    |
+
+### Example
+
+```js
+const VIP_ROLE = 'role_2jd1TjKpCYjhFKDhw8hmTH';
+
+const isAnyVipPlayer = engine.players.some(player =>
+  player.name.includes(VIP_ROLE),
+);
+
+console.log('is vip player found?', isAnyVipPlayer);
+```
+
+**Available on:** <ClientTag /> <ServerTag />

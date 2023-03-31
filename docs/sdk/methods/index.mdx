@@ -1,0 +1,209 @@
+import DocCardList from '@theme/DocCardList';
+
+# Methods
+
+Methods in Verza's SDK provide a powerful way to interact with various world elements, control the flow of your scripts, and build complex interactions. They are used to perform actions, retrieve information, and modify the game state according to your requirements.
+
+In this section, you'll find a comprehensive list of methods available in the Verza SDK, along with detailed descriptions and usage examples. Discover how to effectively utilize these methods to create engaging, interactive, and immersive experiences for your players within your scripts.
+
+<DocCardList />
+
+## Engine
+
+### Methods
+
+| Method                                                   | Description                                                    |
+| -------------------------------------------------------- | -------------------------------------------------------------- |
+| [engine.connectServer](./engine/connectServer)           | Connects a websocket server script to a Verza server instance. |
+| [engine.connectClient](./engine/connectClient)           | Connects a client script to a Verza server instance.           |
+| [engine.restartServer](./engine/restartServer)           | Restarts the server instance.                                  |
+| [engine.setForwardMessages](./engine/setForwardMessages) | Enables or disables message forwarding to scripts.             |
+| [engine.destroy](./engine/destroy)                       | Cleans up and releases engine resources.                       |
+
+### Properties
+
+| Name                               | Type                                      | Description                                         |
+| ---------------------------------- | ----------------------------------------- | --------------------------------------------------- |
+| `engine.network`                   | `NetworkManager`                          | Manages network connections and communication.      |
+| `engine.api`                       | `ApiManager`                              | Handles Verza's requests and responses.             |
+| `engine.ui`                        | `UIManager`                               | Manages UI elements and interactions.               |
+| `engine.chat`                      | `ChatManager`                             | Handles in-game chat functionality.                 |
+| `engine.commands`                  | `CommandsManager`                         | Manages command registration and execution.         |
+| `engine.camera`                    | `CameraManager`                           | Controls camera settings and transitions.           |
+| `engine.streamer`                  | `StreamerManager`                         | Manages the streaming of objects and assets.        |
+| `engine.world`                     | `WorldManager`                            | Controls world properties and environment settings. |
+| `engine.assets`                    | `AssetsManager`                           | Manages assets loading and caching.                 |
+| `engine.events`                    | `EventsManager`                           | Engine's events manager.                            |
+| `engine.params`                    | [`EngineParams`](/sdk/types/EngineParams) | Holds engine configuration parameters.              |
+| `engine.localPlayer`               | `PlayerManager`                           | A reference to the local player object.             |
+| `engine.players`                   | `PlayersManager`                          | The manager for players.                            |
+| `engine.objects`                   | `ObjectsManager`                          | The manager for objects.                            |
+| `engine.localPlayerId`             | `number`                                  | The ID of the local player.                         |
+| `engine.connected`                 | `boolean`                                 | True if the engine is currently connected.          |
+| `engine.synced`                    | `boolean`                                 | True if the engine is currently synced.             |
+| `engine.isServer`                  | `boolean`                                 | True if the script is running on the server.        |
+| `engine.isClient`                  | `boolean`                                 | True if the script is running on the client.        |
+| `engine.chunkSize`                 | `number`                                  | The size of the chunks used for streaming.          |
+| `engine.syncPlayers`               | `boolean`                                 | Indicates if player data is being synced.           |
+| `engine.syncPlayerUpdatesPriority` | `boolean`                                 | Determines the priority of player updates syncing.  |
+| `engine.syncPlayerUpdates`         | `boolean`                                 | Indicates if player updates are being synced.       |
+| `engine.syncPlayerControls`        | `boolean`                                 | Indicates if player controls are being synced.      |
+| `engine.syncCameraPosition`        | `boolean`                                 | Indicates if camera position is being synced.       |
+
+## Chat
+
+### Methods
+
+| Method                                           | Description                                                                               |
+| ------------------------------------------------ | ----------------------------------------------------------------------------------------- |
+| [chat.escapeText](./chat/escapeText)             | Escapes special characters in a message so that they are displayed correctly in the chat. |
+| [chat.sendMessageToAll](./chat/sendMessageToAll) | Sends a message to all players in the chat.                                               |
+| [chat.sendMessageTo](./chat/sendMessageTo)       | Sends a message to a specific player in the chat.                                         |
+
+## Entities
+
+### Methods
+
+| Method                                 | Description                                                                                                                                                                                                                                                        |
+| -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [entities.is](./entities/is)           | Checks whether an entity with the specified ID exists.                                                                                                                                                                                                             |
+| [entities.get](./entities/get)         | Retrieves the entity with the specified ID. Returns `null` if the entity does not exist.                                                                                                                                                                           |
+| [entities.forEach](./entities/forEach) | Calls a provided function once for each entity, similar to [`Array.forEach`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach).                                                                                      |
+| [entities.map](./entities/map)         | Creates a new array with the results of calling a provided function on every entity, similar to [`Array.map`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map).                                                         |
+| [entities.some](./entities/some)       | Tests whether at least one entity passes the provided test, similar to [`Array.some`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some).                                                                                |
+| [entities.filter](./entities/filter)   | Creates a new array with all entities that pass the provided test, similar to [`Array.filter`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter).                                                                     |
+| [entities.find](./entities/find)       | Returns the first entity that satisfies the provided testing function or `null`, similar to [`Array.find`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find). If no entity matches the test, the method returns `null`. |
+
+### Properties
+
+| Name                   | Type                                  | Description                                                                                                |
+| ---------------------- | ------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `entities.type`        | [`EntityType`](/sdk/types/EntityType) | The type of entity managed by the entity manager.                                                          |
+| `entities.entities`    | `EntityManager[]`                     | An array containing all the entity managers for the specified entity type.                                 |
+| `entities.entitiesMap` | `Map<ID, EntityManager>`              | A map of entity managers indexed by their respective entity IDs.                                           |
+| `entities.streamed`    | `Map<ID, EntityManager>`              | A map of entity managers for entities that are currently being streamed to the player.                     |
+| `entities.events`      | `EventsManager`                       | An instance of the `EventsManager` class used to register and manage events for the specified entity type. |
+
+## Player
+
+### Methods
+
+| Method                                                             | Description                                                     |
+| ------------------------------------------------------------------ | --------------------------------------------------------------- |
+| [player.hasAccess](./player/hasAccess)                             | Checks if the player has access to a certain command or action. |
+| [player.setName](./player/setName)                                 | Sets the player's name.                                         |
+| [player.setNametagColor](./player/setNametagColor)                 | Sets the player's nametag color.                                |
+| [player.addRole](./player/addRole)                                 | Adds a role to the player.                                      |
+| [player.removeRole](./player/removeRole)                           | Removes a role from the player.                                 |
+| [player.setDimension](./player/setDimension)                       | Sets the player's dimension.                                    |
+| [player.setPosition](./player/setPosition)                         | Sets the player's position.                                     |
+| [player.setRotation](./player/setRotation)                         | Sets the player's rotation.                                     |
+| [player.getFacingAngle](./player/getFacingAngle)                   | Gets the player's facing angle.                                 |
+| [player.setFacingAngle](./player/setFacingAngle)                   | Sets the player's facing angle.                                 |
+| [player.setCameraBehind](./player/setCameraBehind)                 | Sets the player's camera to be behind them.                     |
+| [player.sendMessage](./player/sendMessage)                         | Sends a message to the player.                                  |
+| [player.setMovements](./player/setMovements)                       | Sets the player's movement controls.                            |
+| [player.setTranslations](./player/setTranslations)                 | Sets the player's translation axes.                             |
+| [player.setLinearVelocity](./player/setLinearVelocity)             | Sets the player's linear velocity.                              |
+| [player.setVisible](./player/setVisible)                           | Set whether or not the player is visible.                       |
+| [player.sendSuccessNotification](./player/sendSuccessNotification) | Sends a success notification to the player.                     |
+| [player.sendErrorNotification](./player/sendErrorNotification)     | Sends an error notification to the player.                      |
+| [player.camera.setMode](./player/camera/setMode)                   | Sets the camera mode for the player.                            |
+| [player.camera.startTransitions](./player/camera/startTransitions) | Starts transitions for the camera.                              |
+| [player.camera.startTransition](./player/camera/startTransition)   | Starts a transition for the camera.                             |
+| [player.camera.setPosition](./player/camera/setPosition)           | Sets the position of the camera.                                |
+
+### Properties
+
+| Name                                | Type                                          | Description                                                                |
+| ----------------------------------- | --------------------------------------------- | -------------------------------------------------------------------------- |
+| `player.location`                   | [`Object3D`](/sdk/types/Object3D)             | The player's position and rotation.                                        |
+| `player.position`                   | [`Vector3`](/sdk/types/Vector3)               | The player's position.                                                     |
+| `player.rotation`                   | [`Quaternion`](/sdk/types/Quaternion)         | The player's rotation.                                                     |
+| `player.velocity`                   | [`Vector3`](/sdk/types/Vector3)               | The player's velocity vector.                                              |
+| `player.name`                       | `string`                                      | The player's name.                                                         |
+| `player.state`                      | [`PlayerState`](/sdk/types/PlayerState)       | The player's current state.                                                |
+| `player.roles`                      | `string[]`                                    | The roles assigned to the player.                                          |
+| `player.controls `                  | [`PlayerControls`](/sdk/types/PlayerControls) | The player's controls.                                                     |
+| `player.isMovingControl`            | `boolean`                                     | Whether the player's movement controls are active.                         |
+| `player.onGround`                   | `boolean`                                     | Whether the player is currently on the ground.                             |
+| `player.voicechat.connectedPlayers` | `Set<PlayerManager>`                          | The set of players connected to the same voice chat channel as the player. |
+
+## Objects
+
+### Methods
+
+| Method                                         | Description                                                                                      |
+| ---------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| [objects.create](./objects/create)             | Creates a new object with the specified properties.                                              |
+| [objects.resolve](./objects/resolve)           | Retrieves an object by its ID and returns a reference to the corresponding object manager.       |
+| [objects.edit](./objects/edit)                 | Begins editing the specified object.                                                             |
+| [objects.cancelEdit](./objects/cancelEdit)     | Cancels editing of the current object.                                                           |
+| [objects.setEditSnaps](./objects/setEditSnaps) | Enables or disables snap offset while editing objects.                                           |
+| [objects.setEditAxes](./objects/setEditAxes)   | Enables or disables the display of translation, rotation and scaling axes while editing objects. |
+
+### Properties
+
+| Name                    | Type            | Description                                                                                                      |
+| ----------------------- | --------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `objects.editingObject` | `ObjectManager` | A reference to the object manager for the object currently being edited, or `null` if no object is being edited. |
+
+## Object
+
+### Methods
+
+| Method                                                                 | Description                                                                     |
+| ---------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| [object.setPosition](./object/setPosition)                             | Set the position of the object.                                                 |
+| [object.setRotation](./object/setRotation)                             | Set the rotation of the object.                                                 |
+| [object.setScale](./object/setScale)                                   | Set the scale of the object.                                                    |
+| [object.setPositionFromWorldSpace](./object/setPositionFromWorldSpace) | Set the position of the object in world space.                                  |
+| [object.setRotationFromWorldSpace](./object/setRotationFromWorldSpace) | Set the rotation of the object in world space.                                  |
+| [object.setCollision](./object/setCollision)                           | Set the collision type of the object.                                           |
+| [object.setCollider](./object/setCollider)                             | Set the collider type of the object.                                            |
+| [object.setMass](./object/setMass)                                     | Set the mass of the object.                                                     |
+| [object.setVisible](./object/setVisible)                               | Set whether or not the object is visible.                                       |
+| [object.setData](./object/setData)                                     | Update data for the object.                                                     |
+| [object.setProps](./object/setProps)                                   | Updates type-specific properties for an object.                                 |
+| [object.computeBoundingBox](./object/computeBoundingBox)               | Compute the bounding box of the object.                                         |
+| [object.computeWorldBoundingBox](./object/computeWorldBoundingBox)     | Compute the world bounding box of the object.                                   |
+| [object.rerender](./object/rerender)                                   | Forces an object to re-render.                                                  |
+| [object.isStreamed](./object/isStreamed)                               | Checks if an object is currently being streamed.                                |
+| [object.waitForStream](./object/waitForStream)                         | Waits for an object to finish streaming.                                        |
+| [object.setLinearVelocity](./object/setLinearVelocity)                 | Sets the linear velocity of the object.                                         |
+| [object.setAngularVelocity](./object/setAngularVelocity)               | Sets the angular velocity of the object.                                        |
+| [object.applyImpulse](./object/applyImpulse)                           | Applies an impulse to the object.                                               |
+| [object.addTorque](./object/addTorque)                                 | Adds torque to the object.                                                      |
+| [object.applyTorqueImpulse](./object/applyTorqueImpulse)               | Applies an impulse torque to the object.                                        |
+| [object.startTransitions](./object/startTransitions)                   | Starts all active transitions for the object.                                   |
+| [object.startTransition](./object/startTransition)                     | Starts a transition for the object.                                             |
+| [object.clearTransitions](./object/clearTransitions)                   | Clears all active transitions for the object.                                   |
+| [object.toData](./object/toData)                                       | Converts an object to its corresponding data representation.                    |
+| [object.clone](./object/clone)                                         | Creates a new object by cloning an existing object with the same properties.    |
+| [object.sync](./object/sync)                                           | Synchronizes an object's properties between the server and the client.          |
+| [object.save](./object/save)                                           | Saves an object to the Verza servers, making it permanent.                      |
+| [object.saveVolatile](./object/saveVolatile)                           | Same as `object.save` but with a delay.                                         |
+| [object.delete](./object/delete)                                       | Destroys and deletes an object from Verza servers (only for permanent objects). |
+| [object.destroy](./object/destroy)                                     | Destroys an object.                                                             |
+
+### Properties
+
+| Name                   | Type                                            | Description                                                                          |
+| ---------------------- | ----------------------------------------------- | ------------------------------------------------------------------------------------ |
+| `object.objectType`    | [`ObjectType`](/sdk/types/ObjectType)           | The type of the object.                                                              |
+| `object.location`      | [`Object3D`](/sdk/types/Object3D)               | The object's position, rotation, and scale.                                          |
+| `object.position`      | [`Vector3`](/sdk/types/Vector3)                 | The object's position.                                                               |
+| `object.rotation`      | [`Quaternion`](/sdk/types/Quaternion)           | The object's rotation.                                                               |
+| `object.scale`         | [`Vector3`](/sdk/types/Vector3)                 | The object's scale.                                                                  |
+| `object.worldLocation` | [`Promise<Object3D>`](/sdk/types/Object3D)      | A promise that resolves to the world location of the object.                         |
+| `object.permanent`     | `boolean`                                       | Whether the object is permanent or not.                                              |
+| `object.remote`        | `boolean`                                       | Whether the object is remote or not.                                                 |
+| `object.parentId`      | `string`                                        | The ID of the parent object.                                                         |
+| `object.parent`        | `ObjectManager`                                 | The parent object of this object, or `null` if this object has no parent.            |
+| `object.children`      | `Set<ObjectManager>`                            | The child objects of this object, represented as a set of `ObjectManager` instances. |
+| `object.userData`      | [`ObjectUserData`](/sdk/types/ObjectUserData)   | Custom user data attached to the object.                                             |
+| `props`                | `ObjectProps`                                   | The properties of the object, based on its type.                                     |
+| `data`                 | `ObjectData`                                    | The data of the object.                                                              |
+| `collision`            | [`EntityCollision`](/sdk/types/EntityCollision) | The collision type of the object.                                                    |
+| `collider`             | [`EntityCollider`](/sdk/types/EntityCollider)   | The collider type of the object.                                                     |
+| `object.mass`          | `number`                                        | The object's mass, used in physics calculations.                                     |

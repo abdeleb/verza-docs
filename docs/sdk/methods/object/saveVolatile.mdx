@@ -1,0 +1,26 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+Same as [`object.save`](./save) but with a delay.
+
+### Syntax
+
+```js
+object.saveVolatile();
+```
+
+### Returns
+
+- `Promise<void>`: A promise that resolves when the object is saved.
+
+### Example
+
+```js
+await object.saveVolatile();
+```
+
+**Available on:** <ClientTag /> <ServerTag />

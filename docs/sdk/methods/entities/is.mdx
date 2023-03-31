@@ -1,0 +1,30 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+Checks whether an entity with the specified ID exists.
+
+### Syntax
+
+```js
+entities.is(id);
+```
+
+### Parameters
+
+| Name | Type                 | Description |
+| ---- | -------------------- | ----------- |
+| `id` | `number` or `string` | Entity ID   |
+
+### Example
+
+```js
+console.log(
+  'player with id 1 is ' + (engine.players.is(1) ? 'online' : 'offline'),
+);
+```
+
+**Available on:** <ClientTag /> <ServerTag />

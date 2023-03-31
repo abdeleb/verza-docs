@@ -1,0 +1,27 @@
+---
+hide_table_of_contents: true
+---
+
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+Sends a message to the player.
+
+### Syntax
+
+```js
+player.sendMessage(message);
+```
+
+### Parameters
+
+| Name      | Type     | Description                       |
+| --------- | -------- | --------------------------------- |
+| `message` | `string` | The message to be send the player |
+
+### Example
+
+```js
+player.sendMessage('Use /team1 to join {blue}team 1');
+```
+
+**Available on:** <ServerTag />

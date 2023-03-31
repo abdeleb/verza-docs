@@ -8,15 +8,15 @@ This event is triggered when an object is edited.
 
 ### Parameters
 
-| Name     | Type                   | Description                                                                          |
-| -------- | ---------------------- | ------------------------------------------------------------------------------------ |
-| `object` | `ObjectManager`        | The object being edited                                                              |
-| `type`   | `ObjectEditActionType` | The type of edit action performed: `select` `unselect` `sync` `start` `update` `end` |
+| Name     | Type                                                      | Description                       |
+| -------- | --------------------------------------------------------- | --------------------------------- |
+| `object` | `ObjectManager`                                           | The object being edited           |
+| `type`   | [`ObjectEditActionType`](/sdk/types/ObjectEditActionType) | The type of edit action performed |
 
 ### Example
 
 ```js
-engine.objectManager.events.on('onObjectEdit', (object, type) => {
+engine.events.on('onObjectEdit', (object, type) => {
   console.log('Object edited:', object, 'Edit action:', type);
 });
 ```

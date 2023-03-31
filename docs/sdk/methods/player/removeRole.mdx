@@ -1,0 +1,31 @@
+---
+hide_table_of_contents: true
+---
+
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+Removes a role from the player.
+
+### Syntax
+
+```js
+player.removeRole(role);
+```
+
+### Returns
+
+- `Promise<void>` - A promise that resolves when the role has been removed.
+
+### Parameters
+
+| Name   | Type     | Description                         |
+| ------ | -------- | ----------------------------------- |
+| `role` | `string` | The role to remove from the player. |
+
+### Example
+
+```js
+await player.removeRole('role_2jd1TjKpCYjhFKDhw8hmTH');
+```
+
+**Available on:** <ServerTag />

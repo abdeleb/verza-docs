@@ -1,0 +1,28 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+Saves an object to the Verza servers, making it permanent.
+
+This method is used to store objects long-term.
+
+### Syntax
+
+```js
+object.save();
+```
+
+### Returns
+
+- `Promise<void>`: A promise that resolves when the object is saved.
+
+### Example
+
+```js
+await object.save();
+```
+
+**Available on:** <ClientTag /> <ServerTag />

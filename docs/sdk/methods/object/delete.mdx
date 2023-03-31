@@ -1,0 +1,33 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+Destroys and deletes an object from Verza servers (only for permanent objects).
+
+### Syntax
+
+```js
+object.delete();
+```
+
+### Returns
+
+- `Promise<void>` - A promise that resolves when the object is deleted.
+
+### Example
+
+```js
+// create a box
+const box = engine.objects.create('box');
+
+// make it permanent
+await box.save();
+
+// delete it
+await box.delete();
+```
+
+**Available on:** <ClientTag /> <ServerTag />

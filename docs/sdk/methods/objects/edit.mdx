@@ -1,0 +1,30 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+Begins editing the specified object.
+
+### Syntax
+
+```js
+objects.edit(object);
+```
+
+### Parameters
+
+| Name     | Type            | Description         |
+| -------- | --------------- | ------------------- |
+| `object` | `ObjectManager` | The object to edit. |
+
+### Example
+
+```js
+const box = engine.objects.create('box');
+
+engine.objects.edit(box);
+```
+
+**Available on:** <ClientTag />

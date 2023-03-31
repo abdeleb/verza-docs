@@ -1,0 +1,32 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+Retrieves the entity with the specified ID. Returns `null` if the entity does not exist.
+
+### Syntax
+
+```js
+entities.get(id);
+```
+
+### Parameters
+
+| Name | Type                 | Description |
+| ---- | -------------------- | ----------- |
+| `id` | `number` or `string` | Entity ID   |
+
+### Returns
+
+- `EntityManager` - The entity with the specified ID or `null` if the entity does not exist.
+
+### Example
+
+```js
+console.log('player', engine.players.get(1));
+```
+
+**Available on:** <ClientTag /> <ServerTag />

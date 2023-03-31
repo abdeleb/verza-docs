@@ -1,0 +1,29 @@
+---
+hide_table_of_contents: true
+---
+
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+Sends a message to all players in the chat.
+
+This method can be used to broadcast announcements, chat room rules, or other messages to all players in the chat. This method can be used to broadcast announcements, chat room rules, or other messages to all players in the chat.
+
+### Syntax
+
+```js
+chat.sendMessageToAll(message);
+```
+
+### Parameters
+
+| Name      | Type     | Description                                              |
+| --------- | -------- | -------------------------------------------------------- |
+| `message` | `string` | The message to be broadcasted to all players in the chat |
+
+### Example
+
+```js
+chat.sendMessageToAll('Welcome to my {green}Server');
+```
+
+**Available on:** <ServerTag />

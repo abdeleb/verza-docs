@@ -1,0 +1,28 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+Sets the player's position.
+
+### Syntax
+
+```js
+player.setRotation(rotation);
+```
+
+### Parameters
+
+| Name       | Type                                                                                                                                                         | Description      |
+| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------- |
+| `rotation` | [`Euler`](/sdk/types/Euler), [`EulerArray`](/sdk/types/EulerArray), [`Quaternion`](/sdk/types/Quaternion) or [`QuaternionArray`](/sdk/types/QuaternionArray) | The new rotation |
+
+### Example
+
+```js
+player.setRotation([0, Math.PI, 0]);
+```
+
+**Available on:** <ClientTag /> <ServerTag />

@@ -1,0 +1,31 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+Sets the player's translation axes.
+
+### Syntax
+
+```js
+player.setTranslations(x, y, z);
+```
+
+### Parameters
+
+| Name | Type      | Description                                      |
+| ---- | --------- | ------------------------------------------------ |
+| `x`  | `boolean` | Whether or not to enable the X translation axis. |
+| `y`  | `boolean` | Whether or not to enable the Y translation axis. |
+| `z`  | `boolean` | Whether or not to enable the Z translation axis. |
+
+### Example
+
+```js
+//
+player.setTranslations(false, false, false);
+```
+
+**Available on:** <ClientTag /> <ServerTag />

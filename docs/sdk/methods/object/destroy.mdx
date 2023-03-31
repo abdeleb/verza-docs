@@ -1,0 +1,26 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+Destroys the object.
+
+### Syntax
+
+```js
+object.destroy();
+```
+
+### Example
+
+```js
+// create a box
+const box = engine.objects.create('box');
+
+// destroy it
+box.destroy();
+```
+
+**Available on:** <ClientTag /> <ServerTag />

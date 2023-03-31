@@ -1,0 +1,40 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+Starts all specified transitions for the object.
+
+### Syntax
+
+```js
+object.startTransitions(transitions);
+```
+
+### Parameters
+
+| Name          | Type                                                | Description                                  |
+| ------------- | --------------------------------------------------- | -------------------------------------------- |
+| `transitions` | [`ObjectTransition[]`](/sdk/types/ObjectTransition) | The transitions to be applied to the object. |
+
+### Example
+
+```js
+object.startTransitions([
+  {
+    from: [0, 5, 10],
+    to: [0, 5, 15],
+    duration: 500,
+    easing: 'easeOutQuad',
+  },
+  {
+    to: [0, 5, 10],
+    duration: 500,
+    easing: 'easeInQuad',
+  },
+]);
+```
+
+**Available on:** <ClientTag /> <ServerTag />

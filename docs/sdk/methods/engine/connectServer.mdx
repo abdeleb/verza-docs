@@ -1,0 +1,26 @@
+---
+hide_table_of_contents: true
+---
+
+import WebsocketServerTag from '@site/src/components/tags/WebsocketServerTag';
+
+Connects a websocket server script to a Verza server instance.
+
+### Syntax
+
+```js
+engine.connectServer();
+```
+
+### Example
+
+```js
+const engine = new EngineManager({
+  name: 'My Server Script',
+  accessToken: 'VERZA ACCESS TOKEN',
+});
+
+engine.connectServer();
+```
+
+**Available on:** <WebsocketServerTag />

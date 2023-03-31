@@ -1,0 +1,15 @@
+```ts
+type IntersectsResultRaw = {
+  hit?: {
+    distance: number;
+    point: Vector3Array;
+    faceIndex?: number;
+  };
+
+  object?: InteresectionData<string> & {
+    data: ObjectDataProps;
+  };
+
+  player?: InteresectionData<number>;
+};
+```

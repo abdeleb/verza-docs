@@ -1,0 +1,40 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+Starts transitions for the camera.
+
+### Syntax
+
+```js
+player.camera.startTransitions(transitions);
+```
+
+### Parameters
+
+| Name          | Type                                                | Description                              |
+| ------------- | --------------------------------------------------- | ---------------------------------------- |
+| `transitions` | [`CameraTransition[]`](/sdk/types/CameraTransition) | The transitions to start for the camera. |
+
+### Example
+
+```js
+player.camera.startTransitions([
+  {
+    from: [0, 5, 10],
+    to: [0, 5, 15],
+    durtion: 500,
+    easing: 'easeOutQuad',
+  },
+  {
+    to: [0, 5, 10],
+    durtion: 500,
+    easing: 'easeInQuad',
+  },
+]);
+```
+
+**Available on:** <ClientTag /> <ServerTag />

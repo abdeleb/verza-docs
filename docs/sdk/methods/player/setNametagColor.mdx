@@ -1,0 +1,34 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+Sets the player's nametag color.
+
+:::note
+This method is available on the <ServerTag /> but is not synchronized to all players.
+
+You can easily do so by using network events.
+:::
+
+### Syntax
+
+```js
+player.setNametagColor(name);
+```
+
+### Parameters
+
+| Name   | Type                                | Description            |
+| ------ | ----------------------------------- | ---------------------- |
+| `name` | [`ColorType`](/sdk/types/ColorType) | The new nametag color. |
+
+### Example
+
+```js
+player.setNametagColor('red');
+```
+
+**Available on:** <ClientTag /> <ServerTag />

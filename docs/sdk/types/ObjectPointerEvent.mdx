@@ -1,0 +1,6 @@
+```ts
+type ObjectPointerEvent<T extends ObjectType = ObjectType> = PointerEvent & {
+  object: ObjectManager<T>;
+  intersects: IntersectsResult;
+};
+```

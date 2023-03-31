@@ -1,0 +1,39 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+Creates a new object with the specified properties.
+
+### Syntax
+
+```js
+objects.create(type, props);
+```
+
+### Parameters
+
+| Name    | Type                                  | Description      |
+| ------- | ------------------------------------- | ---------------- |
+| `type`  | [`ObjectType`](/sdk/types/ObjectType) | The object type  |
+| `props` | `ObjectProps`                         | The object props |
+
+### Returns
+
+- `ObjectManager` - The created object manager.
+
+### Example
+
+```js
+const box = engine.objects.create('box', {
+  color: 'red',
+  width: 1,
+  height: 1,
+  depth: 1,
+  position: [1, 2, 3],
+});
+```
+
+**Available on:** <ClientTag /> <ServerTag />
