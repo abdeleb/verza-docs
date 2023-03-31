@@ -4,22 +4,18 @@ hide_table_of_contents: true
 
 import ClientTag from '@site/src/components/tags/ClientTag';
 
-Connects a client script to a Verza server instance.
+Hides the cursor.
 
 ### Syntax
 
 ```js
-engine.connectClient();
+engine.ui.hideCursor();
 ```
 
 ### Example
 
 ```js
-const engine = new EngineManager({
-  name: 'My Client Script',
-});
-
-engine.connectClient();
+engine.ui.hideCursor();
 ```
 
 **Available on:** <ClientTag />

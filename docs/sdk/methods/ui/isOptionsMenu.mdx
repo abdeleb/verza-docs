@@ -1,0 +1,27 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Checks whether the current interface is the **Options Menu**.
+
+### Syntax
+
+```js
+engine.ui.isOptionsMenu();
+```
+
+### Returns
+
+- `boolean` - `true` if the menu is currently being shown, `false` otherwise.
+
+### Example
+
+```js
+console.log(
+  `The Options Menu is currently being shown: ${engine.ui.isOptionsMenu()}`,
+);
+```
+
+**Available on:** <ClientTag />

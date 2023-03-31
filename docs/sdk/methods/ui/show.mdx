@@ -4,22 +4,18 @@ hide_table_of_contents: true
 
 import ClientTag from '@site/src/components/tags/ClientTag';
 
-Connects a client script to a Verza server instance.
+Shows the UI.
 
 ### Syntax
 
 ```js
-engine.connectClient();
+engine.ui.show();
 ```
 
 ### Example
 
 ```js
-const engine = new EngineManager({
-  name: 'My Client Script',
-});
-
-engine.connectClient();
+engine.ui.show();
 ```
 
 **Available on:** <ClientTag />

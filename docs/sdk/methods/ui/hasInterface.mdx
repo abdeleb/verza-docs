@@ -1,0 +1,31 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Checks whether the interface has been added to UI.
+
+### Syntax
+
+```js
+engine.ui.hasInterface(interface);
+```
+
+### Parameters
+
+| Name        | Type     | Description        |
+| ----------- | -------- | ------------------ |
+| `interface` | `string` | The interface name |
+
+### Returns
+
+- `boolean` - Whether the interface has been added to UI.
+
+### Example
+
+```js
+engine.ui.hasInterface('my-interface');
+```
+
+**Available on:** <ClientTag />

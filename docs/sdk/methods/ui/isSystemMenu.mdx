@@ -1,0 +1,27 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Checks whether the current interface is any **System Menu**.
+
+### Syntax
+
+```js
+engine.ui.isSystemMenu();
+```
+
+### Returns
+
+- `boolean` - `true` if any system menu is currently being shown, `false` otherwise.
+
+### Example
+
+```js
+console.log(
+  `A System Menu is currently being shown: ${engine.ui.isSystemMenu()}`,
+);
+```
+
+**Available on:** <ClientTag />

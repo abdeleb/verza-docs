@@ -4,22 +4,18 @@ hide_table_of_contents: true
 
 import ClientTag from '@site/src/components/tags/ClientTag';
 
-Connects a client script to a Verza server instance.
+Hides the loading indicator on the UI.
 
 ### Syntax
 
 ```js
-engine.connectClient();
+engine.ui.hideIndicator(id);
 ```
 
 ### Example
 
 ```js
-const engine = new EngineManager({
-  name: 'My Client Script',
-});
-
-engine.connectClient();
+engine.ui.hideIndicator('my-id');
 ```
 
 **Available on:** <ClientTag />

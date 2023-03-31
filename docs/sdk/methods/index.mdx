@@ -60,6 +60,39 @@ In this section, you'll find a comprehensive list of methods available in the Ve
 | [chat.sendMessageToAll](./chat/sendMessageToAll) | Sends a message to all players in the server.                                             |
 | [chat.sendMessageTo](./chat/sendMessageTo)       | Sends a message to a specific player in the server.                                       |
 
+## UI
+
+### Methods
+
+| Method          | Description                                                   |
+| --------------- | ------------------------------------------------------------- |
+| show            | Shows the UI.                                                 |
+| hide            | Hides the UI.                                                 |
+| setSize         | Sets the size properties of the UI.                           |
+| addInterface    | Adds an interface to the UI.                                  |
+| removeInterface | Removes an interface from the UI.                             |
+| hasInterface    | Checks whether the interface has been added to UI.            |
+| toggleInterface | Toggles whether an interface is added or not.                 |
+| showCursor      | Shows the cursor.                                             |
+| hideCursor      | Hides the cursor.                                             |
+| toggleCursor    | Toggles the locked status of the cursor.                      |
+| showIndicator   | Shows a loading indicator on the UI.                          |
+| hideIndicator   | Hides the loading indicator on the UI.                        |
+| addToolbar      | Adds a toolbar to the UI.                                     |
+| removeToolbar   | Removes a toolbar from the UI.                                |
+| isSystemMenu    | Checks whether the current interface is any **System Menu**.  |
+| isOptionsMenu   | Checks whether the current interface is the **Options Menu**. |
+| isServerMenu    | Checks whether the current interface is the **Server Menu**.  |
+
+### Properties
+
+| Name            | Type                                                                                    | Description                                                                                    |
+| --------------- | --------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `interfaces`    | `string[]`                                                                              | An array of the available interfaces available to the player.                                  |
+| `cursorLock`    | `boolean`                                                                               | A boolean that indicates whether or not the cursor is locked to the game window.               |
+| `isActiveInput` | `boolean`                                                                               | A boolean that indicates whether or not a text input field is currently active for the player. |
+| `activeInput`   | [`HTMLInputElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement) | The HTML input element that is currently active relative to the script.                        |
+
 ## Entities
 
 ### Methods
