@@ -84,6 +84,51 @@ In this section, you'll find a comprehensive list of methods available in the Ve
 | `entities.streamed`    | `Map<ID, EntityManager>`              | A map of entity managers for entities that are currently being streamed to the player.                     |
 | `entities.events`      | `EventsManager`                       | An instance of the `EventsManager` class used to register and manage events for the specified entity type. |
 
+## Player
+
+### Methods
+
+| Method                                                                       | Description                                                     |
+| ---------------------------------------------------------------------------- | --------------------------------------------------------------- |
+| [player.hasAccess](/sdk/player/player.hasAccess)                             | Checks if the player has access to a certain command or action. |
+| [player.setName](/sdk/player/player.setName)                                 | Sets the player's name.                                         |
+| [player.setNametagColor](/sdk/player/player.setNametagColor)                 | Sets the player's nametag color.                                |
+| [player.addRole](/sdk/player/player.addRole)                                 | Adds a role to the player.                                      |
+| [player.removeRole](/sdk/player/player.removeRole)                           | Removes a role from the player.                                 |
+| [player.setDimension](/sdk/player/player.setDimension)                       | Sets the player's dimension.                                    |
+| [player.setPosition](/sdk/player/player.setPosition)                         | Sets the player's position.                                     |
+| [player.setRotation](/sdk/player/player.setRotation)                         | Sets the player's rotation.                                     |
+| [player.getFacingAngle](/sdk/player/player.getFacingAngle)                   | Gets the player's facing angle.                                 |
+| [player.setFacingAngle](/sdk/player/player.setFacingAngle)                   | Sets the player's facing angle.                                 |
+| [player.setCameraBehind](/sdk/player/player.setCameraBehind)                 | Sets the player's camera to be behind them.                     |
+| [player.sendMessage](/sdk/player/player.sendMessage)                         | Sends a message to the player.                                  |
+| [player.setMovements](/sdk/player/player.setMovements)                       | Sets the player's movement controls.                            |
+| [player.setTranslations](/sdk/player/player.setTranslations)                 | Sets the player's translation axes.                             |
+| [player.setLinearVelocity](/sdk/player/player.setLinearVelocity)             | Sets the player's linear velocity.                              |
+| [player.setVisible](/sdk/player/player.setVisible)                           | Set whether or not the player is visible.                       |
+| [player.sendSuccessNotification](/sdk/player/player.sendSuccessNotification) | Sends a success notification to the player.                     |
+| [player.sendErrorNotification](/sdk/player/player.sendErrorNotification)     | Sends an error notification to the player.                      |
+| [player.camera.setMode](/sdk/types/camera/setMode)                           | Sets the camera mode for the player.                            |
+| [player.camera.startTransitions](/sdk/types/camera/startTransitions)         | Starts transitions for the camera.                              |
+| [player.camera.startTransition](/sdk/types/camera/startTransition)           | Starts a transition for the camera.                             |
+| [player.camera.setPosition](/sdk/types/camera/setPosition)                   | Sets the position of the camera.                                |
+
+### Properties
+
+| Name                                | Type                                          | Description                                                                |
+| ----------------------------------- | --------------------------------------------- | -------------------------------------------------------------------------- |
+| `player.location`                   | [`Object3D`](/sdk/types/Object3D)             | The player's position and rotation.                                        |
+| `player.position`                   | [`Vector3`](/sdk/types/Vector3)               | The player's position.                                                     |
+| `player.rotation`                   | [`Quaternion`](/sdk/types/Quaternion)         | The player's rotation.                                                     |
+| `player.velocity`                   | [`Vector3`](/sdk/types/Vector3)               | The player's velocity vector.                                              |
+| `player.name`                       | `string`                                      | The player's name.                                                         |
+| `player.state`                      | [`PlayerState`](/sdk/types/PlayerState)       | The player's current state.                                                |
+| `player.roles`                      | `string[]`                                    | The roles assigned to the player.                                          |
+| `player.controls `                  | [`PlayerControls`](/sdk/types/PlayerControls) | The player's controls.                                                     |
+| `player.isMovingControl`            | `boolean`                                     | Whether the player's movement controls are active.                         |
+| `player.onGround`                   | `boolean`                                     | Whether the player is currently on the ground.                             |
+| `player.voicechat.connectedPlayers` | `Set<PlayerManager>`                          | The set of players connected to the same voice chat channel as the player. |
+
 ## Objects
 
 ### Methods
@@ -125,6 +170,14 @@ In this section, you'll find a comprehensive list of methods available in the Ve
 | [object.rerender](./object/rerender)                                   | Forces an object to re-render.                                                  |
 | [object.isStreamed](./object/isStreamed)                               | Checks if an object is currently being streamed.                                |
 | [object.waitForStream](./object/waitForStream)                         | Waits for an object to finish streaming.                                        |
+| [object.setLinearVelocity](./object/setLinearVelocity)                 | Sets the linear velocity of the object.                                         |
+| [object.setAngularVelocity](./object/setAngularVelocity)               | Sets the angular velocity of the object.                                        |
+| [object.applyImpulse](./object/applyImpulse)                           | Applies an impulse to the object.                                               |
+| [object.addTorque](./object/addTorque)                                 | Adds torque to the object.                                                      |
+| [object.applyTorqueImpulse](./object/applyTorqueImpulse)               | Applies an impulse torque to the object.                                        |
+| [object.startTransitions](./object/startTransitions)                   | Starts all active transitions for the object.                                   |
+| [object.startTransition](./object/startTransition)                     | Starts a transition for the object.                                             |
+| [object.clearTransitions](./object/clearTransitions)                   | Clears all active transitions for the object.                                   |
 | [object.toData](./object/toData)                                       | Converts an object to its corresponding data representation.                    |
 | [object.clone](./object/clone)                                         | Creates a new object by cloning an existing object with the same properties.    |
 | [object.sync](./object/sync)                                           | Synchronizes an object's properties between the server and the client.          |

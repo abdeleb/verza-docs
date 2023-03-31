@@ -1,0 +1,35 @@
+---
+hide_table_of_contents: true
+---
+
+import ServerTag from '@site/src/components/tags/ServerTag';
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Sets the position of the camera.
+
+:::note
+This method is only available in `global` mode.
+:::
+
+### Syntax
+
+```js
+player.camera.setMode(mode);
+```
+
+### Parameters
+
+| Name       | Type                                          | Description                 |
+| ---------- | --------------------------------------------- | --------------------------- |
+| `position` | [`CameraPosition`](/sdk/types/CameraPosition) | The position of the camera. |
+
+### Example
+
+```js
+player.camera.setPosition({
+  to: [0, 5, 10],
+  lookAt: [0, 5, 20],
+});
+```
+
+**Available on:** <ClientTag /> <ServerTag />

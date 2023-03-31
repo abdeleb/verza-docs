@@ -1,0 +1,28 @@
+---
+hide_table_of_contents: true
+---
+
+import ServerTag from '@site/src/components/tags/ServerTag';
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Sets the camera mode for the player.
+
+### Syntax
+
+```js
+player.camera.setMode(mode);
+```
+
+### Parameters
+
+| Name   | Type                                  | Description             |
+| ------ | ------------------------------------- | ----------------------- |
+| `mode` | [`CameraMode`](/sdk/types/CameraMode) | The camera mode to set. |
+
+### Example
+
+```js
+player.camera.setMode('global');
+```
+
+**Available on:** <ClientTag /> <ServerTag />

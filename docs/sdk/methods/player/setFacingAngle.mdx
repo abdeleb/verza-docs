@@ -1,0 +1,28 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+Sets the player's facing angle.
+
+### Syntax
+
+```js
+player.setFacingAngle(angle);
+```
+
+### Parameters
+
+| Name    | Type     | Description                                                             |
+| ------- | -------- | ----------------------------------------------------------------------- |
+| `angle` | `number` | The angle, in degrees, to which the player's facing angle should be set |
+
+### Example
+
+```js
+player.setFacingAngle(180);
+```
+
+**Available on:** <ClientTag /> <ServerTag />

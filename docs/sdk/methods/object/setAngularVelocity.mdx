@@ -1,0 +1,29 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+Sets the angular velocity of the object.
+
+### Syntax
+
+```js
+object.setAngularVelocity(vector);
+```
+
+### Parameters
+
+| Name     | Type                                      | Description                  |
+| -------- | ----------------------------------------- | ---------------------------- |
+| `vector` | [`Vector3Array`](/sdk/types/Vector3Array) | The angular velocity vector. |
+
+### Example
+
+```js
+// make it spin
+object.setAngularVelocity([0, 20, 0]);
+```
+
+**Available on:** <ClientTag /> <ServerTag />

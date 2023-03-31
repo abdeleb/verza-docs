@@ -1,0 +1,28 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+Set whether or not the player is visible.
+
+### Syntax
+
+```js
+player.setVisible(visible);
+```
+
+### Parameters
+
+| Name      | Type      | Description                                                            |
+| --------- | --------- | ---------------------------------------------------------------------- |
+| `visible` | `boolean` | Determines whether the player is visible (`true`) or hidden (`false`). |
+
+### Example
+
+```js
+player.setVisible(false);
+```
+
+**Available on:** <ClientTag /> <ServerTag />

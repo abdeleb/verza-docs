@@ -1,0 +1,29 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+Sets the player's movement controls.
+
+### Syntax
+
+```js
+player.setMovements(status);
+```
+
+### Parameters
+
+| Name     | Type      | Description                                                           |
+| -------- | --------- | --------------------------------------------------------------------- |
+| `status` | `boolean` | Whether the player's movement controls should be enabled or disabled. |
+
+### Example
+
+```js
+// block all player movements
+player.setMovements(false);
+```
+
+**Available on:** <ClientTag /> <ServerTag />

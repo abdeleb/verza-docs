@@ -1,0 +1,29 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+Clears all active transitions for the object.
+
+### Syntax
+
+```js
+object.clearTransitions();
+```
+
+### Example
+
+```js
+object.startTransition({
+  to: [0, 5, 15],
+  durtion: 500,
+});
+
+// ...
+
+object.clearTransitions();
+```
+
+**Available on:** <ClientTag /> <ServerTag />

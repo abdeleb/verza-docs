@@ -1,0 +1,29 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+Applies an impulse to the object.
+
+### Syntax
+
+```js
+object.applyImpulse(vector);
+```
+
+### Parameters
+
+| Name     | Type                                      | Description                                     |
+| -------- | ----------------------------------------- | ----------------------------------------------- |
+| `vector` | [`Vector3Array`](/sdk/types/Vector3Array) | The impulse vector to be applied to the object. |
+
+### Example
+
+```js
+// make it spin
+object.applyImpulse([0, 20, 0]);
+```
+
+**Available on:** <ClientTag /> <ServerTag />
