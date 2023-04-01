@@ -1,0 +1,39 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Casts a ray from a point on the screen and returns the hit information.
+
+### Syntax
+
+```js
+engine.world.raycaster.raycastScreenPoint(x, y, far, options);
+```
+
+### Parameters
+
+| Name      | Type                                          | Description                                                                                                                                    |
+| --------- | --------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| `x`       | `number`                                      | The x-coordinate of the pixel on the screen.                                                                                                   |
+| `y`       | `number`                                      | The y-coordinate of the pixel on the screen.                                                                                                   |
+| `far`     | `number` or `null`                            | The maximum distance the ray can travel before it is considered to have missed its target. If `null`, then there is no maximum distance limit. |
+| `options` | [`RaycastOptions`](/sdk/types/RaycastOptions) | Additional options for the raycast. (optional)                                                                                                 |
+
+### Returns
+
+- [`IntersectsResult`](/sdk/types/IntersectsResult) - The result of the raycast.
+
+### Example
+
+```js
+const intersects = engine.world.raycaster.raycastScreenPoint(
+  200, // x
+  400, // y
+);
+
+console.log('what did we hit?', intersects);
+```
+
+**Available on:** <ClientTag />

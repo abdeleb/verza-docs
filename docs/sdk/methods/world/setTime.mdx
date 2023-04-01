@@ -1,0 +1,28 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Sets the current time of day.
+
+### Syntax
+
+```js
+engine.world.setTime(seconds);
+```
+
+### Parameters
+
+| Name      | Type     | Description                 |
+| --------- | -------- | --------------------------- |
+| `seconds` | `number` | The time of day in seconds. |
+
+### Example
+
+```js
+// set the time to 10am
+engine.world.setTime(3600 * 10);
+```
+
+**Available on:** <ClientTag />

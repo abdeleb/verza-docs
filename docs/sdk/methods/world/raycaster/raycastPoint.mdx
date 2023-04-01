@@ -1,0 +1,43 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Casts a ray from a origin and a direction in the world and returns the hit information.
+
+### Syntax
+
+```js
+engine.world.raycaster.raycastPoint(origin, dir, far, options);
+```
+
+### Parameters
+
+| Name      | Type                                                                         | Description                                                                                                                                  |
+| --------- | ---------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| `origin`  | [`Vector3`](/sdk/types/Vector3) or [`Vector3Array`](/sdk/types/Vector3Array) | The origin point of the raycast.                                                                                                             |
+| `dir`     | [`Vector3`](/sdk/types/Vector3) or [`Vector3Array`](/sdk/types/Vector3Array) | The direction of the raycast.                                                                                                                |
+| `far`     | `number` or `null`                                                           | The maximum distance the ray can travel before it is considered to have missed its target. If null, then there is no maximum distance limit. |
+| `options` | [`RaycastOptions`](/sdk/types/RaycastOptions)                                | Additional options for the raycast. (optional)                                                                                               |
+
+### Returns
+
+- [`IntersectsResult`](/sdk/types/IntersectsResult) - The result of the raycast.
+
+### Example
+
+```js
+const intersects = engine.world.raycaster.raycastPoint(
+  engine.localPlayer.position, // origin
+  [0, -1, 0], // dir  - ray to the ground
+  10, // far - how far to cast the ray
+  {
+    excludePlayers: [engine.localPlayer.id], // exclude the local player
+  },
+);
+
+console.log('what did we hit?', intersects);
+```
+
+**Available on:** <ClientTag />

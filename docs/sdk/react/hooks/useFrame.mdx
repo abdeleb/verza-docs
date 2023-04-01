@@ -1,0 +1,29 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Calls a function every frame.
+
+### Syntax
+
+```js
+useFrame(callback);
+```
+
+### Parameters
+
+| Name       | Type                      | Description                       |
+| ---------- | ------------------------- | --------------------------------- |
+| `callback` | `(delta: number) => void` | The function to call every frame. |
+
+### Example
+
+```js
+useFrame(() => {
+  // ...
+});
+```
+
+**Available on:** <ClientTag />

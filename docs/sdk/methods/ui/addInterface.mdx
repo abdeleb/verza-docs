@@ -1,0 +1,29 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Adds an interface to the UI.
+
+Adding an interface will automatically unlock the player's cursor until it is removed.
+
+### Syntax
+
+```js
+engine.ui.addInterface(interface);
+```
+
+### Parameters
+
+| Name        | Type     | Description        |
+| ----------- | -------- | ------------------ |
+| `interface` | `string` | The interface name |
+
+### Example
+
+```js
+engine.ui.addInterface('my-interface');
+```
+
+**Available on:** <ClientTag />

@@ -1,0 +1,33 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Sets the size properties of the UI.
+
+### Syntax
+
+```js
+engine.ui.setSize(props);
+```
+
+### Parameters
+
+| Name    | Type                                    | Description                           |
+| ------- | --------------------------------------- | ------------------------------------- |
+| `props` | [`UISizeProps`](/sdk/types/UISizeProps) | The size properties to set for the UI |
+
+### Example
+
+```js
+engine.ui.setSize({
+  width: '200px',
+  height: '500px',
+
+  right: '20vw',
+  bottom: '5vh',
+});
+```
+
+**Available on:** <ClientTag />

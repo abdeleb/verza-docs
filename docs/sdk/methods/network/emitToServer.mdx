@@ -1,0 +1,35 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Emit an event to the server.
+
+::note
+This method can only be called on the client.
+:::
+
+### Syntax
+
+```js
+engine.network.emitToServer(event, data);
+```
+
+### Parameters
+
+| Name    | Type                                              | Description                |
+| ------- | ------------------------------------------------- | -------------------------- |
+| `event` | `string`                                          | The event name to emit.    |
+| `data`  | [`NetworkEventData`](/sdk/types/NetworkEventData) | The event data. (optional) |
+
+### Example
+
+```js
+engine.network.emitToServer('onOpenDoor', {
+  doorId: 1,
+  status: true,
+});
+```
+
+**Available on:** <ClientTag />

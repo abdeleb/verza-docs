@@ -50,6 +50,16 @@ In this section, you'll find a comprehensive list of methods available in the Ve
 | `engine.syncPlayerControls`        | `boolean`                                 | Indicates if player controls are being synced.      |
 | `engine.syncCameraPosition`        | `boolean`                                 | Indicates if camera position is being synced.       |
 
+## Assets
+
+### Methods
+
+| Method                           | Description                                                              |
+| -------------------------------- | ------------------------------------------------------------------------ |
+| [assets.upload](./assets/upload) | Uploads a file to Verza's servers to be used as an asset in your script. |
+
+serverCommands: Map<string, CommandConfigDto> = new Map();
+
 ## Chat
 
 ### Methods
@@ -57,8 +67,57 @@ In this section, you'll find a comprehensive list of methods available in the Ve
 | Method                                           | Description                                                                               |
 | ------------------------------------------------ | ----------------------------------------------------------------------------------------- |
 | [chat.escapeText](./chat/escapeText)             | Escapes special characters in a message so that they are displayed correctly in the chat. |
-| [chat.sendMessageToAll](./chat/sendMessageToAll) | Sends a message to all players in the chat.                                               |
-| [chat.sendMessageTo](./chat/sendMessageTo)       | Sends a message to a specific player in the chat.                                         |
+| [chat.sendMessageToAll](./chat/sendMessageToAll) | Sends a message to all players in the server.                                             |
+| [chat.sendMessageTo](./chat/sendMessageTo)       | Sends a message to a specific player in the server.                                       |
+
+## UI
+
+### Methods
+
+| Method                                       | Description                                                   |
+| -------------------------------------------- | ------------------------------------------------------------- |
+| [`ui.show`](./ui/show)                       | Shows the UI.                                                 |
+| [`ui.hide`](./ui/hide)                       | Hides the UI.                                                 |
+| [`ui.setSize`](./ui/setSize)                 | Sets the size properties of the UI.                           |
+| [`ui.addInterface`](./ui/addInterface)       | Adds an interface to the UI.                                  |
+| [`ui.removeInterface`](./ui/removeInterface) | Removes an interface from the UI.                             |
+| [`ui.hasInterface`](./ui/hasInterface)       | Checks whether the interface has been added to UI.            |
+| [`ui.toggleInterface`](./ui/toggleInterface) | Toggles whether an interface is added or not.                 |
+| [`ui.showCursor`](./ui/showCursor)           | Shows the cursor.                                             |
+| [`ui.hideCursor`](./ui/hideCursor)           | Hides the cursor.                                             |
+| [`ui.toggleCursor`](./ui/toggleCursor)       | Toggles the locked status of the cursor.                      |
+| [`ui.showIndicator`](./ui/showIndicator)     | Shows a loading indicator on the UI.                          |
+| [`ui.hideIndicator`](./ui/hideIndicator)     | Hides the loading indicator on the UI.                        |
+| [`ui.addToolbar`](./ui/addToolbar)           | Adds a toolbar to the UI.                                     |
+| [`ui.removeToolbar`](./ui/removeToolbar)     | Removes a toolbar from the UI.                                |
+| [`ui.isSystemMenu`](./ui/isSystemMenu)       | Checks whether the current interface is any **System Menu**.  |
+| [`ui.isOptionsMenu`](./ui/isOptionsMenu)     | Checks whether the current interface is the **Options Menu**. |
+| [`ui.isServerMenu`](./ui/isServerMenu)       | Checks whether the current interface is the **Server Menu**.  |
+
+### Properties
+
+| Name            | Type                                                                                    | Description                                                                                    |
+| --------------- | --------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `interfaces`    | `string[]`                                                                              | An array of the available interfaces available to the player.                                  |
+| `cursorLock`    | `boolean`                                                                               | A boolean that indicates whether or not the cursor is locked to the game window.               |
+| `isActiveInput` | `boolean`                                                                               | A boolean that indicates whether or not a text input field is currently active for the player. |
+| `activeInput`   | [`HTMLInputElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement) | The HTML input element that is currently active relative to the script.                        |
+
+## Commands
+
+### Methods
+
+| Method                                | Description            |
+| ------------------------------------- | ---------------------- |
+| [`register`](./commands/register)     | Registers a command.   |
+| [`unregister`](./commands/unregister) | Unregisters a command. |
+
+### Properties
+
+| Name              | Type                   | Description                                                                                        |
+| ----------------- | ---------------------- | -------------------------------------------------------------------------------------------------- |
+| `commands`        | `Map<string, Command>` | The list of registered commands.                                                                   |
+| `noAccessMessage` | `string`               | The message displayed when a user tries to execute a command but doesn't have permission to do so. |
 
 ## Entities
 
@@ -84,50 +143,30 @@ In this section, you'll find a comprehensive list of methods available in the Ve
 | `entities.streamed`    | `Map<ID, EntityManager>`              | A map of entity managers for entities that are currently being streamed to the player.                     |
 | `entities.events`      | `EventsManager`                       | An instance of the `EventsManager` class used to register and manage events for the specified entity type. |
 
-## Player
+## Network
 
 ### Methods
 
-| Method                                                             | Description                                                     |
-| ------------------------------------------------------------------ | --------------------------------------------------------------- |
-| [player.hasAccess](./player/hasAccess)                             | Checks if the player has access to a certain command or action. |
-| [player.setName](./player/setName)                                 | Sets the player's name.                                         |
-| [player.setNametagColor](./player/setNametagColor)                 | Sets the player's nametag color.                                |
-| [player.addRole](./player/addRole)                                 | Adds a role to the player.                                      |
-| [player.removeRole](./player/removeRole)                           | Removes a role from the player.                                 |
-| [player.setDimension](./player/setDimension)                       | Sets the player's dimension.                                    |
-| [player.setPosition](./player/setPosition)                         | Sets the player's position.                                     |
-| [player.setRotation](./player/setRotation)                         | Sets the player's rotation.                                     |
-| [player.getFacingAngle](./player/getFacingAngle)                   | Gets the player's facing angle.                                 |
-| [player.setFacingAngle](./player/setFacingAngle)                   | Sets the player's facing angle.                                 |
-| [player.setCameraBehind](./player/setCameraBehind)                 | Sets the player's camera to be behind them.                     |
-| [player.sendMessage](./player/sendMessage)                         | Sends a message to the player.                                  |
-| [player.setMovements](./player/setMovements)                       | Sets the player's movement controls.                            |
-| [player.setTranslations](./player/setTranslations)                 | Sets the player's translation axes.                             |
-| [player.setLinearVelocity](./player/setLinearVelocity)             | Sets the player's linear velocity.                              |
-| [player.setVisible](./player/setVisible)                           | Set whether or not the player is visible.                       |
-| [player.sendSuccessNotification](./player/sendSuccessNotification) | Sends a success notification to the player.                     |
-| [player.sendErrorNotification](./player/sendErrorNotification)     | Sends an error notification to the player.                      |
-| [player.camera.setMode](./player/camera/setMode)                   | Sets the camera mode for the player.                            |
-| [player.camera.startTransitions](./player/camera/startTransitions) | Starts transitions for the camera.                              |
-| [player.camera.startTransition](./player/camera/startTransition)   | Starts a transition for the camera.                             |
-| [player.camera.setPosition](./player/camera/setPosition)           | Sets the position of the camera.                                |
+| Method                                                                 | Description                                                                |
+| ---------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| [`network.emitToPlayer`](./network/emitToPlayer)                       | Emit an event to a specific player on the server.                          |
+| [`network.emitToPlayers`](./network/emitToPlayers)                     | Emit an event to all players on the server.                                |
+| [`network.emitToPlayersWithAccess`](./network/emitToPlayersWithAccess) | Emit an event to players with specific access on the server.               |
+| [`network.emitToPlayersWithRoles`](./network/emitToPlayersWithRoles)   | Emit an event to players with specific roles on the server.                |
+| [`network.emitToScripts`](./network/emitToScripts)                     | Emit an event to all scripts on the server.                                |
+| [`network.emitToServer`](./network/emitToServer)                       | Emit an event to the server.                                               |
+| [`network.onPlayerEvent`](./network/onPlayerEvent)                     | Register a listener function to be called when a player event is emitted.  |
+| [`network.offPlayerEvent`](./network/offPlayerEvent)                   | Unregister a listener function previously registered with `onPlayerEvent`. |
+| [`network.onServerEvent`](./network/onServerEvent)                     | Register a listener function to be called when a server event is emitted.  |
+| [`network.offServerEvent`](./network/offServerEvent)                   | Unregister a listener function previously registered with `onServerEvent`. |
+| [`network.onScriptEvent`](./network/onScriptEvent)                     | Register a listener function to be called when a script event is emitted.  |
+| [`network.offScriptEvent`](./network/offScriptEvent)                   | Unregister a listener function previously registered with `onScriptEvent`. |
 
 ### Properties
 
-| Name                                | Type                                          | Description                                                                |
-| ----------------------------------- | --------------------------------------------- | -------------------------------------------------------------------------- |
-| `player.location`                   | [`Object3D`](/sdk/types/Object3D)             | The player's position and rotation.                                        |
-| `player.position`                   | [`Vector3`](/sdk/types/Vector3)               | The player's position.                                                     |
-| `player.rotation`                   | [`Quaternion`](/sdk/types/Quaternion)         | The player's rotation.                                                     |
-| `player.velocity`                   | [`Vector3`](/sdk/types/Vector3)               | The player's velocity vector.                                              |
-| `player.name`                       | `string`                                      | The player's name.                                                         |
-| `player.state`                      | [`PlayerState`](/sdk/types/PlayerState)       | The player's current state.                                                |
-| `player.roles`                      | `string[]`                                    | The roles assigned to the player.                                          |
-| `player.controls `                  | [`PlayerControls`](/sdk/types/PlayerControls) | The player's controls.                                                     |
-| `player.isMovingControl`            | `boolean`                                     | Whether the player's movement controls are active.                         |
-| `player.onGround`                   | `boolean`                                     | Whether the player is currently on the ground.                             |
-| `player.voicechat.connectedPlayers` | `Set<PlayerManager>`                          | The set of players connected to the same voice chat channel as the player. |
+| Method           | Description                         |
+| ---------------- | ----------------------------------- | --------------------------------------------------------------------------------------- |
+| `network.server` | [`ServerDto`](/sdk/types/ServerDto) | An object containing information about the server the player is currently connected to. |
 
 ## Objects
 
@@ -207,3 +246,65 @@ In this section, you'll find a comprehensive list of methods available in the Ve
 | `collision`            | [`EntityCollision`](/sdk/types/EntityCollision) | The collision type of the object.                                                    |
 | `collider`             | [`EntityCollider`](/sdk/types/EntityCollider)   | The collider type of the object.                                                     |
 | `object.mass`          | `number`                                        | The object's mass, used in physics calculations.                                     |
+
+## Player
+
+### Methods
+
+| Method                                                             | Description                                                     |
+| ------------------------------------------------------------------ | --------------------------------------------------------------- |
+| [player.hasAccess](./player/hasAccess)                             | Checks if the player has access to a certain command or action. |
+| [player.setName](./player/setName)                                 | Sets the player's name.                                         |
+| [player.setNametagColor](./player/setNametagColor)                 | Sets the player's nametag color.                                |
+| [player.addRole](./player/addRole)                                 | Adds a role to the player.                                      |
+| [player.removeRole](./player/removeRole)                           | Removes a role from the player.                                 |
+| [player.setDimension](./player/setDimension)                       | Sets the player's dimension.                                    |
+| [player.setPosition](./player/setPosition)                         | Sets the player's position.                                     |
+| [player.setRotation](./player/setRotation)                         | Sets the player's rotation.                                     |
+| [player.getFacingAngle](./player/getFacingAngle)                   | Gets the player's facing angle.                                 |
+| [player.setFacingAngle](./player/setFacingAngle)                   | Sets the player's facing angle.                                 |
+| [player.setCameraBehind](./player/setCameraBehind)                 | Sets the player's camera to be behind them.                     |
+| [player.sendMessage](./player/sendMessage)                         | Sends a message to the player.                                  |
+| [player.setMovements](./player/setMovements)                       | Sets the player's movement controls.                            |
+| [player.setTranslations](./player/setTranslations)                 | Sets the player's translation axes.                             |
+| [player.setLinearVelocity](./player/setLinearVelocity)             | Sets the player's linear velocity.                              |
+| [player.setVisible](./player/setVisible)                           | Set whether or not the player is visible.                       |
+| [player.sendSuccessNotification](./player/sendSuccessNotification) | Sends a success notification to the player.                     |
+| [player.sendErrorNotification](./player/sendErrorNotification)     | Sends an error notification to the player.                      |
+| [player.camera.setMode](./player/camera/setMode)                   | Sets the camera mode for the player.                            |
+| [player.camera.startTransitions](./player/camera/startTransitions) | Starts transitions for the camera.                              |
+| [player.camera.startTransition](./player/camera/startTransition)   | Starts a transition for the camera.                             |
+| [player.camera.setPosition](./player/camera/setPosition)           | Sets the position of the camera.                                |
+
+### Properties
+
+| Name                                | Type                                          | Description                                                                |
+| ----------------------------------- | --------------------------------------------- | -------------------------------------------------------------------------- |
+| `player.location`                   | [`Object3D`](/sdk/types/Object3D)             | The player's position and rotation.                                        |
+| `player.position`                   | [`Vector3`](/sdk/types/Vector3)               | The player's position.                                                     |
+| `player.rotation`                   | [`Quaternion`](/sdk/types/Quaternion)         | The player's rotation.                                                     |
+| `player.velocity`                   | [`Vector3`](/sdk/types/Vector3)               | The player's velocity vector.                                              |
+| `player.name`                       | `string`                                      | The player's name.                                                         |
+| `player.state`                      | [`PlayerState`](/sdk/types/PlayerState)       | The player's current state.                                                |
+| `player.roles`                      | `string[]`                                    | The roles assigned to the player.                                          |
+| `player.controls `                  | [`PlayerControls`](/sdk/types/PlayerControls) | The player's controls.                                                     |
+| `player.isMovingControl`            | `boolean`                                     | Whether the player's movement controls are active.                         |
+| `player.onGround`                   | `boolean`                                     | Whether the player is currently on the ground.                             |
+| `player.voicechat.connectedPlayers` | `Set<PlayerManager>`                          | The set of players connected to the same voice chat channel as the player. |
+
+## World
+
+### Methods
+
+| Method                                                                         | Description                                                                                     |
+| ------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------- |
+| [`world.setTime`](./world/setTime)                                             | Sets the current time of day.                                                                   |
+| [`world.setEntitySelector`](./world/setEntitySelector)                         | The entity selector allows the player to select entities in the game world by clicking on them. |
+| [`world.setHemisphereLightColor`](./world/setHemisphereLightColor)             | Sets the color of the hemisphere light.                                                         |
+| [`world.setHemisphereLightGroundColor`](./world/setHemisphereLightGroundColor) | Sets the color of the ground hemisphere light.                                                  |
+| [`world.setHemisphereLightIntensity`](./world/setHemisphereLightIntensity)     | Sets the intensity of the hemisphere light.                                                     |
+| [`world.setGlobalLightColor`](./world/setGlobalLightColor)                     | Sets the color of the global light.                                                             |
+| [`world.setGlobalLightIntensity`](./world/setGlobalLightIntensity)             | Sets the intensity of the global light.                                                         |
+| [`world.raycaster.raycastScreenPoint`](./world/raycaster/raycastScreenPoint)   | Casts a ray from a point on the screen and returns the hit information.                         |
+| [`world.raycaster.raycastPoint`](./world/raycaster/raycastPoint)               | Casts a ray from a origin and a direction in the world and returns the hit information.         |
+| [`world.raycaster.raycastPoints`](./world/raycaster/raycastPoints)             | Casts rays from two positions in the world and returns hit information.                         |

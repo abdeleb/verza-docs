@@ -1,0 +1,37 @@
+---
+hide_table_of_contents: true
+---
+
+import ServerTag from '@site/src/components/tags/ServerTag';
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Emit an event to players with specific roles on the server.
+
+### Syntax
+
+```js
+engine.network.emitToPlayersWithRoles(event, roles, data);
+```
+
+### Parameters
+
+| Name    | Type                                              | Description                |
+| ------- | ------------------------------------------------- | -------------------------- |
+| `event` | `string`                                          | The event name to emit.    |
+| `roles` | `string[]`                                        | The roles to emit to.      |
+| `data`  | [`NetworkEventData`](/sdk/types/NetworkEventData) | The event data. (optional) |
+
+### Example
+
+```js
+engine.network.emitToPlayersWithRoles(
+  'onOpenDoor',
+  ['role_2jd1TjKpCYjhFKDhw8hmTH'],
+  {
+    doorId: 1,
+    status: true,
+  },
+);
+```
+
+**Available on:** <ClientTag /> <ServerTag />

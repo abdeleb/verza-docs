@@ -1,0 +1,27 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Removes a toolbar from the UI.
+
+### Syntax
+
+```js
+engine.ui.removeToolbar(toolbarId);
+```
+
+### Parameters
+
+| Name        | Type     | Description                     |
+| ----------- | -------- | ------------------------------- |
+| `toolbarId` | `string` | The ID of the toolbar to remove |
+
+### Example
+
+```js
+engine.ui.removeToolbar('my-toolbar');
+```
+
+**Available on:** <ClientTag />

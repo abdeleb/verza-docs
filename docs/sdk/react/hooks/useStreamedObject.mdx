@@ -1,0 +1,25 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Uses a streamed object by their ID.
+
+### Syntax
+
+```js
+useStreamedObject(id);
+```
+
+| Name | Type     | Description                  |
+| ---- | -------- | ---------------------------- |
+| `id` | `number` | The ID of the object to use. |
+
+### Example
+
+```js
+const object = useStreamedObject('my-object-id');
+```
+
+**Available on:** <ClientTag />

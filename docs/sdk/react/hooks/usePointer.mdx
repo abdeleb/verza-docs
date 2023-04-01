@@ -1,0 +1,31 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Listen for a key event.
+
+### Syntax
+
+```js
+usePointer(event, listener, options);
+```
+
+### Parameters
+
+| Name       | Type                                                | Description                           |
+| ---------- | --------------------------------------------------- | ------------------------------------- |
+| `event`    | [`PointerEventType`](/sdk/types/PointerEventType)   | The pointer event type to listen for. |
+| `listener` | `(event: PointerEvent) => void`                     | The listener to run.                  |
+| `options`  | [`UsePointerOptions`](/sdk/types/UsePointerOptions) | The options. (options)                |
+
+### Example
+
+```js
+usePointer('pointerdown', event => {
+  console.log('pointer down!', event);
+});
+```
+
+**Available on:** <ClientTag />

@@ -1,0 +1,32 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Shows a loading indicator on the UI.
+
+:::note
+You can add multiple loading indicators at the same time. Each indicator will remain visible until explicitly hidden. If multiple indicators are displayed, the last one added will remain visible until it is hidden.
+:::
+
+### Syntax
+
+```js
+engine.ui.showIndicator(id, title);
+```
+
+### Parameters
+
+| Name    | Type                 | Description              |
+| ------- | -------------------- | ------------------------ |
+| `id`    | `string` or `number` | The id of the indicator. |
+| `title` | `string` or `null`   | The title (optional)     |
+
+### Example
+
+```js
+engine.ui.showIndicator('my-id', 'Loading...');
+```
+
+**Available on:** <ClientTag />

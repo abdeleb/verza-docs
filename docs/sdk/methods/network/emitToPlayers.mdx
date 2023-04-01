@@ -1,0 +1,32 @@
+---
+hide_table_of_contents: true
+---
+
+import ServerTag from '@site/src/components/tags/ServerTag';
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Emit an event to all players on the server.
+
+### Syntax
+
+```js
+engine.network.emitToPlayers(event, data);
+```
+
+### Parameters
+
+| Name    | Type                                              | Description                |
+| ------- | ------------------------------------------------- | -------------------------- |
+| `event` | `string`                                          | The event name to emit.    |
+| `data`  | [`NetworkEventData`](/sdk/types/NetworkEventData) | The event data. (optional) |
+
+### Example
+
+```js
+engine.network.emitToPlayers('onOpenDoor', {
+  doorId: 1,
+  status: true,
+});
+```
+
+**Available on:** <ClientTag /> <ServerTag />

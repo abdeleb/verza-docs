@@ -1,0 +1,26 @@
+---
+hide_table_of_contents: true
+---
+
+import ServerTag from '@site/src/components/tags/ServerTag';
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Adds a command to the server.
+
+### Syntax
+
+```js
+useCommand(command);
+```
+
+### Example
+
+```js
+useCommand(
+  new Command('test', player => {
+    player.sendMessage('This is a test!');
+  }),
+);
+```
+
+**Available on:** <ClientTag /> <ServerTag />

@@ -4,7 +4,7 @@ hide_table_of_contents: true
 
 import ServerTag from '@site/src/components/tags/ServerTag';
 
-Sends a message to a specific player in the chat.
+Sends a message to a specific player in the server.
 
 This method can be used to send private messages or group messages to specific players or groups. The player must be specified using their unique ID or player manager.
 
@@ -18,7 +18,7 @@ chat.sendMessageTo(player, message);
 
 | Name               | Type                        | Description                       |
 | ------------------ | --------------------------- | --------------------------------- |
-| `playerOrPlayerId` | `PlayerManager` or 'number' | The player manager or player id   |
+| `playerOrPlayerId` | `PlayerManager` or `number` | The player manager or player id   |
 | `message`          | `string`                    | The message to be send the player |
 
 ### Example
@@ -27,7 +27,7 @@ chat.sendMessageTo(player, message);
 // using a player manager
 chat.sendMessageTo(player, 'Welcome to the {green}Server');
 
-// using player id
+// using the player id
 chat.sendMessageTo(1, 'Welcome to the {green}Server');
 ```
 

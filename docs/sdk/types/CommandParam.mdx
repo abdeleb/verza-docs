@@ -1,0 +1,19 @@
+```ts
+type CommandParam = {
+  type: CommandType;
+
+  name: string;
+
+  display: string = null;
+
+  isRequired: boolean;
+
+  constructor: (name: string, type: CommandType) => CommandParam;
+
+  required: () => CommandParam;
+
+  withDisplay: (display: string) => CommandParam;
+
+  toObject(): CommandParam;
+};
+```

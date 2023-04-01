@@ -1,0 +1,36 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Adds a toolbar to the UI.
+
+### Syntax
+
+```js
+useToolbar();
+```
+
+### Parameters
+
+| Name      | Type                                          | Description         |
+| --------- | --------------------------------------------- | ------------------- |
+| `toolbar` | [`ToolbarElement`](/sdk/types/ToolbarElement) | The toolbar to add. |
+
+### Example
+
+```js
+useToolbar({
+  id: 'my-toolbar',
+  position: 'bottom',
+  items: [
+    {
+      name: 'Open House Menu',
+      key: 'Y',
+    },
+  ],
+});
+```
+
+**Available on:** <ClientTag />

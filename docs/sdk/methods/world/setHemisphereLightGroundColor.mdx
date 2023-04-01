@@ -1,0 +1,28 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Sets the color of the ground hemisphere light.
+
+### Syntax
+
+```js
+engine.world.setHemisphereLightGroundColor(color);
+```
+
+### Parameters
+
+| Name    | Type                                | Description                    |
+| ------- | ----------------------------------- | ------------------------------ |
+| `color` | [`ColorType`](/sdk/types/ColorType) | The color of the ground light. |
+
+### Example
+
+```js
+// set the time to 10am
+engine.world.setHemisphereLightGroundColor('green');
+```
+
+**Available on:** <ClientTag />

@@ -1,0 +1,40 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Adds a toolbar to the UI.
+
+:::note
+The last toolbar added at the specified position will be the one that is currently shown.
+:::
+
+### Syntax
+
+```js
+engine.ui.addToolbar(toolbar);
+```
+
+### Parameters
+
+| Name      | Type                                          | Description         |
+| --------- | --------------------------------------------- | ------------------- |
+| `toolbar` | [`ToolbarElement`](/sdk/types/ToolbarElement) | The toolbar to add. |
+
+### Example
+
+```js
+engine.ui.addToolbar({
+  id: 'my-toolbar',
+  position: 'bottom',
+  items: [
+    {
+      name: 'Open House Menu',
+      key: 'Y',
+    },
+  ],
+});
+```
+
+**Available on:** <ClientTag />

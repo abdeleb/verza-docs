@@ -1,0 +1,19 @@
+```ts
+type UISizeProps = {
+  height: UISizePropValue;
+  width: UISizePropValue;
+  left?: UISizePropValue;
+  top?: UISizePropValue;
+  right?: UISizePropValue;
+  bottom?: UISizePropValue;
+  zIndex?: number;
+};
+```
+
+```ts
+type UISizePropValue =
+  | `${number}vh`
+  | `${number}vw`
+  | `${number}px`
+  | `${number}%`;
+```
