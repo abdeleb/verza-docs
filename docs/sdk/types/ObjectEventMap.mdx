@@ -1,0 +1,24 @@
+```ts
+type ObjectEventMap<T extends ObjectType = ObjectType> = {
+  onPointerMove: (event: ObjectPointerEvent<T>) => void;
+
+  onPointerDown: (event: ObjectPointerEvent<T>) => void;
+
+  onPointerUp: (event: ObjectPointerEvent<T>) => void;
+
+  onPointerEnter: (event: ObjectPointerEvent<T>) => void;
+
+  onPointerLeave: (event: ObjectPointerEvent<T>) => void;
+
+  onTransitionEnd: (id: number | string) => void;
+
+  onTransitionStart: (id: number | string) => void;
+};
+```
+
+```ts
+type ObjectPointerEvent<T extends ObjectType = ObjectType> = PointerEvent & {
+  object: ObjectManager<T>;
+  intersects: IntersectsResult;
+};
+```
