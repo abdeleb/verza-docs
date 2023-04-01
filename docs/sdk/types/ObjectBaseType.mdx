@@ -1,0 +1,33 @@
+```ts
+type ObjectBaseType<T extends ObjectType = ObjectType, D = unknown> = {
+  id?: string; // id
+
+  parent_id?: string; // parent
+
+  t: T; // type
+
+  o: D; // object data
+
+  dd?: EntityDrawDistance;
+
+  p?: Vector3Array; // position
+
+  r?: QuaternionArray | Vector3Array; // rotation
+
+  s?: Vector3Array; // scale
+
+  d?: number; // dimension
+
+  ss?: boolean; // shadows
+
+  c?: EntityCollision | null; // collision
+
+  cc?: EntityCollider | null; // collider
+
+  m?: number; // mass
+
+  po?: boolean; // permanent object
+
+  ro?: boolean; // remote object
+};
+```

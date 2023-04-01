@@ -1,0 +1,30 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+`Gltf` is a component that allows you to load a GLTF model into your scene.
+
+### Syntax
+
+```jsx
+<Gltf url={url} />
+```
+
+### Parameters
+
+All objects share the same base parameters from [`CreateObjectProps`](/sdk/types/CreateObjectProps).
+
+| Name  | Type     | Description                                                                   |
+| ----- | -------- | ----------------------------------------------------------------------------- |
+| `url` | `string` | The URL of the GLTF model to load, it could be an `asset_id` or a remote URL. |
+
+### Example
+
+```jsx
+<Gltf url="glb url" />
+```
+
+**Available on:** <ClientTag /> <ServerTag />

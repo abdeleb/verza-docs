@@ -1,0 +1,82 @@
+import CodeBlock from '@theme/CodeBlock';
+
+```ts
+type ObjectTexture = {
+  /**
+   * Asset URL or Asset ID
+   */
+  source: string;
+
+  /**
+   * @see {@link https://threejs.org/docs/#api/en/constants/Textures}
+   * @default DEFAULT_MAPPING
+   */
+  mapping?: Mapping;
+
+  /**
+   * @see {@link https://threejs.org/docs/#api/en/constants/Textures}
+   * @default ClampToEdgeWrapping
+   */
+  wrapS?: Wrapping;
+
+  /**
+   * @see {@link https://threejs.org/docs/#api/en/constants/Textures}
+   * @default ClampToEdgeWrapping
+   */
+  wrapT?: Wrapping;
+
+  /**
+   * @see {@link https://threejs.org/docs/#api/en/constants/Textures}
+   * @default LinearFilter
+   */
+  magFilter?: TextureFilter;
+
+  /**
+   * @see {@link https://threejs.org/docs/#api/en/constants/Textures}
+   * @default LinearMipmapLinearFilter
+   */
+  minFilter?: TextureFilter;
+
+  /**
+   * @default 1
+   */
+  anisotropy?: number;
+
+  /**
+   * @see {@link https://threejs.org/docs/#api/en/constants/Textures}
+   * @default RGBAFormat
+   */
+  format?: PixelFormat;
+
+  /**
+   * @default new Array(0, 0)
+   */
+  offset?: Vector2Array;
+
+  /**
+   * @default new Array(1, 1)
+   */
+  repeat?: Vector2Array;
+
+  /**
+   * @default new Array( 0, 0 )
+   */
+  center?: Vector2Array;
+
+  /**
+   * @default 0
+   */
+  rotation?: number;
+
+  /**
+   * @default true
+   */
+  flipY?: boolean;
+
+  /**
+   * @see {@link https://threejs.org/docs/#api/en/constants/Textures}
+   * @default LinearEncoding
+   */
+  encoding?: TextureEncoding;
+};
+```

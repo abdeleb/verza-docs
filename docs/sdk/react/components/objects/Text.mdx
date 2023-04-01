@@ -1,0 +1,59 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+`Text` is a component that allows you to load a GLTF model into your scene.
+
+### Syntax
+
+```jsx
+<Text text={text} />
+```
+
+### Parameters
+
+All objects share the same base parameters from [`CreateObjectProps`](/sdk/types/CreateObjectProps).
+
+| Name             | Type                                                         | Description                                           |
+| ---------------- | ------------------------------------------------------------ | ----------------------------------------------------- |
+| `text`           | `string`                                                     | The text to display.                                  |
+| `color`          | [`ColorType`](/sdk/types/ColorType)                          | The color of the text.                                |
+| `fontSize`       | `number`                                                     | The size of the font.                                 |
+| `maxWidth`       | `number`                                                     | The maximum width that the text can take up.          |
+| `lineHeight`     | `number`                                                     | The height of a line of text.                         |
+| `letterSpacing`  | `number`                                                     | The space between each letter in the text.            |
+| `textAlign`      | `center, left, right, justify`                               | The alignment of the text.                            |
+| `font`           | `string`                                                     | The font to use for the text.                         |
+| `anchorX`        | `number, center, left, right`                                | The X-axis anchor point for the text.                 |
+| `anchorY`        | `number, bottom, top, middle, top-baseline, bottom-baseline` | The Y-axis anchor point for the text.                 |
+| `direction`      | `auto, ltr, rtl`                                             | The direction of the text.                            |
+| `overflowWrap`   | `normal, break-word`                                         | How to wrap the text when it overflows the container. |
+| `whiteSpace`     | `normal, nowrap, overflowWrap`                               | How to handle whitespace in the text.                 |
+| `outlineWidth`   | `string, number`                                             | The width of the text outline.                        |
+| `outlineOffsetX` | `string, number`                                             | The X-axis offset of the text outline.                |
+| `outlineOffsetY` | `string, number`                                             | The Y-axis offset of the text outline.                |
+| `outlineBlur`    | `string, number`                                             | The blur amount of the text outline.                  |
+| `outlineColor`   | [`ColorType`](/sdk/types/ColorType)                          | The color of the text outline.                        |
+| `outlineOpacity` | `number`                                                     | The opacity of the text outline.                      |
+| `strokeWidth`    | `string, number`                                             | The width of the text stroke.                         |
+| `strokeColor`    | [`ColorType`](/sdk/types/ColorType)                          | The color of the text stroke.                         |
+| `strokeOpacity`  | `number`                                                     | The opacity of the text stroke.                       |
+| `fillOpacity`    | `number`                                                     | The opacity of the text fill.                         |
+
+### Example
+
+```jsx
+<Text
+  text="Hello World"
+  fontSize={0.5}
+  color="#d4d4d4"
+  outlineWidth={0.05}
+  outlineColor="#212121"
+  position={[0, 2, 0]}
+/>
+```
+
+**Available on:** <ClientTag /> <ServerTag />

@@ -1,0 +1,27 @@
+```ts
+type CreateObjectProps<T extends ObjectType> = {
+  id?: string;
+
+  type?: ObjectType;
+
+  parentId?: string;
+
+  position?: Vector3 | Vector3Array;
+
+  rotation?: Quaternion | Euler | QuaternionArray | Vector3Array;
+
+  scale?: Vector3 | Vector3Array | number;
+
+  drawDistance?: EntityDrawDistance;
+
+  dimension?: number;
+
+  collision?: EntityCollision | null;
+
+  collider?: EntityCollider | null;
+
+  mass?: number;
+
+  shadows?: boolean;
+};
+```

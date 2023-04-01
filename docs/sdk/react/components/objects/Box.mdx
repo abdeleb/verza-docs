@@ -1,0 +1,38 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+`Box` is a primitive object that creates a box.
+
+### Syntax
+
+```jsx
+<Box />
+```
+
+### Parameters
+
+All objects share the same base parameters from [`CreateObjectProps`](/sdk/types/CreateObjectProps).
+
+| Name             | Type                                                          | Description                                         |
+| ---------------- | ------------------------------------------------------------- | --------------------------------------------------- |
+| `width`          | `number`                                                      | The width of the box.                               |
+| `height`         | `number`                                                      | The height of the box.                              |
+| `depth`          | `number`                                                      | The depth of the box.                               |
+| `color`          | [`ColorType`](/sdk/types/ColorType)                           | The color of the box.                               |
+| `widthSegments`  | `number`                                                      | The number of segments along the width of the box.  |
+| `heightSegments` | `number`                                                      | The number of segments along the height of the box. |
+| `depthSegments`  | `number`                                                      | The number of segments along the depth of the box.  |
+| `radius`         | `number`                                                      | The radius of the box.                              |
+| `material`       | [`ObjectStandardMaterial`](/sdk/types/ObjectStandardMaterial) | The material of the box.                            |
+
+### Example
+
+```jsx
+<Box width={1} height={1} depth={1} position={[0, 2, 0]} />
+```
+
+**Available on:** <ClientTag /> <ServerTag />

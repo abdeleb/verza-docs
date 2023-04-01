@@ -1,0 +1,34 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+`Sphere` is a primitive object that creates a sphere.
+
+### Syntax
+
+```jsx
+<Sphere />
+```
+
+### Parameters
+
+All objects share the same base parameters from [`CreateObjectProps`](/sdk/types/CreateObjectProps).
+
+| Name             | Type                                                          | Description                                            |
+| ---------------- | ------------------------------------------------------------- | ------------------------------------------------------ |
+| `radius`         | `number`                                                      | The radius of the sphere.                              |
+| `color`          | [`ColorType`](/sdk/types/ColorType)                           | The color of the sphere.                               |
+| `widthSegments`  | `number`                                                      | The number of segments along the width of the sphere.  |
+| `heightSegments` | `number`                                                      | The number of segments along the height of the sphere. |
+| `material`       | [`ObjectStandardMaterial`](/sdk/types/ObjectStandardMaterial) | The material of the sphere.                            |
+
+### Example
+
+```jsx
+<Sphere radius={1} position={[0, 2, 0]} />
+```
+
+**Available on:** <ClientTag /> <ServerTag />
