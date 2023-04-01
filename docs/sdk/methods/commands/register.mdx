@@ -1,0 +1,42 @@
+---
+hide_table_of_contents: true
+---
+
+import ServerTag from '@site/src/components/tags/ServerTag';
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Registers a command.
+
+### Syntax
+
+```js
+engine.commands.register(command);
+```
+
+### Parameters
+
+| Name      | Type                            | Description              |
+| --------- | ------------------------------- | ------------------------ |
+| `command` | [`Command`](/sdk/types/Command) | The command to register. |
+
+### Example
+
+```js
+// without parameters
+const command = new Command('sayhi').on(player => {
+  player.sendMessage('Hi!');
+});
+
+engine.commands.register(command);
+
+// with parameters
+const command = new Command('sayhi', [
+  new CommandParam('name', 'string').withDisplay('The name of the player'),
+]).on((player, {name}) => {
+  player.sendMessage(`Hi ${name}!`);
+});
+
+engine.commands.register(command);
+```
+
+**Available on:** <ClientTag /> <ServerTag />

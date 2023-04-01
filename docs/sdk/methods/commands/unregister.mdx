@@ -1,0 +1,28 @@
+---
+hide_table_of_contents: true
+---
+
+import ServerTag from '@site/src/components/tags/ServerTag';
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Unregisters a command.
+
+### Syntax
+
+```js
+engine.commands.unregister(command);
+```
+
+### Parameters
+
+| Name      | Type                            | Description               |
+| --------- | ------------------------------- | ------------------------- |
+| `command` | [`Command`](/sdk/types/Command) | The command to unregister |
+
+### Example
+
+```js
+engine.commands.unregister(command);
+```
+
+**Available on:** <ClientTag /> <ServerTag />

@@ -1,0 +1,35 @@
+---
+hide_table_of_contents: true
+---
+
+import ServerTag from '@site/src/components/tags/ServerTag';
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Unregister a listener function previously registered with `onScriptEvent`.
+
+### Syntax
+
+```js
+engine.network.offScriptEvent(event, listener);
+```
+
+### Parameters
+
+| Name       | Type                                | Description                                         |
+| ---------- | ----------------------------------- | --------------------------------------------------- |
+| `event`    | `string`                            | The event name to unsubscribe.                      |
+| `listener` | `(data?: NetworkEventData) => void` | The listener to remove from the event subscription. |
+
+### Example
+
+```js
+// subscribe
+const listener = engine.network.offScriptEvent('onDoorOpen', player => {
+  // ...
+});
+
+// unsubscribe
+engine.network.offScriptEvent('onDoorOpen', listener);
+```
+
+**Available on:** <ClientTag /> <ServerTag />

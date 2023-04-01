@@ -1,0 +1,39 @@
+---
+hide_table_of_contents: true
+---
+
+import ServerTag from '@site/src/components/tags/ServerTag';
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Register a listener function to be called when a script event is emitted.
+
+### Syntax
+
+```js
+engine.network.onScriptEvent(event, listener);
+```
+
+### Parameters
+
+| Name       | Type                                | Description                  |
+| ---------- | ----------------------------------- | ---------------------------- |
+| `event`    | `string`                            | The event name to subscribe. |
+| `listener` | `(data?: NetworkEventData) => void` | The listener.                |
+
+### Returns
+
+- `listener` - The listener.
+
+### Example
+
+```js
+engine.network.onScriptEvent('onOpenDoor', (({status})) => {
+  if (status) {
+    door.open()
+  } else {
+    door.close()
+  }
+});
+```
+
+**Available on:** <ClientTag /> <ServerTag />

@@ -1,0 +1,28 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Sets the color of the hemisphere light.
+
+### Syntax
+
+```js
+engine.world.setHemisphereLightColor(color);
+```
+
+### Parameters
+
+| Name    | Type                                  | Description                        |
+| ------- | ------------------------------------- | ---------------------------------- |
+| `color` | [`ColorType`](/sdk/types/`ColorType`) | The color of the hemisphere light. |
+
+### Example
+
+```js
+// set the time to 10am
+engine.world.setHemisphereLightColor('green');
+```
+
+**Available on:** <ClientTag />

@@ -1,0 +1,22 @@
+```ts
+type Command = {
+  command: string;
+
+  desc?: string;
+
+  params: CommandParam[];
+
+  constructor: (
+    name: string
+    parmas: CommandParam[],
+  ) => CommandParam;
+
+  on: (
+    callback: (player: PlayerManager, params: ParamsList<Params>) => void,
+  ) => Command;
+
+  withDesc: (desc: string) => Command;
+
+  toObject: () => CommandInfo;
+};
+```

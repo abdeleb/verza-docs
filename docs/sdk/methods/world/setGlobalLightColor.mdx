@@ -1,0 +1,28 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Sets the color of the global light.
+
+### Syntax
+
+```js
+engine.world.setGlobalLightColor(seconds);
+```
+
+### Parameters
+
+| Name    | Type                                  | Description                    |
+| ------- | ------------------------------------- | ------------------------------ |
+| `color` | [`ColorType`](/sdk/types/`ColorType`) | The color of the global light. |
+
+### Example
+
+```js
+// set the time to 10am
+engine.world.setGlobalLightColor('red');
+```
+
+**Available on:** <ClientTag />

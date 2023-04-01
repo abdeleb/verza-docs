@@ -1,0 +1,35 @@
+---
+hide_table_of_contents: true
+---
+
+import ServerTag from '@site/src/components/tags/ServerTag';
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Register a listener function to be called when a player event is emitted.
+
+### Syntax
+
+```js
+engine.network.onPlayerEvent(event, listener);
+```
+
+### Parameters
+
+| Name       | Type                                                       | Description                  |
+| ---------- | ---------------------------------------------------------- | ---------------------------- |
+| `event`    | `string`                                                   | The event name to subscribe. |
+| `listener` | `(player: PlayerManager, data?: NetworkEventData) => void` | The listener.                |
+
+### Returns
+
+- `listener` - The listener.
+
+### Example
+
+```js
+engine.network.onPlayerEvent('onSayWelcome', player => {
+  engine.localPlayer.sendMessage(`${player.name} says: Welcome!`);
+});
+```
+
+**Available on:** <ClientTag /> <ServerTag />
