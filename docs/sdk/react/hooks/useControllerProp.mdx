@@ -1,0 +1,22 @@
+---
+hide_table_of_contents: true
+---
+
+import ServerTag from '@site/src/components/tags/ServerTag';
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Watch for changes to a controller property.
+
+### Syntax
+
+```js
+useControllerProp(manager, prop);
+```
+
+### Example
+
+```js
+const propValue = useControllerProp(controller, 'prop');
+```
+
+**Available on:** <ClientTag /> <ServerTag />

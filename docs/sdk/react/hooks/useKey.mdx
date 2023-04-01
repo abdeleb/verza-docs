@@ -1,0 +1,31 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Listen for a key event.
+
+### Syntax
+
+```js
+useKey(key, listener, options);
+```
+
+### Parameters
+
+| Name       | Type                                        | Description            |
+| ---------- | ------------------------------------------- | ---------------------- |
+| `key`      | `string`                                    | The key to listen for. |
+| `listener` | `(event: KeyEvent) => void`                 | The listener to run.   |
+| `options`  | [`UseKeyOptions`](/sdk/types/UseKeyOptions) | The options. (options) |
+
+### Example
+
+```js
+useKey('KeyV', event => {
+  console.log('V key pressed', event);
+});
+```
+
+**Available on:** <ClientTag />

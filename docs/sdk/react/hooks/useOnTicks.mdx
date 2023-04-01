@@ -1,0 +1,32 @@
+u---
+hide_table_of_contents: true
+
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+Executes a callback every specified number of ticks.
+
+### Syntax
+
+```js
+useOnTicks(callback, ticks);
+```
+
+### Paramters
+
+| Name       | Type       | Description                                                |
+| ---------- | ---------- | ---------------------------------------------------------- |
+| `callback` | `function` | The callback to execute.                                   |
+| `ticks`    | `number`   | The number of ticks to wait before executing the callback. |
+
+### Example
+
+```js
+useOnTicks(() => {
+  console.log("I'm executing every second!");
+}, 1);
+```
+
+**Available on:** <ClientTag /> <ServerTag />

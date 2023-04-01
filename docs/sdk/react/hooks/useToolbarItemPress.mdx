@@ -4,7 +4,13 @@ hide_table_of_contents: true
 
 import ClientTag from '@site/src/components/tags/ClientTag';
 
-This event is triggered when a toolbar item is pressed.
+Listen to the press event of a toolbar item.
+
+### Syntax
+
+```js
+useToolbarItemPress(id, callback);
+```
 
 ### Parameters
 
@@ -16,7 +22,7 @@ This event is triggered when a toolbar item is pressed.
 ### Example
 
 ```js
-engine.events.on('onToolbarItemPress', (id, toolbarId) => {
+useToolbarItemPress('toolbar-item-id', (id, toolbarId) => {
   console.log('Toolbar item pressed:', id, 'on toolbar:', toolbarId);
 });
 ```

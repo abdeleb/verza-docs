@@ -1,0 +1,26 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+Uses a player by their ID.
+
+### Syntax
+
+```js
+usePlayer(id);
+```
+
+| Name | Type     | Description                  |
+| ---- | -------- | ---------------------------- |
+| `id` | `number` | The ID of the player to use. |
+
+### Example
+
+```js
+const player = usePlayer(1);
+```
+
+**Available on:** <ClientTag /> <ServerTag />

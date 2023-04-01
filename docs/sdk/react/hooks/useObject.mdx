@@ -1,0 +1,26 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+Uses an object by their ID.
+
+### Syntax
+
+```js
+useObject(id);
+```
+
+| Name | Type     | Description                  |
+| ---- | -------- | ---------------------------- |
+| `id` | `number` | The ID of the object to use. |
+
+### Example
+
+```js
+const object = useObject('my-object-id');
+```
+
+**Available on:** <ClientTag /> <ServerTag />

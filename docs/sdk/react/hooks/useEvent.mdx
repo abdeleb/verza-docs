@@ -1,0 +1,31 @@
+---
+hide_table_of_contents: true
+---
+
+import ServerTag from '@site/src/components/tags/ServerTag';
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Listen to an event.
+
+### Syntax
+
+```js
+useEvent();
+```
+
+### Parameters
+
+| Name        | Type       | Description                                       |
+| ----------- | ---------- | ------------------------------------------------- |
+| `eventName` | `string`   | The name of the event to listen to.               |
+| `callback`  | `function` | The callback to call when the event is triggered. |
+
+### Example
+
+```js
+useEvent('onKeyDown', event => {
+  console.log('key down!', event);
+});
+```
+
+**Available on:** <ClientTag /> <ServerTag />
