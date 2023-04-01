@@ -9,7 +9,7 @@ Casts a ray from a point on the screen and returns the hit information.
 ### Syntax
 
 ```js
-engine.world.raycastScreenPoint(x, y, options);
+engine.world.raycaster.raycastScreenPoint(x, y, far, options);
 ```
 
 ### Parameters
@@ -28,7 +28,7 @@ engine.world.raycastScreenPoint(x, y, options);
 ### Example
 
 ```js
-const intersects = engine.world.raycastScreenPoint(
+const intersects = engine.world.raycaster.raycastScreenPoint(
   200, // x
   400, // y
 );

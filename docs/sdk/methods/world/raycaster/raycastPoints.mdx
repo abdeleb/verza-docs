@@ -9,7 +9,7 @@ Casts rays from two positions in the world and returns hit information.
 ### Syntax
 
 ```js
-engine.world.raycastPoint(from, to, options);
+engine.world.raycaster.raycastPoints(from, to, options);
 ```
 
 ### Parameters
@@ -27,7 +27,7 @@ engine.world.raycastPoint(from, to, options);
 ### Example
 
 ```js
-const intersects = engine.world.raycastPoint(
+const intersects = engine.world.raycaster.raycastPoints(
   [5, 1, 10], // from - where to start the ray
   [10, 1, 20], // to - where to end the ray
 );

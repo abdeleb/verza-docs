@@ -9,7 +9,7 @@ Casts a ray from a origin and a direction in the world and returns the hit infor
 ### Syntax
 
 ```js
-engine.world.raycastPoint(origin, dir, far, options);
+engine.world.raycaster.raycastPoint(origin, dir, far, options);
 ```
 
 ### Parameters
@@ -28,7 +28,7 @@ engine.world.raycastPoint(origin, dir, far, options);
 ### Example
 
 ```js
-const intersects = engine.world.raycastPoint(
+const intersects = engine.world.raycaster.raycastPoint(
   engine.localPlayer.position, // origin
   [0, -1, 0], // dir  - ray to the ground
   10, // far - how far to cast the ray
