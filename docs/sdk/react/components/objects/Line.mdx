@@ -1,0 +1,38 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+`Line` is a primitive object that creates a line.
+
+### Syntax
+
+```jsx
+<Line />
+```
+
+### Parameters
+
+All objects share the same base parameters from [`ComponentObjectProps`](/sdk/types/ComponentObjectProps).
+
+| Name     | Type                                        | Description             |
+| -------- | ------------------------------------------- | ----------------------- |
+| `points` | [`Vector3Array[]`](/sdk/types/Vector3Array) | The points of the line. |
+| `color`  | [`ColorType`](/sdk/types/ColorType)         | The color of the line.  |
+
+### Example
+
+```jsx
+<Line
+  points={[
+    [0, 2, 10],
+    [1, 1, 5],
+    [3, 4, 5],
+  ]}
+  position={[0, 2, 0]}
+/>
+```
+
+**Available on:** <ClientTag /> <ServerTag />

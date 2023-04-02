@@ -1,0 +1,6 @@
+See [`CreateObjectProps`](/sdk/types/CreateObjectProps) and [`ObjectEventMap`](/sdk/types/ObjectEventMap)
+
+```ts
+type ComponentObjectProps<T extends ObjectType> = ObjectEventMapList<T> &
+  CreateObjectProps<T>;
+```

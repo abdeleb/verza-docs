@@ -1,0 +1,34 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+`EngineProvider` is a component that provides the engine context to the script. It is required to be used in order to use the engine context.
+
+### Syntax
+
+```jsx
+<EngineProvider params={params}>{children}</EngineProvider>
+```
+
+### Parameters
+
+| Name     | Type                                      | Description            |
+| -------- | ----------------------------------------- | ---------------------- |
+| `params` | [`EngineParams`](/sdk/types/EngineParams) | The engine parameters. |
+
+### Example
+
+```jsx
+const Provider = () => {
+  return (
+    <EngineProvider params={{name: 'My Script'}}>
+      {/* your script logic goes here */}
+    </EngineProvider>
+  );
+};
+```
+
+**Available on:** <ClientTag /> <ServerTag />

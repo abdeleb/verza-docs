@@ -1,0 +1,91 @@
+# User Interface (UI)
+
+In the Verza platform, creating and managing UI components is an essential part of creating immersive and interactive experiences for players. As a developer, you have full control over these components and can harness the power of HTML, CSS, and JavaScript to craft engaging user interfaces.
+
+This section will guide you through various aspects of UI development in Verza, such as:
+
+- Creating and customizing UI elements
+- Configuring and managing UI properties
+- Handling UI events
+- Managing UI state
+
+Get ready to explore the exciting possibilities of UI development in Verza and bring your vision to life!
+
+## Managing UI Components
+
+Each client script comes with a built-in UI component that is hidden by default. You have full control over these components, leveraging the power of HTML, CSS, and JavaScript to create engaging and interactive user interfaces for your players.
+
+To make your UI component visible, you can use the [`engine.ui.show`](/sdk/methods/ui/show) method. Additionally, you can customize the `size`, `position`, and `zIndex` of your UI component with the [`engine.ui.setSize`](/sdk/methods/ui/setSize) method, allowing you to organize and layer multiple UI elements from different scripts as needed.
+
+In the following subsections, we'll explore how to respond to events in your UI components, enabling you to create truly immersive experiences.
+
+## Managing UI Properties
+
+With Verza, you can easily configure and manage the properties of your UI components. This includes adjusting the size, position, zIndex, and visibility of the components to create a seamless and organized user experience.
+
+Here are some useful methods for configuring and managing UI properties:
+
+| Method                                         | Description                                              |
+| ---------------------------------------------- | -------------------------------------------------------- |
+| [`engine.ui.show`](/sdk/methods/ui/show)       | Makes the UI component visible.                          |
+| [`engine.ui.hide`](/sdk/methods/ui/hide)       | Hides the UI component.                                  |
+| [`engine.ui.setSize`](/sdk/methods/ui/setSize) | Sets the size, position, and zIndex of the UI component. |
+
+#### Example:
+
+```js
+engine.ui.setSize({
+  width: '50%',
+  height: '50%',
+  left: '25%',
+  top: '25%',
+  zIndex: 10,
+});
+```
+
+In this example, we set the size of the UI component to `50%` of the canvas container's `width` and `height`, `position` it in the center of the screen, and set its `zIndex` to `10`.
+
+Throughout this section, we'll dive deeper into handling events within your UI components, allowing you to create engaging and interactive experiences for your players.
+
+## UI Components and Events
+
+Handling events in your UI components is an essential aspect of creating interactive experiences for your players. Since your UI components are built using standard HTML, CSS, and JavaScript, you can listen for and handle events just like you would with any other web-based project.
+
+Here's a basic example of handling a button click event:
+
+```jsx
+const MyUIComponent = () => {
+  const localPlayer = useLocalPlayer();
+
+  useEffect(() => {
+    // make the body transparent to allow to see the scene behind the UI component
+    doucment.body.style.backgroundColor = 'transparent';
+
+    // Set the size of the UI component
+    engine.ui.setSize({
+      width: '100%',
+      height: '100%',
+    });
+
+    // Show the UI component when the component is mounted
+    engine.ui.show();
+
+    return () => {
+      // Hide the UI component when the component is unmounted
+      engine.ui.hide();
+    };
+  }, []);
+
+  return (
+    <>
+      <button onClick={() => localPlayer.setFacingAngle(0)}>
+        Face to north
+      </button>
+    </>
+  );
+};
+```
+
+In this example, we create a simple React component with a button element. When the button is clicked, an event listener triggers a function that sets the local player's facing angle to `0`.
+
+As you can see, handling events in your UI components is very straightforward. You can use any of the standard event listeners available in HTML, CSS, and JavaScript to listen for and handle events in your UI components.

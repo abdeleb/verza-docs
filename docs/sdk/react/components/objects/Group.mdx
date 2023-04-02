@@ -1,0 +1,30 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+`Group` is a component that allows you to group objects together. This is useful for creating complex objects that are made up of multiple parts.
+
+### Syntax
+
+```jsx
+<Group>{children}</Group>
+```
+
+### Parameters
+
+All objects share the same base parameters from [`ComponentObjectProps`](/sdk/types/ComponentObjectProps).
+
+### Example
+
+```jsx
+<Group position={[5, 2, 5]} rotation={[0, Math.PI / 3, 0]}>
+  <Box position={[0, 1, 0]} />
+  <Box position={[0, 2, 0]} />
+  <Box position={[0, 3, 0]} />
+</Group>
+```
+
+**Available on:** <ClientTag /> <ServerTag />

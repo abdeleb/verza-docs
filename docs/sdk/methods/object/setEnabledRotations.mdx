@@ -1,0 +1,29 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+Sets which rotations are enabled for the physics object.
+
+### Syntax
+
+```js
+object.setEnabledRotations(rotations);
+```
+
+### Parameters
+
+| Name        | Type                                          | Description                                                  |
+| ----------- | --------------------------------------------- | ------------------------------------------------------------ |
+| `rotations` | `[`Boolean3Array`](/sdk/types/Boolean3Array)` | An array of booleans indicating which rotations are enabled. |
+
+### Example
+
+```js
+// Enable only the Y rotation
+object.setEnabledRotations([false, true, false]);
+```
+
+**Available on:** <ClientTag /> <ServerTag />

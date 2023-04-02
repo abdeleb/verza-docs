@@ -1,0 +1,54 @@
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+# Networking
+
+The `Networking` feature of the engine allows different parts of the script to communicate with each other by emitting and listening to events. It's possible to synchronize data, send messages, and trigger actions across the server, client, and scripts.
+
+In this section, we'll provide an overview of the `Networking` feature and explain its purpose in the script.
+
+## Events
+
+Custom events can be defined using the [`engine.network.*`](/sdk/methods/#network) methods like [`engine.network.emitToPlayers`](/sdk/methods/network/emitToPlayers), providing a flexible way to extend the functionality of the Networking feature. With custom events, developers can define their own event types, payloads, and listeners, which can be triggered and received by other parts of the script. This allows for a wide range of possibilities, from syncing player inventory and stats to triggering custom animations and effects. Custom events provide a way to tailor the Networking feature to meet the specific needs of your project and create a unique experience for players.
+
+See the full [Methods List](/sdk/methods/#network).
+
+## Emitting and Listening to Events
+
+To emit a custom event, you can use one of the `engine.*` methods listed in the previous section and specify the event name and payload. The payload can be any valid JSON data, such as a string, number, or object.
+
+Here's an example of defining, emitting, and listening to a custom event:
+
+```js
+// Define a custom event
+engine.emitToPlayers('myCustomEvent', {message: 'Hello, players!'});
+
+// Listen for the custom event and log the message
+engine.onPlayerEvent('myCustomEvent', function (data) {
+  console.log('Received message: ' + data.message);
+});
+```
+
+## Event Emitters and Receivers
+
+Based on where the event is emitted from, the event can be received by different listeners. This flexibility in communication channels allows for a wide range of possibilities in creating custom experiences for your project.
+
+Here's a table of all the possible combinations of event emitters and receivers:
+
+| Source        | Destination                 | Emitter                                                                   | Receiver                                              | Description                                    |
+| ------------- | --------------------------- | ------------------------------------------------------------------------- | ----------------------------------------------------- | ---------------------------------------------- |
+| <ClientTag /> | <ClientTag />               | [`emitToPlayers`](/sdk/methods/network/emitToPlayers)                     | [`onPlayerEvent`](/sdk/methods/network/onPlayerEvent) | Emits to all players                           |
+| <ClientTag /> | <ClientTag />               | [`emitToScripts`](/sdk/methods/network/emitToScripts)                     | [`onScriptEvent`](/sdk/methods/network/onScriptEvent) | Only emits to local scripts                    |
+| <ClientTag /> | <ClientTag />               | [`emitToPlayer`](/sdk/methods/network/emitToPlayer)                       | [`onPlayerEvent`](/sdk/methods/network/onPlayerEvent) | Emits to a specific player                     |
+| <ClientTag /> | <ServerTag />               | [`emitToServer`](/sdk/methods/network/emitToServer)                       | [`onServerEvent`](/sdk/methods/network/onPlayerEvent) | Emits to the server                            |
+| <ClientTag /> | <ClientTag />               | [`emitToPlayersWithAccess`](/sdk/methods/network/emitToPlayersWithAccess) | [`onPlayerEvent`](/sdk/methods/network/onPlayerEvent) | Emits to all players with the specified access |
+| <ClientTag /> | <ClientTag />               | [`emitToPlayersWithRoles`](/sdk/methods/network/emitToPlayersWithRoles)   | [`onPlayerEvent`](/sdk/methods/network/onPlayerEvent) | Emits to all players with the specified roles  |
+| <ServerTag /> | <ClientTag />               | [`emitToPlayers`](/sdk/methods/network/emitToPlayers)                     | [`onServerEvent`](/sdk/methods/network/onServerEvent) | Emits to all players                           |
+| <ServerTag /> | <ClientTag /> <ServerTag /> | [`emitToScripts`](/sdk/methods/network/emitToScripts)                     | [`onScriptEvent`](/sdk/methods/network/onScriptEvent) | Emits to all scripts, including client scripts |
+| <ServerTag /> | <ClientTag />               | [`emitToPlayer`](/sdk/methods/network/emitToPlayer)                       | [`onServerEvent`](/sdk/methods/network/onServerEvent) | Emits to a specific player                     |
+| <ServerTag /> | <ClientTag />               | [`emitToPlayersWithAccess`](/sdk/methods/network/emitToPlayersWithAccess) | [`onServerEvent`](/sdk/methods/network/onServerEvent) | Emits to all players with the specified access |
+| <ServerTag /> | <ClientTag />               | [`emitToPlayersWithRoles`](/sdk/methods/network/emitToPlayersWithRoles)   | [`onServerEvent`](/sdk/methods/network/onServerEvent) | Emits to all players with the specified roles  |
+
+:::warning SECURITY NOTE
+It's important to note that with this flexibility comes the responsibility to ensure that events are emitted and received securely. Developers should take care to validate the data sent with events and ensure that sensitive information is not exposed to unintended listeners.
+:::

@@ -1,0 +1,34 @@
+---
+hide_table_of_contents: true
+---
+
+import ServerTag from '@site/src/components/tags/ServerTag';
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Checks if the player has a role.
+
+Learn more on [Roles and Permissions](/concepts/roles-and-permissions).
+
+### Syntax
+
+```js
+player.hasRole(role);
+```
+
+### Returns
+
+- `boolean` - Whether the player has the role.
+
+### Parameters
+
+| Name   | Type     | Description                       |
+| ------ | -------- | --------------------------------- |
+| `role` | `string` | The role to check for the player. |
+
+### Example
+
+```js
+player.hasRole('role_2jd1TjKpCYjhFKDhw8hmTH');
+```
+
+**Available on:** <ClientTag /> <ServerTag />
