@@ -1,0 +1,29 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+Sets which translations are enabled for the physics object.
+
+### Syntax
+
+```js
+object.setEnabledTranslations(translations);
+```
+
+### Parameters
+
+| Name           | Type                                          | Description                                                     |
+| -------------- | --------------------------------------------- | --------------------------------------------------------------- |
+| `translations` | `[`Boolean3Array`](/sdk/types/Boolean3Array)` | An array of booleans indicating which translations are enabled. |
+
+### Example
+
+```js
+// Enable only the Y translation.
+object.setEnabledTranslations([false, true, false]);
+```
+
+**Available on:** <ClientTag /> <ServerTag />

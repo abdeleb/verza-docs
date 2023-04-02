@@ -70,7 +70,7 @@ serverCommands: Map<string, CommandConfigDto> = new Map();
 | [chat.sendMessageToAll](./chat/sendMessageToAll) | Sends a message to all players in the server.                                             |
 | [chat.sendMessageTo](./chat/sendMessageTo)       | Sends a message to a specific player in the server.                                       |
 
-## UI
+## User Interface (UI)
 
 ### Methods
 
@@ -107,10 +107,10 @@ serverCommands: Map<string, CommandConfigDto> = new Map();
 
 ### Methods
 
-| Method                                | Description            |
-| ------------------------------------- | ---------------------- |
-| [`register`](./commands/register)     | Registers a command.   |
-| [`unregister`](./commands/unregister) | Unregisters a command. |
+| Method                                | Description                      |
+| ------------------------------------- | -------------------------------- |
+| [`register`](./commands/register)     | Registers a command or action.   |
+| [`unregister`](./commands/unregister) | Unregisters a command or action. |
 
 ### Properties
 
@@ -201,6 +201,10 @@ serverCommands: Map<string, CommandConfigDto> = new Map();
 | [object.setCollision](./object/setCollision)                           | Set the collision type of the object.                                           |
 | [object.setCollider](./object/setCollider)                             | Set the collider type of the object.                                            |
 | [object.setMass](./object/setMass)                                     | Set the mass of the object.                                                     |
+| [`setFriction`](./object/setFriction)                                  | Sets the friction of the physics object.                                        |
+| [`setRestitution`](./object/setRestitution)                            | Sets the restitution of the physics object.                                     |
+| [`setEnabledRotations`](./object/setEnabledRotations)                  | Sets which rotations are enabled for the physics object.                        |
+| [`setEnabledTranslations`](./object/setEnabledTranslations)            | Sets which translations are enabled for the physics object.                     |
 | [object.setVisible](./object/setVisible)                               | Set whether or not the object is visible.                                       |
 | [object.setData](./object/setData)                                     | Update data for the object.                                                     |
 | [object.setProps](./object/setProps)                                   | Updates type-specific properties for an object.                                 |
@@ -253,11 +257,8 @@ serverCommands: Map<string, CommandConfigDto> = new Map();
 
 | Method                                                             | Description                                                     |
 | ------------------------------------------------------------------ | --------------------------------------------------------------- |
-| [player.hasAccess](./player/hasAccess)                             | Checks if the player has access to a certain command or action. |
 | [player.setName](./player/setName)                                 | Sets the player's name.                                         |
 | [player.setNametagColor](./player/setNametagColor)                 | Sets the player's nametag color.                                |
-| [player.addRole](./player/addRole)                                 | Adds a role to the player.                                      |
-| [player.removeRole](./player/removeRole)                           | Removes a role from the player.                                 |
 | [player.setDimension](./player/setDimension)                       | Sets the player's dimension.                                    |
 | [player.setPosition](./player/setPosition)                         | Sets the player's position.                                     |
 | [player.setRotation](./player/setRotation)                         | Sets the player's rotation.                                     |
@@ -271,6 +272,10 @@ serverCommands: Map<string, CommandConfigDto> = new Map();
 | [player.setVisible](./player/setVisible)                           | Set whether or not the player is visible.                       |
 | [player.sendSuccessNotification](./player/sendSuccessNotification) | Sends a success notification to the player.                     |
 | [player.sendErrorNotification](./player/sendErrorNotification)     | Sends an error notification to the player.                      |
+| [player.hasAccess](./player/hasAccess)                             | Checks if the player has access to a certain command or action. |
+| [player.hasRole](./player/hasRole)                                 | Checks if the player has a role.                                |
+| [player.addRole](./player/addRole)                                 | Adds a role to the player.                                      |
+| [player.removeRole](./player/removeRole)                           | Removes a role from the player.                                 |
 | [player.camera.setMode](./player/camera/setMode)                   | Sets the camera mode for the player.                            |
 | [player.camera.startTransitions](./player/camera/startTransitions) | Starts transitions for the camera.                              |
 | [player.camera.startTransition](./player/camera/startTransition)   | Starts a transition for the camera.                             |

@@ -22,6 +22,14 @@ type CreateObjectProps<T extends ObjectType> = {
 
   mass?: number;
 
+  friction?: number;
+
+  restitution?: number;
+
+  enabledRotations?: Boolean3Array;
+
+  enabledTranslations?: Boolean3Array;
+
   shadows?: boolean;
 };
 ```

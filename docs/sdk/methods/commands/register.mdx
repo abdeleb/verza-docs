@@ -5,19 +5,25 @@ hide_table_of_contents: true
 import ServerTag from '@site/src/components/tags/ServerTag';
 import ClientTag from '@site/src/components/tags/ClientTag';
 
-Registers a command.
+Registers a command or an action.
+
+In Verza, commands and actions serve different purposes. Commands are executed by players, while actions are used to check script permissions.
+
+To register an action, use the `+` prefix.
+
+Learn more on [Roles and Permissions](/concepts/roles-and-permissions).
 
 ### Syntax
 
 ```js
-engine.commands.register(command);
+engine.commands.register(commandOrAction);
 ```
 
 ### Parameters
 
-| Name      | Type                            | Description              |
-| --------- | ------------------------------- | ------------------------ |
-| `command` | [`Command`](/sdk/types/Command) | The command to register. |
+| Name              | Type                            | Description                            |
+| ----------------- | ------------------------------- | -------------------------------------- |
+| `commandOrAction` | [`Command`](/sdk/types/Command) | The command or the action to register. |
 
 ### Example
 
@@ -37,6 +43,20 @@ const command = new Command('sayhi', [
 });
 
 engine.commands.register(command);
+
+// as an action
+const action = new Command('+super_power');
+
+engine.commands.register(command);
+
+// log permissions
+console.log(
+  'sayhi',
+  engine.localPlayer.hasAccess('sayhi'),
+
+  '+super_power',
+  engine.localPlayer.hasAccess('+super_power'),
+);
 ```
 
 **Available on:** <ClientTag /> <ServerTag />

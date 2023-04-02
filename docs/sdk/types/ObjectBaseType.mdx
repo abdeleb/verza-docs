@@ -26,6 +26,14 @@ type ObjectBaseType<T extends ObjectType = ObjectType, D = unknown> = {
 
   m?: number; // mass
 
+  ff?: number; // friction
+
+  rr?: number; // restitution
+
+  er?: Boolean3Array; // enabled rotations
+
+  et?: Boolean3Array; // enabled translations
+
   po?: boolean; // permanent object
 
   ro?: boolean; // remote object

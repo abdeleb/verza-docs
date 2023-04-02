@@ -1,0 +1,61 @@
+# Physics and Collision Detection
+
+Implementing realistic physics and collision detection is an essential aspect of creating an immersive and interactive gaming experience. The Verza SDK provides built-in support for physics and collision detection to help you achieve realistic object interactions within your scripts.
+
+In this section, we will cover the following topics:
+
+- **Rigidbodies**: Learn how to add rigidbodies to objects in your world, enabling them to be affected by physics forces like gravity and interact with other objects.
+- **Colliders**: Understand how to add colliders to objects, defining their shape for the purpose of physics calculations and interactions.
+- **Raycasting**: Discover how to use raycasting to detect intersections between rays and colliders, enabling you to perform actions based on the detected collisions.
+
+By understanding and applying these concepts, you can create a wide range of realistic interactions and gameplay mechanics, enhancing the overall experience for your players
+
+## Rigidbodies
+
+Rigidbodies are used to represent objects that can be affected by physics forces like gravity and can interact with other objects in the world. By adding a rigidbody component to an object, you enable it to participate in the physics simulation.
+
+To add a rigidbody to an object, you need to set its `collision` property and configure its physics properties such as `mass`, `friction`, and `restitution`.
+
+Here's an example of how to add a rigidbody to an object:
+
+```js
+const box = engine.objects.create('box', {
+  collision: 'dynamic',
+  mass: 1,
+  friction: 0.5,
+  restitution: 0.7,
+});
+```
+
+In this example, we create a new object called `box` and set its `collision` property to `dynamic`. The `mass`, `friction`, and `restitution` properties determine how the object behaves within the physics simulation.
+
+## Colliders
+
+Colliders are used to define the shape and size of an object's collision area. By attaching a collider to an object, you allow it to detect and respond to collisions with other objects in the world. Colliders can be added to both static and dynamic objects.
+
+When creating an object, you can set the `collider` property to define the collider's shape and size. Verza SDK supports several types of colliders such as box, sphere, and capsule.
+
+Here's an example of how to add a collider to an object:
+
+```js
+const myObject = engine.objects.create('box', {
+  width: 1,
+  height: 1,
+  depth: 1,
+  collider: 'box',
+});
+```
+
+In this example, we create a new object called box and set its collider property to a box collider with a size of 1x1x1 units. The object will now be able to detect and respond to collisions with other objects that have colliders.
+
+## Raycasting
+
+Raycasting is a technique used to detect collisions or intersections along a line, usually emanating from a point in 3D space. In Verza SDK, you can use raycasting to query the environment, detect collisions, and perform various other tasks. The SDK provides three methods for raycasting: `raycastPoint`, `raycastPoints`, and `raycastScreenPoint`.
+
+| Method                                                                  | Description                                                                              |
+| ----------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| [`raycastPoint`](/sdk/methods/world/raycaster/raycastPoint)             | Casts a ray from an origin and a direction in the world and returns the hit information. |
+| [`raycastPoints`](/sdk/methods/world/raycaster/raycastPoints)           | Casts rays from two positions in the world and returns hit information.                  |
+| [`raycastScreenPoint`](/sdk/methods/world/raycaster/raycastScreenPoint) | Casts a ray from a point on the screen and returns the hit information.                  |
+
+These methods allow you to perform various tasks like querying the environment, detecting collisions, and more, using raycasting.
