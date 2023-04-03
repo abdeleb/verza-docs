@@ -1,0 +1,40 @@
+# Setup Websocket Server Script
+
+`WebsocketServer Scripts` are full-running servers that receive events from the server in real-time. They can be used to create more robust logic, such as anti-cheat measures, and provide a more reliable experience for users. These scripts are ideal for developers who need more advanced functionality and want to build custom experiences that are not possible with traditional server-side scripting.
+
+See the [different types of scripts here](/concepts/scripts).
+
+## Setup Project
+
+1. **Install Verza SDK**: Install the Verza SDK in your project:
+
+```bash
+npm install @verza/sdk
+```
+
+3. **Create a server script:** Create a file called `server.js`.
+
+To obtain your server's `Access Token`, go to its `Server Settings` and click on the `Access Token` tab.
+
+```jsx title="server.js"
+import {EngineManager} from '@verza/sdk';
+const engine = new EngineManager({
+  name: 'Websocket Server',
+
+  accessToken: 'ACCESS_TOKEN',
+});
+
+engine.connectServer();
+
+const onSynced = engine.events.on('onSynced', async () => {
+  console.log('Websocket server ready!');
+});
+```
+
+5. Start the server:
+
+```bash
+node server.js
+```
+
+With these steps, you have set up a basic `Websocket Server Script` using the Verza SDK.
