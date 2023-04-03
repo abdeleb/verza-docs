@@ -98,6 +98,14 @@ const config = {
                 label: 'Get Started',
                 to: '/welcome',
               },
+              {
+                label: 'Concepts',
+                to: '/concepts',
+              },
+              {
+                label: 'SDK Reference',
+                to: '/sdk',
+              },
             ],
           },
           {

@@ -1,0 +1,105 @@
+# Setup WebServer Script
+
+`WebServer Scripts` are lightweight server-side scripts that can receive commands and network events. They don't have to run 24/7 and work more like a serverless-like service. One of the advantages of using a server-side script is that you can secure the logic from potential bad actors and ensure the integrity of your gameplay's mechanics.
+
+See the [different types of scripts here](/concepts/scripts).
+
+To enhance your development experience and take advantage of additional features, we recommend using a framework like [Next.js](https://nextjs.org/) or [Remix](https://remix.run/).
+
+:::note
+A WebServer script always requires a client-side script to be connected to it. The client-side script is responsible for sending commands and network events to the web server-side script.
+:::
+
+## Setup Project
+
+In this section, we'll guide you through setting up a `WebServer Script` project using [Next.js](https://nextjs.org/).
+
+1. **Install Next.js**: If you haven't already, please [visit the Next.js docs](https://nextjs.org/docs/getting-started) and follow the instructions to install **Next.js**.
+
+2. **Install Verza SDK**: Install the Verza SDK in your project:
+
+```bash
+npm install @verza/sdk
+```
+
+3. **Create a client script:** In the `pages` folder, create a new file called `client.js`. This file will serve as the starting point for your game mode's client-side script.
+
+```jsx title="client.js"
+import {useEffect} from 'react';
+
+import {EngineProvider, useEngine} from '@verza/sdk/react';
+
+const ClientScript = () => {
+  return (
+    <EngineProvider
+      params={{
+        webServer: 'api/server', // specify the URL of your WebServer script
+      }}>
+      <Script />
+    </EngineProvider>
+  );
+};
+
+const Script = () => {
+  const engine = useEngine();
+
+  useEffect(() => {
+    engine.network.emitServerEvent('onRequestWelcome');
+  }, [engine]);
+
+  return null;
+};
+
+export default ClientScript;
+```
+
+4. **Create a server script:** In the `api` folder, create a new file called `server.js`. This file will serve as the starting point for your game mode's client-side script.
+
+To obtain your server's `Access Token`, go to its `Server Settings` and click on the `Access Token` tab.
+
+```jsx title="server.js"
+import {EngineManager} from '@verza/sdk';
+
+export default async function handler(req, res) {
+  // allow only POST packets
+  if (req.method !== 'POST') {
+    res.status(200).json({success: false});
+    return;
+  }
+
+  // create server
+  const engine = createWebServer(engine);
+
+  // handle request
+  const response = await engine.api.handleWebServer(req.body);
+
+  // return response
+  res.status(200).json(response);
+}
+
+export const createWebServer = () => {
+  // init verza engine
+  const engine = new EngineManager({
+    name: 'Web Server',
+
+    accessToken: 'ACCESS_TOKEN',
+  });
+
+  // event listener
+  engine.network.onPlayerEvent('onRequestWelcome', async () => {
+    engine.localPlayer.sendMessage(`Message received! Welcome to the server!`);
+  });
+
+  return engine;
+};
+```
+
+5. **Start the development server:** Run the following command to start the development server:
+
+```bash
+npm run dev
+```
+
+6. **Add the script to your server:** Add the script to your server by going to the **Scripts** tab in your **Server's Settings**. Then, enter the URL of your script (`http://localhost:3000/client`) and click on `Connect Script`.
+
+With these steps, you have set up a basic `Webserver Script` project using Next.js and the Verza SDK.
