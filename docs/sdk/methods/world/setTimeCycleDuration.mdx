@@ -1,0 +1,29 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Sets how long a day/night cycle lasts in seconds.
+
+### Syntax
+
+```js
+engine.world.setTimeCycleDuration(seconds);
+```
+
+### Parameters
+
+| Name      | Type     | Description             |
+| --------- | -------- | ----------------------- |
+| `seconds` | `number` | The duration in seconds |
+
+### Example
+
+```js
+// Set the time cycle to 45 minutes
+engine.world.setTimeMode('cycle');
+engine.world.setTime(45 * 60);
+```
+
+**Available on:** <ClientTag />

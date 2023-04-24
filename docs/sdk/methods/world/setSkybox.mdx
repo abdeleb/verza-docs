@@ -1,0 +1,34 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Sets the skybox for the world.
+
+### Syntax
+
+```js
+engine.world.setSkybox(props);
+```
+
+### Parameters
+
+| Name    | Type                                    | Description   |
+| ------- | --------------------------------------- | ------------- |
+| `props` | [`SkyboxProps`](/sdk/types/SkyboxProps) | Skybox props. |
+
+### Example
+
+```js
+engine.world.setSkybox({
+  top: 'skybox/top.png',
+  bottom: 'skybox/bottom.png',
+  left: 'skybox/left.png',
+  right: 'skybox/right.png',
+  front: 'skybox/front.png',
+  back: 'skybox/back.png',
+});
+```
+
+**Available on:** <ClientTag />

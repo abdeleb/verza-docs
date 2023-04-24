@@ -1,0 +1,27 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Sets the moon phase.
+
+### Syntax
+
+```js
+engine.world.setMoonPhase(phase);
+```
+
+### Parameters
+
+| Name    | Type                                  | Description            |
+| ------- | ------------------------------------- | ---------------------- |
+| `phase` | [`MoonPhases`](/sdk/types/MoonPhases) | The moon phase to set. |
+
+### Example
+
+```js
+engine.world.setMoonPhase('FULL_MOON');
+```
+
+**Available on:** <ClientTag />

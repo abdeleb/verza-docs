@@ -196,7 +196,7 @@ serverCommands: Map<string, CommandConfigDto> = new Map();
 | [`object.setPosition`](./object/setPosition)                             | Set the position of the object.                                                 |
 | [`object.setRotation`](./object/setRotation)                             | Set the rotation of the object.                                                 |
 | [`object.setScale`](./object/setScale)                                   | Set the scale of the object.                                                    |
-| [object.setPositionFromWorldSpace](./object/setPositionFromWorldSpace)   | Set the position of the object in world space.                                  |
+| [`object.setPositionFromWorldSpace`](./object/setPositionFromWorldSpace) | Set the position of the object in world space.                                  |
 | [`object.setRotationFromWorldSpace`](./object/setRotationFromWorldSpace) | Set the rotation of the object in world space.                                  |
 | [`object.setCollision`](./object/setCollision)                           | Set the collision type of the object.                                           |
 | [`object.setCollider`](./object/setCollider)                             | Set the collider type of the object.                                            |
@@ -304,6 +304,9 @@ serverCommands: Map<string, CommandConfigDto> = new Map();
 | Method                                                                         | Description                                                                                     |
 | ------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------- |
 | [`world.setTime`](./world/setTime)                                             | Sets the current time of day.                                                                   |
+| [`world.setTimeMode`](./world/setTimeMode)                                     | Sets the time mode.                                                                             |
+| [`world.setTimeCycleDuration`](./world/setTimeCycleDuration)                   | Sets how long a day/night cycle lasts in seconds.                                               |
+| [`world.setTimezone`](./world/setTimezone)                                     | Sets the timezone.                                                                              |
 | [`world.setEntitySelector`](./world/setEntitySelector)                         | The entity selector allows the player to select entities in the game world by clicking on them. |
 | [`world.setHemisphereLightColor`](./world/setHemisphereLightColor)             | Sets the color of the hemisphere light.                                                         |
 | [`world.setHemisphereLightGroundColor`](./world/setHemisphereLightGroundColor) | Sets the color of the ground hemisphere light.                                                  |
@@ -313,3 +316,8 @@ serverCommands: Map<string, CommandConfigDto> = new Map();
 | [`world.raycaster.raycastScreenPoint`](./world/raycaster/raycastScreenPoint)   | Casts a ray from a point on the screen and returns the hit information.                         |
 | [`world.raycaster.raycastPoint`](./world/raycaster/raycastPoint)               | Casts a ray from a origin and a direction in the world and returns the hit information.         |
 | [`world.raycaster.raycastPoints`](./world/raycaster/raycastPoints)             | Casts rays from two positions in the world and returns hit information.                         |
+| [`world.setInteriorMode`](./world/setInteriorMode)                             | Enable or disable the interior mode.                                                            |
+| [`world.setSkybox`](./world/setSkybox)                                         | Sets the current skybox.                                                                        |
+| [`world.setWeather`](./world/setWeather)                                       | Sets the current weather.                                                                       |
+| [`world.setMoonPhase`](./world/setMoonPhase)                                   | Sets the current moon phase.                                                                    |
+| [`world.setSkyManualMode`](./world/setSkyManualMode)                           | Sets whether the sky transitions are manual or automatic.                                       |
