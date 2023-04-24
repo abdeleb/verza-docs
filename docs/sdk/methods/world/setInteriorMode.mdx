@@ -1,0 +1,31 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Enable or disable the interior mode.
+
+:::tip WHEN TO USE
+Enabling the interior mode makes everything brighter, which can help you see more details or navigate through dark interiors. This can be especially useful when designing or exploring in-game spaces. Conversely, disabling the interior mode can help create a more realistic lighting environment.
+:::
+
+### Syntax
+
+```js
+engine.world.setInteriorMode(mode);
+```
+
+### Parameters
+
+| Name     | Type      | Description             |
+| -------- | --------- | ----------------------- |
+| `status` | `boolean` | The new interior status |
+
+### Example
+
+```js
+engine.world.setInteriorMode(true);
+```
+
+**Available on:** <ClientTag />

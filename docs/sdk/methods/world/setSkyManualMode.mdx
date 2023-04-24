@@ -1,0 +1,38 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Enable or disable the manual mode of the sky.
+
+:::note NOTE
+Enabling manual mode for the sky disables automatic transitions, such as night and day cycles, sunrises, and sunsets. When in manual mode, you have full control over the sky's appearance and lighting, but you will need to manually apply any changes or transitions.
+:::
+
+### Syntax
+
+```js
+engine.world.setSkyManualMode(status);
+```
+
+### Parameters
+
+| Name     | Type      | Description                                              |
+| -------- | --------- | -------------------------------------------------------- |
+| `status` | `boolean` | Whether to enable or disable the manual mode of the sky. |
+
+### Example
+
+```js
+engine.world.setSkyManualMode(true);
+
+engine.world.setGlobalLightColor('white');
+engine.world.setGlobalLightIntensity(0.5);
+
+engine.world.setHemisphereLightColor('blue');
+engine.world.setHemisphereLightGroundColor('red');
+engine.world.setHemisphereLightIntensity(1);
+```
+
+**Available on:** <ClientTag />

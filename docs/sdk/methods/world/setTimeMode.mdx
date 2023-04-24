@@ -1,0 +1,29 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Sets the time mode of the world.
+
+### Syntax
+
+```js
+engine.world.setTimeMode(mode);
+```
+
+### Parameters
+
+| Name   | Type                               | Description           |
+| ------ | ---------------------------------- | --------------------- |
+| `mode` | [`TimeMode`](./sdk/types/TimeMode) | The time mode to set. |
+
+### Example
+
+```js
+// Set the time mode to fixed and set the time to 3AM
+engine.world.setTimeMode('fixed');
+engine.world.setTime(3 * 3600);
+```
+
+**Available on:** <ClientTag />

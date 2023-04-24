@@ -1,0 +1,29 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Sets the timezone of the world.
+
+### Syntax
+
+```js
+engine.world.setTimezone(timezone);
+```
+
+### Parameters
+
+| Name       | Type                               | Description          |
+| ---------- | ---------------------------------- | -------------------- |
+| `timezone` | [`TimeMode`](./sdk/types/Timezone) | The timezone to set. |
+
+### Example
+
+```js
+// Set the world to use the timezone of New York
+engine.world.setTimeMode('timezone');
+engine.world.setTimezone('America/New_York');
+```
+
+**Available on:** <ClientTag />

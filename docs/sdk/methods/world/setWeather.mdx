@@ -1,0 +1,28 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Set the weather in the world.
+
+### Syntax
+
+```js
+engine.world.setWeather(weather);
+```
+
+### Parameters
+
+| Name      | Type                                     | Description         |
+| --------- | ---------------------------------------- | ------------------- |
+| `weather` | [`WeatherType`](./sdk/types/WeatherType) | The weather to set. |
+
+### Example
+
+```js
+// Set the weather to cloudy
+engine.world.setWeather('cloudy');
+```
+
+**Available on:** <ClientTag />
