@@ -1,9 +1,11 @@
 ```ts
 type RaycastOptions = {
-  entityTypes?: EntityType[];
+  filterEntityTypes?: EntityType[];
 
-  excludePlayers?: number[];
+  excludePlayerIds?: number[];
 
-  excludeObjects?: string[];
+  excludeObjectIds?: string[];
+
+  collidableOnly?: boolean;
 };
 ```
