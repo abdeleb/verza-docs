@@ -1,0 +1,33 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+`Octahedron` is a primitive object that creates a octahedron.
+
+### Syntax
+
+```jsx
+<Octahedron />
+```
+
+### Parameters
+
+All objects share the same base parameters from [`ComponentObjectProps`](/sdk/types/ComponentObjectProps).
+
+| Name       | Type                                                          | Description                   |
+| ---------- | ------------------------------------------------------------- | ----------------------------- |
+| `radius`   | `number`                                                      | The radius of the octahedron. |
+| `detail`   | `number`                                                      | The detail of the octahedron. |
+| `color`    | [`ColorType`](/sdk/types/ColorType)                           | The color of the box.         |
+| `material` | [`ObjectStandardMaterial`](/sdk/types/ObjectStandardMaterial) | The material of the box.      |
+
+### Example
+
+```jsx
+<Octahedron radius={1} detail={0} color="red" />
+```
+
+**Available on:** <ClientTag /> <ServerTag />

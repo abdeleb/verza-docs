@@ -1,0 +1,33 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+`Tetrahedron` is a primitive object that creates a tetrahedron.
+
+### Syntax
+
+```jsx
+<Tetrahedron />
+```
+
+### Parameters
+
+All objects share the same base parameters from [`ComponentObjectProps`](/sdk/types/ComponentObjectProps).
+
+| Name       | Type                                                          | Description                    |
+| ---------- | ------------------------------------------------------------- | ------------------------------ |
+| `radius`   | `number`                                                      | The radius of the tetrahedron. |
+| `detail`   | `number`                                                      | The detail of the tetrahedron. |
+| `color`    | [`ColorType`](/sdk/types/ColorType)                           | The color of the box.          |
+| `material` | [`ObjectStandardMaterial`](/sdk/types/ObjectStandardMaterial) | The material of the box.       |
+
+### Example
+
+```jsx
+<Tetrahedron radius={1} detail={0} color="#FF0000" />
+```
+
+**Available on:** <ClientTag /> <ServerTag />

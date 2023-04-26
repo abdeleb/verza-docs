@@ -1,0 +1,28 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Gets the current time of day in seconds.
+
+### Syntax
+
+```js
+engine.world.getTime();
+```
+
+### Returns
+
+- `Promise<boolean>` - A promise that resolves to the current time of day in seconds.
+
+### Example
+
+```js
+// set the time to 10am
+const time = await engine.world.getTime();
+
+console.log('Current time', time);
+```
+
+**Available on:** <ClientTag />

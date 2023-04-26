@@ -1,0 +1,21 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+This event is fired when all resources are ready to be used.
+
+:::note HOW TO TRIGGER
+To trigger this event you should call [`engine.requestResourcesCheck()`](/sdk/methods/engine/requestResourcesCheck).
+:::
+
+### Example
+
+```js
+engine.events.on('onResourcesReady', () => {
+  console.log;
+});
+```
+
+**Available on:** <ClientTag />
