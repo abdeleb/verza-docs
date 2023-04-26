@@ -33,7 +33,7 @@ const intersects = engine.world.raycaster.raycastPoint(
   [0, -1, 0], // dir  - ray to the ground
   10, // far - how far to cast the ray
   {
-    excludePlayers: [engine.localPlayer.id], // exclude the local player
+    excludePlayerIds: [engine.localPlayer.id], // exclude the local player
   },
 );
 

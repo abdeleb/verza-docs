@@ -1,0 +1,36 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+`Plane` is a primitive object that creates a plane.
+
+### Syntax
+
+```jsx
+<Plane />
+```
+
+### Parameters
+
+All objects share the same base parameters from [`ComponentObjectProps`](/sdk/types/ComponentObjectProps).
+
+| Name             | Type                                                          | Description                                           |
+| ---------------- | ------------------------------------------------------------- | ----------------------------------------------------- |
+| `width`          | `number`                                                      | The width of the plane.                               |
+| `height`         | `number`                                                      | The height of the plane.                              |
+| `widthSegments`  | `number`                                                      | The number of segments along the width of the plane.  |
+| `heightSegments` | `number`                                                      | The number of segments along the height of the plane. |
+| `surface`        | `boolean`                                                     | Whether the plane is a surface or not.                |
+| `color`          | [`ColorType`](/sdk/types/ColorType)                           | The color of the box.                                 |
+| `material`       | [`ObjectStandardMaterial`](/sdk/types/ObjectStandardMaterial) | The material of the box.                              |
+
+### Example
+
+```jsx
+<Plane width={1} height={1} />
+```
+
+**Available on:** <ClientTag /> <ServerTag />

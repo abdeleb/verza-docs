@@ -1,0 +1,35 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+`Capsule` is a primitive object that creates a capsule.
+
+### Syntax
+
+```jsx
+<Capsule />
+```
+
+### Parameters
+
+All objects share the same base parameters from [`ComponentObjectProps`](/sdk/types/ComponentObjectProps).
+
+| Name             | Type                                                          | Description                                       |
+| ---------------- | ------------------------------------------------------------- | ------------------------------------------------- |
+| `radius`         | `number`                                                      | The radius of the capsule.                        |
+| `length`         | `number`                                                      | The length of the capsule.                        |
+| `capSegments`    | `number`                                                      | The number of segments of the capsule's caps.     |
+| `radialSegments` | `number`                                                      | The number of segments of the capsule's cylinder. |
+| `color`          | [`ColorType`](/sdk/types/ColorType)                           | The color of the box.                             |
+| `material`       | [`ObjectStandardMaterial`](/sdk/types/ObjectStandardMaterial) | The material of the box.                          |
+
+### Example
+
+```jsx
+<Capsule radius={0.5} length={1} />
+```
+
+**Available on:** <ClientTag /> <ServerTag />

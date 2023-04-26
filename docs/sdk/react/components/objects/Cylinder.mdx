@@ -1,0 +1,39 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+`Cylinder` is a primitive object that creates a cylinder.
+
+### Syntax
+
+```jsx
+<Cylinder />
+```
+
+### Parameters
+
+All objects share the same base parameters from [`ComponentObjectProps`](/sdk/types/ComponentObjectProps).
+
+| Name             | Type                                                          | Description                                                      |
+| ---------------- | ------------------------------------------------------------- | ---------------------------------------------------------------- |
+| `radiusTop`      | `number`                                                      | The top radius of the cylinder.                                  |
+| `radiusBottom`   | `number`                                                      | The bottom radius of the cylinder.                               |
+| `height`         | `number`                                                      | The height of the cylinder.                                      |
+| `heightSegments` | `number`                                                      | The number of segments along the height of the cylinder.         |
+| `radialSegments` | `number`                                                      | The number of segments around the circumference of the cylinder. |
+| `openEnded`      | `boolean`                                                     | Whether the cylinder is open-ended or not.                       |
+| `thetaStart`     | `number`                                                      | The starting angle of the cylinder.                              |
+| `thetaLength`    | `number`                                                      | The angle of the cylinder.                                       |
+| `color`          | [`ColorType`](/sdk/types/ColorType)                           | The color of the box.                                            |
+| `material`       | [`ObjectStandardMaterial`](/sdk/types/ObjectStandardMaterial) | The material of the box.                                         |
+
+### Example
+
+```jsx
+<Cylinder radiusTop={0.5} radiusBottom={0.5} height={1} />
+```
+
+**Available on:** <ClientTag /> <ServerTag />

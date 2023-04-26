@@ -1,0 +1,38 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+`Cone` is a primitive object that creates a cone.
+
+### Syntax
+
+```jsx
+<Cone />
+```
+
+### Parameters
+
+All objects share the same base parameters from [`ComponentObjectProps`](/sdk/types/ComponentObjectProps).
+
+| Name             | Type                                                          | Description                                                         |
+| ---------------- | ------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `radius`         | `number`                                                      | The radius of the cone.                                             |
+| `height`         | `number`                                                      | The height of the cone.                                             |
+| `radialSegments` | `number`                                                      | The number of segmented faces around the circumference of the cone. |
+| `heightSegments` | `number`                                                      | The number of rows of faces along the height of the cone.           |
+| `openEnded`      | `boolean`                                                     | Whether the cone is open-ended or not.                              |
+| `thetaStart`     | `number`                                                      | The starting angle of the cone.                                     |
+| `thetaLength`    | `number`                                                      | The central angle of the cone.                                      |
+| `color`          | [`ColorType`](/sdk/types/ColorType)                           | The color of the box.                                               |
+| `material`       | [`ObjectStandardMaterial`](/sdk/types/ObjectStandardMaterial) | The material of the box.                                            |
+
+### Example
+
+```jsx
+<Cone radius={1} height={2} />
+```
+
+**Available on:** <ClientTag /> <ServerTag />

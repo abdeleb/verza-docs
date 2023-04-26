@@ -1,0 +1,27 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Checks if the resources are ready.
+
+### Syntax
+
+```js
+engine.areResourcesReady();
+```
+
+### Returns
+
+- `Promise<boolean>` - A promise that resolves to `true` if the resources are ready, `false` otherwise.
+
+### Example
+
+```js
+const areReady = await engine.areResourcesReady();
+
+conole.log('Resources are ready:', areReady);
+```
+
+**Available on:** <ClientTag />

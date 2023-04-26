@@ -1,0 +1,45 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Requests a resources check.
+
+Checks for the following resources:
+
+- Scripts
+- Objects
+
+This is useful when you want to make sure that all resources are ready before allowing the player to move.
+
+When the player connects to the server, the resources are automatically checked. However, if you add new resources while the player is connected, you will need to request a resources check.
+
+:::note
+After this method is called, the `onResourcesReady` event will be triggered when the resources are ready.
+:::
+
+### Syntax
+
+```js
+engine.requestResourcesCheck(freeze);
+```
+
+### Parameters
+
+| Name     | Type      | Description                                               |
+| -------- | --------- | --------------------------------------------------------- |
+| `freeze` | `boolean` | Freezes the player while the resources are being checked. |
+
+### Example
+
+```js
+engine.events.on('onResourcesReady', () => {
+  console.log('Resources are ready!');
+});
+
+// request check
+engine.requestResourcesCheck(false);
+```
+
+**Available on:** <ClientTag />
