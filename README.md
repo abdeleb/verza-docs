@@ -1,6 +1,10 @@
-# Verza Docs
+<p align="center">
+  <img width="150" src="https://docs.verza.io/img/logo.svg" alt="Verza">
 
-This repository contains the documentation for the Verza platform. The documentation is built with [Docusaurus](https://docusaurus.io/).
+  <p align="center">Docs for <a href="https://verza.io" target="_blank">verza.io</a> platform.</p>
+</p>
+
+The documentation is built with [Docusaurus](https://docusaurus.io/).
 
 ## Getting Started
 
