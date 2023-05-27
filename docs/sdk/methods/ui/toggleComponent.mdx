@@ -1,0 +1,27 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Toggles the visibility of a UI component.
+
+### Syntax
+
+```js
+engine.ui.toggleComponent(componentId);
+```
+
+### Parameters
+
+| Name          | Type                                            | Description                            |
+| ------------- | ----------------------------------------------- | -------------------------------------- |
+| `componentId` | [`UIComponentType`](/sdk/types/UIComponentType) | The type of the UI component to toggle |
+
+### Example
+
+```js
+engine.ui.toggleComponent('chat');
+```
+
+**Available on:** <ClientTag />

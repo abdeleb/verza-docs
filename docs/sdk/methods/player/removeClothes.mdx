@@ -1,0 +1,28 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+Removes clothes from the player.
+
+### Syntax
+
+```js
+player.removeClothes(ids);
+```
+
+### Parameters
+
+| Name  | Type       | Description                        |
+| ----- | ---------- | ---------------------------------- |
+| `ids` | `string[]` | An array of clothes IDs to remove. |
+
+### Example
+
+```js
+player.addClothes(['beach-tshirt']);
+```
+
+**Available on:** <ClientTag /> <ServerTag />

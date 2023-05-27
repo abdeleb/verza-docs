@@ -8,15 +8,16 @@ This event is triggered when a dragged item is dropped on the canvas.
 
 ### Parameters
 
-| Name   | Type                                      | Description                 |
-| ------ | ----------------------------------------- | --------------------------- |
-| `file` | [`FileTransfer`](/sdk/types/FileTransfer) | The dropped file (optional) |
+| Name    | Type                                        | Description                |
+| ------- | ------------------------------------------- | -------------------------- |
+| `event` | [`DragEvent`](/sdk/types/DragEvent)         | The drag event.            |
+| `files` | [`FileTransfer[]`](/sdk/types/FileTransfer) | The dropped files, if any. |
 
 ### Example
 
 ```js
-engine.events.on('onDrop', file => {
-  console.log('Dropped item:', file ? file : 'No file provided');
+engine.events.on('onDrop', (_, files) => {
+  console.log('Dropped item:', files?.length ? files : 'No files provided');
 });
 ```
 

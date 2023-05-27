@@ -1,0 +1,30 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Adds a toolbar item to the main toolbar.
+
+### Syntax
+
+```js
+engine.ui.addMainToolbarItem(item);
+```
+
+### Parameters
+
+| Name   | Type                                            | Description              |
+| ------ | ----------------------------------------------- | ------------------------ |
+| `item` | [`MainToolbarItem`](/sdk/types/MainToolbarItem) | The toolbar item to add. |
+
+### Example
+
+```js
+engine.ui.addMainToolbarItem({
+  name: 'Fly Mode',
+  key: 'U',
+});
+```
+
+**Available on:** <ClientTag />

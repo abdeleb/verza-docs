@@ -1,0 +1,27 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Hides a UI component.
+
+### Syntax
+
+```js
+engine.ui.hideComponent(componentId);
+```
+
+### Parameters
+
+| Name          | Type                                            | Description                           |
+| ------------- | ----------------------------------------------- | ------------------------------------- |
+| `componentId` | [`UIComponentType`](/sdk/types/UIComponentType) | The type of the UI component to hide. |
+
+### Example
+
+```js
+engine.ui.hideComponent('chat');
+```
+
+**Available on:** <ClientTag />

@@ -8,16 +8,17 @@ This event is triggered when an object is edited.
 
 ### Parameters
 
-| Name     | Type                                                      | Description                       |
-| -------- | --------------------------------------------------------- | --------------------------------- |
-| `object` | `ObjectManager`                                           | The object being edited           |
-| `type`   | [`ObjectEditActionType`](/sdk/types/ObjectEditActionType) | The type of edit action performed |
+| Name           | Type                                                      | Description                       |
+| -------------- | --------------------------------------------------------- | --------------------------------- |
+| `object`       | `ObjectManager`                                           | The object being edited           |
+| `type`         | [`ObjectEditActionType`](/sdk/types/ObjectEditActionType) | The type of edit action performed |
+| `prevTransform | [`ObjectEditTransform`](/sdk/types/ObjectEditTransform)   | The old transform of the object   |
 
 ### Example
 
 ```js
-engine.events.on('onObjectEdit', (object, type) => {
-  console.log('Object edited:', object, 'Edit action:', type);
+engine.events.on('onObjectEdit', (object, type, prevTransform) => {
+  console.log('Object edited:', object, 'Edit action:', type, prevTransform);
 });
 ```
 
