@@ -1,0 +1,27 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Removes a toolbar item from the main toolbar.
+
+### Syntax
+
+```js
+engine.ui.removeMainToolbarItem(itemId);
+```
+
+### Parameters
+
+| Name     | Type     | Description                           |
+| -------- | -------- | ------------------------------------- |
+| `itemId` | `string` | The ID of the toolbar item to remove. |
+
+### Example
+
+```js
+engine.ui.removeMainToolbarItem('my-item-id');
+```
+
+**Available on:** <ClientTag />

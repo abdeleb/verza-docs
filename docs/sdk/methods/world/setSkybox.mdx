@@ -14,13 +14,14 @@ engine.world.setSkybox(props);
 
 ### Parameters
 
-| Name    | Type                                              | Description                                  |
-| ------- | ------------------------------------------------- | -------------------------------------------- |
-| `props` | [`SkyboxProps`](/sdk/types/SkyboxProps) or `null` | Skybox props or `null` to remove the skybox. |
+| Name    | Type                                                     | Description                                  |
+| ------- | -------------------------------------------------------- | -------------------------------------------- |
+| `props` | [`SkyboxProps`](/sdk/types/SkyboxProps), `url` or `null` | Skybox props or `null` to remove the skybox. |
 
 ### Example
 
 ```js
+// method #1 Using a cubemap
 engine.world.setSkybox({
   top: 'skybox/top.png',
   bottom: 'skybox/bottom.png',
@@ -29,6 +30,25 @@ engine.world.setSkybox({
   front: 'skybox/front.png',
   back: 'skybox/back.png',
 });
+
+// method #2 | Using a cubemap
+engine.world.setSkybox({
+  px: 'skybox/px.png',
+  nx: 'skybox/nx.png',
+  py: 'skybox/py.png',
+  ny: 'skybox/ny.png',
+  pz: 'skybox/pz.png',
+  nz: 'skybox/nz.png',
+});
+
+// method #3 | using a HDR
+engine.world.setSkybox({
+  url: 'https://example.com/skybox.hdr',
+  isHdr: true,
+});
+
+// method #4 | using a PNG
+engine.world.setSkybox('https://example.com/skybox.png');
 ```
 
 **Available on:** <ClientTag />

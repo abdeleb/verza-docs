@@ -1,0 +1,28 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+Resumes an animation on the player.
+
+### Syntax
+
+```js
+player.resumeAnimation(id);
+```
+
+### Parameters
+
+| Name     | Type     | Description                       |
+| -------- | -------- | --------------------------------- |
+| `animId` | `string` | The ID of the animation to resume |
+
+### Example
+
+```js
+player.resumeAnimation('dance');
+```
+
+**Available on:** <ClientTag /> <ServerTag />

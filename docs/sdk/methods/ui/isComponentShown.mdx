@@ -1,0 +1,31 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Checks whether a UI component is shown.
+
+### Syntax
+
+```js
+engine.ui.isComponentShown(componentId);
+```
+
+### Parameters
+
+| Name          | Type                                            | Description                            |
+| ------------- | ----------------------------------------------- | -------------------------------------- |
+| `componentId` | [`UIComponentType`](/sdk/types/UIComponentType) | The type of the UI component to check. |
+
+### Returns
+
+- `Promise<boolean>` - A promise that resolves to `true` if the UI component is shown, or `false` if it is hidden.
+
+### Example
+
+```js
+engine.ui.isComponentShown('chat');
+```
+
+**Available on:** <ClientTag />

@@ -1,0 +1,33 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+Adds clothes to the player.
+
+### Syntax
+
+```js
+player.addClothes(clothes);
+```
+
+### Parameters
+
+| Name      | Type                                                | Description                       |
+| --------- | --------------------------------------------------- | --------------------------------- |
+| `clothes` | [`PlayerClotheItem[]`](/sdk/types/PlayerClotheItem) | The clothes to add to the player. |
+| `replace` | `boolean` (optional)                                | Whether to replace all clothes.   |
+
+### Example
+
+```js
+player.addClothes([
+  {
+    id: 'beach-tshirt',
+  },
+]);
+```
+
+**Available on:** <ClientTag /> <ServerTag />

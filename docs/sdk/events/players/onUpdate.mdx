@@ -1,0 +1,17 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+This event is triggered when a player's update is received.
+
+### Example
+
+```js
+engine.localPlayer.events.on('onUpdate', () => {
+  console.log('Player updated received!');
+});
+```
+
+**Available on:** <ClientTag />

@@ -1,0 +1,27 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Shows a UI component.
+
+### Syntax
+
+```js
+engine.ui.showComponent(componentId);
+```
+
+### Parameters
+
+| Name          | Type                                            | Description                           |
+| ------------- | ----------------------------------------------- | ------------------------------------- |
+| `componentId` | [`UIComponentType`](/sdk/types/UIComponentType) | The type of the UI component to show. |
+
+### Example
+
+```js
+engine.ui.showComponent('chat');
+```
+
+**Available on:** <ClientTag />

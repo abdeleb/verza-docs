@@ -1,0 +1,27 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Sets the render mode of the viewport.
+
+### Syntax
+
+```js
+engine.world.setViewportRender(mode);
+```
+
+### Parameters
+
+| Name   | Type                                          | Description                           |
+| ------ | --------------------------------------------- | ------------------------------------- |
+| `mode` | [`ViewportRender`](/sdk/types/ViewportRender) | The render mode. Default is `render`. |
+
+### Example
+
+```js
+engine.world.setViewportRender('wireframe');
+```
+
+**Available on:** <ClientTag />

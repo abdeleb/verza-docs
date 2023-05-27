@@ -1,0 +1,27 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Removes a skin mask from the engine
+
+### Syntax
+
+```js
+engine.clothes.removeSkinMask(maskId);
+```
+
+### Parameters
+
+| Name     | Type     | Description                        |
+| -------- | -------- | ---------------------------------- |
+| `maskId` | `string` | The ID of the skin mask to remove. |
+
+### Example
+
+```js
+engine.clothes.removeSkinMask('top');
+```
+
+**Available on:** <ClientTag />

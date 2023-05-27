@@ -5,7 +5,24 @@ type ObjectTexture = {
   /**
    * Asset URL or Asset ID
    */
-  source: string;
+  source?: string | null;
+
+  /**
+   * @see {@link https://threejs.org/docs/index.html#api/en/constants/Textures}
+   * @defaultValue UnsignedByteType
+   */
+  type?: TextureDataType;
+
+  /**
+   * @defaultValue `false`
+   */
+  premultiplyAlpha?: boolean;
+
+  /**
+   * @see {@link http://www.khronos.org/opengles/sdk/docs/man/xhtml/glPixelStorei.xml}
+   * @defaultValue `4`
+   */
+  unpackAlignment?: number;
 
   /**
    * @see {@link https://threejs.org/docs/#api/en/constants/Textures}
@@ -29,13 +46,13 @@ type ObjectTexture = {
    * @see {@link https://threejs.org/docs/#api/en/constants/Textures}
    * @default LinearFilter
    */
-  magFilter?: TextureFilter;
+  magFilter?: MagnificationTextureFilter;
 
   /**
    * @see {@link https://threejs.org/docs/#api/en/constants/Textures}
    * @default LinearMipmapLinearFilter
    */
-  minFilter?: TextureFilter;
+  minFilter?: MinificationTextureFilter;
 
   /**
    * @default 1
@@ -75,8 +92,8 @@ type ObjectTexture = {
 
   /**
    * @see {@link https://threejs.org/docs/#api/en/constants/Textures}
-   * @default LinearEncoding
+   * @default LinearSRGBColorSpace
    */
-  encoding?: TextureEncoding;
+  colorSpace?: ColorSpace;
 };
 ```

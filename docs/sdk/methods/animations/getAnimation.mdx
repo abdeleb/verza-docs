@@ -1,0 +1,34 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Gets an animation by id.
+
+### Syntax
+
+```js
+engine.animations.getAnimation(animId);
+```
+
+### Parameters
+
+| ----- | -------- | ------------------------------------- |
+| Name | Type | Description |
+| -------- | -------- | ---------------------------------- |
+| `animId` | `string` | The ID of the animation to retrieve. |
+
+### Returns
+
+- `Promise<AnimationInfo>` - A promise that resolves with the animation info.
+
+### Example
+
+```js
+const animInfo = await engine.animations.getAnimation('dance');
+
+console.log('Animation:', animInfo);
+```
+
+**Available on:** <ClientTag />

@@ -1,0 +1,27 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Removes a clothe item from the engine.
+
+### Syntax
+
+```js
+engine.clothes.removeClothe(animId);
+```
+
+### Parameters
+
+| Name       | Type     | Description                        |
+| ---------- | -------- | ---------------------------------- |
+| `clotheId` | `string` | The ID of the clothe to be removed |
+
+### Example
+
+```js
+engine.clothes.removeClothe('beach-tshirt');
+```
+
+**Available on:** <ClientTag />

@@ -1,0 +1,28 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+Pauses an animation on the player.
+
+### Syntax
+
+```js
+player.pauseAnimation(id);
+```
+
+### Parameters
+
+| Name     | Type     | Description                       |
+| -------- | -------- | --------------------------------- |
+| `animId` | `string` | The ID of the animation to pause. |
+
+### Example
+
+```js
+player.pauseAnimation('dance');
+```
+
+**Available on:** <ClientTag /> <ServerTag />

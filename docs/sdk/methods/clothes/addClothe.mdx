@@ -1,0 +1,32 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Adds a clothe item to the engine.
+
+### Syntax
+
+```js
+engine.clothes.addClothe(item);
+```
+
+### Parameters
+
+| Name   | Type                                  | Description                           |
+| ------ | ------------------------------------- | ------------------------------------- |
+| `item` | [`ClotheItem`](/sdk/types/ClotheItem) | The clothe item to add to the engine. |
+
+### Example
+
+```js
+engine.clothes.addClothe({
+  id: 'beach-tshirt',
+  url: 'https://example.com/beach-tshirt.glb',
+  name: 'Beach T-Shirt',
+  masks: ['top'],
+});
+```
+
+**Available on:** <ClientTag />

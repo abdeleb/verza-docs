@@ -1,0 +1,31 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+Plays an animation on the player.
+
+### Syntax
+
+```js
+player.playAnimation(id, options);
+```
+
+### Parameters
+
+| Name      | Type                                                | Description                          |
+| --------- | --------------------------------------------------- | ------------------------------------ |
+| `animId`  | `string`                                            | The ID of the animation to play.     |
+| `options` | [`AnimationOptions[]`](/sdk/types/AnimationOptions) | The animation to play on the player. |
+
+### Example
+
+```js
+player.playAnimation('dance', {
+  loop: 'repeat';
+});
+```
+
+**Available on:** <ClientTag /> <ServerTag />

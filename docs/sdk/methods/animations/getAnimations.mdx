@@ -1,0 +1,27 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Gets all animations.
+
+### Syntax
+
+```js
+engine.animations.getAnimations();
+```
+
+### Returns
+
+- `Promise<AnimationInfo[]>` - An array of [AnimationInfo](/sdk/types/AnimationInfo) objects.
+
+### Example
+
+```js
+const animsInfo = await engine.animations.getAnimations();
+
+console.log('Animations:', animsInfo);
+```
+
+**Available on:** <ClientTag />

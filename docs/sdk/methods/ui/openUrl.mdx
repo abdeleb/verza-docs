@@ -1,0 +1,31 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Opens a URL in a new tab.
+
+:::note
+The URL must be an absolute URL. Only `https://*` and `http://localhost` urls are allowed.
+:::
+
+### Syntax
+
+```js
+engine.ui.openUrl(url);
+```
+
+### Parameters
+
+| Name  | Type     | Description      |
+| ----- | -------- | ---------------- |
+| `url` | `string` | The URL to open. |
+
+### Example
+
+```js
+engine.ui.openUrl('https://www.example.com');
+```
+
+**Available on:** <ClientTag />

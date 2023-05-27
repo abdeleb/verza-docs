@@ -1,0 +1,50 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Adds a skin mask to the engine.
+
+Skin masks will be applied to the character when the user wears the corresponding clothing item specifing the mask ID.
+
+Skin masks are used to hide parts of the character's skin when wearing clothing items that don't cover the whole body.
+
+### Syntax
+
+```js
+engine.clothes.addSkinMask(mask);
+```
+
+### Parameters
+
+| Name   | Type                                      | Description                         |
+| ------ | ----------------------------------------- | ----------------------------------- |
+| `mask` | [`SkinMaskItem`](/sdk/types/SkinMaskItem) | The skin mask to add to the engine. |
+
+### Example
+
+```js
+engine.clothes.addSkinMask({
+  id: 'top',
+  url: 'https://example.com/top.png',
+  position: {
+    x: 0,
+    y: 0,
+  },
+});
+```
+
+### Mask position
+
+The mask position is relative to the character's UV. The origin is the top left corner of the character's body.
+
+The UV is `1024x1024` pixels, masks should be `512x512` pixels or `1024x1024` pixels if using the full body.
+
+If your mask uses the full body, you can omit the position or use `x: 0, y: 0`.
+
+The following image shows the character's UV and the mask position.
+
+<img src={require('./res/skin-masks.png').default} width="320" />
+
+**Available on:** <ClientTag />
