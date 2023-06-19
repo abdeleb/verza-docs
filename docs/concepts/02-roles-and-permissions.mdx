@@ -1,12 +1,12 @@
 # Roles and Permissions
 
-Verza's platform includes a roles and permissions system that can be integrated with the commands and actions to control access. Roles are used to group players based on their permissions, and permissions are used to control what actions players can perform. This allows for fine-grained control over who can use which commands and access certain features of the platform, as well as custom logics via [`player.hasAccess`](/sdk/methods/player/hasAccess) or [`player.hasRole`](/sdk/methods/player/hasRole).
+Verza's platform includes a roles and permissions system that can be integrated with the commands and actions to control access. Roles are used to group players based on their permissions, and permissions are used to control what actions players can perform. This allows for fine-grained control over who can use which commands and access certain features of the platform, as well as custom logics via [`player.hasAccess`](/sdk/managers/player/hasAccess) or [`player.hasRole`](/sdk/managers/player/hasRole).
 
 The roles and permissions system is highly customizable, allowing you to create roles and assign specific permissions to each role. This ensures that players are only able to access the features and commands that are appropriate for their level of access. Additionally, you can easily manage roles and permissions through the use of simple commands and configuration files.
 
 ## Managing Roles
 
-To manage roles, you can access the server settings in the `Verza UI` and navigate to the Roles section. From there, you can create new roles, edit existing ones, and assign roles to players. You can also assign roles to players via scripts using the [`player.addRole`](/sdk/methods/player/addRole) and [`player.removeRole`](/sdk/methods/player/removeRole) methods from a server script.
+To manage roles, you can access the server settings in the `Verza UI` and navigate to the Roles section. From there, you can create new roles, edit existing ones, and assign roles to players. You can also assign roles to players via scripts using the [`player.addRole`](/sdk/managers/player/addRole) and [`player.removeRole`](/sdk/managers/player/removeRole) methods from a server script.
 
 :::note Roles creation
 Please note that roles can only be created from the `Server Settings UI` and cannot be created via scripts at this time.
@@ -28,11 +28,11 @@ To assign a role to a command, simply click on the role dropdown next to the com
 
 ### Commands
 
-Commands are created using the [`Command`](/sdk/types/Command) class, and can be registered with the [`engine.commands.register`](/sdk/methods/commands/register) method. `Commands` are identified by a unique name, and can be executed by players by typing the name preceded by a slash (`/`) in the chat.
+Commands are created using the [`Command`](/sdk/types/Command) class, and can be registered with the [`engine.commands.register`](/sdk/managers/commands/register) method. `Commands` are identified by a unique name, and can be executed by players by typing the name preceded by a slash (`/`) in the chat.
 
 ### Actions
 
-`Actions` are not triggered by players directly, but are used to grant or restrict access to functionality based on a player's assigned roles. Actions are essentially just permissions that can be checked using the [`player.hasAccess`](/sdk/methods/player/hasAccess) method. For example, if a player has been assigned the `admin` role, which grants access to the `+kick` action, they can use the `player.hasAccess('+kick')` method to check if they have permission to kick another player.
+`Actions` are not triggered by players directly, but are used to grant or restrict access to functionality based on a player's assigned roles. Actions are essentially just permissions that can be checked using the [`player.hasAccess`](/sdk/managers/player/hasAccess) method. For example, if a player has been assigned the `admin` role, which grants access to the `+kick` action, they can use the `player.hasAccess('+kick')` method to check if they have permission to kick another player.
 
 ### Conclusion
 

@@ -1,14 +1,14 @@
 import DocCardList from '@theme/DocCardList';
 
-# Methods
+# Managers
 
-Methods in Verza's SDK provide a powerful way to interact with various world elements, control the flow of your scripts, and build complex interactions. They are used to perform actions, retrieve information, and modify the game state according to your requirements.
+Managers in Verza's SDK provide a powerful way to interact with various world elements, control the flow of your scripts, and build complex interactions. They are used to perform actions, retrieve information, and modify the game state according to your requirements.
 
-In this section, you'll find a comprehensive list of methods available in the Verza SDK, along with detailed descriptions and usage examples. Discover how to effectively utilize these methods to create engaging, interactive, and immersive experiences for your players within your scripts.
+In this section, you'll find a comprehensive list of managers available in the Verza SDK, along with detailed descriptions and usage examples. Discover how to effectively utilize these managers to create engaging, interactive, and immersive experiences for your players within your scripts.
 
 <DocCardList />
 
-## Engine
+## `Engine`
 
 ### Methods
 
@@ -24,35 +24,35 @@ In this section, you'll find a comprehensive list of methods available in the Ve
 
 ### Properties
 
-| Name                               | Type                                      | Description                                         |
-| ---------------------------------- | ----------------------------------------- | --------------------------------------------------- |
-| `engine.network`                   | `NetworkManager`                          | Manages network connections and communication.      |
-| `engine.api`                       | `ApiManager`                              | Handles Verza's requests and responses.             |
-| `engine.ui`                        | `UIManager`                               | Manages UI elements and interactions.               |
-| `engine.chat`                      | `ChatManager`                             | Handles in-game chat functionality.                 |
-| `engine.commands`                  | `CommandsManager`                         | Manages command registration and execution.         |
-| `engine.camera`                    | `CameraManager`                           | Controls camera settings and transitions.           |
-| `engine.streamer`                  | `StreamerManager`                         | Manages the streaming of objects and assets.        |
-| `engine.world`                     | `WorldManager`                            | Controls world properties and environment settings. |
-| `engine.assets`                    | `AssetsManager`                           | Manages assets loading and caching.                 |
-| `engine.events`                    | `EventsManager`                           | Engine's events manager.                            |
-| `engine.params`                    | [`EngineParams`](/sdk/types/EngineParams) | Holds engine configuration parameters.              |
-| `engine.localPlayer`               | `PlayerManager`                           | A reference to the local player object.             |
-| `engine.players`                   | `PlayersManager`                          | The manager for players.                            |
-| `engine.objects`                   | `ObjectsManager`                          | The manager for objects.                            |
-| `engine.localPlayerId`             | `number`                                  | The ID of the local player.                         |
-| `engine.connected`                 | `boolean`                                 | True if the engine is currently connected.          |
-| `engine.synced`                    | `boolean`                                 | True if the engine is currently synced.             |
-| `engine.isServer`                  | `boolean`                                 | True if the script is running on the server.        |
-| `engine.isClient`                  | `boolean`                                 | True if the script is running on the client.        |
-| `engine.chunkSize`                 | `number`                                  | The size of the chunks used for streaming.          |
-| `engine.syncPlayers`               | `boolean`                                 | Indicates if player data is being synced.           |
-| `engine.syncPlayerUpdatesPriority` | `boolean`                                 | Determines the priority of player updates syncing.  |
-| `engine.syncPlayerUpdates`         | `boolean`                                 | Indicates if player updates are being synced.       |
-| `engine.syncPlayerControls`        | `boolean`                                 | Indicates if player controls are being synced.      |
-| `engine.syncCameraPosition`        | `boolean`                                 | Indicates if camera position is being synced.       |
+| Name                               | Type                                           | Description                                         |
+| ---------------------------------- | ---------------------------------------------- | --------------------------------------------------- |
+| `engine.network`                   | [`NetworkManager`](/sdk/types/NetworkManager/) | Manages network connections and communication.      |
+| `engine.api`                       | `ApiManager`                                   | Handles Verza's requests and responses.             |
+| `engine.ui`                        | `UIManager`                                    | Manages UI elements and interactions.               |
+| `engine.chat`                      | `ChatManager`                                  | Handles in-game chat functionality.                 |
+| `engine.commands`                  | `CommandsManager`                              | Manages command registration and execution.         |
+| `engine.camera`                    | `CameraManager`                                | Controls camera settings and transitions.           |
+| `engine.streamer`                  | `StreamerManager`                              | Manages the streaming of objects and assets.        |
+| `engine.world`                     | `WorldManager`                                 | Controls world properties and environment settings. |
+| `engine.assets`                    | `AssetsManager`                                | Manages assets loading and caching.                 |
+| `engine.events`                    | `EventsManager`                                | Engine's events manager.                            |
+| `engine.params`                    | [`EngineParams`](/sdk/types/EngineParams)      | Holds engine configuration parameters.              |
+| `engine.localPlayer`               | `PlayerManager`                                | A reference to the local player object.             |
+| `engine.players`                   | `PlayersManager`                               | The manager for players.                            |
+| `engine.objects`                   | `ObjectsManager`                               | The manager for objects.                            |
+| `engine.localPlayerId`             | `number`                                       | The ID of the local player.                         |
+| `engine.connected`                 | `boolean`                                      | True if the engine is currently connected.          |
+| `engine.synced`                    | `boolean`                                      | True if the engine is currently synced.             |
+| `engine.isServer`                  | `boolean`                                      | True if the script is running on the server.        |
+| `engine.isClient`                  | `boolean`                                      | True if the script is running on the client.        |
+| `engine.chunkSize`                 | `number`                                       | The size of the chunks used for streaming.          |
+| `engine.syncPlayers`               | `boolean`                                      | Indicates if player data is being synced.           |
+| `engine.syncPlayerUpdatesPriority` | `boolean`                                      | Determines the priority of player updates syncing.  |
+| `engine.syncPlayerUpdates`         | `boolean`                                      | Indicates if player updates are being synced.       |
+| `engine.syncPlayerControls`        | `boolean`                                      | Indicates if player controls are being synced.      |
+| `engine.syncCameraPosition`        | `boolean`                                      | Indicates if camera position is being synced.       |
 
-## Assets
+## `Assets`
 
 ### Methods
 
@@ -60,7 +60,7 @@ In this section, you'll find a comprehensive list of methods available in the Ve
 | ---------------------------------- | ------------------------------------------------------------------------ |
 | [`assets.upload`](./assets/upload) | Uploads a file to Verza's servers to be used as an asset in your script. |
 
-## Audio
+## `Audio`
 
 ### Methods
 
@@ -72,7 +72,7 @@ In this section, you'll find a comprehensive list of methods available in the Ve
 | [`audio.playSound`](./audio/playSound)                     | Play a sound.                        |
 | [`audio.playSoundAtPosition`](./audio/playSoundAtPosition) | Play a sound at a specific position. |
 
-## Sound
+## `Sound`
 
 ### Methods
 
@@ -101,7 +101,7 @@ In this section, you'll find a comprehensive list of methods available in the Ve
 | `sound.id`   | `string` |             |
 | `sound.name` | `string` |             |
 
-## Animations
+## `Animations`
 
 ### Methods
 
@@ -112,7 +112,7 @@ In this section, you'll find a comprehensive list of methods available in the Ve
 | [`animations.getAnimations`](./animations/getAnimations)     | Gets all animations.           |
 | [`animations.removeAnimation`](./animations/removeAnimation) | Removes an animation by id.    |
 
-## Camera
+## `Camera`
 
 ### Properties
 
@@ -123,7 +123,7 @@ In this section, you'll find a comprehensive list of methods available in the Ve
 | `camera.rotation`   | [`Euler`](/sdk/types/Euler)           | The rotation of the camera.   |
 | `camera.quaternion` | [`Quaternion`](/sdk/types/Quaternion) | The quaternion of the camera. |
 
-## Clothes
+## `Clothes`
 
 ### Methods
 
@@ -134,7 +134,7 @@ In this section, you'll find a comprehensive list of methods available in the Ve
 | [`clothes.addSkinMask`](./clothes/addSkinMask)       | Adds a skin mask to the engine.        |
 | [`clothes.removeSkinMask`](./clothes/removeSkinMask) | Removes a skin mask from the engine.   |
 
-## Chat
+## `Chat`
 
 ### Methods
 
@@ -144,7 +144,7 @@ In this section, you'll find a comprehensive list of methods available in the Ve
 | [`chat.sendMessageToAll`](./chat/sendMessageToAll) | Sends a message to all players in the server.                                             |
 | [`chat.sendMessageTo`](./chat/sendMessageTo)       | Sends a message to a specific player in the server.                                       |
 
-## User Interface (UI)
+## `User Interface (UI)`
 
 ### Methods
 
@@ -185,7 +185,7 @@ In this section, you'll find a comprehensive list of methods available in the Ve
 | --------------- | ---------- | ------------------------------------------------------------- |
 | `ui.interfaces` | `string[]` | An array of the available interfaces available to the player. |
 
-## Input
+## `Input`
 
 ### Properties
 
@@ -195,7 +195,7 @@ In this section, you'll find a comprehensive list of methods available in the Ve
 | `input.isActiveInput` | `boolean`                                                                               | A boolean that indicates whether or not a text input field is currently active for the player. |
 | `input.activeInput`   | [`HTMLInputElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement) | The HTML input element that is currently active relative to the script.                        |
 
-## Commands
+## `Commands`
 
 ### Methods
 
@@ -211,7 +211,7 @@ In this section, you'll find a comprehensive list of methods available in the Ve
 | `commands`        | `Map<string, Command>` | The list of registered commands.                                                                   |
 | `noAccessMessage` | `string`               | The message displayed when a user tries to execute a command but doesn't have permission to do so. |
 
-## Entities
+## `Entities`
 
 ### Methods
 
@@ -235,7 +235,7 @@ In this section, you'll find a comprehensive list of methods available in the Ve
 | `entities.streamed`    | `Map<ID, EntityManager>`              | A map of entity managers for entities that are currently being streamed to the player.                     |
 | `entities.events`      | `EventsManager`                       | An instance of the `EventsManager` class used to register and manage events for the specified entity type. |
 
-## Network
+## `Network`
 
 ### Methods
 
@@ -260,7 +260,7 @@ In this section, you'll find a comprehensive list of methods available in the Ve
 | ---------------- | ----------------------------------- | --------------------------------------------------------------------------------------- |
 | `network.server` | [`ServerDto`](/sdk/types/ServerDto) | An object containing information about the server the player is currently connected to. |
 
-## Objects
+## `Objects`
 
 ### Methods
 
@@ -279,7 +279,7 @@ In this section, you'll find a comprehensive list of methods available in the Ve
 | ----------------------- | --------------- | ---------------------------------------------------------------------------------------------------------------- |
 | `objects.editingObject` | `ObjectManager` | A reference to the object manager for the object currently being edited, or `null` if no object is being edited. |
 
-## Object
+## `Object`
 
 ### Methods
 
@@ -325,28 +325,28 @@ In this section, you'll find a comprehensive list of methods available in the Ve
 
 ### Properties
 
-| Name                   | Type                                            | Description                                                                          |
-| ---------------------- | ----------------------------------------------- | ------------------------------------------------------------------------------------ |
-| `object.id`            | `string`                                        | The ID of the object.                                                                |
-| `object.objectType`    | [`ObjectType`](/sdk/types/ObjectType)           | The type of the object.                                                              |
-| `object.location`      | [`Object3D`](/sdk/types/Object3D)               | The object's position, rotation, and scale.                                          |
-| `object.position`      | [`Vector3`](/sdk/types/Vector3)                 | The object's position.                                                               |
-| `object.rotation`      | [`Quaternion`](/sdk/types/Quaternion)           | The object's rotation.                                                               |
-| `object.scale`         | [`Vector3`](/sdk/types/Vector3)                 | The object's scale.                                                                  |
-| `object.worldLocation` | [`Promise<Object3D>`](/sdk/types/Object3D)      | A promise that resolves to the world location of the object.                         |
-| `object.permanent`     | `boolean`                                       | Whether the object is permanent or not.                                              |
-| `object.remote`        | `boolean`                                       | Whether the object is remote or not.                                                 |
-| `object.parentId`      | `string`                                        | The ID of the parent object.                                                         |
-| `object.parent`        | `ObjectManager`                                 | The parent object of this object, or `null` if this object has no parent.            |
-| `object.children`      | `Set<ObjectManager>`                            | The child objects of this object, represented as a set of `ObjectManager` instances. |
-| `object.userData`      | [`ObjectUserData`](/sdk/types/ObjectUserData)   | Custom user data attached to the object.                                             |
-| `props`                | `ObjectProps`                                   | The properties of the object, based on its type.                                     |
-| `data`                 | `ObjectData`                                    | The data of the object.                                                              |
-| `collision`            | [`EntityCollision`](/sdk/types/EntityCollision) | The collision type of the object.                                                    |
-| `collider`             | [`EntityCollider`](/sdk/types/EntityCollider)   | The collider type of the object.                                                     |
-| `object.mass`          | `number`                                        | The object's mass, used in physics calculations.                                     |
+| Name                   | Type                                                    | Description                                                                          |
+| ---------------------- | ------------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| `object.id`            | `string`                                                | The ID of the object.                                                                |
+| `object.objectType`    | [`ObjectType`](/sdk/types/ObjectType)                   | The type of the object.                                                              |
+| `object.location`      | [`Object3D`](/sdk/types/Object3D)                       | The object's position, rotation, and scale.                                          |
+| `object.position`      | [`Vector3`](/sdk/types/Vector3)                         | The object's position.                                                               |
+| `object.rotation`      | [`Quaternion`](/sdk/types/Quaternion)                   | The object's rotation.                                                               |
+| `object.scale`         | [`Vector3`](/sdk/types/Vector3)                         | The object's scale.                                                                  |
+| `object.worldLocation` | [`Promise<Object3D>`](/sdk/types/Object3D)              | A promise that resolves to the world location of the object.                         |
+| `object.permanent`     | `boolean`                                               | Whether the object is permanent or not.                                              |
+| `object.remote`        | `boolean`                                               | Whether the object is remote or not.                                                 |
+| `object.parentId`      | `string`                                                | The ID of the parent object.                                                         |
+| `object.parent`        | `ObjectManager`                                         | The parent object of this object, or `null` if this object has no parent.            |
+| `object.children`      | `Set<ObjectManager>`                                    | The child objects of this object, represented as a set of `ObjectManager` instances. |
+| `object.userData`      | [`ObjectUserData`](/sdk/types/ObjectUserData)           | Custom user data attached to the object.                                             |
+| `props`                | `ObjectProps`                                           | The properties of the object, based on its type.                                     |
+| `data`                 | `ObjectData`                                            | The data of the object.                                                              |
+| `collision`            | [`EntityCollisionType`](/sdk/types/EntityCollisionType) | The collision type of the object.                                                    |
+| `collider`             | [`EntityColliderType`](/sdk/types/EntityColliderType)   | The collider type of the object.                                                     |
+| `object.mass`          | `number`                                                | The object's mass, used in physics calculations.                                     |
 
-## Player
+## `Player`
 
 ### Methods
 
@@ -408,7 +408,7 @@ In this section, you'll find a comprehensive list of methods available in the Ve
 | `player.onGround`                   | `boolean`                                     | Whether the player is currently on the ground.                             |
 | `player.voicechat.connectedPlayers` | `Set<PlayerManager>`                          | The set of players connected to the same voice chat channel as the player. |
 
-## World
+## `World`
 
 ### Methods
 
