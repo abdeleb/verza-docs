@@ -1,0 +1,11 @@
+```ts
+class AnimationsManager {
+  addAnimations(url: string): Promise<AnimationInfo[]>;
+
+  getAnimation(animId: string): Promise<AnimationInfo>;
+
+  getAnimations(): Promise<AnimationInfo[]>;
+
+  removeAnimation(animId: string): void;
+}
+```

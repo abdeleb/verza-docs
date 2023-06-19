@@ -1,0 +1,67 @@
+```ts
+class UIManager {
+  visible: boolean;
+
+  get interfaces(): Set<string>;
+
+  bind(): void;
+
+  show(): void;
+
+  hide(): void;
+
+  setProps(props: Partial<UISizeProps>): void;
+
+  addInterface(tag: string): void;
+
+  removeInterface(tag: string): void;
+
+  toggleInterface(tag: string): void;
+
+  hasInterface(tag: string): boolean;
+
+  removeAllInterfaces(): void;
+
+  isCursorShown(): boolean;
+
+  toggleCursor(): void;
+
+  showCursor(): void;
+
+  hideCursor(): void;
+
+  isComponentShown(component: UIComponentType): Promise<boolean>;
+
+  toggleComponent(component: UIComponentType): void;
+
+  showComponent(component: UIComponentType): void;
+
+  hideComponent(component: UIComponentType): void;
+
+  showIndicator(id: IndicatorId, title?: IndicatorTitle): void;
+
+  hideIndicator(id: IndicatorId): void;
+
+  addMainToolbarItem(item: MainToolbarItem): void;
+
+  removeMainToolbarItem(itemId: string): void;
+
+  addToolbar(toolbar: ToolbarElement): string;
+
+  removeToolbar(toolbarId: string): void;
+
+  isSystemMenu(): boolean;
+
+  isPlayersList(): boolean;
+
+  isServerMenu(): boolean;
+
+  isOptionsMenu(): boolean;
+
+  openUrl(url: string): void;
+
+  goToServer(serverId: string): void;
+
+  destroy(): void;
+}
+```

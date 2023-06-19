@@ -1,0 +1,26 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+Gets the player's clothes.
+
+### Syntax
+
+```js
+player.getClothes();
+```
+
+### Returns
+
+- `Promise<PlayerClotheItem[]>` - Returns a promise containing an array of [PlayerClotheItem](/sdk/types/PlayerClotheItem) objects.
+
+### Example
+
+```js
+const clothes = await player.getClothes();
+```
+
+**Available on:** <ClientTag />

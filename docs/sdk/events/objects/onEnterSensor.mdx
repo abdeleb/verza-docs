@@ -1,0 +1,27 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+This event is triggered when a player enters the sensor.
+
+:::note
+If you want to detect when a player enters any sensor, you should use [`player.events(onEnterSensor)`](/sdk/events/players/onEnterSensor) instead.
+:::
+
+### Parameters
+
+| Name     | Type                                        | Description                         |
+| -------- | ------------------------------------------- | ----------------------------------- |
+| `player` | [`PlayerManager`](/sdk/types/PlayerManager) | The player that entered the sensor. |
+
+### Example
+
+```js
+object.events.on('onEnterSensor', player => {
+  console.log('Player entered sensor', player);
+});
+```
+
+**Available on:** <ClientTag />

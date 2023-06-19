@@ -1,0 +1,17 @@
+```ts
+class PersistentStoreManager<T = any> {
+  readonly mode: StorageModeType;
+
+  readonly name: string;
+
+  readonly scope: string;
+
+  set(key: string, value: unknown): Promise<void>;
+
+  get<D = T>(key: string): Promise<D>;
+
+  getList<D = T>(filters?: StorageFilters): Promise<StorageResult<D>>;
+
+  delete(key: string): Promise<void>;
+}
+```

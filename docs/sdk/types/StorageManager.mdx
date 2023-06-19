@@ -1,0 +1,12 @@
+```ts
+class StorageManager {
+  constructor(engine: EngineManager);
+
+  getPersistentStore<T = any>(
+    name: string,
+    scope?: string,
+  ): PersistentStoreManager<T>;
+
+  getMemoryStore<T = any>(name: string, scope?: string): MemoryStoreManager<T>;
+}
+```

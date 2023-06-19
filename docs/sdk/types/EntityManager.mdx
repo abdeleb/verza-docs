@@ -1,0 +1,57 @@
+```ts
+class EntityManager<
+  T extends EntityItem = EntityItem,
+  H extends EntityHandleManager<any> | void = void,
+  Events extends EventListenersMap | void = void,
+> {
+  destroyed: boolean;
+
+  entity: T;
+
+  engine: EngineManager;
+
+  handle: H extends EntityHandleManager<any> ? H : EntityHandleManager<this>;
+
+  streamed: boolean;
+
+  events: EntityEventsManager<MergeEntityEvents<Events, EntityEventMap<this>>>;
+
+  streamer: EntityStreamManager;
+
+  chunkIndex: ChunkIndex;
+
+  get id(): T['id'];
+
+  get type(): 'object' | 'player';
+
+  get data(): T['data'];
+
+  set data(data: T['data']);
+
+  get worldPosition(): Vector3;
+
+  get location(): Object3D;
+
+  get position(): Vector3;
+
+  get rotation(): Quaternion;
+
+  get dimension(): number;
+
+  set dimension(dimension: number);
+
+  get drawDistance(): EntityDrawDistanceType;
+
+  set drawDistance(drawDistance: EntityDrawDistanceType);
+
+  updateChunkIndex(): void;
+
+  updatePosition(position: Vector3 | Vector3Array): void;
+
+  updateRotation(
+    rotation: Quaternion | Euler | QuaternionArray | EulerArray,
+  ): void;
+
+  restoreData(): void;
+}
+```

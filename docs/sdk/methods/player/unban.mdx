@@ -1,0 +1,26 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+Unbans the player.
+
+### Syntax
+
+```js
+player.unban();
+```
+
+### Returns
+
+- `Promise<void>` - Resolves when the player has been unbanned.
+
+### Example
+
+```js
+await player.unban();
+```
+
+**Available on:** <ClientTag /> <ServerTag />

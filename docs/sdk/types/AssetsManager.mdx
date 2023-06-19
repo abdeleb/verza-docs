@@ -1,0 +1,9 @@
+```ts
+class AssetsManager {
+  get assetsUrl(): string;
+
+  upload(file: FileTransfer, options?: AssetTransformOptions): Promise<string>;
+
+  formatUrl(url: string): string;
+}
+```

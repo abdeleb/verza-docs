@@ -60,6 +60,47 @@ In this section, you'll find a comprehensive list of methods available in the Ve
 | ---------------------------------- | ------------------------------------------------------------------------ |
 | [`assets.upload`](./assets/upload) | Uploads a file to Verza's servers to be used as an asset in your script. |
 
+## Audio
+
+### Methods
+
+| Method                                                     | Description                          |
+| ---------------------------------------------------------- | ------------------------------------ |
+| [`audio.addSound`](./audio/addSound)                       | Add a sound to the engine.           |
+| [`audio.removeSound`](./audio/removeSound)                 | Remove a sound from the engine.      |
+| [`audio.createSound`](./audio/createSound)                 | Create a sound.                      |
+| [`audio.playSound`](./audio/playSound)                     | Play a sound.                        |
+| [`audio.playSoundAtPosition`](./audio/playSoundAtPosition) | Play a sound at a specific position. |
+
+## Sound
+
+### Methods
+
+| Method                                               | Description                     |
+| ---------------------------------------------------- | ------------------------------- |
+| [`sound.play`](./sound/play)                         | Play the sound.                 |
+| [`sound.pause`](./sound/pause)                       | Pause the sound.                |
+| [`sound.resume`](./sound/resume)                     | Resume the sound.               |
+| [`sound.stop`](./sound/stop)                         | Stop the sound.                 |
+| [`sound.setVolume`](./sound/setVolume)               | Set the sound volume.           |
+| [`sound.setPlaybackRate`](./sound/setPlaybackRate)   | Set the sound playback rate.    |
+| [`sound.setLoop`](./sound/setLoop)                   | Set the sound loop.             |
+| [`sound.setLoopStart`](./sound/setLoopStart)         | Set the sound loop start.       |
+| [`sound.setLoopEnd`](./sound/setLoopEnd)             | Set the sound loop end.         |
+| [`sound.setPosition`](./sound/setPosition)           | Set the sound position.         |
+| [`sound.setMinDistance`](./sound/setMinDistance)     | Set the sound minimum distance. |
+| [`sound.setMaxDistance`](./sound/setMaxDistance)     | Set the sound maximum distance. |
+| [`sound.setRolloffFactor`](./sound/setRolloffFactor) | Set the sound rolloff factor.   |
+| [`sound.setOptions`](./sound/setOptions)             | Set the sound options.          |
+| [`sound.destroy`](./sound/destroy)                   | Destroy the sound.              |
+
+### Properties
+
+| Name         | Type     | Description |
+| ------------ | -------- | ----------- |
+| `sound.id`   | `string` |             |
+| `sound.name` | `string` |             |
+
 ## Animations
 
 ### Methods
@@ -130,21 +171,29 @@ In this section, you'll find a comprehensive list of methods available in the Ve
 | [`ui.openUrl`](./ui/openUrl)                         | Opens a URL in a new tab.                                     |
 | [`ui.goToServer`](./ui/goToServer)                   | Goes to a server.                                             |
 | [`ui.isSystemMenu`](./ui/isSystemMenu)               | Checks whether the current interface is any **System Menu**.  |
+| [`ui.isPlayersList`](./ui/isPlayersList)             | Checks whether the current interface is the **Players List**. |
 | [`ui.isOptionsMenu`](./ui/isOptionsMenu)             | Checks whether the current interface is the **Options Menu**. |
 | [`ui.isServerMenu`](./ui/isServerMenu)               | Checks whether the current interface is the **Server Menu**.  |
-| [`isComponentShown`](./ui/isComponentShown)          | Checks whether a UI component is shown.                       |
-| [`toggleComponent`](./ui/toggleComponent)            | Toggles the visibility of a UI component.                     |
-| [`showComponent`](./ui/showComponent)                | Shows a UI component.                                         |
-| [`hideComponent`](./ui/hideComponent)                | Hides a UI component.                                         |
+| [`ui.isComponentShown`](./ui/isComponentShown)       | Checks whether a UI component is shown.                       |
+| [`ui.toggleComponent`](./ui/toggleComponent)         | Toggles the visibility of a UI component.                     |
+| [`ui.showComponent`](./ui/showComponent)             | Shows a UI component.                                         |
+| [`ui.hideComponent`](./ui/hideComponent)             | Hides a UI component.                                         |
 
 ### Properties
 
-| Name            | Type                                                                                    | Description                                                                                    |
-| --------------- | --------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `interfaces`    | `string[]`                                                                              | An array of the available interfaces available to the player.                                  |
-| `cursorLock`    | `boolean`                                                                               | A boolean that indicates whether or not the cursor is locked to the game window.               |
-| `isActiveInput` | `boolean`                                                                               | A boolean that indicates whether or not a text input field is currently active for the player. |
-| `activeInput`   | [`HTMLInputElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement) | The HTML input element that is currently active relative to the script.                        |
+| Name            | Type       | Description                                                   |
+| --------------- | ---------- | ------------------------------------------------------------- |
+| `ui.interfaces` | `string[]` | An array of the available interfaces available to the player. |
+
+## Input
+
+### Properties
+
+| Name                  | Type                                                                                    | Description                                                                                    |
+| --------------------- | --------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `input.cursorLock`    | `boolean`                                                                               | A boolean that indicates whether or not the cursor is locked to the game window.               |
+| `input.isActiveInput` | `boolean`                                                                               | A boolean that indicates whether or not a text input field is currently active for the player. |
+| `input.activeInput`   | [`HTMLInputElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement) | The HTML input element that is currently active relative to the script.                        |
 
 ## Commands
 
@@ -264,6 +313,8 @@ In this section, you'll find a comprehensive list of methods available in the Ve
 | [`object.startTransitions`](./object/startTransitions)                   | Starts all active transitions for the object.                                   |
 | [`object.startTransition`](./object/startTransition)                     | Starts a transition for the object.                                             |
 | [`object.clearTransitions`](./object/clearTransitions)                   | Clears all active transitions for the object.                                   |
+| [`object.setProximityAction`](./object/setProximityAction)               | Sets the proximity action for the object.                                       |
+| [`object.removeProximityAction`](./object/removeProximityAction)         | Removes the proximity action for the object.                                    |
 | [`object.toData`](./object/toData)                                       | Converts an object to its corresponding data representation.                    |
 | [`object.clone`](./object/clone)                                         | Creates a new object by cloning an existing object with the same properties.    |
 | [`object.sync`](./object/sync)                                           | Synchronizes an object's properties between the server and the client.          |
@@ -276,6 +327,7 @@ In this section, you'll find a comprehensive list of methods available in the Ve
 
 | Name                   | Type                                            | Description                                                                          |
 | ---------------------- | ----------------------------------------------- | ------------------------------------------------------------------------------------ |
+| `object.id`            | `string`                                        | The ID of the object.                                                                |
 | `object.objectType`    | [`ObjectType`](/sdk/types/ObjectType)           | The type of the object.                                                              |
 | `object.location`      | [`Object3D`](/sdk/types/Object3D)               | The object's position, rotation, and scale.                                          |
 | `object.position`      | [`Vector3`](/sdk/types/Vector3)                 | The object's position.                                                               |
@@ -320,6 +372,7 @@ In this section, you'll find a comprehensive list of methods available in the Ve
 | [`player.addRole`](./player/addRole)                                 | Adds a role to the player.                                      |
 | [`player.removeRole`](./player/removeRole)                           | Removes a role from the player.                                 |
 | [`player.addClothes`](./player/addClothes)                           | Adds clothes to the player.                                     |
+| [`player.getClothes`](./player/getClothes)                           | Gets the player's clothes.                                      |
 | [`player.removeClothes`](./player/removeClothes)                     | Removes clothes from the player.                                |
 | [`player.playAnimation`](./player/playAnimation)                     | Plays an animation on the player.                               |
 | [`player.stopAnimation`](./player/stopAnimation)                     | Stops an animation on the player.                               |
@@ -332,11 +385,17 @@ In this section, you'll find a comprehensive list of methods available in the Ve
 | [`player.camera.startTransition`](./player/camera/startTransition)   | Starts a transition for the camera.                             |
 | [`player.camera.stopTransitions`](./player/camera/stopTransitions)   | Stops transitions for the camera.                               |
 | [`player.camera.setPosition`](./player/camera/setPosition)           | Sets the position of the camera.                                |
+| [`player.ban`](./player/ban)                                         | Bans the player.                                                |
+| [`player.unban`](./player/unban)                                     | Unbans the player.                                              |
+| [`player.getBanStatus`](./player/getBanStatus)                       | Gets the player's ban status.                                   |
+| [`player.kick`](./player/kick)                                       | Kicks the player.                                               |
 
 ### Properties
 
 | Name                                | Type                                          | Description                                                                |
 | ----------------------------------- | --------------------------------------------- | -------------------------------------------------------------------------- |
+| `player.id`                         | `number`                                      | The player's ID.                                                           |
+| `player.isAdmin`                    | `boolean`                                     | Whether the player is an admin or not.                                     |
 | `player.location`                   | [`Object3D`](/sdk/types/Object3D)             | The player's position and rotation.                                        |
 | `player.position`                   | [`Vector3`](/sdk/types/Vector3)               | The player's position.                                                     |
 | `player.rotation`                   | [`Quaternion`](/sdk/types/Quaternion)         | The player's rotation.                                                     |
@@ -374,3 +433,5 @@ In this section, you'll find a comprehensive list of methods available in the Ve
 | [`world.setMoonPhase`](./world/setMoonPhase)                                   | Sets the current moon phase.                                                            |
 | [`world.setSkyManualMode`](./world/setSkyManualMode)                           | Sets whether the sky transitions are manual or automatic.                               |
 | [`world.setViewportRender`](./world/setViewportRender)                         | Sets the world viewport render mode.                                                    |
+| [`world.createProximityAction`](./world/createProximityAction)                 | Creates a proximity action.                                                             |
+| [`world.deleteProximityAction`](./world/deleteProximityAction)                 | Deletes a proximity action.                                                             |

@@ -1,0 +1,65 @@
+```ts
+class NetworkManager {
+  server: ServerDto;
+
+  serverCommands: Map<string, CommandConfigDto>;
+
+  encryptedPackets: EncryptedPacketsDto;
+
+  hasAdminRole(roles: string[]): boolean;
+
+  onServerEvent(
+    eventName: string,
+    listener: (data: NetworkEventData) => void,
+  ): (data?: NetworkEventData | undefined) => void;
+
+  onScriptEvent(
+    eventName: string,
+    listener: (data: NetworkEventData) => void,
+  ): (data?: NetworkEventData | undefined) => void;
+
+  offServerEvent(
+    eventName: string,
+    listener: (data?: NetworkEventData) => void,
+  ): void;
+
+  offScriptEvent(
+    eventName: string,
+    listener: (data?: NetworkEventData) => void,
+  ): void;
+
+  onPlayerEvent(
+    eventName: string,
+    listener: (player: PlayerManager, data?: NetworkEventData) => void,
+  ): (player: PlayerManager, data?: NetworkEventData) => void;
+
+  offPlayerEvent(
+    eventName: string,
+    listener: (player: PlayerManager, data?: NetworkEventData) => void,
+  ): void;
+
+  emitToPlayer(
+    player: PlayerManager | number,
+    event: string,
+    data?: NetworkEventData,
+  ): void;
+
+  emitToPlayers(event: string, data?: NetworkEventData): void;
+
+  emitToPlayersWithAccess(
+    event: string,
+    command: string,
+    data?: NetworkEventData,
+  ): void;
+
+  emitToPlayersWithRoles(
+    event: string,
+    roles: string[],
+    data?: NetworkEventData,
+  ): void;
+
+  emitToServer(event: string, data?: NetworkEventData): void;
+
+  emitToScripts(event: string, data?: NetworkEventData): void;
+}
+```

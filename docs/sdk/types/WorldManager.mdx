@@ -1,0 +1,43 @@
+```ts
+class WorldManager {
+  raycaster: RaycasterManager;
+
+  setInteriorMode(status: boolean): void;
+
+  setHemisphereLightColor(color: ColorType): void;
+
+  setHemisphereLightGroundColor(color: ColorType): void;
+
+  setHemisphereLightIntensity(intensity: number): void;
+
+  setGlobalLightColor(color: ColorType): void;
+
+  setGlobalLightIntensity(intensity: number): void;
+
+  setTime(seconds: number): void;
+
+  getTime(): Promise<number>;
+
+  setTimeRepresentation(hour: number, minute?: number, second?: number): void;
+
+  setTimeMode(timeMode: TimeMode): void;
+
+  setTimeCycleDuration(timeCycleDuration: number): void;
+
+  setTimezone(timezone: Timezone): void;
+
+  setWeather(weather: WeatherType): void;
+
+  setSkybox(skybox: SkyboxProps | string | null): void;
+
+  setMoonPhase(phase: MoonPhases): void;
+
+  setSkyManualMode(status: boolean): void;
+
+  setViewportRender(type: ViewportRender): void;
+
+  createProximityAction(action: ProximityAction): string;
+
+  deleteProximityAction(actionId: string): void;
+}
+```

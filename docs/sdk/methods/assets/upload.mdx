@@ -25,14 +25,15 @@ The maximum allowed file size is `100MB`.
 ### Syntax
 
 ```js
-engine.assets.upload(file);
+engine.assets.upload(file, options);
 ```
 
 ### Parameters
 
-| Name   | Type                                      | Description         |
-| ------ | ----------------------------------------- | ------------------- |
-| `file` | [`FileTransfer`](/sdk/types/FileTransfer) | The file to upload. |
+| Name      | Type                                      | Description                                   |
+| --------- | ----------------------------------------- | --------------------------------------------- |
+| `file`    | [`FileTransfer`](/sdk/types/FileTransfer) | The file to upload.                           |
+| `options` | [`AssetOptions`](/sdk/types/AssetOptions) | Additional options for the upload. (optional) |
 
 ### Returns
 
@@ -46,9 +47,16 @@ const assetId = await engine.assets.upload({
   data: arrayBuffer,
 });
 
-const object = engine.objects.create('gltf', {
-  u: assetId,
-});
+const object = engine.objects.create(
+  'gltf',
+  {
+    u: assetId,
+  },
+  {
+    optimizeGeometry: true,
+    optimizeTextures: true,
+  },
+);
 ```
 
 **Available on:** <ClientTag />

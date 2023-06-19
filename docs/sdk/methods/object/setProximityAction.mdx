@@ -1,0 +1,44 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Sets the proximity action for the object.
+
+:::note Multiple proximity actions
+If you need to create multiple proximity actions for the same object, you can use [`world.createProximityActions`](/sdk/methods/world/createProximityAction) instead and specify the `objectId`.
+:::
+
+### Syntax
+
+```js
+object.setProximityAction(action);
+```
+
+### Parameters
+
+| Name     | Type                                            | Description                  |
+| -------- | ----------------------------------------------- | ---------------------------- |
+| `action` | [`ProximityAction`](/sdk/types/ProximityAction) | The proximity action to set. |
+
+### Example
+
+```js
+// Create a proximity action
+object.setProximityAction({
+  id: 'my-id',
+  position: [3, 2, 3],
+  label: 'Nice music',
+  description: 'Play a sound',
+  key: 'KeyF',
+  distance: 3,
+});
+
+// listen for proximity action events
+object.events.on('onProximityActionTriggered', event => {
+  console.log('Proximity action triggered', action);
+});
+```
+
+**Available on:** <ClientTag />

@@ -1,0 +1,93 @@
+```ts
+class EngineManager {
+  z: Zod;
+
+  network: NetworkManager;
+
+  api: ApiManager;
+
+  storage: StorageManager;
+
+  input: InputManager;
+
+  ui: UIManager;
+
+  audio: AudioManager;
+
+  chat: ChatManager;
+
+  utils: UtilsManager;
+
+  commands: CommandsManager;
+
+  camera: CameraManager;
+
+  streamer: StreamerManager;
+
+  world: WorldManager;
+
+  clothes: ClothesManager;
+
+  animations: AnimationsManager;
+
+  assets: AssetsManager;
+
+  methodsHandler: MethodsHandlerManager;
+
+  messenger: MessengerManager<ScriptEventMap>;
+
+  eventsManager: Map<EventKey, EventsManager | EntityEventsManager>;
+
+  events: EngineEvents<EngineScriptEventMap>;
+
+  params: EngineParams;
+
+  destroyed: boolean;
+
+  get id(): string;
+
+  get name(): string;
+
+  get syncPlayers(): boolean;
+
+  get syncPlayerUpdates(): boolean;
+
+  get syncPlayerControls(): boolean;
+
+  get syncCameraPosition(): boolean;
+
+  get synced(): boolean;
+
+  get connected(): boolean;
+
+  get localPlayerId(): number;
+
+  set localPlayerId(playerId: number);
+
+  get localPlayer(): import('./entities/players/player/player.manager').default;
+
+  get players(): PlayersManager;
+
+  get objects(): ObjectsManager;
+
+  get isServer(): boolean;
+
+  get isClient(): boolean;
+
+  get chunkSize(): number;
+
+  connectServer(): void;
+
+  connectClient(): void;
+
+  restartServer(reason?: string | null): void;
+
+  setForwardMessages(status: boolean): void;
+
+  requestResourcesCheck(freeze: boolean): void;
+
+  areResourcesReady(): Promise<boolean>;
+
+  destroy(): void;
+}
+```
