@@ -10,15 +10,16 @@ Sets a value in the store.
 ### Syntax
 
 ```js
-store.set(key, value);
+store.set(key, value, ttl);
 ```
 
 ### Parameters
 
-| Name    | Type     | Description                  |
-| ------- | -------- | ---------------------------- |
-| `key`   | `string` | The key of the value to set. |
-| `value` | `any`    | The value to set.            |
+| Name    | Type     | Description                                         |
+| ------- | -------- | --------------------------------------------------- |
+| `key`   | `string` | The key of the value to set.                        |
+| `value` | `any`    | The value to set.                                   |
+| `ttl`   | `number` | The time to live in seconds. (Default: `3600 * 24`) |
 
 ### Returns
 
@@ -27,7 +28,8 @@ store.set(key, value);
 ### Example
 
 ```js
-await store.set('player1', 100);
+// Set a value in the store that expires in 60 seconds.
+await store.set('player1', 100, 60);
 ```
 
 **Available on:** <ClientTag /> <ServerTag />

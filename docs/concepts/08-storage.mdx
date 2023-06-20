@@ -1,0 +1,44 @@
+# Storage
+
+Verza provides two storage options: `Persistent Store` and `Memory Store`.
+
+The `Persistent Store` allows for long-term data storage across player sessions, while the `Memory Store` is designed for temporary or transient data within a session. Both storage options follow a key-value approach, enabling you to store and retrieve data efficiently.
+
+Let's explore the details of each storage option below.
+
+## Persistent Store
+
+The `Persistent Store` is designed for long-term storage of data that persists across player sessions. It is suitable for saving player progress, player settings, and other persistent data. The data stored in the `Persistent Store` will be available even if the server restarts or the player leaves and returns to the server.
+
+### Limits
+
+| Method                                                      | Rate Limit                               |
+| ----------------------------------------------------------- | ---------------------------------------- |
+| [`store.set`](/sdk/managers/storage/persistent/set)         | `100 + players * 10` requests per minute |
+| [`store.get`](/sdk/managers/storage/persistent/get)         | `100 + players * 10` requests per minute |
+| [`store.delete`](/sdk/managers/storage/persistent/delete)   | `100 + players * 10` requests per minute |
+| [`store.getList`](/sdk/managers/storage/persistent/getList) | `100 + players * 10` requests per minute |
+
+Rate limiting is implemented to ensure fair usage of storage operations. In some cases, rate limiting allows for short bursts of traffic, allowing a temporary increase in the number of requests within a specific timeframe.
+
+**Key Max Length:** Maximum key length for the `Persistent Store` is `64` characters.
+
+**Value Max Size:** Maximum value size for the `Persistent Store` is `4MB`.
+
+## Memory Store
+
+The `Memory Store` is designed for temporary or transient storage of data that is only needed during a player session. It is suitable for storing temporary variables, caching frequently accessed data, and other short-lived data. The data stored in the Memory Store will be lost when the server restarts or the player leaves the server.
+
+### Limits
+
+| Method                                                | Rate Limit                                 |
+| ----------------------------------------------------- | ------------------------------------------ |
+| [`store.set`](/sdk/managers/storage/memory/set)       | `1000 + players * 100` requests per minute |
+| [`store.get`](/sdk/managers/storage/memory/get)       | `1000 + players * 100` requests per minute |
+| [`store.delete`](/sdk/managers/storage/memory/delete) | `1000 + players * 100` requests per minute |
+
+Rate limiting is implemented to ensure fair usage of storage operations. In some cases, rate limiting allows for short bursts of traffic, allowing a temporary increase in the number of requests within a specific timeframe.
+
+**Key Max Length:** Maximum key length for the `Memory Store` is `64` characters.
+
+**Value Max Size:** Maximum value size for the `Memory Store` is `1K` (`1024 bytes`).
