@@ -140,32 +140,7 @@ class ObjectManager<OT extends ObjectType = ObjectType> extends EntityManager<
 
   rerender(): void;
 
-  clone(
-    withId?: string,
-  ): Promise<
-    ObjectManager<
-      | 'group'
-      | 'model'
-      | 'gltf'
-      | 'box'
-      | 'sphere'
-      | 'capsule'
-      | 'cylinder'
-      | 'circle'
-      | 'cone'
-      | 'torus'
-      | 'plane'
-      | 'tetrahedron'
-      | 'dodecahedron'
-      | 'octahedron'
-      | 'icosahedron'
-      | 'line'
-      | 'text'
-      | 'spotlight'
-      | 'pointlight'
-      | 'rectarealight'
-    >
-  >;
+  clone(withId?: string): Promise<ObjectManager<ObjectType>>;
   destroy(): void;
 
   saveVolatile(): void;

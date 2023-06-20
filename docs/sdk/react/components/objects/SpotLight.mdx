@@ -1,0 +1,43 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+`SpotLight` is a light source positioned at a point that spreads in all directions. It can be used to simulate a light bulb.
+
+### Syntax
+
+```jsx
+<SpotLight />
+```
+
+### Parameters
+
+All objects share the same base parameters from [`ComponentObjectProps`](/sdk/types/ComponentObjectProps).
+
+| Name        | Type                                | Description                |
+| ----------- | ----------------------------------- | -------------------------- |
+| `color`     | [`ColorType`](/sdk/types/ColorType) | The base color.            |
+| `intensity` | `number`                            | The light's strength.      |
+| `distance`  | `number`                            | The distance of the light. |
+| `angle`     | `number`                            | The angle of the light.    |
+| `penumbra`  | `number`                            | The penumbra of the light. |
+| `decay`     | `number`                            | The decay of the light.    |
+| `helper`    | `boolean`                           | Show a visual helper.      |
+
+### Example
+
+```jsx
+<SpotLight
+  color="#ffffff"
+  intensity={1}
+  distance={0}
+  angle={Math.PI / 4}
+  penumbra={0}
+  decay={1}
+/>
+```
+
+**Available on:** <ClientTag /> <ServerTag />

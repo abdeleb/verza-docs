@@ -2,11 +2,47 @@
 
 Implementing lighting is a crucial aspect of creating immersive and visually appealing experiences in any game. With Verza, you have full control over the lighting in your world, enabling you to create dynamic and engaging environments that captivate players and elevate the overall experience.
 
-## Lighting
+## Light Sources
 
-You can set up lighting in your world using point and spot lights. You can also customize the intensity, color, and position of each light, giving you complete control over the look and feel of your world. Additionally, Verza supports real-time lighting, which means that lights can be animated and updated dynamically in response to changes in the environment.
+You can set up lighting in your world using point lights, spot lights, and rectangular area lights. These light sources allow you to illuminate your scene and create realistic and captivating visuals.
 
+:::note Performance Tip
 It is recommended to use baked lighting wherever possible, as this can greatly improve performance and reduce the number of dynamic lights needed in a scene.
+:::
+
+### Global Illumination
+
+Verza provides a powerful global illumination system that can be controlled through the [`WorldManager`](/sdk/types/WorldManager). Global illumination enhances the realism of your scenes by simulating the indirect lighting effects that occur in the real world. It takes into account the interaction of light with surfaces and objects, resulting in more accurate and natural lighting.
+
+### Point Light
+
+A [`PointLight`](/sdk/react/components/objects/PointLight) is a light source that emits light in all directions from a single point in space. It can be used to create localized lighting effects, such as a light bulb or a torch. You can customize the intensity, color, and position of the point light to achieve the desired lighting effect in your scene.
+
+### Spot Light
+
+A [`SpotLight`](/sdk/react/components/objects/SpotLight) is a directional light source that emits light within a cone-shaped region. It can be used to simulate focused light, such as a flashlight or a spotlight on a stage. Like point lights, you have control over the intensity, color, position, and also the angle and falloff of the cone-shaped light emitted by the spot light.
+
+### Rectangular Area Light
+
+A [`RectAreaLight`](/sdk/react/components/objects/RectAreaLight) is a light source that emits light uniformly from a rectangular surface. It can be used to create soft, diffused lighting, such as the light coming through a window or a large light panel. You can adjust the intensity, color, size, and position of the rectangular area light to achieve the desired lighting effect in your scene.
+
+It is recommended to use a combination of these light sources strategically to achieve the desired lighting atmosphere and visual impact in your game.
+
+## Indoor Lighting
+
+In certain situations where a player is teleported to an interior or indoor scene, you may encounter challenges with dark interiors that are not well-lit in the day or night. To address this, Verza provides a convenient solution by enabling the [`world.setInteriorMode`](/sdk/managers/world/setInteriorMode) method.
+
+By using [`world.setInteriorMode`](/sdk/managers/world/setInteriorMode), you can automatically adjust the lighting settings for interior scenes, making them brighter and more visible to players. This feature allows you to ensure that players can easily navigate and interact with indoor environments without having to worry too much about complex lighting setups.
+
+To make use of [`world.setInteriorMode`](/sdk/managers/world/setInteriorMode), simply call the function when transitioning the player to an interior or indoor scene. Verza will handle the necessary lighting adjustments behind the scenes, providing a more consistent and visually pleasing experience.
+
+## Fog
+
+In addition to lighting, Verza provides the ability to add fog to your scenes. Fog can be used to create atmospheric effects, add depth, and enhance the mood of your environment.
+
+You can customize various properties of the fog, including density and color. By adjusting these properties, you can create effects like misty landscapes, dense foggy areas, or eerie atmospheres.
+
+The fog can be controlled through the [`WorldManager`](/sdk/types/WorldManager).
 
 ## Native Sky vs Skybox
 
@@ -17,3 +53,5 @@ The `Native Sky` is a dynamic system that can be configured to show different ti
 The `Skybox` is a pre-rendered 2D image that is used to create the sky environment.
 
 `Native Sky` is just as fast as the `Skybox` approach, with no major performance impact. Additionally, regardless of whether you use a skybox or the native sky, the environment map will use the selected sky.
+
+The sky can be controlled through the [`WorldManager`](/sdk/types/WorldManager).
