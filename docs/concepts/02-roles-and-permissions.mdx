@@ -18,13 +18,23 @@ In Verza, permissions for commands and actions are defined by the name of the co
 
 To manage permissions, you can configure them from the `Server Settings UI` by assigning them to specific roles. You can access the `Server Settings UI` by pressing the `K` key while in-game, or by navigating to the `Server Settings` section of the `Options Menu`.
 
-Once you're in the `Server Settings UI`, click on the `Commands` tab to see a list of all the available commands. For each command, you can assign a specific role that is required to access it. This means that only players with that role will be able to use the command.
+Once you're in the `Server Settings UI`, click on the `Commands & Actions` tab to see a list of all the available commands. For each command, you can assign a specific role that is required to access it. This means that only players with that role will be able to use the command.
 
 To assign a role to a command, simply click on the role dropdown next to the command and select the desired role from the list. You can assign multiple roles to a command if you want to allow multiple groups of players to access it.
 
 ## Commands vs Actions
 
-`Commands` and `Actions` are both ways to define player interactions in Verza. `Commands` are messages sent by players in the chat that trigger predefined functionality, while `Actions` are used to grant or restrict access to certain functionality.
+`Commands` and `Actions` are both ways to define player interactions in Verza. `Commands` are messages prefixed with a slash (`/`) in the chat that trigger predefined functionality, while `Actions` are used to grant or restrict access to certain functionality programmatically.
+
+For example:
+
+**Command**: `/kick player1` - Kicks `player1` from the server.
+
+**Actions**: `player.hasAccess('+miner')` - Checks if the player has access to the `+miner` action.
+
+Think of `Commands` as something that players can trigger directly, while `Actions` are used to control access to functionality based on a player's assigned roles.
+
+You can check if a player has access to a specific command or action using the [`player.hasAccess`](/sdk/managers/player/hasAccess) method.
 
 ### Commands
 
@@ -37,3 +47,43 @@ Commands are created using the [`Command`](/sdk/types/Command) class, and can be
 ### Conclusion
 
 In conclusion, commands are used to trigger predefined functionality, while actions are used to control access to functionality based on a player's assigned roles.
+
+## Special Admin Role
+
+The `Admin` role is a special role that is automatically created when you create a new server. This role is assigned to the server owner by default, and grants access to all commands and actions. This means that the server owner will be able to use all commands and actions without having to assign them to the `Admin` role.
+
+There are certain server-side actions that can be performed from the client when the player holds the `Admin` role. These actions are listed below:
+
+### Player
+
+| Action                                                     | Description                   |
+| :--------------------------------------------------------- | :---------------------------- |
+| [`player.ban`](/sdk/managers/player/ban)                   | Bans the player.              |
+| [`player.unban`](/sdk/managers/player/unban)               | Unbans the player.            |
+| [`player.getBanStatus`](/sdk/managers/player/getBanStatus) | Gets the player's ban status. |
+| [`player.kick`](/sdk/managers/player/kick)                 | Kicks the player.             |
+
+### Storage
+
+| Action                                                   | Description                                     |
+| :------------------------------------------------------- | :---------------------------------------------- |
+| [`Persistent Store`](/concepts/storage#persistent-store) | Allows the player to access a persistent store. |
+| [`Memory Store`](/concepts/storage/#memory-store)        | Allows the player to access a memory store.     |
+
+## Special Actions
+
+There are certain actions that are automatically created when you create a new server.
+
+This will help to access certain server-side actions from the client when the player has access to these actions.
+
+These actions are listed below:
+
+### Objects
+
+| Action                                                     | Action    | Description                                                                     |
+| :--------------------------------------------------------- | :-------- | :------------------------------------------------------------------------------ |
+| [`object.sync`](/sdk/managers/object/sync)                 | `+editor` | Synchronizes an object's properties between the server and the client.          |
+| [`object.save`](/sdk/managers/object/save)                 | `+editor` | Saves an object to the Verza servers, making it permanent.                      |
+| [`object.saveVolatile`](/sdk/managers/object/saveVolatile) | `+editor` | Same as `object.save` but with a delay.                                         |
+| [`object.delete`](/sdk/managers/object/delete)             | `+editor` | Destroys and deletes an object from Verza servers (only for permanent objects). |
+| [`object.destroy`](/sdk/managers/object/destroy)           | `+editor` | Destroys an object.                                                             |
