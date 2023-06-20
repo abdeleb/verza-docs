@@ -12,13 +12,15 @@ type CreateObjectProps<T extends ObjectType> = {
 
   scale?: Vector3 | Vector3Array | number;
 
-  drawDistance?: EntityDrawDistance;
+  drawDistance?: EntityDrawDistanceType | null;
 
   dimension?: number;
 
-  collision?: EntityCollision | null;
+  collision?: EntityCollisionType | null;
 
-  collider?: EntityCollider | null;
+  collider?: EntityCollisionType | null;
+
+  sensor?: boolean;
 
   mass?: number;
 
@@ -31,5 +33,7 @@ type CreateObjectProps<T extends ObjectType> = {
   enabledTranslations?: Boolean3Array;
 
   shadows?: boolean;
+
+  renderOrder?: number;
 };
 ```

@@ -1,0 +1,41 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+Enables or disables the display of translation, rotation and scaling axes while editing objects.
+
+### Syntax
+
+```js
+engine.objects.setEditAxes(axes);
+```
+
+### Parameters
+
+| Name   | Type                                          | Description                                                                                 |
+| ------ | --------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| `axes` | [`ObjectEditAxes`](/sdk/types/ObjectEditAxes) | The object's editing axes, used to manipulate its position and rotation while in edit mode. |
+
+### Example
+
+```js
+// show only translation axes
+engine.objects.setEditAxes({
+  showX: true,
+  showY: true,
+  showZ: true,
+
+  showRX: false,
+  showRY: false,
+  showRZ: false,
+
+  showSX: false,
+  showSY: false,
+  showSZ: false,
+});
+```
+
+**Available on:** <ClientTag />

@@ -1,0 +1,23 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+This event is triggered when a player leaves a sensor.
+
+### Parameters
+
+| Name     | Type                                        | Description                         |
+| -------- | ------------------------------------------- | ----------------------------------- |
+| `player` | [`PlayerManager`](/sdk/types/PlayerManager) | The player that entered the sensor. |
+
+### Example
+
+```js
+object.events.on('onLeaveSensor', player => {
+  console.log('Player left sensor', player);
+});
+```
+
+**Available on:** <ClientTag />

@@ -10,9 +10,17 @@ type ObjectEventMap<T extends ObjectType = ObjectType> = {
 
   onPointerLeave: (event: ObjectPointerEvent<T>) => void;
 
-  onTransitionEnd: (id: number | string) => void;
+  onTransitionEnd: (transitionId: number | string) => void;
 
-  onTransitionStart: (id: number | string) => void;
+  onTransitionStart: (transitionId: number | string) => void;
+
+  onProximityActionTriggered: (event: ObjectProximityActionEvent<T>) => void;
+
+  onSoundEnd: (event: ObjectSoundEvent<T>) => void;
+
+  onEnterSensor: (player: PlayerManager) => void;
+
+  onLeaveSensor: (player: PlayerManager) => void;
 };
 ```
 

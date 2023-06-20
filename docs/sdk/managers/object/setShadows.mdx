@@ -1,0 +1,28 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+Enable or disable shadows for the object.
+
+### Syntax
+
+```js
+object.setShadows(status);
+```
+
+### Parameters
+
+| Name     | Type      | Description                                                              |
+| -------- | --------- | ------------------------------------------------------------------------ |
+| `status` | `boolean` | `true` to enable shadows, `false` to disable shadows. Default is `true`. |
+
+### Example
+
+```js
+object.setShadows(false);
+```
+
+**Available on:** <ClientTag /> <ServerTag />

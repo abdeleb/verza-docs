@@ -9,13 +9,13 @@ In this section, we'll provide an overview of the `Networking` feature and expla
 
 ## Events
 
-Custom events can be defined using the [`engine.network.*`](/sdk/methods/#network) methods like [`engine.network.emitToPlayers`](/sdk/methods/network/emitToPlayers), providing a flexible way to extend the functionality of the Networking feature. With custom events, developers can define their own event types, data, and listeners, which can be triggered and received by other parts of the script. This allows for a wide range of possibilities, from syncing player inventory and stats to triggering custom animations and effects. Custom events provide a way to tailor the Networking feature to meet the specific needs of your project and create a unique experience for players.
+Custom events can be defined using the [`engine.network.*`](/sdk/managers/#networkmanager) methods like [`engine.network.emitToPlayers`](/sdk/managers/network/emitToPlayers), providing a flexible way to extend the functionality of the Networking feature. With custom events, developers can define their own event types, data, and listeners, which can be triggered and received by other parts of the script. This allows for a wide range of possibilities, from syncing player inventory and stats to triggering custom animations and effects. Custom events provide a way to tailor the Networking feature to meet the specific needs of your project and create a unique experience for players.
 
-See the full [Methods List](/sdk/methods/#network).
+See the full [Methods List](/sdk/managers/#networkmanager).
 
 ## Emitting and Listening to Events
 
-To emit a custom event, you can use one of the [`engine.network.*`](/sdk/methods/#network) methods listed in the previous section and specify the event name and data. The data can be any valid JSON data, such as a string, number, or object.
+To emit a custom event, you can use one of the [`engine.network.*`](/sdk/managers/#networkmanager) methods listed in the previous section and specify the event name and data. The data can be any valid JSON data, such as a string, number, or object.
 
 Here's an example of defining, emitting, and listening to a custom event:
 
@@ -35,19 +35,19 @@ Based on where the event is emitted from, the event can be received by different
 
 Here's a table of all the possible combinations of event emitters and receivers:
 
-| Source        | Destination                 | Emitter                                                                   | Receiver                                              | Action                                         |
-| ------------- | --------------------------- | ------------------------------------------------------------------------- | ----------------------------------------------------- | ---------------------------------------------- |
-| <ClientTag /> | <ClientTag />               | [`emitToPlayers`](/sdk/methods/network/emitToPlayers)                     | [`onPlayerEvent`](/sdk/methods/network/onPlayerEvent) | Emits to all players                           |
-| <ClientTag /> | <ClientTag />               | [`emitToScripts`](/sdk/methods/network/emitToScripts)                     | [`onScriptEvent`](/sdk/methods/network/onScriptEvent) | Only emits to local scripts                    |
-| <ClientTag /> | <ClientTag />               | [`emitToPlayer`](/sdk/methods/network/emitToPlayer)                       | [`onPlayerEvent`](/sdk/methods/network/onPlayerEvent) | Emits to a specific player                     |
-| <ClientTag /> | <ServerTag />               | [`emitToServer`](/sdk/methods/network/emitToServer)                       | [`onServerEvent`](/sdk/methods/network/onPlayerEvent) | Emits to the server                            |
-| <ClientTag /> | <ClientTag />               | [`emitToPlayersWithAccess`](/sdk/methods/network/emitToPlayersWithAccess) | [`onPlayerEvent`](/sdk/methods/network/onPlayerEvent) | Emits to all players with the specified access |
-| <ClientTag /> | <ClientTag />               | [`emitToPlayersWithRoles`](/sdk/methods/network/emitToPlayersWithRoles)   | [`onPlayerEvent`](/sdk/methods/network/onPlayerEvent) | Emits to all players with the specified roles  |
-| <ServerTag /> | <ClientTag />               | [`emitToPlayers`](/sdk/methods/network/emitToPlayers)                     | [`onServerEvent`](/sdk/methods/network/onServerEvent) | Emits to all players                           |
-| <ServerTag /> | <ClientTag /> <ServerTag /> | [`emitToScripts`](/sdk/methods/network/emitToScripts)                     | [`onScriptEvent`](/sdk/methods/network/onScriptEvent) | Emits to all scripts, including client scripts |
-| <ServerTag /> | <ClientTag />               | [`emitToPlayer`](/sdk/methods/network/emitToPlayer)                       | [`onServerEvent`](/sdk/methods/network/onServerEvent) | Emits to a specific player                     |
-| <ServerTag /> | <ClientTag />               | [`emitToPlayersWithAccess`](/sdk/methods/network/emitToPlayersWithAccess) | [`onServerEvent`](/sdk/methods/network/onServerEvent) | Emits to all players with the specified access |
-| <ServerTag /> | <ClientTag />               | [`emitToPlayersWithRoles`](/sdk/methods/network/emitToPlayersWithRoles)   | [`onServerEvent`](/sdk/methods/network/onServerEvent) | Emits to all players with the specified roles  |
+| Source        | Destination                 | Emitter                                                                    | Receiver                                               | Action                                         |
+| ------------- | --------------------------- | -------------------------------------------------------------------------- | ------------------------------------------------------ | ---------------------------------------------- |
+| <ClientTag /> | <ClientTag />               | [`emitToPlayers`](/sdk/managers/network/emitToPlayers)                     | [`onPlayerEvent`](/sdk/managers/network/onPlayerEvent) | Emits to all players                           |
+| <ClientTag /> | <ClientTag />               | [`emitToScripts`](/sdk/managers/network/emitToScripts)                     | [`onScriptEvent`](/sdk/managers/network/onScriptEvent) | Only emits to local scripts                    |
+| <ClientTag /> | <ClientTag />               | [`emitToPlayer`](/sdk/managers/network/emitToPlayer)                       | [`onPlayerEvent`](/sdk/managers/network/onPlayerEvent) | Emits to a specific player                     |
+| <ClientTag /> | <ServerTag />               | [`emitToServer`](/sdk/managers/network/emitToServer)                       | [`onServerEvent`](/sdk/managers/network/onPlayerEvent) | Emits to the server                            |
+| <ClientTag /> | <ClientTag />               | [`emitToPlayersWithAccess`](/sdk/managers/network/emitToPlayersWithAccess) | [`onPlayerEvent`](/sdk/managers/network/onPlayerEvent) | Emits to all players with the specified access |
+| <ClientTag /> | <ClientTag />               | [`emitToPlayersWithRoles`](/sdk/managers/network/emitToPlayersWithRoles)   | [`onPlayerEvent`](/sdk/managers/network/onPlayerEvent) | Emits to all players with the specified roles  |
+| <ServerTag /> | <ClientTag />               | [`emitToPlayers`](/sdk/managers/network/emitToPlayers)                     | [`onServerEvent`](/sdk/managers/network/onServerEvent) | Emits to all players                           |
+| <ServerTag /> | <ClientTag /> <ServerTag /> | [`emitToScripts`](/sdk/managers/network/emitToScripts)                     | [`onScriptEvent`](/sdk/managers/network/onScriptEvent) | Emits to all scripts, including client scripts |
+| <ServerTag /> | <ClientTag />               | [`emitToPlayer`](/sdk/managers/network/emitToPlayer)                       | [`onServerEvent`](/sdk/managers/network/onServerEvent) | Emits to a specific player                     |
+| <ServerTag /> | <ClientTag />               | [`emitToPlayersWithAccess`](/sdk/managers/network/emitToPlayersWithAccess) | [`onServerEvent`](/sdk/managers/network/onServerEvent) | Emits to all players with the specified access |
+| <ServerTag /> | <ClientTag />               | [`emitToPlayersWithRoles`](/sdk/managers/network/emitToPlayersWithRoles)   | [`onServerEvent`](/sdk/managers/network/onServerEvent) | Emits to all players with the specified roles  |
 
 :::warning SECURITY NOTE
 It's important to note that with this flexibility comes the responsibility to ensure that events are emitted and received securely. Developers should take care to validate the data sent with events and ensure that sensitive information is not exposed to unintended listeners as well as ensure that events are only emitted by authorized sources.

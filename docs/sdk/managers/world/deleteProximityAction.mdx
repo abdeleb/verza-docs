@@ -1,0 +1,27 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Deletes a proximity action.
+
+### Syntax
+
+```js
+engine.world.deleteProximityAction(actionId);
+```
+
+### Parameters
+
+| Name       | Type     | Description                     |
+| ---------- | -------- | ------------------------------- |
+| `actionId` | `string` | The id of the action to delete. |
+
+### Example
+
+```js
+engine.world.deleteProximityAction('action-id');
+```
+
+**Available on:** <ClientTag />

@@ -1,0 +1,34 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+`RectAreaLight` is a light that emits light from a rectangular plane. It is used to simulate light sources such as bright windows or strip lighting.
+
+### Syntax
+
+```jsx
+<RectAreaLight />
+```
+
+### Parameters
+
+All objects share the same base parameters from [`ComponentObjectProps`](/sdk/types/ComponentObjectProps).
+
+| Name        | Type                                | Description           |
+| ----------- | ----------------------------------- | --------------------- |
+| `color`     | [`ColorType`](/sdk/types/ColorType) | The base color.       |
+| `intensity` | `number`                            | The light's strength. |
+| `width`     | `number`                            | The light's width.    |
+| `height`    | `number`                            | The light's height.   |
+| `helper`    | `boolean`                           | Show a visual helper. |
+
+### Example
+
+```jsx
+<RectAreaLight color="#ff0000" intensity={1} width={3} height={3} />
+```
+
+**Available on:** <ClientTag /> <ServerTag />

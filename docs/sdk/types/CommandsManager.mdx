@@ -1,0 +1,15 @@
+```ts
+class CommandsManager {
+  commands: Map<string, Command<CommandParam>[]>;
+
+  noAccessMessage: string;
+
+  register(command: Command<any>): void;
+
+  unregister(command: Command<any>): void;
+
+  registerWebServerCommand(command: CommandInfo): void;
+
+  destroy(): void;
+}
+```

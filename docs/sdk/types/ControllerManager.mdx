@@ -1,0 +1,15 @@
+```ts
+type DataBase = {
+  [name: string]: unknown;
+};
+
+type ControllerEventMap<T extends DataBase> = {
+  [key in keyof T]: (value: T[key]) => void;
+};
+
+class ControllerManager<Data extends DataBase = DataBase> {
+  data: Data;
+
+  events: EventsManager<ControllerEventMap<Data>>;
+}
+```

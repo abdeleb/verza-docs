@@ -1,0 +1,28 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Gets a persistent store.
+
+### Syntax
+
+### Parameters
+
+| Name    | Type     | Description                                            |
+| ------- | -------- | ------------------------------------------------------ |
+| `name`  | `string` | The name of the persistent store.                      |
+| `scope` | `string` | The scope of the persistent store. (default: `global`) |
+
+### Returns
+
+- [`PersistentStoreManager`](/sdk/types/PersistentStoreManager) - The persistent store manager.
+
+### Example
+
+```js
+const store = usePersistentStore('scores');
+```
+
+**Available on:** <ClientTag />

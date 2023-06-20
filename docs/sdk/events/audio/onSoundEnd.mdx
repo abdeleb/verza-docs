@@ -1,0 +1,23 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+This event is triggered when a sound ends.
+
+### Parameters
+
+| Name    | Type                                  | Description                   |
+| ------- | ------------------------------------- | ----------------------------- |
+| `event` | [`SoundEvent`](/sdk/types/SoundEvent) | The event that was triggered. |
+
+### Example
+
+```js
+engine.events.on('onSoundEnd', event => {
+  console.log('Sound ended:', event);
+});
+```
+
+**Available on:** <ClientTag />

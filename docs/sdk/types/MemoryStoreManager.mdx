@@ -1,0 +1,15 @@
+```ts
+class MemoryStoreManager<T = any> {
+  readonly mode: StorageModeType;
+
+  readonly name: string;
+
+  readonly scope: string;
+
+  set(key: string, value: unknown, expiration?: number): Promise<void>;
+
+  get<D = T>(key: string): Promise<D>;
+
+  delete(key: string): Promise<void>;
+}
+```

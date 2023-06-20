@@ -1,6 +1,16 @@
 See [`CreateObjectProps`](/sdk/types/CreateObjectProps) and [`ObjectEventMap`](/sdk/types/ObjectEventMap)
 
 ```ts
-type ComponentObjectProps<T extends ObjectType> = ObjectEventMapList<T> &
-  CreateObjectProps<T>;
+export type ComponentObjectProps<T extends ObjectType = ObjectType> = Omit<
+  ObjectEventMapList<T> & CreateObjectProps<T>,
+  'type'
+> & {
+  proximityAction?: Omit<ProximityAction, 'id' | 'objectId'> | boolean;
+
+  soundName?: string;
+
+  soundOptions?: Omit<SoundOptions, 'objectId'>;
+
+  helper?: boolean;
+};
 ```

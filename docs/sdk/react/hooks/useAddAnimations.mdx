@@ -1,0 +1,33 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Adds animations to the engine.
+
+### Syntax
+
+```js
+useAddAnimations(url);
+```
+
+### Parameters
+
+| Name  | Type     | Description                           |
+| ----- | -------- | ------------------------------------- |
+| `url` | `string` | The URL of the animation file to add. |
+
+### Returns
+
+- [`AnimationInfo[]`](/sdk/types/AnimationInfo) - The added animations.
+
+### Example
+
+```js
+const anims = useAddAnimations('https://example.com/animation.glb');
+
+console.log('Animations added:', anims);
+```
+
+**Available on:** <ClientTag />

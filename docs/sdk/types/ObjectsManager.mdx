@@ -1,0 +1,49 @@
+```ts
+class ObjectsManager extends EntitiesManager<ObjectManager> {
+  editingObject: ObjectManager;
+
+  create<T extends ObjectType = ObjectType>(
+    type: T,
+    props?: CreateObjectProps<T>,
+  ): ObjectManager<ObjectType>;
+
+  update(
+    object: ObjectManager,
+    data: ObjectManager['data'],
+    sync?: boolean,
+  ): ObjectManager<ObjectType>;
+
+  ensure(id: string, data: ObjectManager['data']): ObjectManager<ObjectType>;
+
+  createFromData(data: ObjectDataProps, id?: string): ObjectManager<ObjectType>;
+
+  edit(object: ObjectManager): void;
+
+  cancelEdit(): void;
+
+  setEditSnaps(
+    position: number | null,
+    rotation: number | null,
+    scale: number | null,
+  ): void;
+
+  setEditAxes(axes: ObjectEditAxes): void;
+
+  resolve(objectId: string, forceUpdate?: boolean): Promise<ObjectManager>;
+
+  clone(
+    object: ObjectManager,
+    withId?: string,
+  ): Promise<ObjectManager<ObjectType>>;
+
+  saveVolatile(object: ObjectManager): void;
+
+  sync(object: ObjectManager): Promise<void>;
+
+  save(object: ObjectManager): Promise<void>;
+
+  delete(object: ObjectManager): Promise<void>;
+
+  destroy(entity: ObjectManager, report?: boolean): void;
+}
+```

@@ -1,0 +1,37 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+Bans the player.
+
+### Syntax
+
+```js
+player.ban(reason, duration);
+```
+
+### Returns
+
+- `Promise<PlayerBanStatus>` - The [PlayerBanStatus](/sdk/types/PlayerBanStatus) object.
+
+### Parameters
+
+| Name       | Type     | Description                                                                                 |
+| ---------- | -------- | ------------------------------------------------------------------------------------------- |
+| `reason`   | `string` | The reason for the ban.                                                                     |
+| `duration` | `number` | The duration of the ban in seconds. If not specified, the ban will be permanent. (optional) |
+
+### Example
+
+```js
+// perm ban a player
+await player.ban('Cheating');
+
+// temp ban a player for 1 hour
+await player.ban('Cheating', 3600);
+```
+
+**Available on:** <ClientTag /> <ServerTag />

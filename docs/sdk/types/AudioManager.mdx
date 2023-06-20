@@ -1,0 +1,26 @@
+```ts
+class AudioManager {
+  addSound(sound: SoundItem): Promise<boolean>;
+
+  removeSound(soundName: string): void;
+
+  createSound(
+    soundName: string,
+    options?: SoundOptions,
+    withId?: string,
+  ): SoundManager;
+
+  playSound(
+    soundName: string,
+    options?: SoundOptions,
+    withId?: string,
+  ): SoundManager;
+
+  playSoundAtPosition(
+    soundName: string,
+    position: Vector3Array | Vector3,
+    options?: SoundOptions,
+    withId?: string,
+  ): SoundManager;
+}
+```

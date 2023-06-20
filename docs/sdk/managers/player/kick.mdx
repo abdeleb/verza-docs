@@ -1,0 +1,26 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+Kicks the player.
+
+### Syntax
+
+```js
+player.kick();
+```
+
+### Returns
+
+- `Promise<void>` - A promise that resolves when the player has been kicked.
+
+### Example
+
+```js
+await player.kick();
+```
+
+**Available on:** <ClientTag /> <ServerTag />

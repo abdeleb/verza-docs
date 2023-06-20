@@ -1,0 +1,27 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Sets the fog status.
+
+### Syntax
+
+```js
+engine.world.setFogStatus(status);
+```
+
+### Parameters
+
+| Name     | Type      | Description                                   |
+| -------- | --------- | --------------------------------------------- |
+| `status` | `boolean` | `true` to enable fog, `false` to disable fog. |
+
+### Example
+
+```js
+engine.world.setFogStatus(true);
+```
+
+**Available on:** <ClientTag />

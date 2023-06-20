@@ -1,0 +1,30 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Adds a sound to the engine.
+
+### Syntax
+
+```js
+useAddSound(item);
+```
+
+### Parameters
+
+| Name   | Type        | Description                  |
+| ------ | ----------- | ---------------------------- |
+| `item` | `SoundItem` | The ID of the player to use. |
+
+### Example
+
+```js
+useAddSound({
+  soundName: 'fire',
+  url: 'https://www.example.com/fire.mp3',
+});
+```
+
+**Available on:** <ClientTag />

@@ -1,0 +1,38 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Gets a memory store manager.
+
+### Syntax
+
+```js
+engine.storage.getMemoryStore(name, scope);
+```
+
+### Parameters
+
+| Name    | Type     | Description                                        |
+| ------- | -------- | -------------------------------------------------- |
+| `name`  | `string` | The name of the memory store.                      |
+| `scope` | `string` | The scope of the memory store. (default: `global`) |
+
+### Returns
+
+- [`MemoryStoreManager`](/sdk/types/MemoryStoreManager) - The memory store manager.
+
+### Example
+
+```js
+const scores = engine.storage.getMemoryStore('scores');
+
+await scores.set('player1', 100);
+
+const player1Score = await scores.get('player1');
+
+console.log('Player 1 score:', player1Score);
+```
+
+**Available on:** <ClientTag />

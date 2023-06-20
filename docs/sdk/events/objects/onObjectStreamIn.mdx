@@ -1,0 +1,23 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+This event is triggered when an object is streamed in for the local player.
+
+### Parameters
+
+| Name     | Type                                        | Description                 |
+| -------- | ------------------------------------------- | --------------------------- |
+| `object` | [`ObjectManager`](/sdk/types/ObjectManager) | The object that streamed in |
+
+### Example
+
+```js
+object.events.on('onObjectStreamIn', object => {
+  console.log('object', object);
+});
+```
+
+**Available on:** <ClientTag />

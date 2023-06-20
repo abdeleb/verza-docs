@@ -1,0 +1,73 @@
+```ts
+class ApiManager {
+  server: ServerDto;
+
+  endpoint: string;
+
+  websocketServer: WebsocketServerManager;
+
+  webServer: WebServerManager;
+
+  accessToken: string;
+
+  get webServerEndpoint(): string;
+
+  get isWebServerAvailable(): boolean;
+
+  get isWebServer(): false;
+
+  get isWebsocketServer(): boolean;
+
+  get isServer(): boolean;
+
+  get isClient(): boolean;
+
+  get isApi(): boolean;
+
+  get network(): NetworkManager;
+
+  get encryptedPackets(): EncryptedPacketsDto;
+
+  encryptPacket(data: unknown): string;
+
+  decryptPacket(data: string): any;
+
+  handleWebServer(rawData: unknown): Promise<unknown>;
+
+  emitAction<A extends keyof ScriptEventMap>(
+    eventName: A,
+    args?: Parameters<ScriptEventMap[A]>,
+    playerId?: number,
+  ): Promise<void>;
+
+  emitActionAsync<A extends keyof ScriptEventMap>(
+    eventName: A,
+    args?: Parameters<ScriptEventMap[A]>,
+    playerId?: number,
+  ): Promise<MessengerMessage<[ReturnType<ScriptEventMap[A]>]>>;
+
+  emitActionToServer<A extends keyof ScriptEventMap>(
+    eventName: A,
+    args?: Parameters<ScriptEventMap[A]>,
+    playerId?: number,
+  ): Promise<void>;
+
+  emitActionToServerAsync<
+    A extends keyof ScriptEventMap,
+    R extends MessengerMessage<[ReturnType<ScriptEventMap[A]>]>,
+  >(
+    eventName: A,
+    args?: Parameters<ScriptEventMap[A]>,
+    playerId?: number,
+  ): Promise<R>;
+
+  emitLocalAction<A extends keyof ScriptEventMap>(
+    eventName: A,
+    args?: Parameters<ScriptEventMap[A]>,
+  ): Promise<void>;
+
+  connectWs(): void;
+
+  destroy(): void;
+}
+```

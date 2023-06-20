@@ -1,0 +1,37 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+Gets a list from the store.
+
+### Syntax
+
+```js
+store.getList(filters);
+```
+
+### Parameters
+
+| Name      | Type                                          | Description                   |
+| --------- | --------------------------------------------- | ----------------------------- |
+| `filters` | [`StorageFilters`](/sdk/types/StorageFilters) | Filters to apply to the list. |
+
+### Returns
+
+- [`Promise<StorageResult>`](/sdk/types/StorageResult) - A promise that resolves to the list.
+
+### Example
+
+```js
+const result = await store.getList({
+  sort: 'desc',
+  order: 'created_at',
+});
+
+console.log('Result:', result);
+```
+
+**Available on:** <ClientTag /> <ServerTag />

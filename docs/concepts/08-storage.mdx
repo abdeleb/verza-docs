@@ -1,0 +1,54 @@
+# Storage
+
+Verza offers two cloud-based storage options: the `Persistent Store` and the `Memory Store`. These storage solutions provide a secure and reliable way to store and retrieve data in your server.
+
+The `Persistent Store` ensures long-term data storage across player sessions, while the `Memory Store` is ideal for temporary or transient data during a session. Both options utilize a key-value approach, allowing you to efficiently manage your server data.
+
+Let's dive into the specifics of each storage option below.
+
+## Access
+
+The access to these storage options is limited to [`WebServer Script`](/concepts/scripts), [`WebsocketServer Scripts`](/concepts/scripts) or `Player` with `Admin` permissions, ensuring the security and integrity of the data.
+
+## Persistent Store
+
+The `Persistent Store` is designed for long-term storage of data that persists across player sessions. It is suitable for saving player progress, player settings, and other persistent data. The data stored in the `Persistent Store` will be available even if the server restarts or the player leaves and returns to the server.
+
+### Limits
+
+| Method                                                      | Rate Limit                               |
+| ----------------------------------------------------------- | ---------------------------------------- |
+| [`store.set`](/sdk/managers/storage/persistent/set)         | `100 + players * 10` requests per minute |
+| [`store.get`](/sdk/managers/storage/persistent/get)         | `100 + players * 10` requests per minute |
+| [`store.delete`](/sdk/managers/storage/persistent/delete)   | `100 + players * 10` requests per minute |
+| [`store.getList`](/sdk/managers/storage/persistent/getList) | `100 + players * 10` requests per minute |
+
+Rate limiting is implemented to ensure fair usage of storage operations. In some cases, rate limiting allows for short bursts of traffic, allowing a temporary increase in the number of requests within a specific timeframe.
+
+**Key Max Length:** Maximum key length for the `Persistent Store` is `64` characters.
+
+**Value Max Size:** Maximum value size for the `Persistent Store` is `4MB`.
+
+## Memory Store
+
+The `Memory Store` is designed for temporary or transient storage of data that is only needed during a player session. It is suitable for storing temporary variables, caching frequently accessed data, and other short-lived data. The data stored in the Memory Store will be lost when the server restarts or the player leaves the server.
+
+### Limits
+
+| Method                                                | Rate Limit                                 |
+| ----------------------------------------------------- | ------------------------------------------ |
+| [`store.set`](/sdk/managers/storage/memory/set)       | `1000 + players * 100` requests per minute |
+| [`store.get`](/sdk/managers/storage/memory/get)       | `1000 + players * 100` requests per minute |
+| [`store.delete`](/sdk/managers/storage/memory/delete) | `1000 + players * 100` requests per minute |
+
+Rate limiting is implemented to ensure fair usage of storage operations. In some cases, rate limiting allows for short bursts of traffic, allowing a temporary increase in the number of requests within a specific timeframe.
+
+**Key Max Length:** Maximum key length for the `Memory Store` is `64` characters.
+
+**Value Max Size:** Maximum value size for the `Memory Store` is `1K` (`1024 bytes`).
+
+## Recommendations
+
+When using our storage service, we want to ensure that you have the best experience without worrying about infrastructure management. Here are some recommendations to help you make the most of our storage capabilities:
+
+While there are no strict limits, it's a good practice to avoid storing excessively large amounts of data or frequently updating large datasets. By being mindful of data usage, you can optimize the performance of our storage service.

@@ -1,0 +1,43 @@
+---
+hide_table_of_contents: true
+---
+
+import ServerTag from '@site/src/components/tags/ServerTag';
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Creates a controller manager.
+
+### Syntax
+
+```js
+createControllerManager(props);
+```
+
+### Parameters
+
+| Name    | Type                           | Description       |
+| ------- | ------------------------------ | ----------------- |
+| `props` | `{ [name: string]: unknown; }` | Controller props. |
+
+### Returns
+
+- [`ControllerManager`](/sdk/types/ControllerManager) - The controller manager.
+
+### Example
+
+```js
+// create a controller manager
+const manager = createControllerManager({
+  status: true,
+});
+
+// listen for status changes
+manager.events.on('status', status => {
+  console.log('new status', status);
+});
+
+// change the status
+manager.status = false;
+```
+
+**Available on:** <ClientTag /> <ServerTag />

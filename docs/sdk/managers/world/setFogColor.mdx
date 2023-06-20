@@ -1,0 +1,27 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Sets the fog color.
+
+### Syntax
+
+```js
+engine.world.setFogColor(color);
+```
+
+### Parameters
+
+| Name    | Type                                | Description                    |
+| ------- | ----------------------------------- | ------------------------------ |
+| `color` | [`ColorType`](/sdk/types/ColorType) | The color of the global light. |
+
+### Example
+
+```js
+engine.world.setFogColor('red');
+```
+
+**Available on:** <ClientTag />

@@ -1,0 +1,34 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+Gets the player's ban status.
+
+### Syntax
+
+```js
+player.getBanStatus();
+```
+
+### Returns
+
+- `Promise<PlayerBanStatus>` - The [PlayerBanStatus](/sdk/types/PlayerBanStatus) object.
+
+### Example
+
+```js
+const banStatus = await player.getBanStatus();
+
+if (banStatus.banned) {
+  console.log(
+    `Player is banned for reason: ${banStatus.reason} and will be unbanned at ${banStatus.expiration}`,
+  );
+} else {
+  console.log('Player is not banned');
+}
+```
+
+**Available on:** <ClientTag /> <ServerTag />

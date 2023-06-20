@@ -1,0 +1,40 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Creates a proximity action.
+
+### Syntax
+
+```js
+engine.world.setProximityAction(action);
+```
+
+### Parameters
+
+| Name     | Type                                            | Description                  |
+| -------- | ----------------------------------------------- | ---------------------------- |
+| `action` | [`ProximityAction`](/sdk/types/ProximityAction) | The proximity action to set. |
+
+### Example
+
+```js
+// create a proximity action
+engine.world.setProximityAction({
+  id: 'my-id',
+  position: [3, 2, 3],
+  label: 'Nice music',
+  description: 'Play a sound',
+  key: 'KeyF',
+  distance: 3,
+});
+
+// listen for proximity action triggers
+engine.world.on('onProximityActionTriggered', action => {
+  console.log('Proximity action triggered', action);
+});
+```
+
+**Available on:** <ClientTag />

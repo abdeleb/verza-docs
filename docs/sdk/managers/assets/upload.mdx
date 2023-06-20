@@ -1,0 +1,62 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Uploads a file to Verza's CDN to be used as an asset in your script.
+
+:::tip Usage Recommendation
+Note that this feature is intended for game asset sharing only, and not intended to be used as a file storage service for assets unrelated to the game mode.
+
+You can reuse the `asset_id` on as many objects as you want, which is useful for shared assets such as textures, models, and sounds. If you have a large file that you want to use in multiple places, you can upload it once and then use the same `asset_id` on all of the objects that need it.
+
+If you need to store files other than game assets, it is recommended to use a dedicated file storage service such as [Amazon S3](https://aws.amazon.com/s3/) or [Cloudflare R2](https://www.cloudflare.com/products/r2/).
+:::
+
+:::info Allowed File Types
+This method supports uploading any file type (`application/octet-stream`) like `png`, `jpg`, `gif`, `glb`, and `gltf`.
+:::
+
+:::caution File Size Limit
+The maximum allowed file size is `100MB`.
+:::
+
+### Syntax
+
+```js
+engine.assets.upload(file, options);
+```
+
+### Parameters
+
+| Name      | Type                                      | Description                                   |
+| --------- | ----------------------------------------- | --------------------------------------------- |
+| `file`    | [`FileTransfer`](/sdk/types/FileTransfer) | The file to upload.                           |
+| `options` | [`AssetOptions`](/sdk/types/AssetOptions) | Additional options for the upload. (optional) |
+
+### Returns
+
+- `Promise<string>` - A promise that resolves with the asset ID of the uploaded file.
+
+### Example
+
+```js
+const assetId = await engine.assets.upload({
+  name: 'my-gltf.glb',
+  data: arrayBuffer,
+});
+
+const object = engine.objects.create(
+  'gltf',
+  {
+    u: assetId,
+  },
+  {
+    optimizeGeometry: true,
+    optimizeTextures: true,
+  },
+);
+```
+
+**Available on:** <ClientTag />

@@ -1,0 +1,28 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+Converts an object to its corresponding data representation.
+
+### Syntax
+
+```js
+object.toData();
+```
+
+### Returns
+
+- [`ObjectDataProps`](/sdk/types/ObjectDataProps) - A promise that resolves to the object's data representation.
+
+### Example
+
+```js
+const objectData = object.toData();
+
+console.log('objectData', objectData);
+```
+
+**Available on:** <ClientTag /> <ServerTag />

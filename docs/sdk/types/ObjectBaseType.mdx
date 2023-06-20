@@ -6,9 +6,9 @@ type ObjectBaseType<T extends ObjectType = ObjectType, D = unknown> = {
 
   t: T; // type
 
-  o: D; // object data
+  o: ObjectDataBase & D; // object data
 
-  dd?: EntityDrawDistance;
+  dd?: EntityDrawDistanceType | null;
 
   p?: Vector3Array; // position
 
@@ -20,9 +20,11 @@ type ObjectBaseType<T extends ObjectType = ObjectType, D = unknown> = {
 
   ss?: boolean; // shadows
 
-  c?: EntityCollision | null; // collision
+  c?: EntityCollisionType | null; // collision
 
-  cc?: EntityCollider | null; // collider
+  cc?: EntityColliderType | null; // collider
+
+  cs?: boolean; // collision sensor
 
   m?: number; // mass
 
@@ -36,6 +38,8 @@ type ObjectBaseType<T extends ObjectType = ObjectType, D = unknown> = {
 
   po?: boolean; // permanent object
 
-  ro?: boolean; // remote object
+  ro?: number; // render order
+
+  rm?: boolean; // remote object
 };
 ```

@@ -1,0 +1,31 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+Enables or disables the display of translation, rotation and scaling axes while editing objects.
+
+### Syntax
+
+```js
+engine.objects.setEditAxes(position, rotation, scale);
+```
+
+### Parameters
+
+| Name       | Type     | Description                                                           |
+| ---------- | -------- | --------------------------------------------------------------------- |
+| `position` | `number` | The object's snap position value. Use `null` to reset to the default. |
+| `rotation` | `number` | The object's snap rotation value. Use `null` to reset to the default. |
+| `scale`    | `number` | The object's snap scale value. Use `null` to reset to the default.    |
+
+### Example
+
+```js
+// change all snaps to 1 meter
+engine.objects.setEditSnaps(1, 1, 1);
+```
+
+**Available on:** <ClientTag />

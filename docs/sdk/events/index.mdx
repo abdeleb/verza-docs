@@ -8,26 +8,30 @@ In this section, you'll find a comprehensive list of events supported by the Ver
 
 <DocCardList />
 
-## Engine
+## `Engine`
 
 - [onConnect](./engine/onConnect)
 - [onDisconnect](./engine/onDisconnect)
 - [onSynced](./engine/onSynced)
 - [onResourcesReady](./engine/onResourcesReady)
 
-## Chat
+## `Audio`
+
+- [onSoundEnd](./audio/onSoundEnd)
+
+## `Chat`
 
 - [onChat](./chat/onChat)
 - [onCommand](./chat/onCommand)
 - [onCommandNotFound](./chat/onCommandNotFound)
 
-## Camera
+## `Camera`
 
 - [onCameraModeChange](./camera/onCameraModeChange)
 - [onCameraTransitionStart](./camera/onCameraTransitionStart)
 - [onCameraTransitionEnd](./camera/onCameraTransitionEnd)
 
-## Entities
+## `Entities`
 
 The following events apply to multiple entity types, such as players and objects.
 
@@ -36,7 +40,7 @@ The following events apply to multiple entity types, such as players and objects
 - [onStreamIn](./entities/onStreamIn)
 - [onStreamOut](./entities/onStreamOut)
 
-## Players
+## `Players`
 
 - [onUpdate](./players/onUpdate)
 - [onControlChange](./players/onControlChange)
@@ -45,9 +49,13 @@ The following events apply to multiple entity types, such as players and objects
 - [onHeadMove](./players/onHeadMove)
 - [onClothesUpdate](./players/onClothesUpdate)
 - [onGenderChange](./players/onGenderChange)
+- [onEnterSensor](./players/onEnterSensor)
+- [onLeaveSensor](./players/onLeaveSensor)
 
-## Objects
+## `Objects`
 
+- [onObjectStreamIn](./objects/onObjectStreamIn)
+- [onObjectStreamOut](./objects/onObjectStreamOut)
 - [onObjectEdit](./objects/onObjectEdit)
 - [onPointerMove](./objects/onPointerMove)
 - [onPointerEnter](./objects/onPointerEnter)
@@ -56,12 +64,16 @@ The following events apply to multiple entity types, such as players and objects
 - [onPointerUp](./objects/onPointerUp)
 - [onTransitionStart](./objects/onTransitionStart)
 - [onTransitionEnd](./objects/onTransitionEnd)
+- [onProximityActionTriggered](./objects/onProximityActionTriggered)
+- [onSoundEnd](./objects/onSoundEnd)
+- [onEnterSensor](./objects/onEnterSensor)
+- [onLeaveSensor](./objects/onLeaveSensor)
 
-## World
+## `World`
 
 - [onEntitySelected](./world/onEntitySelected)
 
-## User Interface (UI)
+## `User Interface (UI)`
 
 - [onInputFocus](./ui/onInputFocus)
 - [onCursorLock](./ui/onCursorLock)

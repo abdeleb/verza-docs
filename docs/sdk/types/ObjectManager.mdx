@@ -1,0 +1,189 @@
+```ts
+class ObjectManager<OT extends ObjectType = ObjectType> extends EntityManager<
+  ObjectEntity,
+  ObjectHandleManager,
+  ObjectEventMap
+> {
+  parent: ObjectManager | null;
+
+  children: Set<ObjectManager>;
+
+  boundingBox: Box3;
+
+  get objectType(): ObjectType;
+
+  get worldLocation(): Object3D;
+
+  get worldLocationSync(): Promise<Object3D>;
+
+  get location(): Object3D;
+
+  get position(): Vector3;
+
+  get rotation(): Quaternion;
+
+  get scale(): Vector3;
+
+  get permanent(): boolean;
+
+  set permanent(permanent: boolean);
+
+  get remote(): boolean;
+
+  set remote(remote: boolean);
+
+  get parentId(): string | undefined;
+
+  set parentId(parentId: string | undefined);
+
+  get userData(): {
+    [name: string]: unknown;
+  };
+
+  get props(): PickObject<OT>['o'];
+
+  get supportsShadows(): boolean;
+
+  get shadows(): boolean;
+
+  get supportsBloom(): boolean;
+
+  get bloom(): boolean;
+
+  get supportsCollision(): boolean;
+
+  get collision(): EntityCollisionType | null;
+
+  get collider(): EntityColliderType | null;
+
+  get sensor(): boolean;
+
+  get mass(): number | undefined;
+
+  get friction(): number | undefined;
+
+  get restitution(): number | undefined;
+
+  get enabledRotations(): Boolean3Array | undefined;
+
+  get enabledTranslations(): Boolean3Array | undefined;
+
+  setPosition(position: Vector3 | Vector3Array): void;
+
+  setRotation(
+    rotation: Quaternion | Euler | QuaternionArray | EulerArray,
+  ): void;
+
+  setScale(scale: Vector3 | Vector3Array): void;
+
+  updateScale(scale: Vector3 | Vector3Array): void;
+
+  setShadows(status: boolean): void;
+
+  setBloom(status: boolean): void;
+
+  setCollision(collision: EntityCollisionType | null): void;
+
+  setCollider(collider: EntityColliderType | null): void;
+
+  setMass(mass: number): void;
+
+  setFriction(friction: number): void;
+
+  setRestitution(restitution: number): void;
+
+  setEnabledRotations(enabledRotations: Boolean3Array): void;
+
+  setEnabledTranslations(enabledTranslations: Boolean3Array): void;
+
+  setPositionFromWorldSpace(position: Vector3 | Vector3Array): Promise<void>;
+
+  setRotationFromWorldSpace(
+    rotation: Quaternion | Euler | QuaternionArray | EulerArray,
+  ): Promise<void>;
+
+  detachFromParent(): void;
+
+  attachToParent(parent: ObjectManager): void;
+
+  edit(): void;
+
+  computeBoundingBox(): Promise<Box3>;
+
+  computeWorldBoundingBox(): Promise<Box3>;
+
+  resolve(): Promise<ObjectManager | null>;
+
+  resolveParent(forceUpdate?: boolean): Promise<ObjectManager | null>;
+
+  setVisible(visible: boolean): void;
+
+  setHelper(status: boolean): void;
+
+  enableHighlight(options?: ObjectHighlightOptions): void;
+
+  disableHighlight(): void;
+
+  setProps<D extends PickObjectProps<OT> = PickObjectProps<OT>>(
+    props: Partial<D>,
+    partial?: boolean,
+  ): void;
+
+  setData<D extends PickObject<OT> = PickObject<OT>>(
+    data: Partial<
+      Omit<D, 'o'> & {
+        o: Partial<D['o']>;
+      }
+    >,
+    partial?: boolean,
+  ): void;
+
+  rerender(): void;
+
+  clone(withId?: string): Promise<ObjectManager<ObjectType>>;
+  destroy(): void;
+
+  saveVolatile(): void;
+
+  isStreamed(): Promise<boolean>;
+
+  waitForStream(): Promise<void>;
+
+  sync(): Promise<void>;
+
+  save(): Promise<void>;
+
+  delete(): Promise<void>;
+
+  setLinearVelocity(vector: Vector3Array): void;
+
+  setAngularVelocity(vector: Vector3Array): void;
+
+  applyImpulse(vector: Vector3Array): void;
+
+  addTorque(vector: Vector3Array): void;
+
+  applyTorqueImpulse(vector: Vector3Array): void;
+
+  startTransitions(transitions: ObjectTransition[]): void;
+
+  startTransition(transition: ObjectTransition): void;
+
+  clearTransitions(): void;
+
+  setSound(
+    soundName: string,
+    options?: Omit<SoundOptions, 'objectId'>,
+  ): SoundManager;
+
+  removeSound(): void;
+
+  setProximityAction(action: Omit<ProximityAction, 'id' | 'objectId'>): void;
+
+  removeProximityAction(): void;
+
+  restoreData(): void;
+
+  toData(): ObjectDataProps;
+}
+```

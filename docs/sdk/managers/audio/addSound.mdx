@@ -1,0 +1,40 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Add a sound to the engine.
+
+### Syntax
+
+```js
+engine.audio.addSound(item);
+```
+
+### Parameters
+
+| Name   | Type                                | Description                     |
+| ------ | ----------------------------------- | ------------------------------- |
+| `item` | [`SoundItem`](/sdk/types/SoundItem) | The sound to add to the engine. |
+
+### Returns
+
+- `Promise<boolean>` - Whether the sound was added successfully.
+
+### Example
+
+```js
+const success = await engine.audio.addSound({
+  soundName: 'fire',
+  url: 'https://example.com/fire.mp3',
+});
+
+console.log('Sound added:', success);
+
+if (success) {
+  engine.audio.playSound('fire');
+}
+```
+
+**Available on:** <ClientTag />

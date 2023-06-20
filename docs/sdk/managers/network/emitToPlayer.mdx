@@ -1,0 +1,40 @@
+---
+hide_table_of_contents: true
+---
+
+import ServerTag from '@site/src/components/tags/ServerTag';
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Emit an event to a specific player on the server.
+
+### Syntax
+
+```js
+engine.network.emitToPlayer(player, event, data);
+```
+
+### Parameters
+
+| Name     | Type                                                    | Description                     |
+| -------- | ------------------------------------------------------- | ------------------------------- |
+| `player` | [`PlayerManager`](/sdk/types/PlayerManager) or `number` | The player manger or player ID. |
+| `event`  | `string`                                                | The event name to emit.         |
+| `data`   | [`NetworkEventData`](/sdk/types/NetworkEventData)       | The event data. (optional)      |
+
+### Example
+
+```js
+// with player manager
+engine.network.emitToPlayer(player, 'onOpenDoor', {
+  doorId: 1,
+  status: true,
+});
+
+// with player id
+engine.network.emitToPlayer(1, 'onOpenDoor', {
+  doorId: 1,
+  status: true,
+});
+```
+
+**Available on:** <ClientTag /> <ServerTag />

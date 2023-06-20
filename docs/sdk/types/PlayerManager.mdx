@@ -1,0 +1,109 @@
+```ts
+class PlayerManager extends EntityManager<
+  PlayerEntity,
+  PlayerHandleManager,
+  PlayerEventMap
+> {
+  chunksIn: Set<`${number}_${number}_${number}_${number}`>;
+
+  voicechat: PlayerVoicechatManager;
+
+  camera: PlayerCameraManager;
+
+  controls: PlayerControls;
+
+  velocity: Vector3;
+
+  surfing: number;
+
+  onGround: boolean;
+
+  get state(): PlayerState;
+
+  get stateAnimIndex(): number | undefined;
+
+  get stateAnim(): keyof typeof ANIMATIONS | null;
+
+  get isAdmin(): boolean;
+
+  get isController(): boolean;
+
+  get isMovingControl(): boolean;
+
+  get name(): string;
+
+  get roles(): string[];
+
+  hasRole(role: string): boolean;
+
+  hasAccess(command: string): boolean;
+
+  updateName(name: string): void;
+
+  updateRoles(roles: string[]): void;
+
+  setName(name: string): void;
+
+  setNametagColor(color: ColorType): void;
+
+  addRole(roleId: string): Promise<void>;
+
+  removeRole(roleId: string): Promise<void>;
+
+  getBanStatus(): Promise<PlayerBanStatus>;
+
+  ban(reason: string, duration?: null): Promise<PlayerBanStatus>;
+
+  unban(): Promise<void>;
+
+  kick(reason: string): Promise<void>;
+
+  setDimension(dimension: number): void;
+
+  setPosition(position: Vector3 | Vector3Array, instant?: boolean): void;
+
+  setRotation(
+    rotation: Quaternion | Euler | QuaternionArray | Vector3Array,
+    instant?: boolean,
+  ): void;
+
+  getFacingAngle(): number;
+
+  setFacingAngle(degrees: number, instant?: boolean): void;
+
+  setCameraBehind(): void;
+
+  sendMessage(message: string): void;
+
+  setMovements(status: boolean): void;
+
+  setTranslations(x: boolean, y: boolean, z: boolean): void;
+
+  setLinearVelocity(vec: Vector3 | Vector3Array): void;
+
+  setVisible(visible: boolean): void;
+
+  sendSuccessNotification(message: string, duration?: number): void;
+
+  sendErrorNotification(message: string, duration?: number): void;
+
+  addClothes(
+    clotheItems: PlayerClotheItem | PlayerClotheItem[],
+    replace?: boolean,
+  ): void;
+
+  removeClothes(clotheIds: string | string[]): void;
+
+  getClothes(): Promise<PlayerClotheItem[]>;
+
+  playAnimation(animId: string, options: AnimationOptions): void;
+
+  stopAnimation(animId: string, fadeOutDuration?: number): void;
+
+  stopAnimations(fadeOutDuration?: number): void;
+
+  pauseAnimation(animId: string): void;
+
+  resumeAnimation(animId: string): void;
+}
+```

@@ -1,0 +1,23 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+This event is triggered when a proximity action is triggered.
+
+### Parameters
+
+| Name    | Type                                                      | Description                |
+| ------- | --------------------------------------------------------- | -------------------------- |
+| `event` | [`ProximityActionEvent`](/sdk/types/ProximityActionEvent) | The proximity action event |
+
+### Example
+
+```js
+object.events.on('onProximityActionTriggered', event => {
+  console.log('Proximity action triggered', event);
+});
+```
+
+**Available on:** <ClientTag />

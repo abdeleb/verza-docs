@@ -1,0 +1,30 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+Iterates for each player in specified chunk.
+
+### Syntax
+
+```js
+engine.players.forEachInChunk(callback);
+```
+
+### Parameters
+
+| Name       | Type                                 | Description |
+| ---------- | ------------------------------------ | ----------- |
+| `callback` | `(entity: PlayerManager) => boolean` | Callback    |
+
+### Example
+
+```js
+engine.players.forEachInChunk(`0_0_0_0`, player => {
+  player.sendMessage('Hello world!');
+});
+```
+
+**Available on:** <ClientTag /> <ServerTag />

@@ -1,0 +1,27 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Checks whether the current interface is the **Players List**.
+
+### Syntax
+
+```js
+engine.ui.isPlayersList();
+```
+
+### Returns
+
+- `boolean` - `true` if the players list is currently being shown, `false` otherwise.
+
+### Example
+
+```js
+console.log(
+  `The Players List is currently being shown: ${engine.ui.isPlayersList()}`,
+);
+```
+
+**Available on:** <ClientTag />

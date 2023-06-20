@@ -1,0 +1,15 @@
+```ts
+class PlayerCameraManager {
+  setMode(mode: CameraModeType, instant?: boolean): void;
+
+  startTransitions(transitions: CameraTransition[]): void;
+
+  startTransition(transition: CameraTransition): void;
+
+  stopTransitions(): void;
+
+  setPosition(position: CameraPosition): void;
+
+  setFov(fov: number | null): void;
+}
+```

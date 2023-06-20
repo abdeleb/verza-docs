@@ -1,0 +1,25 @@
+```ts
+class RaycasterManager {
+  raycastScreenPoint(
+    x: number,
+    y: number,
+    far: number | null,
+    options?: RaycastOptions,
+  ): Promise<IntersectsResult>;
+
+  raycastPoint(
+    origin: Vector3 | Vector3Array,
+    dir: Vector3 | Vector3Array,
+    far: number | null,
+    options?: RaycastOptions,
+  ): Promise<IntersectsResult>;
+
+  raycastPoints(
+    from: Vector3 | Vector3Array,
+    to: Vector3 | Vector3Array,
+    options?: RaycastOptions,
+  ): Promise<IntersectsResult>;
+
+  parseIntersectsResult(intersects: IntersectsResultRaw): IntersectsResult;
+}
+```

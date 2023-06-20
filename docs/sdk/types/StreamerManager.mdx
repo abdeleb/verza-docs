@@ -1,0 +1,17 @@
+```ts
+class StreamerManager {
+  is(entity: StreamerEntity): boolean;
+
+  refreshEntity(entity: StreamerEntity): void;
+
+  removeEntity(entity: StreamerEntity): void;
+
+  syncEntity(entity: StreamerEntity, prevChunkIndex?: ChunkIndex): void;
+
+  syncEntities(
+    data: ChunkData,
+    chunkIndex: ChunkIndex,
+    prevChunkIndex?: ChunkIndex,
+  ): void;
+}
+```

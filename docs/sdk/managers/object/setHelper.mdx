@@ -1,0 +1,31 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Enables or disables the helper for the object.
+
+:::note
+Only available for objects that have a helper like `lights`.
+:::
+
+### Syntax
+
+```js
+object.setHelper(status);
+```
+
+### Parameters
+
+| Name     | Type      | Description                                                            |
+| -------- | --------- | ---------------------------------------------------------------------- |
+| `status` | `boolean` | `true` to enable the helper, `false` to disable it. Default is `true`. |
+
+### Example
+
+```js
+object.setHelper(true);
+```
+
+**Available on:** <ClientTag />

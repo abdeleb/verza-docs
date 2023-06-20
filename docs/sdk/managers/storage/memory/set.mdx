@@ -1,0 +1,35 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+Sets a value in the store.
+
+### Syntax
+
+```js
+store.set(key, value, ttl);
+```
+
+### Parameters
+
+| Name    | Type     | Description                                         |
+| ------- | -------- | --------------------------------------------------- |
+| `key`   | `string` | The key of the value to set.                        |
+| `value` | `any`    | The value to set.                                   |
+| `ttl`   | `number` | The time to live in seconds. (Default: `3600 * 24`) |
+
+### Returns
+
+- `Promise<void>` - A promise that resolves when the value is set.
+
+### Example
+
+```js
+// Set a value in the store that expires in 60 seconds.
+await store.set('player1', 100, 60);
+```
+
+**Available on:** <ClientTag /> <ServerTag />
