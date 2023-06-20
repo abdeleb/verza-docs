@@ -9,7 +9,7 @@ Adds animations to the engine.
 ### Syntax
 
 ```js
-engine.animations.addAnimations(url);
+useAddAnimations(url);
 ```
 
 ### Parameters
@@ -20,14 +20,12 @@ engine.animations.addAnimations(url);
 
 ### Returns
 
-- [`Promise<AnimationInfo[]>`](/sdk/types/AnimationInfo) - A promise that resolves to an array of `AnimationInfo` containing information about the animations that were added.
+- [`AnimationInfo[]`](/sdk/types/AnimationInfo) - The added animations.
 
 ### Example
 
 ```js
-const anims = await engine.animations.addAnimations(
-  'https://example.com/animation.glb',
-);
+const anims = useAddAnimations('https://example.com/animation.glb');
 
 console.log('Animations added:', anims);
 ```
