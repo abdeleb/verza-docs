@@ -1,0 +1,31 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Set the sound loop.
+
+### Syntax
+
+```js
+sound.setLoop(loop);
+```
+
+### Parameters
+
+| Name   | Type                                | Description      |
+| ------ | ----------------------------------- | ---------------- |
+| `loop` | [`SoundLoop`](/sdk/types/SoundLoop) | The loop to set. |
+
+### Example
+
+```js
+sound.setLoop('repeat');
+
+// or
+
+sound.setLoop('once');
+```
+
+**Available on:** <ClientTag />

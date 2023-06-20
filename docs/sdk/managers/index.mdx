@@ -76,23 +76,23 @@ In this section, you'll find a comprehensive list of managers available in the V
 
 ### Methods
 
-| Method                                               | Description                     |
-| ---------------------------------------------------- | ------------------------------- |
-| [`sound.play`](./sound/play)                         | Play the sound.                 |
-| [`sound.pause`](./sound/pause)                       | Pause the sound.                |
-| [`sound.resume`](./sound/resume)                     | Resume the sound.               |
-| [`sound.stop`](./sound/stop)                         | Stop the sound.                 |
-| [`sound.setVolume`](./sound/setVolume)               | Set the sound volume.           |
-| [`sound.setPlaybackRate`](./sound/setPlaybackRate)   | Set the sound playback rate.    |
-| [`sound.setLoop`](./sound/setLoop)                   | Set the sound loop.             |
-| [`sound.setLoopStart`](./sound/setLoopStart)         | Set the sound loop start.       |
-| [`sound.setLoopEnd`](./sound/setLoopEnd)             | Set the sound loop end.         |
-| [`sound.setPosition`](./sound/setPosition)           | Set the sound position.         |
-| [`sound.setMinDistance`](./sound/setMinDistance)     | Set the sound minimum distance. |
-| [`sound.setMaxDistance`](./sound/setMaxDistance)     | Set the sound maximum distance. |
-| [`sound.setRolloffFactor`](./sound/setRolloffFactor) | Set the sound rolloff factor.   |
-| [`sound.setOptions`](./sound/setOptions)             | Set the sound options.          |
-| [`sound.destroy`](./sound/destroy)                   | Destroy the sound.              |
+| Method                                               | Description                                          |
+| ---------------------------------------------------- | ---------------------------------------------------- |
+| [`sound.play`](./sound/play)                         | Play the sound.                                      |
+| [`sound.pause`](./sound/pause)                       | Pause the sound.                                     |
+| [`sound.resume`](./sound/resume)                     | Resume the sound.                                    |
+| [`sound.stop`](./sound/stop)                         | Stop the sound.                                      |
+| [`sound.setVolume`](./sound/setVolume)               | Set the sound volume.                                |
+| [`sound.setPlaybackRate`](./sound/setPlaybackRate)   | Set the sound playback rate.                         |
+| [`sound.setLoop`](./sound/setLoop)                   | Set the sound loop.                                  |
+| [`sound.setLoopStart`](./sound/setLoopStart)         | Set the sound loop start.                            |
+| [`sound.setLoopEnd`](./sound/setLoopEnd)             | Set the sound loop end.                              |
+| [`sound.setPosition`](./sound/setPosition)           | Set the sound position.                              |
+| [`sound.setMinDistance`](./sound/setMinDistance)     | Set the sound minimum distance to start to fade out. |
+| [`sound.setMaxDistance`](./sound/setMaxDistance)     | Set the sound maximum distance to fade out.          |
+| [`sound.setRolloffFactor`](./sound/setRolloffFactor) | Set the sound rolloff factor.                        |
+| [`sound.setOptions`](./sound/setOptions)             | Set the sound options.                               |
+| [`sound.destroy`](./sound/destroy)                   | Destroy the sound.                                   |
 
 ### Properties
 
@@ -288,8 +288,13 @@ In this section, you'll find a comprehensive list of managers available in the V
 | [`object.setPosition`](./object/setPosition)                             | Set the position of the object.                                                 |
 | [`object.setRotation`](./object/setRotation)                             | Set the rotation of the object.                                                 |
 | [`object.setScale`](./object/setScale)                                   | Set the scale of the object.                                                    |
+| [`object.setVisible`](./object/setVisible)                               | Set whether or not the object is visible.                                       |
+| [`object.setData`](./object/setData)                                     | Update data for the object.                                                     |
+| [`object.setProps`](./object/setProps)                                   | Updates type-specific properties for an object.                                 |
 | [`object.setPositionFromWorldSpace`](./object/setPositionFromWorldSpace) | Set the position of the object in world space.                                  |
 | [`object.setRotationFromWorldSpace`](./object/setRotationFromWorldSpace) | Set the rotation of the object in world space.                                  |
+| [`object.setShadows`](./object/setShadows)                               | Enable or disable shadows for the object.                                       |
+| [`object.setBloom`](./object/setBloom)                                   | Enable or disable bloom for the object.                                         |
 | [`object.setCollision`](./object/setCollision)                           | Set the collision type of the object.                                           |
 | [`object.setCollider`](./object/setCollider)                             | Set the collider type of the object.                                            |
 | [`object.setMass`](./object/setMass)                                     | Set the mass of the object.                                                     |
@@ -297,9 +302,6 @@ In this section, you'll find a comprehensive list of managers available in the V
 | [`object.setRestitution`](./object/setRestitution)                       | Sets the restitution of the physics object.                                     |
 | [`object.setEnabledRotations`](./object/setEnabledRotations)             | Sets which rotations are enabled for the physics object.                        |
 | [`object.setEnabledTranslations`](./object/setEnabledTranslations)       | Sets which translations are enabled for the physics object.                     |
-| [`object.setVisible`](./object/setVisible)                               | Set whether or not the object is visible.                                       |
-| [`object.setData`](./object/setData)                                     | Update data for the object.                                                     |
-| [`object.setProps`](./object/setProps)                                   | Updates type-specific properties for an object.                                 |
 | [`object.computeBoundingBox`](./object/computeBoundingBox)               | Compute the bounding box of the object.                                         |
 | [`object.computeWorldBoundingBox`](./object/computeWorldBoundingBox)     | Compute the world bounding box of the object.                                   |
 | [`object.rerender`](./object/rerender)                                   | Forces an object to re-render.                                                  |
@@ -317,6 +319,7 @@ In this section, you'll find a comprehensive list of managers available in the V
 | [`object.removeProximityAction`](./object/removeProximityAction)         | Removes the proximity action for the object.                                    |
 | [`object.toData`](./object/toData)                                       | Converts an object to its corresponding data representation.                    |
 | [`object.clone`](./object/clone)                                         | Creates a new object by cloning an existing object with the same properties.    |
+| [`object.setHelper`](./object/setHelper)                                 | Enables or disables the helper for the object.                                  |
 | [`object.sync`](./object/sync)                                           | Synchronizes an object's properties between the server and the client.          |
 | [`object.save`](./object/save)                                           | Saves an object to the Verza servers, making it permanent.                      |
 | [`object.saveVolatile`](./object/saveVolatile)                           | Same as `object.save` but with a delay.                                         |
@@ -325,26 +328,36 @@ In this section, you'll find a comprehensive list of managers available in the V
 
 ### Properties
 
-| Name                   | Type                                                    | Description                                                                          |
-| ---------------------- | ------------------------------------------------------- | ------------------------------------------------------------------------------------ |
-| `object.id`            | `string`                                                | The ID of the object.                                                                |
-| `object.objectType`    | [`ObjectType`](/sdk/types/ObjectType)                   | The type of the object.                                                              |
-| `object.location`      | [`Object3D`](/sdk/types/Object3D)                       | The object's position, rotation, and scale.                                          |
-| `object.position`      | [`Vector3`](/sdk/types/Vector3)                         | The object's position.                                                               |
-| `object.rotation`      | [`Quaternion`](/sdk/types/Quaternion)                   | The object's rotation.                                                               |
-| `object.scale`         | [`Vector3`](/sdk/types/Vector3)                         | The object's scale.                                                                  |
-| `object.worldLocation` | [`Promise<Object3D>`](/sdk/types/Object3D)              | A promise that resolves to the world location of the object.                         |
-| `object.permanent`     | `boolean`                                               | Whether the object is permanent or not.                                              |
-| `object.remote`        | `boolean`                                               | Whether the object is remote or not.                                                 |
-| `object.parentId`      | `string`                                                | The ID of the parent object.                                                         |
-| `object.parent`        | [`ObjectManager`](/sdk/types/ObjectManager)             | The parent object of this object, or `null` if this object has no parent.            |
-| `object.children`      | [`Set<ObjectManager>`](/sdk/types/ObjectManager)        | The child objects of this object, represented as a set of `ObjectManager` instances. |
-| `object.userData`      | [`ObjectUserData`](/sdk/types/ObjectUserData)           | Custom user data attached to the object.                                             |
-| `props`                | `ObjectProps`                                           | The properties of the object, based on its type.                                     |
-| `data`                 | `ObjectData`                                            | The data of the object.                                                              |
-| `collision`            | [`EntityCollisionType`](/sdk/types/EntityCollisionType) | The collision type of the object.                                                    |
-| `collider`             | [`EntityColliderType`](/sdk/types/EntityColliderType)   | The collider type of the object.                                                     |
-| `object.mass`          | `number`                                                | The object's mass, used in physics calculations.                                     |
+| Name                         | Type                                                    | Description                                                                          |
+| ---------------------------- | ------------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| `object.id`                  | `string`                                                | The ID of the object.                                                                |
+| `object.objectType`          | [`ObjectType`](/sdk/types/ObjectType)                   | The type of the object.                                                              |
+| `object.location`            | [`Object3D`](/sdk/types/Object3D)                       | The object's position, rotation, and scale.                                          |
+| `object.position`            | [`Vector3`](/sdk/types/Vector3)                         | The object's position.                                                               |
+| `object.rotation`            | [`Quaternion`](/sdk/types/Quaternion)                   | The object's rotation.                                                               |
+| `object.scale`               | [`Vector3`](/sdk/types/Vector3)                         | The object's scale.                                                                  |
+| `object.worldLocation`       | [`Promise<Object3D>`](/sdk/types/Object3D)              | A promise that resolves to the world location of the object.                         |
+| `object.permanent`           | `boolean`                                               | Whether the object is permanent or not.                                              |
+| `object.remote`              | `boolean`                                               | Whether the object is remote or not.                                                 |
+| `object.parentId`            | `string`                                                | The ID of the parent object.                                                         |
+| `object.parent`              | [`ObjectManager`](/sdk/types/ObjectManager)             | The parent object of this object, or `null` if this object has no parent.            |
+| `object.children`            | [`Set<ObjectManager>`](/sdk/types/ObjectManager)        | The child objects of this object, represented as a set of `ObjectManager` instances. |
+| `object.userData`            | [`ObjectUserData`](/sdk/types/ObjectUserData)           | Custom user data attached to the object.                                             |
+| `object.props`               | `ObjectProps`                                           | The properties of the object, based on its type.                                     |
+| `object.data`                | `ObjectData`                                            | The data of the object.                                                              |
+| `object.supportsCollision`   | `boolean`                                               | Whether the object supports collision or not.                                        |
+| `object.collision`           | [`EntityCollisionType`](/sdk/types/EntityCollisionType) | The collision type of the object.                                                    |
+| `object.collider`            | [`EntityColliderType`](/sdk/types/EntityColliderType)   | The collider type of the object.                                                     |
+| `object.supportsShadows`     | `boolean`                                               | Whether the object supports shadows or not.                                          |
+| `object.shadows`             | `boolean`                                               | Whether the object casts shadows or not.                                             |
+| `object.supportsBloom`       | `boolean`                                               | Whether the object supports bloom or not.                                            |
+| `object.bloom`               | `boolean`                                               | Whether the object has bloom or not.                                                 |
+| `object.sensor`              | `boolean`                                               | Whether the object is a sensor or not.                                               |
+| `object.mass`                | `number`                                                | The object's mass, used in physics calculations.                                     |
+| `object.friction`            | `number`                                                | The object's friction, used in physics calculations.                                 |
+| `object.restitution`         | `number`                                                | The object's restitution, used in physics calculations.                              |
+| `object.enabledRotations`    | [`Boolean3Array`](/sdk/types/Boolean3Array)             | Whether the object's rotations are enabled or not.                                   |
+| `object.enabledTranslations` | [`Boolean3Array`](/sdk/types/Boolean3Array)             | Whether the object's translations are enabled or not.                                |
 
 ## `Players`
 
@@ -444,6 +457,9 @@ In this section, you'll find a comprehensive list of managers available in the V
 | [`world.setViewportRender`](./world/setViewportRender)                         | Sets the world viewport render mode.                                                    |
 | [`world.createProximityAction`](./world/createProximityAction)                 | Creates a proximity action.                                                             |
 | [`world.deleteProximityAction`](./world/deleteProximityAction)                 | Deletes a proximity action.                                                             |
+| [`world.setFogStatus`](./world/setFogStatus)                                   | Sets the fog status.                                                                    |
+| [`world.setFogColor`](./world/setFogColor)                                     | Sets the fog color.                                                                     |
+| [`world.setFogDensity`](./world/setFogDensity)                                 | Sets the fog density.                                                                   |
 
 ## `Misc`
 

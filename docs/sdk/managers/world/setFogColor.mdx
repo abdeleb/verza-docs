@@ -4,12 +4,12 @@ hide_table_of_contents: true
 
 import ClientTag from '@site/src/components/tags/ClientTag';
 
-Sets the color of the global light.
+Sets the fog color.
 
 ### Syntax
 
 ```js
-engine.world.setGlobalLightColor(color);
+engine.world.setFogColor(color);
 ```
 
 ### Parameters
@@ -21,8 +21,7 @@ engine.world.setGlobalLightColor(color);
 ### Example
 
 ```js
-// set the time to 10am
-engine.world.setGlobalLightColor('red');
+engine.world.setFogColor('red');
 ```
 
 **Available on:** <ClientTag />

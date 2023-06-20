@@ -1,0 +1,28 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Set the sound volume.
+
+### Syntax
+
+```js
+sound.setVolume(volume);
+```
+
+### Parameters
+
+| Name     | Type     | Description                                     |
+| -------- | -------- | ----------------------------------------------- |
+| `volume` | `number` | The volume to set. Must be between `0` and `1`. |
+
+### Example
+
+```js
+// Set the volume to 50%.
+sound.setVolume(0.5);
+```
+
+**Available on:** <ClientTag />

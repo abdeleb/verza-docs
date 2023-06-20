@@ -1,0 +1,28 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+Enable or disable bloom for the object.
+
+### Syntax
+
+```js
+object.setBloom(status);
+```
+
+### Parameters
+
+| Name     | Type      | Description                                                           |
+| -------- | --------- | --------------------------------------------------------------------- |
+| `status` | `boolean` | `true` to enable bloom, `false` to disable bloom. Default is `false`. |
+
+### Example
+
+```js
+object.setBloom(false);
+```
+
+**Available on:** <ClientTag /> <ServerTag />

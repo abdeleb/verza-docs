@@ -1,0 +1,29 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Set the sound options.
+
+### Syntax
+
+```js
+sound.setOptions(loop);
+```
+
+### Parameters
+
+| Name      | Type                                      | Description        |
+| --------- | ----------------------------------------- | ------------------ |
+| `options` | [`SoundOptions`](/sdk/types/SoundOptions) | The sound options. |
+
+### Example
+
+```js
+sound.setOptions({
+  volume: 0.5,
+});
+```
+
+**Available on:** <ClientTag />
