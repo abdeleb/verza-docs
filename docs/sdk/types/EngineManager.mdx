@@ -64,7 +64,7 @@ class EngineManager {
 
   set localPlayerId(playerId: number);
 
-  get localPlayer(): import('./entities/players/player/player.manager').default;
+  get localPlayer(): PlayerManager;
 
   get players(): PlayersManager;
 

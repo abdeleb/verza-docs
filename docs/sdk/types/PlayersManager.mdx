@@ -1,0 +1,10 @@
+```ts
+class PlayersManager extends EntitiesManager<PlayerManager> {
+  create(id: number, data?: PlayerDataProps): PlayerManager;
+
+  forEachInChunk(
+    chunkIndex: ChunkIndex,
+    callback: (player: PlayerManager) => void,
+  ): void;
+}
+```

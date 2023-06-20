@@ -1,0 +1,37 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Play a sound and automatically dispose of it when it's done playing.
+
+### Syntax
+
+```js
+engine.audio.playSound(soundName, options, withId);
+```
+
+### Parameters
+
+| Name           | Type                                      | Description                                  |
+| -------------- | ----------------------------------------- | -------------------------------------------- |
+| `soundName`    | `string`                                  | The name of the sound to create.             |
+| `SoundOptions` | [`SoundOptions`](/sdk/types/SoundOptions) | The options to use for the sound. (optional) |
+| `withId`       | `string`                                  | The ID of the sound to create. (optional)    |
+
+### Returns
+
+- [`SoundManager`](/sdk/types/SoundManager) - The sound manager.
+
+### Example
+
+```js
+const audio = engine.audio.playSound('fire', {
+  volume: 0.5,
+});
+
+audio.play();
+```
+
+**Available on:** <ClientTag />

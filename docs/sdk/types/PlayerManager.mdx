@@ -50,12 +50,9 @@ class PlayerManager extends EntityManager<
 
   removeRole(roleId: string): Promise<void>;
 
-  getBanStatus(): Promise<import('../../../..').PlayerBanStatus>;
+  getBanStatus(): Promise<PlayerBanStatus>;
 
-  ban(
-    reason: string,
-    duration?: null,
-  ): Promise<import('../../../..').PlayerBanStatus>;
+  ban(reason: string, duration?: null): Promise<PlayerBanStatus>;
 
   unban(): Promise<void>;
 

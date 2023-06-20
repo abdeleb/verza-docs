@@ -199,7 +199,7 @@ class ObjectManager<OT extends ObjectType = ObjectType> extends EntityManager<
   setSound(
     soundName: string,
     options?: Omit<SoundOptions, 'objectId'>,
-  ): import('../../../audio/sound.manager').default;
+  ): SoundManager;
 
   removeSound(): void;
 

@@ -1,0 +1,36 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+Creates a detached player entity.
+
+### Syntax
+
+```js
+engine.players.create(playerId);
+```
+
+### Parameters
+
+| Name       | Type     | Description   |
+| ---------- | -------- | ------------- |
+| `playerId` | `number` | The player ID |
+
+### Returns
+
+- [`PlayerManager`](/sdk/types/PlayerManager) - The player manager
+
+### Example
+
+```js
+const player = engine.players.create(1212);
+
+const banStatus = await player.getBanStatus();
+
+console.log('Is banned:', banStatus.banned);
+```
+
+**Available on:** <ClientTag /> <ServerTag />

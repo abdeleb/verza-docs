@@ -10,19 +10,19 @@ Creates a new object with the specified properties.
 ### Syntax
 
 ```js
-objects.create(type, props);
+engine.objects.create(type, props);
 ```
 
 ### Parameters
 
-| Name    | Type                                  | Description      |
-| ------- | ------------------------------------- | ---------------- |
-| `type`  | [`ObjectType`](/sdk/types/ObjectType) | The object type  |
-| `props` | `ObjectProps`                         | The object props |
+| Name    | Type                                                | Description      |
+| ------- | --------------------------------------------------- | ---------------- |
+| `type`  | [`ObjectType`](/sdk/types/ObjectType)               | The object type  |
+| `props` | [`CreateObjectProps`](/sdk/types/CreateObjectProps) | The object props |
 
 ### Returns
 
-- `ObjectManager` - The created object manager.
+- [`ObjectManager`](/sdk/types/ObjectManager) - The created object manager.
 
 ### Example
 

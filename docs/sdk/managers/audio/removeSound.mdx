@@ -1,0 +1,27 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Remove a sound from the engine.
+
+### Syntax
+
+```js
+engine.audio.removeSound(soundName);
+```
+
+### Parameters
+
+| Name        | Type     | Description                     |
+| ----------- | -------- | ------------------------------- |
+| `soundName` | `string` | The name of the sound to remove |
+
+### Example
+
+```js
+engine.audio.removeSound('fire');
+```
+
+**Available on:** <ClientTag />

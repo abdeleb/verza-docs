@@ -24,33 +24,33 @@ In this section, you'll find a comprehensive list of managers available in the V
 
 ### Properties
 
-| Name                               | Type                                           | Description                                         |
-| ---------------------------------- | ---------------------------------------------- | --------------------------------------------------- |
-| `engine.network`                   | [`NetworkManager`](/sdk/types/NetworkManager/) | Manages network connections and communication.      |
-| `engine.api`                       | `ApiManager`                                   | Handles Verza's requests and responses.             |
-| `engine.ui`                        | `UIManager`                                    | Manages UI elements and interactions.               |
-| `engine.chat`                      | `ChatManager`                                  | Handles in-game chat functionality.                 |
-| `engine.commands`                  | `CommandsManager`                              | Manages command registration and execution.         |
-| `engine.camera`                    | `CameraManager`                                | Controls camera settings and transitions.           |
-| `engine.streamer`                  | `StreamerManager`                              | Manages the streaming of objects and assets.        |
-| `engine.world`                     | `WorldManager`                                 | Controls world properties and environment settings. |
-| `engine.assets`                    | `AssetsManager`                                | Manages assets loading and caching.                 |
-| `engine.events`                    | `EventsManager`                                | Engine's events manager.                            |
-| `engine.params`                    | [`EngineParams`](/sdk/types/EngineParams)      | Holds engine configuration parameters.              |
-| `engine.localPlayer`               | `PlayerManager`                                | A reference to the local player object.             |
-| `engine.players`                   | `PlayersManager`                               | The manager for players.                            |
-| `engine.objects`                   | `ObjectsManager`                               | The manager for objects.                            |
-| `engine.localPlayerId`             | `number`                                       | The ID of the local player.                         |
-| `engine.connected`                 | `boolean`                                      | True if the engine is currently connected.          |
-| `engine.synced`                    | `boolean`                                      | True if the engine is currently synced.             |
-| `engine.isServer`                  | `boolean`                                      | True if the script is running on the server.        |
-| `engine.isClient`                  | `boolean`                                      | True if the script is running on the client.        |
-| `engine.chunkSize`                 | `number`                                       | The size of the chunks used for streaming.          |
-| `engine.syncPlayers`               | `boolean`                                      | Indicates if player data is being synced.           |
-| `engine.syncPlayerUpdatesPriority` | `boolean`                                      | Determines the priority of player updates syncing.  |
-| `engine.syncPlayerUpdates`         | `boolean`                                      | Indicates if player updates are being synced.       |
-| `engine.syncPlayerControls`        | `boolean`                                      | Indicates if player controls are being synced.      |
-| `engine.syncCameraPosition`        | `boolean`                                      | Indicates if camera position is being synced.       |
+| Name                               | Type                                            | Description                                         |
+| ---------------------------------- | ----------------------------------------------- | --------------------------------------------------- |
+| `engine.network`                   | [`NetworkManager`](/sdk/types/NetworkManager)   | Manages network connections and communication.      |
+| `engine.api`                       | [`ApiManager`](/sdk/types/ApiManager)           | Handles Verza's requests and responses.             |
+| `engine.ui`                        | [`UIManager`](/sdk/types/UIManager)             | Manages UI elements and interactions.               |
+| `engine.chat`                      | [`ChatManager`](/sdk/types/ChatManager)         | Handles in-game chat functionality.                 |
+| `engine.commands`                  | [`CommandsManager`](/sdk/types/CommandsManager) | Manages command registration and execution.         |
+| `engine.camera`                    | [`CameraManager`](/sdk/types/CameraManager)     | Controls camera settings and transitions.           |
+| `engine.streamer`                  | [`StreamerManager`](/sdk/types/StreamerManager) | Manages the streaming of objects and assets.        |
+| `engine.world`                     | [`WorldManager`](/sdk/types/WorldManager)       | Controls world properties and environment settings. |
+| `engine.assets`                    | [`AssetsManager`](/sdk/types/AssetsManager)     | Manages assets loading and caching.                 |
+| `engine.events`                    | [`EventsManager`](/sdk/types/EventsManager)     | Engine's events manager.                            |
+| `engine.params`                    | [`EngineParams`](/sdk/types/EngineParams)       | Holds engine configuration parameters.              |
+| `engine.localPlayer`               | [`PlayerManager`](/sdk/types/PlayerManager)     | A reference to the local player object.             |
+| `engine.players`                   | [`PlayersManager`](/sdk/types/PlayersManager)   | The manager for players.                            |
+| `engine.objects`                   | [`ObjectsManager`](/sdk/types/ObjectsManager)   | The manager for objects.                            |
+| `engine.localPlayerId`             | `number`                                        | The ID of the local player.                         |
+| `engine.connected`                 | `boolean`                                       | True if the engine is currently connected.          |
+| `engine.synced`                    | `boolean`                                       | True if the engine is currently synced.             |
+| `engine.isServer`                  | `boolean`                                       | True if the script is running on the server.        |
+| `engine.isClient`                  | `boolean`                                       | True if the script is running on the client.        |
+| `engine.chunkSize`                 | `number`                                        | The size of the chunks used for streaming.          |
+| `engine.syncPlayers`               | `boolean`                                       | Indicates if player data is being synced.           |
+| `engine.syncPlayerUpdatesPriority` | `boolean`                                       | Determines the priority of player updates syncing.  |
+| `engine.syncPlayerUpdates`         | `boolean`                                       | Indicates if player updates are being synced.       |
+| `engine.syncPlayerControls`        | `boolean`                                       | Indicates if player controls are being synced.      |
+| `engine.syncCameraPosition`        | `boolean`                                       | Indicates if camera position is being synced.       |
 
 ## `Assets`
 
@@ -64,13 +64,13 @@ In this section, you'll find a comprehensive list of managers available in the V
 
 ### Methods
 
-| Method                                                     | Description                          |
-| ---------------------------------------------------------- | ------------------------------------ |
-| [`audio.addSound`](./audio/addSound)                       | Add a sound to the engine.           |
-| [`audio.removeSound`](./audio/removeSound)                 | Remove a sound from the engine.      |
-| [`audio.createSound`](./audio/createSound)                 | Create a sound.                      |
-| [`audio.playSound`](./audio/playSound)                     | Play a sound.                        |
-| [`audio.playSoundAtPosition`](./audio/playSoundAtPosition) | Play a sound at a specific position. |
+| Method                                                     | Description                                                                                 |
+| ---------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| [`audio.addSound`](./audio/addSound)                       | Add a sound to the engine.                                                                  |
+| [`audio.removeSound`](./audio/removeSound)                 | Remove a sound from the engine.                                                             |
+| [`audio.createSound`](./audio/createSound)                 | Create a sound.                                                                             |
+| [`audio.playSound`](./audio/playSound)                     | Play a sound and automatically dispose of it when it's done playing.                        |
+| [`audio.playSoundAtPosition`](./audio/playSoundAtPosition) | Play a sound and automatically dispose of it when it's done playing at a specific position. |
 
 ## `Sound`
 
@@ -206,10 +206,10 @@ In this section, you'll find a comprehensive list of managers available in the V
 
 ### Properties
 
-| Name              | Type                   | Description                                                                                        |
-| ----------------- | ---------------------- | -------------------------------------------------------------------------------------------------- |
-| `commands`        | `Map<string, Command>` | The list of registered commands.                                                                   |
-| `noAccessMessage` | `string`               | The message displayed when a user tries to execute a command but doesn't have permission to do so. |
+| Name              | Type                                         | Description                                                                                        |
+| ----------------- | -------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `commands`        | [`Map<string, Command>`](/sdk/types/Command) | The list of registered commands.                                                                   |
+| `noAccessMessage` | `string`                                     | The message displayed when a user tries to execute a command but doesn't have permission to do so. |
 
 ## `Entities`
 
@@ -227,13 +227,13 @@ In this section, you'll find a comprehensive list of managers available in the V
 
 ### Properties
 
-| Name                   | Type                                  | Description                                                                                                |
-| ---------------------- | ------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `entities.type`        | [`EntityType`](/sdk/types/EntityType) | The type of entity managed by the entity manager.                                                          |
-| `entities.entities`    | `EntityManager[]`                     | An array containing all the entity managers for the specified entity type.                                 |
-| `entities.entitiesMap` | `Map<ID, EntityManager>`              | A map of entity managers indexed by their respective entity IDs.                                           |
-| `entities.streamed`    | `Map<ID, EntityManager>`              | A map of entity managers for entities that are currently being streamed to the player.                     |
-| `entities.events`      | `EventsManager`                       | An instance of the `EventsManager` class used to register and manage events for the specified entity type. |
+| Name                   | Type                                                 | Description                                                                                                |
+| ---------------------- | ---------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `entities.type`        | [`EntityType`](/sdk/types/EntityType)                | The type of entity managed by the entity manager.                                                          |
+| `entities.entities`    | [`EntityManager[]`](/sdk/types/EntityManager)        | An array containing all the entity managers for the specified entity type.                                 |
+| `entities.entitiesMap` | [`Map<ID, EntityManager>`](/sdk/types/EntityManager) | A map of entity managers indexed by their respective entity IDs.                                           |
+| `entities.streamed`    | [`Map<ID, EntityManager>`](/sdk/types/EntityManager) | A map of entity managers for entities that are currently being streamed to the player.                     |
+| `entities.events`      | [`EventsManager`](/sdk/types/EntityManager)          | An instance of the `EventsManager` class used to register and manage events for the specified entity type. |
 
 ## `Network`
 
@@ -275,9 +275,9 @@ In this section, you'll find a comprehensive list of managers available in the V
 
 ### Properties
 
-| Name                    | Type            | Description                                                                                                      |
-| ----------------------- | --------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `objects.editingObject` | `ObjectManager` | A reference to the object manager for the object currently being edited, or `null` if no object is being edited. |
+| Name                    | Type                                        | Description                                                                                                      |
+| ----------------------- | ------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `objects.editingObject` | [`ObjectManager`](/sdk/types/ObjectManager) | A reference to the object manager for the object currently being edited, or `null` if no object is being edited. |
 
 ## `Object`
 
@@ -337,14 +337,23 @@ In this section, you'll find a comprehensive list of managers available in the V
 | `object.permanent`     | `boolean`                                               | Whether the object is permanent or not.                                              |
 | `object.remote`        | `boolean`                                               | Whether the object is remote or not.                                                 |
 | `object.parentId`      | `string`                                                | The ID of the parent object.                                                         |
-| `object.parent`        | `ObjectManager`                                         | The parent object of this object, or `null` if this object has no parent.            |
-| `object.children`      | `Set<ObjectManager>`                                    | The child objects of this object, represented as a set of `ObjectManager` instances. |
+| `object.parent`        | [`ObjectManager`](/sdk/types/ObjectManager)             | The parent object of this object, or `null` if this object has no parent.            |
+| `object.children`      | [`Set<ObjectManager>`](/sdk/types/ObjectManager)        | The child objects of this object, represented as a set of `ObjectManager` instances. |
 | `object.userData`      | [`ObjectUserData`](/sdk/types/ObjectUserData)           | Custom user data attached to the object.                                             |
 | `props`                | `ObjectProps`                                           | The properties of the object, based on its type.                                     |
 | `data`                 | `ObjectData`                                            | The data of the object.                                                              |
 | `collision`            | [`EntityCollisionType`](/sdk/types/EntityCollisionType) | The collision type of the object.                                                    |
 | `collider`             | [`EntityColliderType`](/sdk/types/EntityColliderType)   | The collider type of the object.                                                     |
 | `object.mass`          | `number`                                                | The object's mass, used in physics calculations.                                     |
+
+## `Players`
+
+### Methods
+
+| Method                                               | Description                                  |
+| ---------------------------------------------------- | -------------------------------------------- |
+| [`players.create`](./players/create)                 | Creates a detached player entity.            |
+| [`players.forEachInChunk`](./players/forEachInChunk) | Iterates for each player in specified chunk. |
 
 ## `Player`
 
@@ -392,21 +401,21 @@ In this section, you'll find a comprehensive list of managers available in the V
 
 ### Properties
 
-| Name                                | Type                                          | Description                                                                |
-| ----------------------------------- | --------------------------------------------- | -------------------------------------------------------------------------- |
-| `player.id`                         | `number`                                      | The player's ID.                                                           |
-| `player.isAdmin`                    | `boolean`                                     | Whether the player is an admin or not.                                     |
-| `player.location`                   | [`Object3D`](/sdk/types/Object3D)             | The player's position and rotation.                                        |
-| `player.position`                   | [`Vector3`](/sdk/types/Vector3)               | The player's position.                                                     |
-| `player.rotation`                   | [`Quaternion`](/sdk/types/Quaternion)         | The player's rotation.                                                     |
-| `player.velocity`                   | [`Vector3`](/sdk/types/Vector3)               | The player's velocity vector.                                              |
-| `player.name`                       | `string`                                      | The player's name.                                                         |
-| `player.state`                      | [`PlayerState`](/sdk/types/PlayerState)       | The player's current state.                                                |
-| `player.roles`                      | `string[]`                                    | The roles assigned to the player.                                          |
-| `player.controls `                  | [`PlayerControls`](/sdk/types/PlayerControls) | The player's controls.                                                     |
-| `player.isMovingControl`            | `boolean`                                     | Whether the player's movement controls are active.                         |
-| `player.onGround`                   | `boolean`                                     | Whether the player is currently on the ground.                             |
-| `player.voicechat.connectedPlayers` | `Set<PlayerManager>`                          | The set of players connected to the same voice chat channel as the player. |
+| Name                                | Type                                             | Description                                                                |
+| ----------------------------------- | ------------------------------------------------ | -------------------------------------------------------------------------- |
+| `player.id`                         | `number`                                         | The player's ID.                                                           |
+| `player.isAdmin`                    | `boolean`                                        | Whether the player is an admin or not.                                     |
+| `player.location`                   | [`Object3D`](/sdk/types/Object3D)                | The player's position and rotation.                                        |
+| `player.position`                   | [`Vector3`](/sdk/types/Vector3)                  | The player's position.                                                     |
+| `player.rotation`                   | [`Quaternion`](/sdk/types/Quaternion)            | The player's rotation.                                                     |
+| `player.velocity`                   | [`Vector3`](/sdk/types/Vector3)                  | The player's velocity vector.                                              |
+| `player.name`                       | `string`                                         | The player's name.                                                         |
+| `player.state`                      | [`PlayerState`](/sdk/types/PlayerState)          | The player's current state.                                                |
+| `player.roles`                      | `string[]`                                       | The roles assigned to the player.                                          |
+| `player.controls `                  | [`PlayerControls`](/sdk/types/PlayerControls)    | The player's controls.                                                     |
+| `player.isMovingControl`            | `boolean`                                        | Whether the player's movement controls are active.                         |
+| `player.onGround`                   | `boolean`                                        | Whether the player is currently on the ground.                             |
+| `player.voicechat.connectedPlayers` | [`Set<PlayerManager>`](/sdk/types/PlayerManager) | The set of players connected to the same voice chat channel as the player. |
 
 ## `World`
 
@@ -435,3 +444,11 @@ In this section, you'll find a comprehensive list of managers available in the V
 | [`world.setViewportRender`](./world/setViewportRender)                         | Sets the world viewport render mode.                                                    |
 | [`world.createProximityAction`](./world/createProximityAction)                 | Creates a proximity action.                                                             |
 | [`world.deleteProximityAction`](./world/deleteProximityAction)                 | Deletes a proximity action.                                                             |
+
+## `Misc`
+
+### Methods
+
+| Method                                                      | Description                   |
+| ----------------------------------------------------------- | ----------------------------- |
+| [`createControllerManager`](./misc/createControllerManager) | Creates a controller manager. |
