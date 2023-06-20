@@ -1,10 +1,12 @@
 # Storage
 
-Verza provides two storage options: `Persistent Store` and `Memory Store`.
+Verza offers two cloud-based storage options: the `Persistent Store` and the `Memory Store`. These storage solutions provide a secure and reliable way to store and retrieve data in your server.
 
-The `Persistent Store` allows for long-term data storage across player sessions, while the `Memory Store` is designed for temporary or transient data within a session. Both storage options follow a key-value approach, enabling you to store and retrieve data efficiently.
+The `Persistent Store` ensures long-term data storage across player sessions, while the `Memory Store` is ideal for temporary or transient data during a session. Both options utilize a key-value approach, allowing you to efficiently manage your server data.
 
-Let's explore the details of each storage option below.
+Please note that access to these storage options is limited to [`WebServer Script`](/concepts/scripts), [`WebsocketServer Scripts`](/concepts/scripts) or `Player` with Admin permissions, ensuring the security and integrity of the data.
+
+Let's dive into the specifics of each storage option below.
 
 ## Persistent Store
 
@@ -42,3 +44,9 @@ Rate limiting is implemented to ensure fair usage of storage operations. In some
 **Key Max Length:** Maximum key length for the `Memory Store` is `64` characters.
 
 **Value Max Size:** Maximum value size for the `Memory Store` is `1K` (`1024 bytes`).
+
+## Recommendations
+
+When using our storage service, we want to ensure that you have the best experience without worrying about infrastructure management. Here are some recommendations to help you make the most of our storage capabilities:
+
+While there are no strict limits, it's a good practice to avoid storing excessively large amounts of data or frequently updating large datasets. By being mindful of data usage, you can optimize the performance of our storage service.
