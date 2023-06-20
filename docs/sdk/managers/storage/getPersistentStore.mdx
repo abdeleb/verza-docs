@@ -1,0 +1,38 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Gets a persistent store.
+
+### Syntax
+
+```js
+engine.storage.getPersistentStore(name, scope);
+```
+
+### Parameters
+
+| Name    | Type     | Description                                            |
+| ------- | -------- | ------------------------------------------------------ |
+| `name`  | `string` | The name of the persistent store.                      |
+| `scope` | `string` | The scope of the persistent store. (default: `global`) |
+
+### Returns
+
+- [`PersistentStoreManager`](/sdk/types/PersistentStoreManager) - The persistent store manager.
+
+### Example
+
+```js
+const scores = engine.storage.getPersistentStore('scores');
+
+await scores.set('player1', 100);
+
+const player1Score = await scores.get('player1');
+
+console.log('Player 1 score:', player1Score);
+```
+
+**Available on:** <ClientTag />

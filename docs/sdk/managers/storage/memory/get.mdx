@@ -1,0 +1,34 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+Gets a value from the store.
+
+### Syntax
+
+```js
+store.get(key);
+```
+
+### Parameters
+
+| Name  | Type     | Description                  |
+| ----- | -------- | ---------------------------- |
+| `key` | `string` | The key of the value to get. |
+
+### Returns
+
+- `Promise<any>` - A promise that resolves with the value.
+
+### Example
+
+```js
+const score = await store.get('player1');
+
+console.log('Player 1 score:', score);
+```
+
+**Available on:** <ClientTag /> <ServerTag />

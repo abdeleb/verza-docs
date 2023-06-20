@@ -1,0 +1,33 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+Sets a value in the store.
+
+### Syntax
+
+```js
+store.set(key, value);
+```
+
+### Parameters
+
+| Name    | Type     | Description                  |
+| ------- | -------- | ---------------------------- |
+| `key`   | `string` | The key of the value to set. |
+| `value` | `any`    | The value to set.            |
+
+### Returns
+
+- `Promise<void>` - A promise that resolves when the value is set.
+
+### Example
+
+```js
+await store.set('player1', 100);
+```
+
+**Available on:** <ClientTag /> <ServerTag />

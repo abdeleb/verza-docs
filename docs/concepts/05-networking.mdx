@@ -9,13 +9,13 @@ In this section, we'll provide an overview of the `Networking` feature and expla
 
 ## Events
 
-Custom events can be defined using the [`engine.network.*`](/sdk/managers/#network) methods like [`engine.network.emitToPlayers`](/sdk/managers/network/emitToPlayers), providing a flexible way to extend the functionality of the Networking feature. With custom events, developers can define their own event types, data, and listeners, which can be triggered and received by other parts of the script. This allows for a wide range of possibilities, from syncing player inventory and stats to triggering custom animations and effects. Custom events provide a way to tailor the Networking feature to meet the specific needs of your project and create a unique experience for players.
+Custom events can be defined using the [`engine.network.*`](/sdk/managers/#networkmanager) methods like [`engine.network.emitToPlayers`](/sdk/managers/network/emitToPlayers), providing a flexible way to extend the functionality of the Networking feature. With custom events, developers can define their own event types, data, and listeners, which can be triggered and received by other parts of the script. This allows for a wide range of possibilities, from syncing player inventory and stats to triggering custom animations and effects. Custom events provide a way to tailor the Networking feature to meet the specific needs of your project and create a unique experience for players.
 
-See the full [Methods List](/sdk/managers/#network).
+See the full [Methods List](/sdk/managers/#networkmanager).
 
 ## Emitting and Listening to Events
 
-To emit a custom event, you can use one of the [`engine.network.*`](/sdk/managers/#network) methods listed in the previous section and specify the event name and data. The data can be any valid JSON data, such as a string, number, or object.
+To emit a custom event, you can use one of the [`engine.network.*`](/sdk/managers/#networkmanager) methods listed in the previous section and specify the event name and data. The data can be any valid JSON data, such as a string, number, or object.
 
 Here's an example of defining, emitting, and listening to a custom event:
 

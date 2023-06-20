@@ -8,7 +8,7 @@ In this section, you'll find a comprehensive list of managers available in the V
 
 <DocCardList />
 
-## `Engine`
+## `EngineManager`
 
 ### Methods
 
@@ -52,7 +52,7 @@ In this section, you'll find a comprehensive list of managers available in the V
 | `engine.syncPlayerControls`        | `boolean`                                       | Indicates if player controls are being synced.      |
 | `engine.syncCameraPosition`        | `boolean`                                       | Indicates if camera position is being synced.       |
 
-## `Assets`
+## `AssetsManager`
 
 ### Methods
 
@@ -60,7 +60,7 @@ In this section, you'll find a comprehensive list of managers available in the V
 | ---------------------------------- | ------------------------------------------------------------------------ |
 | [`assets.upload`](./assets/upload) | Uploads a file to Verza's servers to be used as an asset in your script. |
 
-## `Audio`
+## `AudioManager`
 
 ### Methods
 
@@ -72,7 +72,7 @@ In this section, you'll find a comprehensive list of managers available in the V
 | [`audio.playSound`](./audio/playSound)                     | Play a sound and automatically dispose of it when it's done playing.                        |
 | [`audio.playSoundAtPosition`](./audio/playSoundAtPosition) | Play a sound and automatically dispose of it when it's done playing at a specific position. |
 
-## `Sound`
+## `SoundManager`
 
 ### Methods
 
@@ -101,7 +101,7 @@ In this section, you'll find a comprehensive list of managers available in the V
 | `sound.id`   | `string` |             |
 | `sound.name` | `string` |             |
 
-## `Animations`
+## `AnimationsManager`
 
 ### Methods
 
@@ -112,7 +112,7 @@ In this section, you'll find a comprehensive list of managers available in the V
 | [`animations.getAnimations`](./animations/getAnimations)     | Gets all animations.           |
 | [`animations.removeAnimation`](./animations/removeAnimation) | Removes an animation by id.    |
 
-## `Camera`
+## `CameraManager`
 
 ### Properties
 
@@ -123,7 +123,7 @@ In this section, you'll find a comprehensive list of managers available in the V
 | `camera.rotation`   | [`Euler`](/sdk/types/Euler)           | The rotation of the camera.   |
 | `camera.quaternion` | [`Quaternion`](/sdk/types/Quaternion) | The quaternion of the camera. |
 
-## `Clothes`
+## `ClothesManager`
 
 ### Methods
 
@@ -134,7 +134,7 @@ In this section, you'll find a comprehensive list of managers available in the V
 | [`clothes.addSkinMask`](./clothes/addSkinMask)       | Adds a skin mask to the engine.        |
 | [`clothes.removeSkinMask`](./clothes/removeSkinMask) | Removes a skin mask from the engine.   |
 
-## `Chat`
+## `ChatManager`
 
 ### Methods
 
@@ -144,7 +144,7 @@ In this section, you'll find a comprehensive list of managers available in the V
 | [`chat.sendMessageToAll`](./chat/sendMessageToAll) | Sends a message to all players in the server.                                             |
 | [`chat.sendMessageTo`](./chat/sendMessageTo)       | Sends a message to a specific player in the server.                                       |
 
-## `User Interface (UI)`
+## `UIManager`
 
 ### Methods
 
@@ -185,7 +185,7 @@ In this section, you'll find a comprehensive list of managers available in the V
 | --------------- | ---------- | ------------------------------------------------------------- |
 | `ui.interfaces` | `string[]` | An array of the available interfaces available to the player. |
 
-## `Input`
+## `InputManager`
 
 ### Properties
 
@@ -195,7 +195,7 @@ In this section, you'll find a comprehensive list of managers available in the V
 | `input.isActiveInput` | `boolean`                                                                               | A boolean that indicates whether or not a text input field is currently active for the player. |
 | `input.activeInput`   | [`HTMLInputElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement) | The HTML input element that is currently active relative to the script.                        |
 
-## `Commands`
+## `CommandsManager`
 
 ### Methods
 
@@ -211,7 +211,7 @@ In this section, you'll find a comprehensive list of managers available in the V
 | `commands`        | [`Map<string, Command>`](/sdk/types/Command) | The list of registered commands.                                                                   |
 | `noAccessMessage` | `string`                                     | The message displayed when a user tries to execute a command but doesn't have permission to do so. |
 
-## `Entities`
+## `EntitiesManager`
 
 ### Methods
 
@@ -235,7 +235,7 @@ In this section, you'll find a comprehensive list of managers available in the V
 | `entities.streamed`    | [`Map<ID, EntityManager>`](/sdk/types/EntityManager) | A map of entity managers for entities that are currently being streamed to the player.                     |
 | `entities.events`      | [`EventsManager`](/sdk/types/EntityManager)          | An instance of the `EventsManager` class used to register and manage events for the specified entity type. |
 
-## `Network`
+## `NetworkManager`
 
 ### Methods
 
@@ -260,7 +260,7 @@ In this section, you'll find a comprehensive list of managers available in the V
 | ---------------- | ----------------------------------- | --------------------------------------------------------------------------------------- |
 | `network.server` | [`ServerDto`](/sdk/types/ServerDto) | An object containing information about the server the player is currently connected to. |
 
-## `Objects`
+## `ObjectsManager`
 
 ### Methods
 
@@ -279,7 +279,7 @@ In this section, you'll find a comprehensive list of managers available in the V
 | ----------------------- | ------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
 | `objects.editingObject` | [`ObjectManager`](/sdk/types/ObjectManager) | A reference to the object manager for the object currently being edited, or `null` if no object is being edited. |
 
-## `Object`
+## `ObjectManager`
 
 ### Methods
 
@@ -359,7 +359,7 @@ In this section, you'll find a comprehensive list of managers available in the V
 | `object.enabledRotations`    | [`Boolean3Array`](/sdk/types/Boolean3Array)             | Whether the object's rotations are enabled or not.                                   |
 | `object.enabledTranslations` | [`Boolean3Array`](/sdk/types/Boolean3Array)             | Whether the object's translations are enabled or not.                                |
 
-## `Players`
+## `PlayersManager`
 
 ### Methods
 
@@ -368,7 +368,7 @@ In this section, you'll find a comprehensive list of managers available in the V
 | [`players.create`](./players/create)                 | Creates a detached player entity.            |
 | [`players.forEachInChunk`](./players/forEachInChunk) | Iterates for each player in specified chunk. |
 
-## `Player`
+## `PlayerManager`
 
 ### Methods
 
@@ -429,6 +429,36 @@ In this section, you'll find a comprehensive list of managers available in the V
 | `player.isMovingControl`            | `boolean`                                        | Whether the player's movement controls are active.                         |
 | `player.onGround`                   | `boolean`                                        | Whether the player is currently on the ground.                             |
 | `player.voicechat.connectedPlayers` | [`Set<PlayerManager>`](/sdk/types/PlayerManager) | The set of players connected to the same voice chat channel as the player. |
+
+## `StorageManager`
+
+### Methods
+
+| Method                                                       | Description              |
+| ------------------------------------------------------------ | ------------------------ |
+| [`storage.getPersistentStore`](./storage/getPersistentStore) | Gets a persistent store. |
+| [`storage.getMemoryStore`](./storage/getMemoryStore)         | Gets a memory store.     |
+
+## `PersistentStoreManager`
+
+### Methods
+
+| Method                                          | Description                     |
+| ----------------------------------------------- | ------------------------------- |
+| [`store.set`](./storage/persistent/set)         | Sets a value in the store.      |
+| [`store.get`](./storage/persistent/get)         | Gets a value from the store.    |
+| [`store.delete`](./storage/persistent/delete)   | Deletes a value from the store. |
+| [`store.getList`](./storage/persistent/getList) | Gets a list from the store.     |
+
+## `MemoryStoreManager`
+
+### Methods
+
+| Method                                    | Description                     |
+| ----------------------------------------- | ------------------------------- |
+| [`store.set`](./storage/memory/set)       | Sets a value in the store.      |
+| [`store.get`](./storage/memory/get)       | Gets a value from the store.    |
+| [`store.delete`](./storage/memory/delete) | Deletes a value from the store. |
 
 ## `World`
 
