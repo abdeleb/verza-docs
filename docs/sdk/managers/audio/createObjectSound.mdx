@@ -1,0 +1,38 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Create a sound attached to an object.
+
+### Syntax
+
+```js
+engine.audio.createObjectSound(object, soundName, options, withId);
+```
+
+### Parameters
+
+| Name        | Type                                                    | Description                                             |
+| ----------- | ------------------------------------------------------- | ------------------------------------------------------- |
+| `object`    | `string` or [`ObjectManager`](/sdk/types/ObjectManager) | The object id or object manager to attach the sound to. |
+| `soundName` | `string`                                                | The name of the sound to create.                        |
+| `options`   | [`SoundOptions`](/sdk/types/SoundOptions)               | The options to use for the sound. (optional)            |
+| `withId`    | `string`                                                | The ID of the sound to create. (optional)               |
+
+### Returns
+
+- [`SoundManager`](/sdk/types/SoundManager) - The sound manager.
+
+### Example
+
+```js
+const audio = engine.audio.createObjectSound(object, 'fire', {
+  position: [0, 2, 0],
+});
+
+audio.play();
+```
+
+**Available on:** <ClientTag />

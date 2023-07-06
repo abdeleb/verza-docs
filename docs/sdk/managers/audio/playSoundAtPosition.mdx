@@ -9,17 +9,17 @@ Play a sound and automatically dispose of it when it's done playing at a specifi
 ### Syntax
 
 ```js
-engine.audio.playSound(soundName, options, withId);
+engine.audio.playSound(soundName, position, options, withId);
 ```
 
 ### Parameters
 
-| Name           | Type                                                                         | Description                                  |
-| -------------- | ---------------------------------------------------------------------------- | -------------------------------------------- |
-| `soundName`    | `string`                                                                     | The name of the sound to create.             |
-| `position`     | [`Vector3Array`](/sdk/types/Vector3Array) or [`Vector3`](/sdk/types/Vector3) | The position of the sound.                   |
-| `SoundOptions` | [`SoundOptions`](/sdk/types/SoundOptions)                                    | The options to use for the sound. (optional) |
-| `withId`       | `string`                                                                     | The ID of the sound to create. (optional)    |
+| Name                   | Type                                                                         | Description                       |
+| ---------------------- | ---------------------------------------------------------------------------- | --------------------------------- |
+| `soundName`            | `string`                                                                     | The name of the sound to create.  |
+| `position`             | [`Vector3Array`](/sdk/types/Vector3Array) or [`Vector3`](/sdk/types/Vector3) | The position of the sound.        |
+| `options` _(optional)_ | [`SoundOptions`](/sdk/types/SoundOptions)                                    | The options to use for the sound. |
+| `withId` _(optional)_  | `string`                                                                     | The ID of the sound to create.    |
 
 ### Returns
 

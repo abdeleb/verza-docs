@@ -1,0 +1,31 @@
+# Effects
+
+Implementing visual effects is a great way to add polish and make your game feel more alive. In this section we'll look at how to implement some common effects.
+
+## Particles
+
+Particles are a great way to add visual effects to your game. They can be used to simulate things like fire, smoke, explosions, and more. In this section we'll look at how to implement a simple particle system.
+
+### Create Manager
+
+First we need to create a new [`ParticlesManager`](/sdk/managers/#particlesmanager) manager using the [`EffectsManager`](/sdk/managers/#effectsmanager) manager.
+
+```ts
+const particles = engine.effects.createParticles({
+  position: [0, 2, 0],
+
+  autoplay: false,
+});
+```
+
+Now you can play a particle effect by calling the [`play`](/sdk/managers/effects/particles/play) method.
+
+```ts
+particles.play();
+```
+
+### Options
+
+The [`ParticlesManager`](/sdk/managers/#particlesmanager) manager has a number of options that can be used to customize the particle effect.
+
+See the [`ParticleOptions`](/sdk/types/ParticleOptions) type for a full list of options.

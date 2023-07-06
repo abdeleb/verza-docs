@@ -69,6 +69,7 @@ In this section, you'll find a comprehensive list of managers available in the V
 | [`audio.addSound`](./audio/addSound)                       | Add a sound to the engine.                                                                  |
 | [`audio.removeSound`](./audio/removeSound)                 | Remove a sound from the engine.                                                             |
 | [`audio.createSound`](./audio/createSound)                 | Create a sound.                                                                             |
+| [`audio.createObjectSound`](./audio/createObjectSound)     | Create a sound attached to an object.                                                       |
 | [`audio.playSound`](./audio/playSound)                     | Play a sound and automatically dispose of it when it's done playing.                        |
 | [`audio.playSoundAtPosition`](./audio/playSoundAtPosition) | Play a sound and automatically dispose of it when it's done playing at a specific position. |
 
@@ -76,30 +77,62 @@ In this section, you'll find a comprehensive list of managers available in the V
 
 ### Methods
 
-| Method                                               | Description                                          |
-| ---------------------------------------------------- | ---------------------------------------------------- |
-| [`sound.play`](./sound/play)                         | Play the sound.                                      |
-| [`sound.pause`](./sound/pause)                       | Pause the sound.                                     |
-| [`sound.resume`](./sound/resume)                     | Resume the sound.                                    |
-| [`sound.stop`](./sound/stop)                         | Stop the sound.                                      |
-| [`sound.setVolume`](./sound/setVolume)               | Set the sound volume.                                |
-| [`sound.setPlaybackRate`](./sound/setPlaybackRate)   | Set the sound playback rate.                         |
-| [`sound.setLoop`](./sound/setLoop)                   | Set the sound loop.                                  |
-| [`sound.setLoopStart`](./sound/setLoopStart)         | Set the sound loop start.                            |
-| [`sound.setLoopEnd`](./sound/setLoopEnd)             | Set the sound loop end.                              |
-| [`sound.setPosition`](./sound/setPosition)           | Set the sound position.                              |
-| [`sound.setMinDistance`](./sound/setMinDistance)     | Set the sound minimum distance to start to fade out. |
-| [`sound.setMaxDistance`](./sound/setMaxDistance)     | Set the sound maximum distance to fade out.          |
-| [`sound.setRolloffFactor`](./sound/setRolloffFactor) | Set the sound rolloff factor.                        |
-| [`sound.setOptions`](./sound/setOptions)             | Set the sound options.                               |
-| [`sound.destroy`](./sound/destroy)                   | Destroy the sound.                                   |
+| Method                                                     | Description                                          |
+| ---------------------------------------------------------- | ---------------------------------------------------- |
+| [`sound.play`](./audio/sound/play)                         | Play the sound.                                      |
+| [`sound.pause`](./audio/sound/pause)                       | Pause the sound.                                     |
+| [`sound.resume`](./audio/sound/resume)                     | Resume the sound.                                    |
+| [`sound.stop`](./audio/sound/stop)                         | Stop the sound.                                      |
+| [`sound.setVolume`](./audio/sound/setVolume)               | Set the sound volume.                                |
+| [`sound.setPlaybackRate`](./audio/sound/setPlaybackRate)   | Set the sound playback rate.                         |
+| [`sound.setLoop`](./audio/sound/setLoop)                   | Set the sound loop.                                  |
+| [`sound.setLoopStart`](./audio/sound/setLoopStart)         | Set the sound loop start.                            |
+| [`sound.setLoopEnd`](./audio/sound/setLoopEnd)             | Set the sound loop end.                              |
+| [`sound.setPosition`](./audio/sound/setPosition)           | Set the sound position.                              |
+| [`sound.setMinDistance`](./audio/sound/setMinDistance)     | Set the sound minimum distance to start to fade out. |
+| [`sound.setMaxDistance`](./audio/sound/setMaxDistance)     | Set the sound maximum distance to fade out.          |
+| [`sound.setRolloffFactor`](./audio/sound/setRolloffFactor) | Set the sound rolloff factor.                        |
+| [`sound.setOptions`](./audio/sound/setOptions)             | Set the sound options.                               |
+| [`sound.destroy`](./audio/sound/destroy)                   | Destroy the sound.                                   |
 
 ### Properties
 
 | Name         | Type     | Description |
 | ------------ | -------- | ----------- |
-| `sound.id`   | `string` |             |
-| `sound.name` | `string` |             |
+| `sound.id`   | `string` | Sound ID.   |
+| `sound.name` | `string` | Sound name. |
+
+## `EffectsManager`
+
+### Methods
+
+| Method                                                                 | Description                                     |
+| ---------------------------------------------------------------------- | ----------------------------------------------- |
+| [`effects.createParticles`](./effects/createParticles)                 | Create a particle effect.                       |
+| [`effects.createPlayerParticles`](./effects/createPlayerParticles)     | Create a particle effect attached to a player.  |
+| [`effects.createObjectParticles`](./effects/createObjectParticles)     | Create a particle effect attached to an object. |
+| [`effects.playParticles`](./effects/playParticles)                     | Play a particle effect.                         |
+| [`effects.playParticlesAtPosition`](./effects/playParticlesAtPosition) | Play a particle effect at a specific position.  |
+
+## `ParticlesManager`
+
+### Methods
+
+| Method                                                     | Description                       |
+| ---------------------------------------------------------- | --------------------------------- |
+| [`particles.play`](./effects/particles/play)               | Play the particle effect.         |
+| [`particles.pause`](./effects/particles/pause)             | Pause the particle effect.        |
+| [`particles.stop`](./effects/particles/stop)               | Stop the particle effect.         |
+| [`particles.resume`](./effects/particles/resume)           | Resume the particle effect.       |
+| [`particles.setPosition`](./effects/particles/setPosition) | Set the particle effect position. |
+| [`particles.setOptions`](./effects/particles/setOptions)   | Set the particle effect options.  |
+| [`particles.destroy`](./effects/particles/destroy)         | Destroy the particle effect.      |
+
+### Properties
+
+| Name           | Type     | Description         |
+| -------------- | -------- | ------------------- |
+| `particles.id` | `string` | Particle effect ID. |
 
 ## `AnimationsManager`
 
@@ -358,6 +391,8 @@ In this section, you'll find a comprehensive list of managers available in the V
 | `object.restitution`         | `number`                                                | The object's restitution, used in physics calculations.                              |
 | `object.enabledRotations`    | [`Boolean3Array`](/sdk/types/Boolean3Array)             | Whether the object's rotations are enabled or not.                                   |
 | `object.enabledTranslations` | [`Boolean3Array`](/sdk/types/Boolean3Array)             | Whether the object's translations are enabled or not.                                |
+| `object.sound`               | [`SoundManager`](/sdk/types/SoundManager)               | The object's sound manager when used the `sound` property (React SDK only).          |
+| `object.particles`           | [`ParticlesManager`](/sdk/types/ParticlesManager)       | The object's particles manager when used the `particles` property (React SDK only).  |
 
 ## `PlayersManager`
 
@@ -460,36 +495,43 @@ In this section, you'll find a comprehensive list of managers available in the V
 | [`store.get`](./storage/memory/get)       | Gets a value from the store.    |
 | [`store.delete`](./storage/memory/delete) | Deletes a value from the store. |
 
-## `World`
+## `WorldManager`
 
 ### Methods
 
-| Method                                                                         | Description                                                                             |
-| ------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------- |
-| [`world.getTime`](./world/getTime)                                             | Gets the current time of day.                                                           |
-| [`world.setTime`](./world/setTime)                                             | Sets the current time of day.                                                           |
-| [`world.setTimeMode`](./world/setTimeMode)                                     | Sets the time mode.                                                                     |
-| [`world.setTimeCycleDuration`](./world/setTimeCycleDuration)                   | Sets how long a day/night cycle lasts in seconds.                                       |
-| [`world.setTimezone`](./world/setTimezone)                                     | Sets the timezone.                                                                      |
-| [`world.setHemisphereLightColor`](./world/setHemisphereLightColor)             | Sets the color of the hemisphere light.                                                 |
-| [`world.setHemisphereLightGroundColor`](./world/setHemisphereLightGroundColor) | Sets the color of the ground hemisphere light.                                          |
-| [`world.setHemisphereLightIntensity`](./world/setHemisphereLightIntensity)     | Sets the intensity of the hemisphere light.                                             |
-| [`world.setGlobalLightColor`](./world/setGlobalLightColor)                     | Sets the color of the global light.                                                     |
-| [`world.setGlobalLightIntensity`](./world/setGlobalLightIntensity)             | Sets the intensity of the global light.                                                 |
-| [`world.raycaster.raycastScreenPoint`](./world/raycaster/raycastScreenPoint)   | Casts a ray from a point on the screen and returns the hit information.                 |
-| [`world.raycaster.raycastPoint`](./world/raycaster/raycastPoint)               | Casts a ray from a origin and a direction in the world and returns the hit information. |
-| [`world.raycaster.raycastPoints`](./world/raycaster/raycastPoints)             | Casts rays from two positions in the world and returns hit information.                 |
-| [`world.setInteriorMode`](./world/setInteriorMode)                             | Enable or disable the interior mode.                                                    |
-| [`world.setSkybox`](./world/setSkybox)                                         | Sets the current skybox.                                                                |
-| [`world.setWeather`](./world/setWeather)                                       | Sets the current weather.                                                               |
-| [`world.setMoonPhase`](./world/setMoonPhase)                                   | Sets the current moon phase.                                                            |
-| [`world.setSkyManualMode`](./world/setSkyManualMode)                           | Sets whether the sky transitions are manual or automatic.                               |
-| [`world.setViewportRender`](./world/setViewportRender)                         | Sets the world viewport render mode.                                                    |
-| [`world.createProximityAction`](./world/createProximityAction)                 | Creates a proximity action.                                                             |
-| [`world.deleteProximityAction`](./world/deleteProximityAction)                 | Deletes a proximity action.                                                             |
-| [`world.setFogStatus`](./world/setFogStatus)                                   | Sets the fog status.                                                                    |
-| [`world.setFogColor`](./world/setFogColor)                                     | Sets the fog color.                                                                     |
-| [`world.setFogDensity`](./world/setFogDensity)                                 | Sets the fog density.                                                                   |
+| Method                                                                         | Description                                               |
+| ------------------------------------------------------------------------------ | --------------------------------------------------------- |
+| [`world.getTime`](./world/getTime)                                             | Gets the current time of day.                             |
+| [`world.setTime`](./world/setTime)                                             | Sets the current time of day.                             |
+| [`world.setTimeMode`](./world/setTimeMode)                                     | Sets the time mode.                                       |
+| [`world.setTimeCycleDuration`](./world/setTimeCycleDuration)                   | Sets how long a day/night cycle lasts in seconds.         |
+| [`world.setTimezone`](./world/setTimezone)                                     | Sets the timezone.                                        |
+| [`world.setHemisphereLightColor`](./world/setHemisphereLightColor)             | Sets the color of the hemisphere light.                   |
+| [`world.setHemisphereLightGroundColor`](./world/setHemisphereLightGroundColor) | Sets the color of the ground hemisphere light.            |
+| [`world.setHemisphereLightIntensity`](./world/setHemisphereLightIntensity)     | Sets the intensity of the hemisphere light.               |
+| [`world.setGlobalLightColor`](./world/setGlobalLightColor)                     | Sets the color of the global light.                       |
+| [`world.setGlobalLightIntensity`](./world/setGlobalLightIntensity)             | Sets the intensity of the global light.                   |
+| [`world.setInteriorMode`](./world/setInteriorMode)                             | Enable or disable the interior mode.                      |
+| [`world.setSkybox`](./world/setSkybox)                                         | Sets the current skybox.                                  |
+| [`world.setWeather`](./world/setWeather)                                       | Sets the current weather.                                 |
+| [`world.setMoonPhase`](./world/setMoonPhase)                                   | Sets the current moon phase.                              |
+| [`world.setSkyManualMode`](./world/setSkyManualMode)                           | Sets whether the sky transitions are manual or automatic. |
+| [`world.setViewportRender`](./world/setViewportRender)                         | Sets the world viewport render mode.                      |
+| [`world.createProximityAction`](./world/createProximityAction)                 | Creates a proximity action.                               |
+| [`world.deleteProximityAction`](./world/deleteProximityAction)                 | Deletes a proximity action.                               |
+| [`world.setFogStatus`](./world/setFogStatus)                                   | Sets the fog status.                                      |
+| [`world.setFogColor`](./world/setFogColor)                                     | Sets the fog color.                                       |
+| [`world.setFogDensity`](./world/setFogDensity)                                 | Sets the fog density.                                     |
+
+## `RaycasterManager`
+
+### Methods
+
+| Method                                                                 | Description                                                                             |
+| ---------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| [`raycaster.raycastScreenPoint`](./world/raycaster/raycastScreenPoint) | Casts a ray from a point on the screen and returns the hit information.                 |
+| [`raycaster.raycastPoint`](./world/raycaster/raycastPoint)             | Casts a ray from a origin and a direction in the world and returns the hit information. |
+| [`raycaster.raycastPoints`](./world/raycaster/raycastPoints)           | Casts rays from two positions in the world and returns hit information.                 |
 
 ## `Misc`
 
