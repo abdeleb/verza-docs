@@ -42,21 +42,20 @@ engine.assets.upload(file, options);
 ### Example
 
 ```js
-const assetId = await engine.assets.upload({
-  name: 'my-gltf.glb',
-  data: arrayBuffer,
-});
-
-const object = engine.objects.create(
-  'gltf',
+const assetId = await engine.assets.upload(
   {
-    u: assetId,
+    name: 'my-gltf.glb',
+    data: arrayBuffer,
   },
   {
     optimizeGeometry: true,
     optimizeTextures: true,
   },
 );
+
+const object = engine.objects.create('gltf', {
+  u: assetId,
+});
 ```
 
 **Available on:** <ClientTag />
