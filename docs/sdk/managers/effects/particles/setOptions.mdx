@@ -1,0 +1,33 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Set the particle effect options.
+
+### Syntax
+
+```js
+particles.setOptions(options, respawn);
+```
+
+### Parameters
+
+| Name                   | Type                                            | Description                                         |
+| ---------------------- | ----------------------------------------------- | --------------------------------------------------- |
+| `options`              | [`ParticleOptions`](/sdk/types/ParticleOptions) | The options for the particle effect.                |
+| `respawn` _(optional)_ | `boolean`                                       | Whether to respawn the particles. Default: `false`. |
+
+### Example
+
+```js
+particles.setOptions(
+  {
+    color: 'red',
+  },
+  true,
+);
+```
+
+**Available on:** <ClientTag />

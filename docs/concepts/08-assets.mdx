@@ -1,0 +1,46 @@
+# Assets
+
+Assets are the files that are used in your project, such as textures, models, animations and sounds.
+
+## Asset Types
+
+| Asset Type  | Format                   | Description     |
+| ----------- | ------------------------ | --------------- |
+| `Texture`   | `png` `jpg` `jpeg` `hdr` | A 2D image.     |
+| `Model`     | `glb` `gltf`             | A 3D model.     |
+| `Animation` | `glb` `gltf`             | A 3D animation. |
+| `Sound`     | `mp3`                    | A sound.        |
+
+## Assets Manager
+
+The [`AssetsManager`](/sdk/managers/#assetsmanager) is used to upload files to Verza's servers to be used as an asset in your script.
+
+Use the [`assets.upload`](/sdk/managers/assets/upload) method to upload a file to Verza's servers.
+
+```js
+const assetId = await engine.assets.upload(file);
+```
+
+After the file has been uploaded, you can use the returned `assetId` anywhere in your scripts to reference the asset.
+
+## Assets in GLTF Models
+
+The `name` attribute of a mesh can be used to control the `bloom`, `shadows` and `collision` of a mesh from a GLTF model.
+
+### Attribute Specifications
+
+Each attribute is separated by a `|` character.
+
+```
+bloom_on
+shadows_on
+collision_on
+```
+
+### Practical Examples
+
+Bloom, shadows and collision: `MyBox|bloom_on|shadows_on|collision_on`
+
+Bloom and shadows: `MyBox|bloom_on|shadows_on`
+
+Only Bloom: `MyBox|bloom_on`

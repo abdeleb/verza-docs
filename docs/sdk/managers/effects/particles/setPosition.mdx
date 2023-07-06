@@ -1,0 +1,27 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Set the particle effect position.
+
+### Syntax
+
+```js
+particles.setPosition(position);
+```
+
+### Parameters
+
+| Name       | Type                                                                         | Description          |
+| ---------- | ---------------------------------------------------------------------------- | -------------------- |
+| `position` | [`Vector3Array`](/sdk/types/Vector3Array) or [`Vector3`](/sdk/types/Vector3) | The position to set. |
+
+### Example
+
+```js
+particles.setPosition([0, 1, 0]);
+```
+
+**Available on:** <ClientTag />

@@ -1,0 +1,29 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Play the particle effect.
+
+### Syntax
+
+```js
+particles.play(reset, options, respawn);
+```
+
+### Parameters
+
+| Name                   | Type                                            | Description                                               |
+| ---------------------- | ----------------------------------------------- | --------------------------------------------------------- |
+| `reset` _(optional)_   | `boolean`                                       | Whether to stop the particles instantly. Default: `false` |
+| `options` _(optional)_ | [`ParticleOptions`](/sdk/types/ParticleOptions) | The options for the particle effect.                      |
+| `respawn` _(optional)_ | `boolean`                                       | Whether to respawn the particles. Default: `false`        |
+
+### Example
+
+```js
+particles.play(true);
+```
+
+**Available on:** <ClientTag />

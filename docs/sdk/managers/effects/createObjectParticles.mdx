@@ -1,0 +1,36 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Create a particle effect attached to an object.
+
+### Syntax
+
+```js
+engine.effects.createObjectParticles(object, options, withId);
+```
+
+### Parameters
+
+| Name                   | Type                                                    | Description                                  |
+| ---------------------- | ------------------------------------------------------- | -------------------------------------------- |
+| `object`               | `string` or [`ObjectManager`](/sdk/types/ObjectManager) | The object to attach the particle effect to. |
+| `options` _(optional)_ | [`ParticleOptions`](/sdk/types/ParticleOptions)         | The options for the particle effect.         |
+| `withId` _(optional)_  | `string`                                                | The ID of the particle effect to create.     |
+
+### Returns
+
+- [`ParticlesManager`](/sdk/types/ParticlesManager) - The particles manager.
+
+### Example
+
+```js
+const particles = engine.effects.createObjectParticles(object, {
+  position: [0, 2, 0],
+  amount: 50,
+});
+```
+
+**Available on:** <ClientTag />

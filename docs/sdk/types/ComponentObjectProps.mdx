@@ -9,7 +9,7 @@ export type ComponentObjectProps<T extends ObjectType = ObjectType> = Omit<
 
   soundName?: string;
 
-  soundOptions?: Omit<SoundOptions, 'objectId'>;
+  soundOptions?: SoundOptions;
 
   helper?: boolean;
 };

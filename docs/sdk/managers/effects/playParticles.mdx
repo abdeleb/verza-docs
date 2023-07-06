@@ -1,0 +1,34 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Play a particle effect.
+
+### Syntax
+
+```js
+engine.audio.playParticles(options, withId);
+```
+
+### Parameters
+
+| Name                  | Type                                            | Description                              |
+| --------------------- | ----------------------------------------------- | ---------------------------------------- |
+| `options`             | [`ParticleOptions`](/sdk/types/ParticleOptions) | The options for the particles to create. |
+| `withId` _(optional)_ | `string`                                        | The ID of the particle effect to create. |
+
+### Returns
+
+- [`ParticlesManager`](/sdk/types/ParticlesManager) - The particles manager.
+
+### Example
+
+```js
+const particles = engine.audio.playSound({
+  amount: 50,
+});
+```
+
+**Available on:** <ClientTag />

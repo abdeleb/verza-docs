@@ -10,6 +10,10 @@ class ObjectManager<OT extends ObjectType = ObjectType> extends EntityManager<
 
   boundingBox: Box3;
 
+  sound: SoundManager | null;
+
+  particles: ParticlesManager | null;
+
   get objectType(): ObjectType;
 
   get worldLocation(): Object3D;
@@ -171,10 +175,7 @@ class ObjectManager<OT extends ObjectType = ObjectType> extends EntityManager<
 
   clearTransitions(): void;
 
-  setSound(
-    soundName: string,
-    options?: Omit<SoundOptions, 'objectId'>,
-  ): SoundManager;
+  setSound(soundName: string, options?: SoundOptions): SoundManager;
 
   removeSound(): void;
 

@@ -1,0 +1,25 @@
+```ts
+class EffectsManager {
+  createParticles(options?: ParticleOptions, withId?: string): ParticlesManager;
+
+  createPlayerParticles(
+    player: number | PlayerManager,
+    options?: ParticleOptions,
+    withId?: string,
+  ): ParticlesManager;
+
+  createObjectParticles(
+    object: number | ObjectManager,
+    options?: ParticleOptions,
+    withId?: string,
+  ): ParticlesManager;
+
+  playParticles(options?: SoundOptions, withId?: string): ParticlesManager;
+
+  playParticlesAtPosition(
+    position: Vector3Array | Vector3,
+    options?: ParticleOptions,
+    withId?: string,
+  ): ParticlesManager;
+}
+```
