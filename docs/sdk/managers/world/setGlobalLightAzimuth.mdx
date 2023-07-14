@@ -1,0 +1,27 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Sets the azimuth of the global light.
+
+### Syntax
+
+```js
+engine.world.setGlobalLightAzimuth(intensity);
+```
+
+### Parameters
+
+| Name      | Type     | Description                                         |
+| --------- | -------- | --------------------------------------------------- |
+| `azimuth` | `number` | The azimuth of the global light in degrees (0-360). |
+
+### Example
+
+```js
+engine.world.setGlobalLightAzimuth(90);
+```
+
+**Available on:** <ClientTag />
