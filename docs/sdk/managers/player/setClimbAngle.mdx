@@ -1,0 +1,32 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+Sets the player's maximum climb angle.
+
+:::note
+A too low angle will cause the player to "slide" on the surface if gravity allows it.
+:::
+
+### Syntax
+
+```js
+player.setClimbAngle(angle);
+```
+
+### Parameters
+
+| Name    | Type     | Description                                                                            |
+| ------- | -------- | -------------------------------------------------------------------------------------- |
+| `angle` | `number` | The maximum climb angle in degrees. The angle must be between 20 and 108. Default `55` |
+
+### Example
+
+```js
+player.setClimbAngle(65);
+```
+
+**Available on:** <ClientTag /> <ServerTag />
