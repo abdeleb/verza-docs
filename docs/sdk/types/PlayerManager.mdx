@@ -96,7 +96,11 @@ class PlayerManager extends EntityManager<
 
   getClothes(): Promise<PlayerClotheItem[]>;
 
-  playAnimation(animId: string, options: AnimationOptions): void;
+  playAnimation(
+    animId: string,
+    options: AnimationOptions,
+    networkSync?: boolean,
+  ): void;
 
   stopAnimation(animId: string, fadeOutDuration?: number): void;
 

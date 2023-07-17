@@ -7,25 +7,34 @@ import ServerTag from '@site/src/components/tags/ServerTag';
 
 Plays an animation on the player.
 
+:::note Network Sync on Client and Server
+When `networkSync` is set to `true`, the animation will be synced with other players. This means that other players will see the animation playing on the player
+
+**Client:** Can only be used on the local player; using it on other players will have no effect.
+
+**Server:** Can be used on any player.
+:::
+
 ### Syntax
 
 ```js
-player.playAnimation(id, options);
+player.playAnimation(animId, options, networkSync);
 ```
 
 ### Parameters
 
-| Name      | Type                                                | Description                          |
-| --------- | --------------------------------------------------- | ------------------------------------ |
-| `animId`  | `string`                                            | The ID of the animation to play.     |
-| `options` | [`AnimationOptions[]`](/sdk/types/AnimationOptions) | The animation to play on the player. |
+| Name                       | Type                                                | Description                                                       |
+| -------------------------- | --------------------------------------------------- | ----------------------------------------------------------------- |
+| `animId`                   | `string`                                            | The ID of the animation to play.                                  |
+| `options`                  | [`AnimationOptions[]`](/sdk/types/AnimationOptions) | The animation to play on the player.                              |
+| `networkSync` _(optional)_ | `boolean`                                           | Whether to sync the animation with other players. Default: `true` |
 
 ### Example
 
 ```js
 player.playAnimation('dance', {
   loop: 'repeat';
-});
+}, true);
 ```
 
 **Available on:** <ClientTag /> <ServerTag />
