@@ -126,6 +126,10 @@ const config = {
                 to: '/concepts',
               },
               {
+                label: 'Guides',
+                to: '/guides',
+              },
+              {
                 label: 'SDK Reference',
                 to: '/sdk',
               },
