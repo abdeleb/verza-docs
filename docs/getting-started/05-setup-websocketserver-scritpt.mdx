@@ -1,20 +1,37 @@
-# Setup Websocket Server Script
+# Setup WebsocketServer Script
 
 `WebsocketServer Scripts` are full-running servers that receive events from the server in real-time. They can be used to create more robust logic, such as anti-cheat measures, and provide a more reliable experience for users. These scripts are ideal for developers who need more advanced functionality and want to build custom experiences that are not possible with traditional server-side scripting.
 
 See the [different types of scripts here](/concepts/scripts).
 
-## Setup Project
+## Setup WebsocketServer Script
 
-1. **Install Verza SDK**: Install the Verza SDK in your project:
+### 1. Install SDK
+
+Install the Verza SDK in your script:
 
 ```bash
 npm install @verza/sdk
 ```
 
-3. **Create a server script:** Create a file called `server.js`.
+### 2. Obtain your `Access Token`
 
-To obtain your server's `Access Token`, go to its `Server Settings` and click on the `Access Token` tab.
+In order to connect your web `WebsocketServer Script`, you need to obtain your server's `Access Token`.
+
+To obtain your server's `Access Token`, go to its `Server Settings` and click on the `Access Token` tab. Then click the `Generate Access Token` button to generate a new token.
+
+<video
+  controls
+  loop
+  style={{
+    maxWidth: '600px',
+  }}>
+  <source src="https://i.gyazo.com/9a45f515b716c301f4b932e3adfb6146.mp4" />
+</video>
+
+### 3. Create a server script:
+
+Create a file called `server.js`.
 
 ```jsx title="server.js"
 import {EngineManager} from '@verza/sdk';
@@ -31,10 +48,40 @@ const onSynced = engine.events.on('onSynced', async () => {
 });
 ```
 
-5. Start the server:
+### 4. Start the server:
 
 ```bash
 node server.js
 ```
 
-With these steps, you have set up a basic `Websocket Server Script` using the Verza SDK.
+## Keep the server running
+
+Sometimes, the server may crash or stop running, this can be due to a variety of reasons, such as a bug in the script or a server restart, to prevent this from happening, you can use a process manager to keep the server running when it crashes or stops.
+
+You can use a process manager like [Forever](https://www.npmjs.com/package/forever) or [PM2](https://pm2.keymetrics.io/).
+
+### Using Forever
+
+```bash
+npm install -g forever
+
+# Start the server
+forever start server.js
+
+# Stop the server
+forever stop server.js
+```
+
+### Using PM2
+
+```bash
+npm install -g pm2
+
+# Start the server
+pm2 start server.js
+
+# Stop the server
+pm2 stop server.js
+```
+
+With these steps, you have set up a basic `WebsocketServer Script` using the Verza SDK.

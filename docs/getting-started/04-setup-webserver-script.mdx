@@ -1,6 +1,6 @@
 # Setup WebServer Script
 
-`WebServer Scripts` are lightweight server-side scripts that can receive commands and network events. They don't have to run 24/7 and work more like a serverless-like service. One of the advantages of using a server-side script is that you can secure the logic from potential bad actors and ensure the integrity of your gameplay's mechanics.
+`WebServer Scripts` are lightweight server-side scripts that can receive commands and network events. They don't have to run 24/7 and work more like a serverless service.
 
 See the [different types of scripts here](/concepts/scripts).
 
@@ -10,19 +10,40 @@ To enhance your development experience and take advantage of additional features
 A WebServer script always requires a client-side script to be connected to it. The client-side script is responsible for sending commands and network events to the web server-side script.
 :::
 
-## Setup Project
+### 2. Obtain your `Access Token`
 
-In this section, we'll guide you through setting up a `WebServer Script` project using [Next.js](https://nextjs.org/).
+In order to connect your web `WebServer Script`, you need to obtain your server's `Access Token`.
 
-1. **Install Next.js**: If you haven't already, please [visit the Next.js docs](https://nextjs.org/docs/getting-started) and follow the instructions to install **Next.js**.
+To obtain your server's `Access Token`, go to its `Server Settings` and click on the `Access Token` tab. Then click the `Generate Access Token` button to generate a new token.
 
-2. **Install Verza SDK**: Install the Verza SDK in your project:
+<video
+  controls
+  loop
+  style={{
+    maxWidth: '600px',
+  }}>
+  <source src="https://i.gyazo.com/9a45f515b716c301f4b932e3adfb6146.mp4" />
+</video>
+
+### Using Next.js
+
+In this section, we'll guide you through setting up a `WebServer Script` project using [Next.js](https://nextjs.org/) and the api routes feature.
+
+### 1. Install Next.js
+
+If you haven't already, please [visit the Next.js docs](https://nextjs.org/docs/getting-started) and follow the instructions to install **Next.js**.
+
+#### 2. **Install Verza SDK**
 
 ```bash
 npm install @verza/sdk
 ```
 
-3. **Create a client script:** In the `pages` folder, create a new file called `client.js`. This file will serve as the starting point for your game mode's client-side script.
+### 3. Create the client script
+
+The URL for this `script` will be `http://localhost:3000/client`
+
+In the `pages` folder, create a new file called `client.js` with the following content:
 
 ```jsx title="client.js"
 import {useEffect} from 'react';
@@ -53,9 +74,9 @@ const Script = () => {
 export default ClientScript;
 ```
 
-4. **Create a server script:** In the `api` folder, create a new file called `server.js`. This file will serve as the starting point for your game mode's client-side script.
+### 4. Create the server script
 
-To obtain your server's `Access Token`, go to its `Server Settings` and click on the `Access Token` tab.
+In the `api` folder, create a new file called `server.js` with the following content:
 
 ```jsx title="server.js"
 import {EngineManager} from '@verza/sdk';
@@ -82,7 +103,7 @@ export const createWebServer = () => {
   const engine = new EngineManager({
     name: 'Web Server',
 
-    accessToken: 'ACCESS_TOKEN',
+    accessToken: 'ACCESS_TOKEN', // replace with your server's access token
   });
 
   // event listener
@@ -94,12 +115,22 @@ export const createWebServer = () => {
 };
 ```
 
-5. **Start the development server:** Run the following command to start the development server:
+### 5. Start the development server
+
+Run the following command to start the development server:
 
 ```bash
 npm run dev
 ```
 
-6. **Add the script to your server:** Add the script to your server by going to the **Scripts** tab in your **Server's Settings**. Then, enter the URL of your script (`http://localhost:3000/client`) and click on `Connect Script`.
+## Add the Script to your server
+
+To add the Script to your server, go to the **Scripts** tab in your **Server's Settings**. Then, enter the URL of your script and click on `Connect Script`
+
+<img
+  alt="Connect Script"
+  src="https://i.gyazo.com/f1d7e7e48f92b6f82d8f2f99a79f3407.png"
+  style={{width: '100%', maxWidth: '600px'}}
+/>
 
 With these steps, you have set up a basic `Webserver Script` project using Next.js and the Verza SDK.
