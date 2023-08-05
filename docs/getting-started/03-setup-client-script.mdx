@@ -1,3 +1,7 @@
+---
+toc_max_heading_level: 2
+---
+
 # Setup Client Script
 
 `Client Scripts` in Verza are HTML files, allowing them to draw UI components over the Verza interface, interacting with players, objects, and much more.
@@ -16,7 +20,7 @@ By the end of this guide, you'll have a `Client Script` that looks like this wit
 
 ## Using Vanilla JS
 
-#### 1. Create script
+### 1. Create script
 
 Create a new file called `client.html` with the following contents:
 
@@ -72,19 +76,19 @@ Create a new file called `client.html` with the following contents:
 </html>
 ```
 
-#### 3. Run your script on localhost
+### 3. Run your script on localhost
 
 To run your script on localhost, you can use a service like [serve](https://www.npmjs.com/package/serve) or [http-server](https://www.npmjs.com/package/http-server).
 
 ## Using Vite (Vanilla)
 
-#### 1. Install SDK
+### 1. Install SDK
 
 ```bash
 npm install @verza/sdk
 ```
 
-#### 2. Create script
+### 2. Create script
 
 The URL for this `script` will be `http://localhost:5173`
 
@@ -130,7 +134,7 @@ function init() {
 
 ## Using React
 
-#### 1. Create script
+### 1. Create script
 
 Create a Component called `ClientScript.jsx` with the following contents:
 
@@ -184,13 +188,13 @@ export default ClientScript;
 
 ## Using Next.js
 
-#### 1. Install SDK
+### 1. Install SDK
 
 ```bash
 npm install @verza/sdk
 ```
 
-#### 2. Create a script
+### 2. Create a script
 
 The URL for this `script` will be `http://localhost:3000/client`
 
