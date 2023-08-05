@@ -201,9 +201,8 @@ The URL for this `script` will be `http://localhost:3000/client`
 In the `pages` folder, create a new file called `client.js` with the following contents:
 
 ```jsx title="client.js"
-import {useEffect} from 'react';
-
-import {EngineProvider, useEngine} from '@verza/sdk/react';
+import { useEffect, useRef } from "react";
+import { EngineProvider, useEngine, Box } from "@verza/sdk/react";
 
 const ClientScript = () => {
   return (
@@ -219,29 +218,29 @@ const Script = () => {
   const boxRef = useRef();
 
   useEffect(() => {
-    engine.localPlayer.sendMessage('Welcome to my server!');
+    engine.localPlayer.sendMessage("Welcome to my server!");
 
     boxRef.current.startTransitions([
       {
         to: [-2, 2, 5],
         toRotation: [0, 0, 0],
         duration: 1000,
-        easing: 'easeInOutQuad',
+        easing: "easeInOutQuad",
         loop: true,
       },
 
       {
-         to: [2, 2, 5],
+        to: [2, 2, 5],
         toRotation: [0, Math.PI, 0],
         duration: 1000,
-        easing: 'easeInOutQuad',
+        easing: "easeInOutQuad",
         loop: true,
       },
     ]);
   }, [engine]);
 
   return (
-    <Box ref={boxRef} color="red" position={[-2, 2, 5],} collision="static" />
+    <Box ref={boxRef} color="red" position={[-2, 2, 5]} collision="static" />
   );
 };
 
