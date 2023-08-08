@@ -10,7 +10,7 @@ type CommandParam = {
 
   constructor: (name: string, type: CommandType) => CommandParam;
 
-  required: () => CommandParam;
+  optional: () => CommandParam;
 
   withDisplay: (display: string) => CommandParam;
 
