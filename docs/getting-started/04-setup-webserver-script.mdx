@@ -10,7 +10,7 @@ To enhance your development experience and take advantage of additional features
 A WebServer script always requires a client-side script to be connected to it. The client-side script is responsible for sending commands and network events to the web server-side script.
 :::
 
-## 2. Obtain your `Access Token`
+## 1. Obtain your `Access Token`
 
 In order to connect your web `WebServer Script`, you need to obtain your server's `Access Token`.
 
@@ -29,7 +29,7 @@ To obtain your server's `Access Token`, go to its `Server Settings` and click on
 
 In this section, we'll guide you through setting up a `WebServer Script` project using [Next.js](https://nextjs.org/) and the api routes feature.
 
-## 1. Install Next.js
+## 2. Install Next.js
 
 If you haven't already, please [visit the Next.js docs](https://nextjs.org/docs/getting-started) and follow the instructions to install **Next.js**.
 
@@ -54,7 +54,7 @@ const ClientScript = () => {
   return (
     <EngineProvider
       params={{
-        webServer: 'api/server', // specify the URL of your WebServer script
+        webServer: '/api/server', // specify the URL of your WebServer script
       }}>
       <Script />
     </EngineProvider>
@@ -65,7 +65,7 @@ const Script = () => {
   const engine = useEngine();
 
   useEffect(() => {
-    engine.network.emitServerEvent('onRequestWelcome');
+    engine.network.emitToServer('onRequestWelcome');
   }, [engine]);
 
   return null;
