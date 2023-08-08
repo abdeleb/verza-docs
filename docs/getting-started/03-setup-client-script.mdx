@@ -14,85 +14,39 @@ In this section, we'll guide you through setting up a `Client Script`
 
 By the end of this guide, you'll have a `Client Script` that looks like this with a box that moves back and forth.
 
+# Requirements
+
+- [Node.js](https://nodejs.org/en/) (v16 or higher)
+
 <video controls loop autoPlay>
   <source src="https://i.gyazo.com/b5966fb2c0116a4c1ade00398b82062e.mp4" />
 </video>
 
-## Using Vanilla JS
-
-### 1. Create script
-
-Create a new file called `client.html` with the following contents:
-
-```html title="client.html"
-<!DOCTYPE html>
-<html>
-  <body>
-    <script type="importmap">
-      {
-        "imports": {
-          "@verza/sdk": "https://unpkg.com/@verza/sdk"
-        }
-      }
-    </script>
-    <script type="module">
-      import {EngineManager} from '@verza/sdk';
-
-      const engine = new EngineManager();
-
-      engine.events.on('onSynced', init);
-
-      engine.connectClient();
-
-      function init() {
-        engine.localPlayer.sendMessage('Welcome to my server!');
-
-        const box = engine.objects.create('box', {
-          color: 'red',
-          position: [-2, 2, 5],
-          collision: 'static',
-        });
-
-        box.startTransitions([
-          {
-            to: [-2, 2, 5],
-            toRotation: [0, 0, 0],
-            duration: 1000,
-            easing: 'easeInOutQuad',
-            loop: true,
-          },
-
-          {
-            to: [2, 2, 5],
-            toRotation: [0, Math.PI, 0],
-            duration: 1000,
-            easing: 'easeInOutQuad',
-            loop: true,
-          },
-        ]);
-      }
-    </script>
-  </body>
-</html>
-```
-
-### 3. Run your script on localhost
-
-To run your script on localhost, you can use a service like [serve](https://www.npmjs.com/package/serve) or [http-server](https://www.npmjs.com/package/http-server).
-
 ## Using Vite (Vanilla)
 
-### 1. Install SDK
+### 1. Create a new project
+
+Create a new project using [Vite](https://vitejs.dev/) and select `Vanilla` as the template.
+
+```bash
+npm create vite@latest
+
+cd <project-name>
+
+npm install
+```
+
+### 2. Install SDK
 
 ```bash
 npm install @verza/sdk
 ```
 
-### 2. Create script
+### 3. Create script
 
 The URL for this `script` will be `http://localhost:5173`
 
-Now let's create a edit the file called `main.js` with the following contents:
+Now let's edit the file called `main.js` and replace the contents with the following:
 
 ```jsx title="main.js"
 import {EngineManager} from '@verza/sdk';
@@ -247,6 +201,68 @@ const Script = () => {
 
 export default ClientScript;
 ```
+
+## Using Vanilla JS
+
+### 1. Create script
+
+Create a new file called `client.html` with the following contents:
+
+```html title="client.html"
+<!DOCTYPE html>
+<html>
+  <body>
+    <script type="importmap">
+      {
+        "imports": {
+          "@verza/sdk": "https://unpkg.com/@verza/sdk"
+        }
+      }
+    </script>
+    <script type="module">
+      import {EngineManager} from '@verza/sdk';
+
+      const engine = new EngineManager();
+
+      engine.events.on('onSynced', init);
+
+      engine.connectClient();
+
+      function init() {
+        engine.localPlayer.sendMessage('Welcome to my server!');
+
+        const box = engine.objects.create('box', {
+          color: 'red',
+          position: [-2, 2, 5],
+          collision: 'static',
+        });
+
+        box.startTransitions([
+          {
+            to: [-2, 2, 5],
+            toRotation: [0, 0, 0],
+            duration: 1000,
+            easing: 'easeInOutQuad',
+            loop: true,
+          },
+
+          {
+            to: [2, 2, 5],
+            toRotation: [0, Math.PI, 0],
+            duration: 1000,
+            easing: 'easeInOutQuad',
+            loop: true,
+          },
+        ]);
+      }
+    </script>
+  </body>
+</html>
+```
+
+### 3. Run your script on localhost
+
+To run your script on localhost, you can use a service like [serve](https://www.npmjs.com/package/serve) or [http-server](https://www.npmjs.com/package/http-server).
 
 ## Add the Script to your server
 
