@@ -30,6 +30,12 @@ class WorldManager {
 
   setWeather(weather: WeatherType): void;
 
+  setFogStatus(status: boolean): void;
+
+  setFogColor(color: ColorType): void;
+
+  setFogDensity(density: number): void;
+
   setSkybox(skybox: SkyboxProps | string | null): void;
 
   setMoonPhase(phase: MoonPhases): void;
