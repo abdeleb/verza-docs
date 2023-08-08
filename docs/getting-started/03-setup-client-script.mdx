@@ -93,9 +93,9 @@ function init() {
 Create a Component called `ClientScript.jsx` with the following contents:
 
 ```jsx title="ClientScript.jsx"
-import {useEffect} from 'react';
+import {useEffect, useRef} from 'react';
 
-import {EngineProvider, useEngine} from '@verza/sdk/react';
+import {EngineProvider, useEngine, Box} from '@verza/sdk/react';
 
 const ClientScript = () => {
   return (
@@ -155,9 +155,9 @@ The URL for this `script` will be `http://localhost:3000/client`
 In the `pages` folder, create a new file called `client.js` with the following contents:
 
 ```jsx title="client.js"
-import {useEffect} from 'react';
+import {useEffect, useRef} from 'react';
 
-import {EngineProvider, useEngine} from '@verza/sdk/react';
+import {EngineProvider, useEngine, Box} from '@verza/sdk/react';
 
 const ClientScript = () => {
   return (
