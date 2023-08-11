@@ -37,13 +37,37 @@ In this section, we'll guide you through setting up a `WebServer Script` project
 
 If you haven't already, please [visit the Next.js docs](https://nextjs.org/docs/getting-started) and follow the instructions to install **Next.js**.
 
-### 2. **Install Verza SDK**
+### 2. Install SDK
 
 ```bash
 npm install @verza/sdk
 ```
 
-### 3. Create the client script
+### 3. Add `Access-Control-Allow-Origin` header
+
+In order to allow the client-side script to connect to the server-side script, you need to add the `Access-Control-Allow-Origin` header to the server-side script.
+
+To do this, open the `next.config.js` file and add the following code:
+
+```js title="next.config.js"
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  //...
+
+  headers() {
+    return [
+      {
+        source: '/:path*',
+        headers: [{key: 'Access-Control-Allow-Origin', value: '*'}],
+      },
+    ];
+  },
+
+  //...
+};
+```
+
+### 4. Create the client script
 
 The URL for this `script` will be `http://localhost:3000/client`
 
@@ -78,7 +102,7 @@ const Script = () => {
 export default ClientScript;
 ```
 
-### 4. Create the server script
+### 5. Create the server script
 
 In the `api` folder, create a new file called `server.js` with the following content:
 
@@ -119,7 +143,7 @@ export const createWebServer = () => {
 };
 ```
 
-### 5. Start the development server
+### 6. Start the development server
 
 Run the following command to start the development server:
 
