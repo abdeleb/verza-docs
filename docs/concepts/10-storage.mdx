@@ -49,20 +49,20 @@ Rate limiting is implemented to ensure fair usage of storage operations. In some
 
 ## Access
 
-`Write` access to a store is limited to [`WebServer Script`](/concepts/scripts), [`WebsocketServer Scripts`](/concepts/scripts) or `Player` with `Admin` permissions, ensuring the security and integrity of the data.
+`Write` access to a store is limited to [`WebServer Script`](/concepts/scripts), [`WebsocketServer Scripts`](/concepts/scripts) or `Admin Players`.
 
 `Read` access is allowed from any player by default, to restrict access to a store you need to add the suffix `private` to the scope of the store, for example `scores.private` or `scores:private` will only be accessible to the `Admin Players` and `Server Scripts`.
 
-This table shows the different scenarios for a player accessing a store:
+**This table shows the different scenarios for a `Player` without `Admin` access accessing a store:**
 
 | Scope                        | Read | Write | Description                                              |
 | ---------------------------- | ---- | ----- | -------------------------------------------------------- |
 | `global`                     | ✅   | ❌    | Accessible to all players (default scope).               |
 | `scores`                     | ✅   | ❌    | Accessible to all players (custom scope).                |
 | `scores.[PLAYER_ID]`         | ✅   | ❌    | Accessible to all players (custom scope).                |
+| `private`                    | ❌   | ❌    | Accessible only to `Admin Players` and `Server Scripts`. |
 | `scores.private`             | ❌   | ❌    | Accessible only to `Admin Players` and `Server Scripts`. |
 | `scores.[PLAYER_ID].private` | ❌   | ❌    | Accessible only to `Admin Players` and `Server Scripts`. |
-| `private`                    | ❌   | ❌    | Accessible only to `Admin Players` and `Server Scripts`. |
 
 _The `[PLAYER_ID]` is a placeholder for the player id, for example, `scores.1234` or `scores.1234.private`._
 
