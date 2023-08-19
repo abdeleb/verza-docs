@@ -35,6 +35,8 @@ overflow: hidden;
   background-position: center center;
   box-sizing: border-box;
   background-repeat: repeat;
+  left: 0px;
+  top: 0px;
 }
 
 .heroBanner:after {
