@@ -53,7 +53,7 @@ Rate limiting is implemented to ensure fair usage of storage operations. In some
 
 `Read` access is allowed from any player by default, to restrict access to a store you need to add the suffix `private` to the scope of the store, for example `scores.private` or `scores:private` will only be accessible to the `Admin Players` and `Server Scripts`.
 
-Here's a table with different scopes and their access from the players:
+This is table with different scopes scenarios for a player accessing a store:
 
 | Scope                        | Read | Write | Description                                              |
 | ---------------------------- | ---- | ----- | -------------------------------------------------------- |
@@ -63,6 +63,8 @@ Here's a table with different scopes and their access from the players:
 | `scores.private`             | ❌   | ❌    | Accessible only to `Admin Players` and `Server Scripts`. |
 | `scores.[PLAYER_ID].private` | ❌   | ❌    | Accessible only to `Admin Players` and `Server Scripts`. |
 | `private`                    | ❌   | ❌    | Accessible only to `Admin Players` and `Server Scripts`. |
+
+_The `[PLAYER_ID]` is a placeholder for the player id, for example, `scores.1234` or `scores.1234.private`._
 
 :::caution Scope Naming
 Scopes are case insensitive, `scores` and `Scores` are the same scope.
