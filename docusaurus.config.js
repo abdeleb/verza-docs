@@ -96,7 +96,7 @@ const config = {
         title: 'Verza',
         logo: {
           alt: 'Logo',
-          src: 'img/logo.svg',
+          src: 'img/logo-v2.svg',
         },
         items: [
           /* {
