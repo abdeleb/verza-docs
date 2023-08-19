@@ -1,8 +1,8 @@
 {
-  "label": "Chat",
+  "label": "Audio",
   "position": 1,
   "link": {
     "type": "generated-index",
-    "slug": "sdk/events/chat"
+    "slug": "sdk/events/audio"
   }
 }

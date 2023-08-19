@@ -1,6 +1,7 @@
 {
   "label": "MemoryStoreManager",
   "link": {
-    "type": "generated-index"
+    "type": "generated-index",
+    "slug": "sdk/managers/storage/memory"
   }
 }

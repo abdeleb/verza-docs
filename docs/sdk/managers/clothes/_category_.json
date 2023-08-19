@@ -1,6 +1,7 @@
 {
   "label": "ClothesManager",
   "link": {
-    "type": "generated-index"
+    "type": "generated-index",
+    "slug": "sdk/managers/clothes"
   }
 }

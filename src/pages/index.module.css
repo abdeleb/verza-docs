@@ -4,10 +4,15 @@
  */
 
 .heroBanner {
-  padding: 2rem 0;
+  padding: 4rem 0;
   text-align: center;
   position: relative;
-  overflow: hidden;
+overflow: hidden;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
 }
 
 @media screen and (max-width: 996px) {
@@ -20,4 +25,42 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.background {
+  z-index: 0;
+  position: absolute;
+  background-image: url(./res/background.svg);
+  background-size: cover;
+  background-position: center center;
+  box-sizing: border-box;
+  background-repeat: repeat;
+}
+
+.heroBanner:after {
+  content: '';
+  position: absolute;
+  height: 40px;
+  width: 100%;
+  bottom: 0px;
+  left: 0px;
+
+  /* transparent to gradient */
+  background: linear-gradient(
+    180deg,
+    rgba(6, 6, 19, 0) 0%,
+    rgba(6, 6, 19, 1) 100%
+  );
+}
+
+.button {
+  transition: all 0.2s ease-in-out;
+}
+
+.button:hover {
+  transform: scale(1.1);
+}
+
+.button:active {
+  transform: scale(1.1) translateY(1px);
 }

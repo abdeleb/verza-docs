@@ -30,7 +30,12 @@ const config = {
   // to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en'],
+    locales: ['en', 'es'],
+    localeConfigs: {
+      en: {
+        htmlLang: 'en-GB',
+      },
+    },
   },
 
   presets: [
@@ -86,7 +91,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/docusaurus-social-card.png',
+      image: 'img/social-card.png',
       navbar: {
         title: 'Verza',
         logo: {
@@ -94,12 +99,60 @@ const config = {
           src: 'img/logo.svg',
         },
         items: [
-          {
+          /* {
             type: 'docSidebar',
             sidebarId: 'docsSidebar',
             position: 'left',
             label: 'Docs',
+          }, */
+          {
+            position: 'left',
+            label: 'Get Started',
+            href: '/getting-started',
           },
+          {
+            position: 'left',
+            label: 'Concepts',
+            href: '/concepts',
+          },
+          {
+            position: 'left',
+            label: 'Guides',
+            href: '/guides',
+          },
+          {
+            position: 'left',
+            label: 'SDK Reference',
+            href: '/sdk',
+          },
+          {
+            position: 'left',
+            label: 'React SDK',
+            href: '/sdk/react',
+          },
+          {
+            position: 'left',
+            label: 'References',
+            items: [
+              {
+                label: 'Managers',
+                href: '/sdk/managers',
+              },
+              {
+                label: 'Events',
+                href: '/sdk/events',
+              },
+              {
+                label: 'Types',
+                href: '/sdk/types',
+              },
+            ],
+          },
+
+          /* {
+            type: 'localeDropdown',
+            position: 'right',
+          }, */
           {
             type: 'search',
             position: 'right',
@@ -136,7 +189,7 @@ const config = {
             ],
           },
           {
-            title: 'Community',
+            title: 'Social',
             items: [
               {
                 label: 'Discord',
@@ -154,6 +207,10 @@ const config = {
               {
                 label: 'GitHub',
                 href: 'https://github.com/verzaio',
+              },
+              {
+                label: 'LinkedIn',
+                href: 'https://www.linkedin.com/company/verzaio/',
               },
             ],
           },

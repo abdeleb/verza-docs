@@ -6,15 +6,25 @@ import Layout from '@theme/Layout';
 import clsx from 'clsx';
 
 import styles from './index.module.css';
+import Background from './res/background.svg';
 
 function HomepageHeader() {
   return (
     <header className={clsx('hero', styles.heroBanner)}>
-      <div className="container">
-        <h1 className="hero__title">Welcome!</h1>
+      <Background className={styles.background} />
+
+      <div className={clsx('container', styles.container)}>
+        <h1 className="hero__title">
+          <img alt="Verza" src="/img/logo-name.svg" />
+        </h1>
         <p className="hero__subtitle">Unlock Your Creativity</p>
         <div className={styles.buttons}>
-          <Link className="button button--secondary button--lg" to="/welcome">
+          <Link
+            className={clsx(
+              'button button--secondary button--lg',
+              styles.button,
+            )}
+            to="/welcome">
             Get started 🧱
           </Link>
         </div>
@@ -26,7 +36,7 @@ function HomepageHeader() {
 export default function Home(): JSX.Element {
   return (
     <Layout
-      title={`Welcome to Verza Documentation`}
+      title={`Home`}
       description="Explore the official documentation for Verza, a powerful browser-based platform for creating and sharing custom game modes using JavaScript. Get started with the Verza SDK, learn best practices, and join the community.">
       <HomepageHeader />
       <main>

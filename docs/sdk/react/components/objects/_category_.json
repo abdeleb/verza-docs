@@ -1,6 +1,7 @@
 {
   "label": "Objects",
   "link": {
-    "type": "generated-index"
+    "type": "generated-index",
+    "slug": "sdk/react/components/objects"
   }
 }
