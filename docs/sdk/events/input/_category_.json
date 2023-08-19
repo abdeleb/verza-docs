@@ -1,8 +1,8 @@
 {
-  "label": "UI",
+  "label": "Input",
   "position": 7,
   "link": {
     "type": "generated-index",
-    "slug": "sdk/events/ui"
+    "slug": "sdk/events/input"
   }
 }

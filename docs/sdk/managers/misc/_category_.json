@@ -1,6 +1,7 @@
 {
   "label": "Misc",
   "link": {
-    "type": "generated-index"
+    "type": "generated-index",
+    "slug": "sdk/managers/misc"
   }
 }

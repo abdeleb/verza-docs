@@ -1,6 +1,7 @@
 {
   "label": "PersistentStoreManager",
   "link": {
-    "type": "generated-index"
+    "type": "generated-index",
+    "slug": "sdk/managers/storage/persistent"
   }
 }

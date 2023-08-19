@@ -16,27 +16,27 @@ const FeatureList: FeatureItem[] = [
     Svg: require('@site/static/img/sections/1.svg').default,
     description: (
       <>
-        Feature-rich SDK for creating immersive experiences with JavaScript.
-        Explore the docs to harness Verza's capabilities.
+        <strong>Feature-rich SDK</strong> for creating immersive experiences
+        with JavaScript. Explore the docs to learn more.
       </>
     ),
   },
   {
-    title: 'Real-time Multiplayer',
+    title: 'Multiplayer',
     Svg: require('@site/static/img/sections/2.svg').default,
     description: (
       <>
-        Experience immersive real-time multiplayer with Verza's powerful
+        <strong>Experience real-time multiplayer</strong> with powerful
         networking features. Say goodbye to the hassle of networking.
       </>
     ),
   },
   {
-    title: 'Connect and Collaborate',
+    title: 'Connect',
     Svg: require('@site/static/img/sections/3.svg').default,
     description: (
       <>
-        Connect with skilled developers on Verza, exchange ideas, join our&nbsp;
+        <strong>Connect with creators</strong>, exchange ideas, join our&nbsp;
         <a target="_blank" href="https://discord.verza.io/">
           Discord
         </a>{' '}
@@ -53,7 +53,7 @@ function Feature({title, Svg, description}: FeatureItem) {
         <Svg className={styles.featureSvg} role="img" />
       </div>
       <div className="text--center padding-horiz--md">
-        <h3>{title}</h3>
+        <h1>{title}</h1>
         <p>{description}</p>
       </div>
     </div>

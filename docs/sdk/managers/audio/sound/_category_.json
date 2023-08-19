@@ -1,6 +1,7 @@
 {
   "label": "SoundManager",
   "link": {
-    "type": "generated-index"
+    "type": "generated-index",
+    "slug": "sdk/managers/audio/sound"
   }
 }

@@ -1,0 +1,24 @@
+<svg width="1728" height="470" viewBox="0 0 1728 470" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g opacity="0.5">
+<path d="M5.02539 467.153C258.005 484.585 567.917 357.705 890.233 195.233C1258.33 9.68295 1656.57 121.578 1728 182.578" stroke="url(#paint0_linear_916_1509)" style=""/>
+<path d="M5.02539 1C260.175 17.886 566.712 322.549 891.792 165.165C1263.05 -14.575 1566.08 432.819 1722.26 452" stroke="url(#paint1_linear_916_1509)" style=""/>
+<path d="M0 214.614C284.291 173 647.277 380.491 943.34 415.374C1365.74 465.142 1572.29 -14.1812 1722.26 5.59602" stroke="url(#paint2_linear_916_1509)" style=""/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_916_1509" x1="5.02539" y1="468.757" x2="1728" y2="468.757" gradientUnits="userSpaceOnUse">
+<stop stop-color="#E7255F" style="stop-color:#E7255F;stop-color:color(display-p3 0.9059 0.1451 0.3733);stop-opacity:1;"/>
+<stop offset="0.442708" stop-color="#D54FEC" style="stop-color:#D54FEC;stop-color:color(display-p3 0.8353 0.3098 0.9255);stop-opacity:1;"/>
+<stop offset="1" stop-color="#514DE2" style="stop-color:#514DE2;stop-color:color(display-p3 0.3176 0.3020 0.8863);stop-opacity:1;"/>
+</linearGradient>
+<linearGradient id="paint1_linear_916_1509" x1="5.02539" y1="452" x2="1722.26" y2="452" gradientUnits="userSpaceOnUse">
+<stop stop-color="#E7255F" style="stop-color:#E7255F;stop-color:color(display-p3 0.9059 0.1451 0.3733);stop-opacity:1;"/>
+<stop offset="0.442708" stop-color="#D54FEC" style="stop-color:#D54FEC;stop-color:color(display-p3 0.8353 0.3098 0.9255);stop-opacity:1;"/>
+<stop offset="1" stop-color="#514DE2" style="stop-color:#514DE2;stop-color:color(display-p3 0.3176 0.3020 0.8863);stop-opacity:1;"/>
+</linearGradient>
+<linearGradient id="paint2_linear_916_1509" x1="0" y1="419" x2="1722.26" y2="419" gradientUnits="userSpaceOnUse">
+<stop stop-color="#E7255F" style="stop-color:#E7255F;stop-color:color(display-p3 0.9059 0.1451 0.3733);stop-opacity:1;"/>
+<stop offset="0.442708" stop-color="#D54FEC" style="stop-color:#D54FEC;stop-color:color(display-p3 0.8353 0.3098 0.9255);stop-opacity:1;"/>
+<stop offset="1" stop-color="#514DE2" style="stop-color:#514DE2;stop-color:color(display-p3 0.3176 0.3020 0.8863);stop-opacity:1;"/>
+</linearGradient>
+</defs>
+</svg>
