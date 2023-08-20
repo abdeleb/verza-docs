@@ -6,13 +6,11 @@ The `Persistent Store` ensures long-term data storage across player sessions, wh
 
 Let's dive into the specifics of each storage option below.
 
-## Access
-
-The access to these storage options is limited to [`WebServer Script`](/concepts/scripts), [`WebsocketServer Scripts`](/concepts/scripts) or `Player` with `Admin` permissions, ensuring the security and integrity of the data.
-
 ## Persistent Store
 
 The `Persistent Store` is designed for long-term storage of data that persists across player sessions. It is suitable for saving player progress, player settings, and other persistent data. The data stored in the `Persistent Store` will be available even if the server restarts or the player leaves and returns to the server.
+
+You can get the `Persistent Store` instance by calling the [`storage.getPersistentStore`](/sdk/managers/storage/getPersistentStore) method.
 
 ### Limits
 
@@ -33,6 +31,8 @@ Rate limiting is implemented to ensure fair usage of storage operations. In some
 
 The `Memory Store` is designed for temporary or transient storage of data that is only needed during a player session. It is suitable for storing temporary variables, caching frequently accessed data, and other short-lived data. The data stored in the Memory Store will be lost when the server restarts or the player leaves the server.
 
+You can get the `Memory Store` instance by calling the [`storage.getPersistentStore`](/sdk/managers/storage/getMemoryStore) method.
+
 ### Limits
 
 | Method                                                | Rate Limit                                 |
@@ -47,8 +47,40 @@ Rate limiting is implemented to ensure fair usage of storage operations. In some
 
 **Value Max Size:** Maximum value size for the `Memory Store` is `1K` (`1024 bytes`).
 
+## Access
+
+`Write` access to a store is limited to [`WebServer Script`](/concepts/scripts), [`WebsocketServer Scripts`](/concepts/scripts) or `Admin Players`.
+
+`Read` access is allowed from any player by default, to restrict access to a store you need to add the suffix `private` to the scope of the store, for example `scores.private` or `scores:private` will only be accessible to the `Admin Players` and `Server Scripts`.
+
+**This table shows the different scenarios for a `Player` without `Admin` access accessing a store:**
+
+| Scope                        | Read | Write | Description                                              |
+| ---------------------------- | ---- | ----- | -------------------------------------------------------- |
+| `global`                     | ✅   | ❌    | Accessible to all players (default scope).               |
+| `scores`                     | ✅   | ❌    | Accessible to all players (custom scope).                |
+| `scores.[PLAYER_ID]`         | ✅   | ❌    | Accessible to all players (custom scope).                |
+| `private`                    | ❌   | ❌    | Accessible only to `Admin Players` and `Server Scripts`. |
+| `scores.private`             | ❌   | ❌    | Accessible only to `Admin Players` and `Server Scripts`. |
+| `scores.[PLAYER_ID].private` | ❌   | ❌    | Accessible only to `Admin Players` and `Server Scripts`. |
+
+_The `[PLAYER_ID]` is a placeholder for the player id, for example, `scores.1234` or `scores.1234.private`._
+
+:::caution Scope Naming
+Scopes are case insensitive, `scores` and `Scores` are the same scope.
+
+Scopes are unique, for example, `scores` to `scores:private` are different scopes and will not share the same data.
+
+You can't convert a scope from `public` to `private` or vice versa, you need to create a new scope and copy the data.
+:::
+
 ## Recommendations
 
 When using our storage service, we want to ensure that you have the best experience without worrying about infrastructure management. Here are some recommendations to help you make the most of our storage capabilities:
 
-While there are no strict limits, it's a good practice to avoid storing excessively large amounts of data or frequently updating large datasets. By being mindful of data usage, you can optimize the performance of our storage service.
+- While there are no strict limits, it's a good practice to avoid storing excessively large amounts of data.
+- Plan a strategy for frequently accessed data to avoid unnecessary storage operations (e.g., when the player joins the server).
+- If you need to store large amounts of data, consider using a dedicated database service.
+- Avoid storing sensitive data such as credit card numbers, billing information, or other personally identifiable information (PII).
+- Avoid storing data that is not relevant to your server.
+- By being mindful of data usage, you can optimize the performance of our storage service.
