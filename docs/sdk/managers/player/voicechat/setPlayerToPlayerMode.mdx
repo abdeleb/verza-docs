@@ -1,0 +1,27 @@
+---
+hide_table_of_contents: true
+---
+
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+Sets the voicechat mode to player to player.
+
+### Syntax
+
+```js
+player.setPlayerToPlayerMode(mode);
+```
+
+### Parameters
+
+| Name   | Type                                                        | Description                                                                                                 |
+| ------ | ----------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| `mode` | [VoicechatModeType](/sdk/types/VoicechatModeType) or `null` | The voicechat mode to set. When set to `null`, the voicechat mode will be reset to the global default mode. |
+
+### Example
+
+```js
+player.setPlayerToPlayerMode(false);
+```
+
+**Available on:** <ServerTag />

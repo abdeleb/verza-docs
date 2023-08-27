@@ -2,6 +2,8 @@
 class ChatManager {
   escapeText(text?: string): string;
 
+  setEnabled(enabled: boolean): void;
+
   sendMessageToAll(text: string): void;
 
   sendMessageTo(player: PlayerManager | number, text: string): void;

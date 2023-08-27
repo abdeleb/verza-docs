@@ -1,5 +1,16 @@
 ```ts
 class PlayerVoicechatManager {
-  connectedPlayers: Set<PlayerManager>;
+  setPlayerToPlayerMode(
+    playerId: number | PlayerManager,
+    mode: VoicechatModeType | null,
+  ): void;
+
+  enableChannel(channel: number): void;
+
+  disableChannel(channel: number): void;
+
+  setMuted(muted: boolean): void;
+
+  setDistance(distance: number | null): Promise<void>;
 }
 ```

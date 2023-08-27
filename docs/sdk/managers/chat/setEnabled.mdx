@@ -1,0 +1,38 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+Enables or disables the chat for the server.
+
+:::note Commands
+This will disable the chat for all players, including admins. If you want to disable the chat for a specific player, use the [`player.setChatEnabled`](/sdk/managers/player/setChatEnabled) method instead.
+
+If you're using [`engine.setForwardMessages`](/sdk/managers/engine/setForwardMessages) to forward messages to a `WebSocketServer`, this will method will have no effect.
+:::
+
+:::caution PERSISTENT METHOD
+This method is persistent. It will not reset when a server restarts.
+:::
+
+### Syntax
+
+```js
+engine.chat.setEnabled(enabled);
+```
+
+### Parameters
+
+| Name      | Type      | Description                                |
+| --------- | --------- | ------------------------------------------ |
+| `enabled` | `boolean` | Whether the chat should be enabled or not. |
+
+### Example
+
+```js
+engine.chat.setEnabled(false);
+```
+
+**Available on:** <ClientTag /> <ServerTag />

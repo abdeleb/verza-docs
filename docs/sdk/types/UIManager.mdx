@@ -36,7 +36,11 @@ class UIManager {
 
   hideComponent(component: UIComponentType): void;
 
-  showIndicator(id: IndicatorId, title?: IndicatorTitle): void;
+  showIndicator(
+    id: IndicatorId,
+    title?: IndicatorTitle,
+    subTitle?: IndicatorTitle,
+  ): void;
 
   hideIndicator(id: IndicatorId): void;
 

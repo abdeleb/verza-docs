@@ -1,0 +1,35 @@
+---
+hide_table_of_contents: true
+---
+
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+Sets the player's voicechat distance.
+
+::note
+Only has an effect if [`VoicechatModeType`](/sdk/types/VoicechatModeType) is `proximity` for the listening player.
+:::
+
+### Syntax
+
+```js
+player.setDistance(distance);
+```
+
+### Parameters
+
+| Name       | Type               | Description                                                                                                                                              |
+| ---------- | ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `distance` | `number` or `null` | The distance to set the player's voicechat. Max distance is `1024`. When set to `null`, the voicechat mode will be reset to the global default distance. |
+
+### Returns
+
+- `Promise<void>` - A promise that resolves when the player's voicechat distance has been set.
+
+### Example
+
+```js
+player.setDistance(128);
+```
+
+**Available on:** <ServerTag />

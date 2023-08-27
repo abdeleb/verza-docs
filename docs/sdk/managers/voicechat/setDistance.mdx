@@ -1,0 +1,40 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+Sets the global voicechat distance.
+
+::note
+Only has an effect if [`VoicechatModeType`](/sdk/types/VoicechatModeType) is `proximity`.
+:::
+
+:::caution PERSISTENT METHOD
+This method is persistent. It will not reset when a server restarts.
+:::
+
+### Syntax
+
+```js
+engine.voicechat.setDistance(distance);
+```
+
+### Parameters
+
+| Name       | Type     | Description                                                                      |
+| ---------- | -------- | -------------------------------------------------------------------------------- |
+| `distance` | `number` | The distance in meters that voicechat should be audible. Max distance is `1024`. |
+
+### Returns
+
+- `Promise<void>` - A promise that resolves when the distance has been set.
+
+### Example
+
+```js
+engine.voicechat.setDistance(128);
+```
+
+**Available on:** <ClientTag /> <ServerTag />

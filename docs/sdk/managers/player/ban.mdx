@@ -13,16 +13,16 @@ Bans the player.
 player.ban(reason, duration);
 ```
 
-### Returns
-
-- `Promise<PlayerBanStatus>` - The [PlayerBanStatus](/sdk/types/PlayerBanStatus) object.
-
 ### Parameters
 
 | Name                    | Type     | Description                                                                      |
 | ----------------------- | -------- | -------------------------------------------------------------------------------- |
 | `reason`                | `string` | The reason for the ban.                                                          |
 | `duration` _(optional)_ | `number` | The duration of the ban in seconds. If not specified, the ban will be permanent. |
+
+### Returns
+
+- `Promise<PlayerBanStatus>` - The [PlayerBanStatus](/sdk/types/PlayerBanStatus) object.
 
 ### Example
 

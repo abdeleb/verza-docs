@@ -13,20 +13,21 @@ You can add multiple loading indicators at the same time. Each indicator will re
 ### Syntax
 
 ```js
-engine.ui.showIndicator(id, title);
+engine.ui.showIndicator(id, title, subTitle);
 ```
 
 ### Parameters
 
-| Name                 | Type                 | Description              |
-| -------------------- | -------------------- | ------------------------ |
-| `id`                 | `string` or `number` | The id of the indicator. |
-| `title` _(optional)_ | `string` or `null`   | The title.               |
+| Name                    | Type                 | Description              |
+| ----------------------- | -------------------- | ------------------------ |
+| `id`                    | `string` or `number` | The id of the indicator. |
+| `title` _(optional)_    | `string`             | The title.               |
+| `subTitle` _(optional)_ | `string`             | The subtitle.            |
 
 ### Example
 
 ```js
-engine.ui.showIndicator('my-id', 'Loading...');
+engine.ui.showIndicator('my-id', 'Loading...', '(1/10)');
 ```
 
 **Available on:** <ClientTag />

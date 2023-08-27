@@ -1,0 +1,31 @@
+---
+hide_table_of_contents: true
+---
+
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+Disables a voicechat channel.
+
+:::note Default channel
+By default, all players are in the channel `0`.
+:::
+
+### Syntax
+
+```js
+player.disableChannel(channel);
+```
+
+### Parameters
+
+| Name      | Type     | Description                                                                              |
+| --------- | -------- | ---------------------------------------------------------------------------------------- |
+| `channel` | `number` | The channel number. Max channel number is `2_147_483_647`, negative channels are allowed |
+
+### Example
+
+```js
+player.disableChannel(1000);
+```
+
+**Available on:** <ServerTag />

@@ -4,10 +4,6 @@ The chat in Verza is a powerful communication tool that enables players to inter
 
 By default, all chat messages are broadcasted to every player in the game. However, if you wish to send messages exclusively to specific players or groups of players, you can make use of the chat API.
 
-For complete chat control, you can develop your own chat system using the chat API and the [engine.setForwardMessages](/sdk/managers/engine/setForwardMessages) function.
-
-Voicechat is streamed by proximity, so you can only hear players that are close to you.
-
 ## Message Formatting
 
 One of the unique features of the chat is the ability to format messages in various ways. You can use a simple syntax to embed colors, URLs, and more in your messages. Here are some examples:
@@ -20,9 +16,11 @@ Here's an example of how to format a message using these tags:
 
 ```js
 player.sendMessage(
-  '{green}Welcome to our server! {blue,url=https://www.example.com}Click here {blue}to learn more about our community!',
+  '{lightgreen}Welcome to our server! {lightblue,url=https://discord.verza.io}Click here{lightblue} to learn more about our community!',
 );
 ```
+
+![Chat](https://i.gyazo.com/8574dc330f1d7bd21d643fee5720458b.png)
 
 ## Commands
 
@@ -42,6 +40,24 @@ const command = new Command('broadcast', [
 engine.commands.register(command);
 ```
 
+## Custom Chat
+
+For complete chat control, you can develop your own chat system using the chat API and the [engine.setForwardMessages](/sdk/managers/engine/setForwardMessages) method that will forward all messages to your [WebSocketServer](/getting-started/setup-websocketserver-scritpt).
+
+Use the [`onChat`](/sdk/events/chat/onChat) event to receive messages from the chat.
+
+```js title=custom-chat.js
+engine.setForwardMessages(true);
+
+engine.events.on('onChat', (message, playerId) => {
+  const player = engine.players.get(playerId);
+
+  player?.sendMessage(`{red}${player.name} (${player.id}): {white}${message}`);
+});
+```
+
 ## Roles and Permissions
 
 Verza's chat system includes a roles and permissions system that can be integrated with the commands to control access. Roles are used to group players based on their permissions, and permissions are used to control what actions players can perform.
+
+Check out the [Roles and Permissions](./roles-and-permissions) documentation for more information.

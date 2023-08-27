@@ -1,0 +1,28 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+Sets the player's muted status.
+
+### Syntax
+
+```js
+player.setMuted(muted);
+```
+
+### Parameters
+
+| Name    | Type      | Description                                |
+| ------- | --------- | ------------------------------------------ |
+| `muted` | `boolean` | Whether the player should be muted or not. |
+
+### Example
+
+```js
+player.setMuted(true);
+```
+
+**Available on:** <ClientTag /> <ServerTag />

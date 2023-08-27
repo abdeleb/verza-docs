@@ -10,6 +10,10 @@ It allows you to control the messages that Verza sends to players in the chat. B
 
 This method can be useful in a variety of situations, such as when you want to filter out certain types of messages or create your own chat moderation system.
 
+:::note
+When enabled, the [`onChat`](/sdk/events/chat/onChat) event will still be triggered, but the message will not be forwarded to the chat.
+:::
+
 ### Syntax
 
 ```js
@@ -26,6 +30,10 @@ engine.setForwardMessages(status);
 
 ```js
 engine.setForwardMessages(true);
+
+engine.events.on('onChat', (message, playerId) => {
+  console.log('Chat message received from player ' + playerId + ': ' + message);
+});
 ```
 
 **Available on:** <WebsocketServerTag />

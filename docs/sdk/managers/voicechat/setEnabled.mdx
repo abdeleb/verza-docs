@@ -1,0 +1,36 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+Sets the global voicechat status.
+
+:::note
+This will disable the voicechat for all players, including admins. If you want to disable the voicechat for a specific player, use the [`player.voicechat.setMuted`](/sdk/managers/player/voicechat/setMuted) method instead.
+:::
+
+:::caution PERSISTENT METHOD
+This method is persistent. It will not reset when a server restarts.
+:::
+
+### Syntax
+
+```js
+engine.voicechat.setEnabled(enabled);
+```
+
+### Parameters
+
+| Name      | Type      | Description                                     |
+| --------- | --------- | ----------------------------------------------- |
+| `enabled` | `boolean` | Whether the voicechat should be enabled or not. |
+
+### Example
+
+```js
+engine.voicechat.setEnabled(false);
+```
+
+**Available on:** <ClientTag /> <ServerTag />

@@ -1,0 +1,32 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+Sets the global voicechat mode.
+
+:::caution PERSISTENT METHOD
+This method is persistent. It will not reset when a server restarts.
+:::
+
+### Syntax
+
+```js
+engine.voicechat.setMode(mode);
+```
+
+### Parameters
+
+| Name   | Type                                              | Description                |
+| ------ | ------------------------------------------------- | -------------------------- |
+| `mode` | [VoicechatModeType](/sdk/types/VoicechatModeType) | The voicechat mode to set. |
+
+### Example
+
+```js
+engine.voicechat.setMode(false);
+```
+
+**Available on:** <ClientTag /> <ServerTag />
