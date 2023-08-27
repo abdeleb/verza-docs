@@ -2,25 +2,33 @@
 
 Verza's platform includes a roles and permissions system that can be integrated with the commands and actions to control access. Roles are used to group players based on their permissions, and permissions are used to control what actions players can perform. This allows for fine-grained control over who can use which commands and access certain features of the platform, as well as custom logics via [`player.hasAccess`](/sdk/managers/player/hasAccess) or [`player.hasRole`](/sdk/managers/player/hasRole).
 
-The roles and permissions system is highly customizable, allowing you to create roles and assign specific permissions to each role. This ensures that players are only able to access the features and commands that are appropriate for their level of access. Additionally, you can easily manage roles and permissions through the use of simple commands and configuration files.
-
 ## Managing Roles
 
-To manage roles, you can access the server settings in the `Verza UI` and navigate to the Roles section. From there, you can create new roles, edit existing ones, and assign roles to players. You can also assign roles to players via scripts using the [`player.addRole`](/sdk/managers/player/addRole) and [`player.removeRole`](/sdk/managers/player/removeRole) methods from a server script.
+To manage roles, go to the `Roles` tab from the `Server Settings`. From there, you can create new roles, edit existing ones, and assign roles to players.
+
+You can also assign roles to players via scripts using the [`player.addRole`](/sdk/managers/player/addRole) and [`player.removeRole`](/sdk/managers/player/removeRole) methods from a server script.
 
 :::note Roles creation
-Please note that roles can only be created from the `Server Settings UI` and cannot be created via scripts at this time.
+Please note that roles can only be created from the `Server Settings UI` and cannot be created via scripts at the moment.
 :::
+
+![img](https://i.gyazo.com/abbb1ca542775bc5432c3e2faa795002.png)
 
 ## Managing Permissions
 
 In Verza, permissions for commands and actions are defined by the name of the command or action itself. For example, if you create a command called `admin`, the permission required to access that command will also be called `admin`.
 
-To manage permissions, you can configure them from the `Server Settings UI` by assigning them to specific roles. You can access the `Server Settings UI` by pressing the `K` key while in-game, or by navigating to the `Server Settings` section of the `Options Menu`.
+To manage permissions, go to the `Commands & Actions` tab from from the `Server Settings`.
 
 Once you're in the `Server Settings UI`, click on the `Commands & Actions` tab to see a list of all the available commands. For each command, you can assign a specific role that is required to access it. This means that only players with that role will be able to use the command.
 
 To assign a role to a command, simply click on the role dropdown next to the command and select the desired role from the list. You can assign multiple roles to a command if you want to allow multiple groups of players to access it.
+
+![img](https://i.gyazo.com/e669276f70d6512dac5b71df4c886a3f.png)
+
+You can also assign roles to players from the `Members` tab:
+
+![img](https://i.gyazo.com/160547c19fb2e31fecd77737f15278af.png)
 
 ## Commands vs Actions
 
@@ -38,7 +46,7 @@ You can check if a player has access to a specific command or action using the [
 
 ### Commands
 
-Commands are created using the [`Command`](/sdk/types/Command) class, and can be registered with the [`engine.commands.register`](/sdk/managers/commands/register) method. `Commands` are identified by a unique name, and can be executed by players by typing the name preceded by a slash (`/`) in the chat.
+Commands are created using the [`Command`](/sdk/types/Command) class, and can be registered with the [`commands.register`](/sdk/managers/commands/register) method. `Commands` are identified by a unique name, and can be executed by players by typing the name preceded by a slash (`/`) in the chat like so: `/fireworks`.
 
 ### Actions
 
@@ -50,9 +58,15 @@ In conclusion, commands are used to trigger predefined functionality, while acti
 
 ## Special Admin Role
 
-The `Admin` role is a special role that is automatically created when you create a new server. This role is assigned to the server owner by default, and grants access to all commands and actions. This means that the server owner will be able to use all commands and actions without having to assign them to the `Admin` role.
+The `Admin` role is a special role that is automatically created when you create a new server. This role is assigned to the server owner by default and has the name `Owner`, it grants access to specific server-side-only actions from the client.
 
-There are certain server-side actions that can be performed from the client when the player holds the `Admin` role. These actions are listed below:
+You can identify the `Admin` special role by its tag along with the `Admin` name like in the following screenshot.
+
+![Admin Role](https://i.gyazo.com/0b15924d7b87a1f95e53f2640492c41c.png)
+
+By default the name of the role is `Owner`, you can change it to whatever you want, however the role will always be `Admin`.
+
+As mentioned above, the `Admin` role grants access to specific server-side-only actions from the client. These actions are listed below:
 
 ### Player
 
@@ -69,6 +83,33 @@ There are certain server-side actions that can be performed from the client when
 | :------------------------------------------------------- | :---------------------------------------------- |
 | [`Persistent Store`](/concepts/storage#persistent-store) | Allows the player to access a persistent store. |
 | [`Memory Store`](/concepts/storage/#memory-store)        | Allows the player to access a memory store.     |
+
+### Voicechat
+
+| Action                                                         | Description                         |
+| :------------------------------------------------------------- | :---------------------------------- |
+| [`voicechat.setEnabled`](/sdk/managers/voicechat/setEnabled)   | Sets the global voicechat status.   |
+| [`voicechat.setMode`](/sdk/managers/voicechat/setMode)         | Sets the global voicechat mode.     |
+| [`voicechat.setDistance`](/sdk/managers/voicechat/setDistance) | Sets the global voicechat distance. |
+
+### Chat
+
+| Action                                             | Description                                  |
+| :------------------------------------------------- | :------------------------------------------- |
+| [`chat.setEnabled`](/sdk/managers/chat/setEnabled) | Enables or disables the chat for the server. |
+
+### Player
+
+| Action                                                                  | Description                                     |
+| :---------------------------------------------------------------------- | :---------------------------------------------- |
+| [`player.voicechat.setMuted` ](/sdk/managers/player/voicechat/setMuted) | Sets the voicechat muted status for the player. |
+
+### Players
+
+| Action                                                                       | Description                                 |
+| :--------------------------------------------------------------------------- | :------------------------------------------ |
+| [`players.setNametagsDistance` ](/sdk/managers/players/setNametagsDistance)  | Sets the nametags distance for all players. |
+| [`players.setStreamerDistance ` ](/sdk/managers/players/setStreamerDistance) | Sets the streamer distance for all players. |
 
 ## Special Actions
 

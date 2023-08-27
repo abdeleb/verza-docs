@@ -1,0 +1,58 @@
+# Voicechat
+
+The voicechat system allows players to communicate with each other using their microphone.
+
+The SDK offers a variety of methods to control the voicechat system, from walkie-talkie style to proximity-based voicechat or a combination of both.
+
+## Modes
+
+The voicechat system supports two modes: **`global`** and **`proximity`**
+
+| Mode        | Description                                                                                |
+| ----------- | ------------------------------------------------------------------------------------------ |
+| `global`    | All players can hear each other regardless of their distance.                              |
+| `proximity` | Players can only hear each other if they are close enough based on the `distance` setting. |
+
+## Channels
+
+By default, all players are in the same voicechat channel `0`.
+
+You can enable and disable different channels by using the [player.enableChannel](/sdk/managers/player/voicechat/enableChannel) and [player.disableChannel](/sdk/managers/player/voicechat/disableChannel) methods respectively.
+
+## Global and Per Player settings
+
+The voicechat system can be controlled globally or per player.
+
+When using a player method, the global setting will be overridden for that player.
+
+If the voicechat is disabled globally using [voicechat.setEnabled](/sdk/managers/voicechat/setEnabled), you can't enable it for a specific player. To achieve this, you can use the [player.voicechat.setMuted](/sdk/managers/player/voicechat/setMuted) or removing the player from all (or specific) channels using [player.voicechat.disableChannel](/sdk/managers/player/voicechat/disableChannel).
+
+| Setting                                                                                           | Description                                  |
+| ------------------------------------------------------------------------------------------------- | -------------------------------------------- |
+| [`voicechat.setEnabled`](/sdk/managers/voicechat/setEnabled)                                      | Sets the global voicechat status.            |
+| [`voicechat.setMode`](/sdk/managers/voicechat/setMode)                                            | Sets the global voicechat mode.              |
+| [`voicechat.setDistance`](/sdk/managers/voicechat/setDistance)                                    | Sets the global voicechat distance.          |
+| [`player.voicechat.setPlayerToPlayerMode` ](/sdk/managers/player/voicechat/setPlayerToPlayerMode) | Sets the voicechat mode to player to player. |
+| [`player.voicechat.enableChannel`](/sdk/managers/player/voicechat/enableChannel)                  | Enables a voicechat channel.                 |
+| [`player.voicechat.disableChannel`](/sdk/managers/player/voicechat/disableChannel)                | Disables a voicechat channel.                |
+| [`player.voicechat.setMuted`](/sdk/managers/player/voicechat/setMuted)                            | Sets the player's muted status.              |
+| [`player.voicechat.setDistance`](/sdk/managers/player/voicechat/setDistance)                      | Sets the player's voicechat distance.        |
+
+## Server settings
+
+Basic configuration of the voicechat system like the global [VoicechatModeType](/sdk/types/VoicechatModeType), `distance` and `status` can be done in the `Communication` tab of the `Server Settings`.
+
+![Communication](https://i.gyazo.com/d5a3844cbc054d29f09c67e56a2700a3.png)
+
+## Mute Players
+
+A player can be muted for all players using the [player.voicechat.setMuted](/sdk/managers/player/voicechat/setMuted) method.
+
+At the same time local players can mute other players from the players list by clicking on the speaker icon:
+
+<video controls muted autoPlay loop style={{width: '100%', maxWidth: '600px'}}>
+  <source
+    src="https://i.gyazo.com/1bec0dc5e07e92714afca3e3e44d4897.mp4"
+    type="video/mp4"
+  />
+</video>
