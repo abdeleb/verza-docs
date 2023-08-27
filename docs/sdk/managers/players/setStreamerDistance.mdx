@@ -1,0 +1,36 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+Sets the streamer distance for all players.
+
+:::caution PERSISTENT METHOD
+This method is persistent. It will not reset when a server restarts.
+:::
+
+### Syntax
+
+```js
+engine.players.setStreamerDistance(distance);
+```
+
+### Parameters
+
+| Name       | Type     | Description                                                       |
+| ---------- | -------- | ----------------------------------------------------------------- |
+| `distance` | `number` | The max distance when players stream in. Maximum value is `1024`. |
+
+### Returns
+
+- `Promise<void>` - A promise that resolves when the streamer distance has been set.
+
+### Example
+
+```js
+engine.players.setStreamerDistance(1024);
+```
+
+**Available on:** <ClientTag /> <ServerTag />

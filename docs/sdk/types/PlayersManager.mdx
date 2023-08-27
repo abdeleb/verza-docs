@@ -6,5 +6,9 @@ class PlayersManager extends EntitiesManager<PlayerManager> {
     chunkIndex: ChunkIndex,
     callback: (player: PlayerManager) => void,
   ): void;
+
+  setNametagsDistance(distance: number): Promise<void>;
+
+  setStreamerDistance(distance: number): Promise<void>;
 }
 ```

@@ -1,0 +1,36 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+Sets the nametags distance for all players.
+
+:::caution PERSISTENT METHOD
+This method is persistent. It will not reset when a server restarts.
+:::
+
+### Syntax
+
+```js
+engine.players.setNametagsDistance(distance);
+```
+
+### Parameters
+
+| Name       | Type     | Description                                                       |
+| ---------- | -------- | ----------------------------------------------------------------- |
+| `distance` | `number` | The distance where nametags are visible. Maximum value is `1024`. |
+
+### Returns
+
+- `Promise<void>` - A promise that resolves when the nametags distance has been set.
+
+### Example
+
+```js
+engine.players.setNametagsDistance(128);
+```
+
+**Available on:** <ClientTag /> <ServerTag />
