@@ -397,63 +397,63 @@ Managers in Verza's SDK provide a powerful way to interact with various world el
 
 ### Methods
 
-| Method                                                           | Description                                  |
-| ---------------------------------------------------------------- | -------------------------------------------- |
-| [`players.create`](./players/create)                             | Creates a detached player entity.            |
-| [`players.forEachInChunk`](./players/forEachInChunk)             | Iterates for each player in specified chunk. |
-| [`players.setNametagsDistance` ](./players/setNametagsDistance)  | Sets the nametags distance for all players.  |
-| [`players.setStreamerDistance ` ](./players/setStreamerDistance) | Sets the streamer distance for all players.  |
+| Method                                                          | Description                                  |
+| --------------------------------------------------------------- | -------------------------------------------- |
+| [`players.create`](./players/create)                            | Creates a detached player entity.            |
+| [`players.forEachInChunk`](./players/forEachInChunk)            | Iterates for each player in specified chunk. |
+| [`players.setNametagsDistance`](./players/setNametagsDistance)  | Sets the nametags distance for all players.  |
+| [`players.setStreamerDistance `](./players/setStreamerDistance) | Sets the streamer distance for all players.  |
 
 ## `PlayerManager`
 
 ### Methods
 
-| Method                                                                                | Description                                                     |
-| ------------------------------------------------------------------------------------- | --------------------------------------------------------------- |
-| [`player.setName`](./player/setName)                                                  | Sets the player's name.                                         |
-| [`player.setNametagColor`](./player/setNametagColor)                                  | Sets the player's nametag color.                                |
-| [`player.setDimension`](./player/setDimension)                                        | Sets the player's dimension.                                    |
-| [`player.setPosition`](./player/setPosition)                                          | Sets the player's position.                                     |
-| [`player.setRotation`](./player/setRotation)                                          | Sets the player's rotation.                                     |
-| [`player.getFacingAngle`](./player/getFacingAngle)                                    | Gets the player's facing angle.                                 |
-| [`player.setFacingAngle`](./player/setFacingAngle)                                    | Sets the player's facing angle.                                 |
-| [`player.setCameraBehind`](./player/setCameraBehind)                                  | Sets the player's camera to be behind them.                     |
-| [`player.sendMessage`](./player/sendMessage)                                          | Sends a message to the player.                                  |
-| [`player.setMovements`](./player/setMovements)                                        | Sets the player's movement controls.                            |
-| [`player.setTranslations`](./player/setTranslations)                                  | Sets the player's translation axes.                             |
-| [`player.setLinearVelocity`](./player/setLinearVelocity)                              | Sets the player's linear velocity.                              |
-| [`player.setClimbAngle`](./player/setClimbAngle)                                      | Sets the player's maximum climb angle.                          |
-| [`player.setVisible`](./player/setVisible)                                            | Set whether or not the player is visible.                       |
-| [`player.sendSuccessNotification`](./player/sendSuccessNotification)                  | Sends a success notification to the player.                     |
-| [`player.sendErrorNotification`](./player/sendErrorNotification)                      | Sends an error notification to the player.                      |
-| [`player.hasAccess`](./player/hasAccess)                                              | Checks if the player has access to a certain command or action. |
-| [`player.hasRole`](./player/hasRole)                                                  | Checks if the player has a role.                                |
-| [`player.addRole`](./player/addRole)                                                  | Adds a role to the player.                                      |
-| [`player.removeRole`](./player/removeRole)                                            | Removes a role from the player.                                 |
-| [`player.addClothes`](./player/addClothes)                                            | Adds clothes to the player.                                     |
-| [`player.getClothes`](./player/getClothes)                                            | Gets the player's clothes.                                      |
-| [`player.removeClothes`](./player/removeClothes)                                      | Removes clothes from the player.                                |
-| [`player.playAnimation`](./player/playAnimation)                                      | Plays an animation on the player.                               |
-| [`player.stopAnimation`](./player/stopAnimation)                                      | Stops an animation on the player.                               |
-| [`player.stopAnimations`](./player/stopAnimations)                                    | Stops all animations on the player.                             |
-| [`player.pauseAnimation`](./player/pauseAnimation)                                    | Pauses an animation on the player.                              |
-| [`player.resumeAnimation`](./player/resumeAnimation)                                  | Resumes an animation on the player.                             |
-| [`player.ban`](./player/ban)                                                          | Bans the player.                                                |
-| [`player.unban`](./player/unban)                                                      | Unbans the player.                                              |
-| [`player.getBanStatus`](./player/getBanStatus)                                        | Gets the player's ban status.                                   |
-| [`player.kick`](./player/kick)                                                        | Kicks the player.                                               |
-| [`player.setChatEnabled` ](./player/setChatEnabled)                                   | Sets the player's chat enabled status.                          |
-| [`player.camera.setFov`](./player/camera/setFov)                                      | Sets the camera fov for the player.                             |
-| [`player.camera.setMode`](./player/camera/setMode)                                    | Sets the camera mode for the player.                            |
-| [`player.camera.startTransitions`](./player/camera/startTransitions)                  | Starts transitions for the camera.                              |
-| [`player.camera.startTransition`](./player/camera/startTransition)                    | Starts a transition for the camera.                             |
-| [`player.camera.stopTransitions`](./player/camera/stopTransitions)                    | Stops transitions for the camera.                               |
-| [`player.camera.setPosition`](./player/camera/setPosition)                            | Sets the position of the camera.                                |
-| [`player.voicechat.setPlayerToPlayerMode` ](./player/voicechat/setPlayerToPlayerMode) | Sets the voicechat mode to player to player.                    |
-| [`player.voicechat.enableChannel`](./player/voicechat/enableChannel)                  | Enables a voicechat channel.                                    |
-| [`player.voicechat.disableChannel`](./player/voicechat/disableChannel)                | Disables a voicechat channel.                                   |
-| [`player.voicechat.setMuted`](./player/voicechat/setMuted)                            | Sets the player's muted status.                                 |
-| [`player.voicechat.setDistance`](./player/voicechat/setDistance)                      | Sets the player's voicechat distance.                           |
+| Method                                                                               | Description                                                     |
+| ------------------------------------------------------------------------------------ | --------------------------------------------------------------- |
+| [`player.setName`](./player/setName)                                                 | Sets the player's name.                                         |
+| [`player.setNametagColor`](./player/setNametagColor)                                 | Sets the player's nametag color.                                |
+| [`player.setDimension`](./player/setDimension)                                       | Sets the player's dimension.                                    |
+| [`player.setPosition`](./player/setPosition)                                         | Sets the player's position.                                     |
+| [`player.setRotation`](./player/setRotation)                                         | Sets the player's rotation.                                     |
+| [`player.getFacingAngle`](./player/getFacingAngle)                                   | Gets the player's facing angle.                                 |
+| [`player.setFacingAngle`](./player/setFacingAngle)                                   | Sets the player's facing angle.                                 |
+| [`player.setCameraBehind`](./player/setCameraBehind)                                 | Sets the player's camera to be behind them.                     |
+| [`player.sendMessage`](./player/sendMessage)                                         | Sends a message to the player.                                  |
+| [`player.setMovements`](./player/setMovements)                                       | Sets the player's movement controls.                            |
+| [`player.setTranslations`](./player/setTranslations)                                 | Sets the player's translation axes.                             |
+| [`player.setLinearVelocity`](./player/setLinearVelocity)                             | Sets the player's linear velocity.                              |
+| [`player.setClimbAngle`](./player/setClimbAngle)                                     | Sets the player's maximum climb angle.                          |
+| [`player.setVisible`](./player/setVisible)                                           | Set whether or not the player is visible.                       |
+| [`player.sendSuccessNotification`](./player/sendSuccessNotification)                 | Sends a success notification to the player.                     |
+| [`player.sendErrorNotification`](./player/sendErrorNotification)                     | Sends an error notification to the player.                      |
+| [`player.hasAccess`](./player/hasAccess)                                             | Checks if the player has access to a certain command or action. |
+| [`player.hasRole`](./player/hasRole)                                                 | Checks if the player has a role.                                |
+| [`player.addRole`](./player/addRole)                                                 | Adds a role to the player.                                      |
+| [`player.removeRole`](./player/removeRole)                                           | Removes a role from the player.                                 |
+| [`player.addClothes`](./player/addClothes)                                           | Adds clothes to the player.                                     |
+| [`player.getClothes`](./player/getClothes)                                           | Gets the player's clothes.                                      |
+| [`player.removeClothes`](./player/removeClothes)                                     | Removes clothes from the player.                                |
+| [`player.playAnimation`](./player/playAnimation)                                     | Plays an animation on the player.                               |
+| [`player.stopAnimation`](./player/stopAnimation)                                     | Stops an animation on the player.                               |
+| [`player.stopAnimations`](./player/stopAnimations)                                   | Stops all animations on the player.                             |
+| [`player.pauseAnimation`](./player/pauseAnimation)                                   | Pauses an animation on the player.                              |
+| [`player.resumeAnimation`](./player/resumeAnimation)                                 | Resumes an animation on the player.                             |
+| [`player.ban`](./player/ban)                                                         | Bans the player.                                                |
+| [`player.unban`](./player/unban)                                                     | Unbans the player.                                              |
+| [`player.getBanStatus`](./player/getBanStatus)                                       | Gets the player's ban status.                                   |
+| [`player.kick`](./player/kick)                                                       | Kicks the player.                                               |
+| [`player.setChatEnabled`](./player/setChatEnabled)                                   | Sets the player's chat enabled status.                          |
+| [`player.camera.setFov`](./player/camera/setFov)                                     | Sets the camera fov for the player.                             |
+| [`player.camera.setMode`](./player/camera/setMode)                                   | Sets the camera mode for the player.                            |
+| [`player.camera.startTransitions`](./player/camera/startTransitions)                 | Starts transitions for the camera.                              |
+| [`player.camera.startTransition`](./player/camera/startTransition)                   | Starts a transition for the camera.                             |
+| [`player.camera.stopTransitions`](./player/camera/stopTransitions)                   | Stops transitions for the camera.                               |
+| [`player.camera.setPosition`](./player/camera/setPosition)                           | Sets the position of the camera.                                |
+| [`player.voicechat.setPlayerToPlayerMode`](./player/voicechat/setPlayerToPlayerMode) | Sets the voicechat mode to player to player.                    |
+| [`player.voicechat.enableChannel`](./player/voicechat/enableChannel)                 | Enables a voicechat channel.                                    |
+| [`player.voicechat.disableChannel`](./player/voicechat/disableChannel)               | Disables a voicechat channel.                                   |
+| [`player.voicechat.setMuted`](./player/voicechat/setMuted)                           | Sets the player's muted status.                                 |
+| [`player.voicechat.setDistance`](./player/voicechat/setDistance)                     | Sets the player's voicechat distance.                           |
 
 ### Properties
 
