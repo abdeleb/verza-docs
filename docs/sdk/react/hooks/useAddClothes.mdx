@@ -4,19 +4,23 @@ hide_table_of_contents: true
 
 import ClientTag from '@site/src/components/tags/ClientTag';
 
-Adds clothes to the engine.
+Adds clothes to the clothes system.
+
+:::caution Heads Up!
+This hook do not add the clothes to the player, it only adds it to the clothes system. To add the clothes to the player, use [`player.addClothes`](/sdk/managers/player/addClothes).
+:::
 
 ### Syntax
 
 ```js
-useAddClothes(items);
+useAddClothes(clothes);
 ```
 
 ### Parameters
 
-| Name    | Type                                    | Description                       |
-| ------- | --------------------------------------- | --------------------------------- |
-| `items` | [`ClotheItem[]`](/sdk/types/ClotheItem) | The clothes to add to the engine. |
+| Name      | Type                                    | Description                       |
+| --------- | --------------------------------------- | --------------------------------- |
+| `clothes` | [`ClotheItem[]`](/sdk/types/ClotheItem) | The clothes to add to the engine. |
 
 ### Example
 

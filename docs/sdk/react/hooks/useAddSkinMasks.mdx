@@ -1,0 +1,36 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Adds a skin mask to the clothes system.
+
+:::caution Heads Up!
+This hook do not add the skin mask to the player, it only adds it to the clothes system. To add the skin mask to the player, use [`player.addClothes`](/sdk/managers/player/addClothes).
+:::
+
+### Syntax
+
+```js
+useAddSkinMasks(masks);
+```
+
+### Parameters
+
+| Name    | Type                                        | Description                          |
+| ------- | ------------------------------------------- | ------------------------------------ |
+| `masks` | [`SkinMaskItem[]`](/sdk/types/SkinMaskItem) | The skin masks to add to the system. |
+
+### Example
+
+```js
+useAddSkinMasks([
+  {
+    id: 'top',
+    url: 'https://example.com/mask.png',
+  },
+]);
+```
+
+**Available on:** <ClientTag />

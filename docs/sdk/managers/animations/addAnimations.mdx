@@ -6,6 +6,16 @@ import ClientTag from '@site/src/components/tags/ClientTag';
 
 Adds animations to the engine.
 
+:::caution Heads Up!
+This method do not play animations to the player, it only adds it to the engine. To play animations to the player, use [`player.playAnimation`](/sdk/managers/player/playAnimation).
+:::
+
+:::note Format
+The animations file must be in the [glTF](https://www.khronos.org/gltf/) format, and animations must be exported as NLA Actions (NLA Tracks).
+
+You can use [Blender](https://www.blender.org/) to create animations and export them to the glTF format.
+:::
+
 ### Syntax
 
 ```js
