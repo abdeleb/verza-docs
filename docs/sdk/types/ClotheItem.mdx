@@ -1,10 +1,24 @@
 ```ts
 type ClotheItem = {
   id: string;
-  url: string;
+  url?: string | null;
+
   name?: string;
+
   masks?: string[];
+
+  colorMasks?: string[];
+
+  headMasks?: string[];
+
   category?: ClotheCategory;
+
   gender?: ClotheGender;
+
+  bone?: CharacterBone;
+
+  position?: Vector3Array | Vector3;
+
+  rotation?: EulerArray | QuaternionArray | Euler | Quaternion;
 };
 ```

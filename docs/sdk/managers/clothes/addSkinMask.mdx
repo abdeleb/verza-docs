@@ -8,7 +8,11 @@ Adds a skin mask to the engine.
 
 Skin masks will be applied to the character when the user wears the corresponding clothing item specifing the mask ID.
 
-Skin masks are used to hide parts of the character's skin when wearing clothing items that don't cover the whole body.
+Skin masks are used to hide parts of the character's skin when wearing clothing items that don't cover the whole body, it's useful for items like hair, hats, glasses, etc.
+
+:::caution Heads Up!
+This hook do not add the skin mask to the player, it only adds it to the clothes system. To add the skin mask to the player, use [`player.addClothes`](/sdk/managers/player/addClothes).
+:::
 
 ### Syntax
 

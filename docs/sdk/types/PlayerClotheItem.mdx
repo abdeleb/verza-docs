@@ -1,5 +1,15 @@
 ```ts
 type PlayerClotheItem = {
   id: string;
+
+  color?: ColorType;
+
+  materialTextures?: Record<string, string>;
+
+  materialColors?: Record<string, ColorType>;
+
+  maskColors?: Record<string, ColorType>;
+
+  headMaskColors?: Record<string, ColorType>;
 };
 ```

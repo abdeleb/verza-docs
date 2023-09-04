@@ -2,7 +2,7 @@
 class WorldManager {
   raycaster: RaycasterManager;
 
-  setInteriorMode(status: boolean): void;
+  setInteriorModeEnabled(enabled: boolean): void;
 
   setHemisphereLightColor(color: ColorType): void;
 
@@ -40,7 +40,7 @@ class WorldManager {
 
   setMoonPhase(phase: MoonPhases): void;
 
-  setSkyManualMode(status: boolean): void;
+  setSkyManualModeEnabled(enabled: boolean): void;
 
   setViewportRender(type: ViewportRender): void;
 
