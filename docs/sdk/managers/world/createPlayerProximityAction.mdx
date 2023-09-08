@@ -4,19 +4,19 @@ hide_table_of_contents: true
 
 import ClientTag from '@site/src/components/tags/ClientTag';
 
-Creates a proximity action attached to an object.
+Creates a proximity action attached to a player.
 
 ### Syntax
 
 ```js
-engine.world.createObjectProximityAction(object, action, withId);
+engine.world.createPlayerProximityAction(player, action, withId);
 ```
 
 ### Parameters
 
 | Name                  | Type                                                          | Description                                   |
 | --------------------- | ------------------------------------------------------------- | --------------------------------------------- |
-| `object`              | `string` or [`ObjectManager`](/sdk/types/ObjectManager)       | The object to attach the proximity action to. |
+| `player`              | `number` or [`PlayerManager`](/sdk/types/PlayerManager)       | The player to attach the proximity action to. |
 | `action` _(optional)_ | [`ProximityActionOptions`](/sdk/types/ProximityActionOptions) | The proximity action options.                 |
 | `withId` _(optional)_ | `string`                                                      | The id of the proximity action.               |
 
@@ -28,7 +28,7 @@ engine.world.createObjectProximityAction(object, action, withId);
 
 ```js
 // create a proximity action
-engine.world.createObjectProximityAction(
+engine.world.createPlayerProximityAction(
   player,
   {
     position: [3, 2, 3],

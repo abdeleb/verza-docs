@@ -116,5 +116,16 @@ class PlayerManager extends EntityManager<
     options?: ParticlesOptions,
     withId?: string,
   ): ParticlesManager;
+
+  createSound(
+    soundName: string,
+    options?: SoundOptions,
+    withId?: string,
+  ): SoundManager;
+
+  createProximityAction(
+    options: ProximityActionOptions,
+    withId?: string,
+  ): ProximityActionManager;
 }
 ```

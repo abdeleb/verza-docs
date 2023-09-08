@@ -67,6 +67,7 @@ Managers in Verza's SDK provide a powerful way to interact with various world el
 | [`audio.addSound`](./audio/addSound)                       | Add a sound to the engine.                                                                  |
 | [`audio.removeSound`](./audio/removeSound)                 | Remove a sound from the engine.                                                             |
 | [`audio.createSound`](./audio/createSound)                 | Create a sound.                                                                             |
+| [`audio.createPlayerSound`](./audio/createPlayerSound)     | Create a sound attached to a player.                                                        |
 | [`audio.createObjectSound`](./audio/createObjectSound)     | Create a sound attached to an object.                                                       |
 | [`audio.playSound`](./audio/playSound)                     | Play a sound and automatically dispose of it when it's done playing.                        |
 | [`audio.playSoundAtPosition`](./audio/playSoundAtPosition) | Play a sound and automatically dispose of it when it's done playing at a specific position. |
@@ -481,7 +482,9 @@ Managers in Verza's SDK provide a powerful way to interact with various world el
 | [`player.getBanStatus`](./player/getBanStatus)                                       | Gets the player's ban status.                                   |
 | [`player.kick`](./player/kick)                                                       | Kicks the player.                                               |
 | [`player.setChatEnabled`](./player/setChatEnabled)                                   | Sets the player's chat enabled status.                          |
+| [`player.createSound`](./player/createSound)                                         | Creates a sound attached to the player.                         |
 | [`player.createParticles`](./player/createParticles)                                 | Creates a particle effect attached to the player.               |
+| [`player.createProximityAction`](./player/createProximityAction)                     | Creates a proximity action attached to the player.              |
 | [`player.camera.setFov`](./player/camera/setFov)                                     | Sets the camera fov for the player.                             |
 | [`player.camera.setMode`](./player/camera/setMode)                                   | Sets the camera mode for the player.                            |
 | [`player.camera.startTransitions`](./player/camera/startTransitions)                 | Starts transitions for the camera.                              |
@@ -558,6 +561,7 @@ Managers in Verza's SDK provide a powerful way to interact with various world el
 | [`world.setSkyManualModeEnabled`](./world/setSkyManualModeEnabled)             | Sets whether the sky transitions are manual or automatic according to the time of day. |
 | [`world.setViewportRender`](./world/setViewportRender)                         | Sets the world viewport render mode.                                                   |
 | [`world.createProximityAction`](./world/createProximityAction)                 | Creates a proximity action.                                                            |
+| [`world.createPlayerProximityAction`](./world/createPlayerProximityAction)     | Creates a proximity action attached to a player.                                       |
 | [`world.createObjectProximityAction`](./world/createObjectProximityAction)     | Creates a proximity action attached to an object.                                      |
 | [`world.setFogEnabled`](./world/setFogEnabled)                                 | Sets the fog status.                                                                   |
 | [`world.setFogColor`](./world/setFogColor)                                     | Sets the fog color.                                                                    |

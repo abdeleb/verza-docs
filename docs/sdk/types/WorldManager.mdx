@@ -49,6 +49,12 @@ class WorldManager {
     withId?: string,
   ): ProximityActionManager;
 
+  createPlayerProximityAction(
+    player: string | PlayerManager,
+    options?: ProximityActionOptions,
+    withId?: string,
+  ): ProximityActionManager;
+
   createObjectProximityAction(
     object: string | ObjectManager,
     options?: ProximityActionOptions,

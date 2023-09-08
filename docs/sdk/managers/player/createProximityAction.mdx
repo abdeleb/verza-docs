@@ -1,0 +1,47 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Creates a proximity action attached to the player.
+
+### Syntax
+
+```js
+player.createProximityAction(options, withId);
+```
+
+### Parameters
+
+| Name                   | Type                                                          | Description                                 |
+| ---------------------- | ------------------------------------------------------------- | ------------------------------------------- |
+| `options` _(optional)_ | [`ProximityActionOptions`](/sdk/types/ProximityActionOptions) | The options to create the proximity action. |
+| `withId` _(optional)_  | `string`                                                      | The id of the proximity action.             |
+
+### Returns
+
+- [`ProximityActionManager`](/sdk/types/ProximityActionManager) - The proximity action manager.
+
+### Example
+
+```js
+// create a proximity action
+const proximityAction = player.createProximityAction(
+  {
+    position: [3, 2, 3],
+    label: 'Nice music',
+    description: 'Play a sound',
+    key: 'KeyF',
+    distance: 3,
+  },
+  'my-custom-id',
+);
+
+// listen to the proximity action trigger
+proximityAction.on(event => {
+  console.log('Proximity action triggered', event);
+});
+```
+
+**Available on:** <ClientTag />
