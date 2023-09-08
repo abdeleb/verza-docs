@@ -1,16 +1,19 @@
 ```ts
 class EffectsManager {
-  createParticles(options?: ParticleOptions, withId?: string): ParticlesManager;
+  createParticles(
+    options?: ParticlesOptions,
+    withId?: string,
+  ): ParticlesManager;
 
   createPlayerParticles(
     player: number | PlayerManager,
-    options?: ParticleOptions,
+    options?: ParticlesOptions,
     withId?: string,
   ): ParticlesManager;
 
   createObjectParticles(
     object: number | ObjectManager,
-    options?: ParticleOptions,
+    options?: ParticlesOptions,
     withId?: string,
   ): ParticlesManager;
 
@@ -18,7 +21,7 @@ class EffectsManager {
 
   playParticlesAtPosition(
     position: Vector3Array | Vector3,
-    options?: ParticleOptions,
+    options?: ParticlesOptions,
     withId?: string,
   ): ParticlesManager;
 }
