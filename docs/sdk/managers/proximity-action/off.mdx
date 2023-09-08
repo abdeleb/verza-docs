@@ -1,0 +1,34 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Stop listening for proximity action triggered events.
+
+### Syntax
+
+```js
+proximityAction.off(callback);
+```
+
+### Parameters
+
+| Name       | Type                                    | Description                                     |
+| ---------- | --------------------------------------- | ----------------------------------------------- |
+| `callback` | `(event: ProximityActionEvent) => void` | Callback function to stop listening for events. |
+
+### Example
+
+```js
+const proximityAction = engine.world.createProximityAction();
+
+const callback = proximityAction.on(event => {
+  console.log('Proximity action triggered!', event);
+});
+
+// Later, when you want to stop listening for proximity action events:
+proximityAction.off(callback);
+```
+
+**Available on:** <ClientTag />

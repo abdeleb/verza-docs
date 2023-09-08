@@ -175,13 +175,21 @@ class ObjectManager<OT extends ObjectType = ObjectType> extends EntityManager<
 
   clearTransitions(): void;
 
-  setSound(soundName: string, options?: SoundOptions): SoundManager;
+  createSound(
+    soundName: string,
+    options?: SoundOptions,
+    withId?: string,
+  ): SoundManager;
 
-  removeSound(): void;
+  createParticles(
+    options?: ParticlesOptions,
+    withId?: string,
+  ): ParticlesManager;
 
-  setProximityAction(action: Omit<ProximityAction, 'id' | 'objectId'>): void;
-
-  removeProximityAction(): void;
+  createProximityAction(
+    options?: ProximityActionOptions,
+    withId?: string,
+  ): ProximityActionManager;
 
   restoreData(): void;
 
