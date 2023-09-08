@@ -1,0 +1,35 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Create a sound attached to the player.
+
+### Syntax
+
+```js
+player.createSound(soundName, options, withId);
+```
+
+### Parameters
+
+| Name        | Type                                      | Description                                  |
+| ----------- | ----------------------------------------- | -------------------------------------------- |
+| `soundName` | `string`                                  | The name of the sound to create.             |
+| `options`   | [`SoundOptions`](/sdk/types/SoundOptions) | The options to use for the sound. (optional) |
+| `withId`    | `string`                                  | The ID of the sound to create. (optional)    |
+
+### Returns
+
+- [`SoundManager`](/sdk/types/SoundManager) - The sound manager.
+
+### Example
+
+```js
+const sound = player.createSound('fire');
+
+sound.play();
+```
+
+**Available on:** <ClientTag />

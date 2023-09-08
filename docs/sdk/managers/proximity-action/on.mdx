@@ -1,0 +1,35 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Listen for proximity action triggered events.
+
+### Syntax
+
+```js
+proximityAction.on(callback);
+```
+
+### Parameters
+
+| Name       | Type                                    | Description                                    |
+| ---------- | --------------------------------------- | ---------------------------------------------- |
+| `callback` | `(event: ProximityActionEvent) => void` | Callback when a proximity action is triggered. |
+
+### Returns
+
+- `(event: ProximityActionEvent) => void` - The callback function.
+
+### Example
+
+```js
+const proximityAction = engine.world.createProximityAction();
+
+proximityAction.on(event => {
+  console.log('Proximity action triggered!', event);
+});
+```
+
+**Available on:** <ClientTag />

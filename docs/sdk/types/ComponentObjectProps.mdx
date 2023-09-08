@@ -5,11 +5,13 @@ export type ComponentObjectProps<T extends ObjectType = ObjectType> = Omit<
   ObjectEventMapList<T> & CreateObjectProps<T>,
   'type'
 > & {
-  proximityAction?: Omit<ProximityAction, 'id' | 'objectId'> | boolean;
-
   soundName?: string;
 
   soundOptions?: SoundOptions;
+
+  proximityAction?: Omit<ProximityActionOptions, 'objectId'> | boolean;
+
+  particles?: ParticlesOptions | boolean;
 
   helper?: boolean;
 };

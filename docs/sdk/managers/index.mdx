@@ -67,11 +67,19 @@ Managers in Verza's SDK provide a powerful way to interact with various world el
 | [`audio.addSound`](./audio/addSound)                       | Add a sound to the engine.                                                                  |
 | [`audio.removeSound`](./audio/removeSound)                 | Remove a sound from the engine.                                                             |
 | [`audio.createSound`](./audio/createSound)                 | Create a sound.                                                                             |
+| [`audio.createPlayerSound`](./audio/createPlayerSound)     | Create a sound attached to a player.                                                        |
 | [`audio.createObjectSound`](./audio/createObjectSound)     | Create a sound attached to an object.                                                       |
 | [`audio.playSound`](./audio/playSound)                     | Play a sound and automatically dispose of it when it's done playing.                        |
 | [`audio.playSoundAtPosition`](./audio/playSoundAtPosition) | Play a sound and automatically dispose of it when it's done playing at a specific position. |
 
 ## `SoundManager`
+
+### Properties
+
+| Name         | Type     | Description |
+| ------------ | -------- | ----------- |
+| `sound.id`   | `string` | Sound ID.   |
+| `sound.name` | `string` | Sound name. |
 
 ### Methods
 
@@ -93,13 +101,6 @@ Managers in Verza's SDK provide a powerful way to interact with various world el
 | [`sound.setOptions`](./audio/sound/setOptions)             | Set the sound options.                               |
 | [`sound.destroy`](./audio/sound/destroy)                   | Destroy the sound.                                   |
 
-### Properties
-
-| Name         | Type     | Description |
-| ------------ | -------- | ----------- |
-| `sound.id`   | `string` | Sound ID.   |
-| `sound.name` | `string` | Sound name. |
-
 ## `EffectsManager`
 
 ### Methods
@@ -114,6 +115,12 @@ Managers in Verza's SDK provide a powerful way to interact with various world el
 
 ## `ParticlesManager`
 
+### Properties
+
+| Name           | Type     | Description         |
+| -------------- | -------- | ------------------- |
+| `particles.id` | `string` | Particle effect ID. |
+
 ### Methods
 
 | Method                                                     | Description                       |
@@ -126,11 +133,21 @@ Managers in Verza's SDK provide a powerful way to interact with various world el
 | [`particles.setOptions`](./effects/particles/setOptions)   | Set the particle effect options.  |
 | [`particles.destroy`](./effects/particles/destroy)         | Destroy the particle effect.      |
 
+## `ProximityActionManager`
+
 ### Properties
 
-| Name           | Type     | Description         |
-| -------------- | -------- | ------------------- |
-| `particles.id` | `string` | Particle effect ID. |
+| Name                 | Type     | Description          |
+| -------------------- | -------- | -------------------- |
+| `proximityAction.id` | `string` | Proximity action ID. |
+
+### Methods
+
+| Method                                                  | Description                                           |
+| ------------------------------------------------------- | ----------------------------------------------------- |
+| [`on`](./proximity-action/on)                           | Listen for proximity action triggered events.         |
+| [`off`](./proximity-action/off)                         | Stop listening for proximity action triggered events. |
+| [`proximityAction.destroy`](./proximity-action/destroy) | Destroy the proximity action.                         |
 
 ## `AnimationsManager`
 
@@ -178,6 +195,12 @@ Managers in Verza's SDK provide a powerful way to interact with various world el
 
 ## `UIManager`
 
+### Properties
+
+| Name            | Type       | Description                                                   |
+| --------------- | ---------- | ------------------------------------------------------------- |
+| `ui.interfaces` | `string[]` | An array of the available interfaces available to the player. |
+
 ### Methods
 
 | Method                                               | Description                                                   |
@@ -211,12 +234,6 @@ Managers in Verza's SDK provide a powerful way to interact with various world el
 | [`ui.showComponent`](./ui/showComponent)             | Shows a UI component.                                         |
 | [`ui.hideComponent`](./ui/hideComponent)             | Hides a UI component.                                         |
 
-### Properties
-
-| Name            | Type       | Description                                                   |
-| --------------- | ---------- | ------------------------------------------------------------- |
-| `ui.interfaces` | `string[]` | An array of the available interfaces available to the player. |
-
 ## `InputManager`
 
 ### Properties
@@ -229,13 +246,6 @@ Managers in Verza's SDK provide a powerful way to interact with various world el
 
 ## `CommandsManager`
 
-### Methods
-
-| Method                                | Description                      |
-| ------------------------------------- | -------------------------------- |
-| [`register`](./commands/register)     | Registers a command or action.   |
-| [`unregister`](./commands/unregister) | Unregisters a command or action. |
-
 ### Properties
 
 | Name              | Type                                         | Description                                                                                        |
@@ -243,7 +253,24 @@ Managers in Verza's SDK provide a powerful way to interact with various world el
 | `commands`        | [`Map<string, Command>`](/sdk/types/Command) | The list of registered commands.                                                                   |
 | `noAccessMessage` | `string`                                     | The message displayed when a user tries to execute a command but doesn't have permission to do so. |
 
+### Methods
+
+| Method                                | Description                      |
+| ------------------------------------- | -------------------------------- |
+| [`register`](./commands/register)     | Registers a command or action.   |
+| [`unregister`](./commands/unregister) | Unregisters a command or action. |
+
 ## `EntitiesManager`
+
+### Properties
+
+| Name                   | Type                                                 | Description                                                                                                |
+| ---------------------- | ---------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `entities.type`        | [`EntityType`](/sdk/types/EntityType)                | The type of entity managed by the entity manager.                                                          |
+| `entities.entities`    | [`EntityManager[]`](/sdk/types/EntityManager)        | An array containing all the entity managers for the specified entity type.                                 |
+| `entities.entitiesMap` | [`Map<ID, EntityManager>`](/sdk/types/EntityManager) | A map of entity managers indexed by their respective entity IDs.                                           |
+| `entities.streamed`    | [`Map<ID, EntityManager>`](/sdk/types/EntityManager) | A map of entity managers for entities that are currently being streamed to the player.                     |
+| `entities.events`      | [`EventsManager`](/sdk/types/EntityManager)          | An instance of the `EventsManager` class used to register and manage events for the specified entity type. |
 
 ### Methods
 
@@ -257,17 +284,13 @@ Managers in Verza's SDK provide a powerful way to interact with various world el
 | [`entities.filter`](./entities/filter)   | Creates a new array with all entities that pass the provided test, similar to [`Array.filter`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter).                                                                     |
 | [`entities.find`](./entities/find)       | Returns the first entity that satisfies the provided testing function or `null`, similar to [`Array.find`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find). If no entity matches the test, the method returns `null`. |
 
+## `NetworkManager`
+
 ### Properties
 
-| Name                   | Type                                                 | Description                                                                                                |
-| ---------------------- | ---------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `entities.type`        | [`EntityType`](/sdk/types/EntityType)                | The type of entity managed by the entity manager.                                                          |
-| `entities.entities`    | [`EntityManager[]`](/sdk/types/EntityManager)        | An array containing all the entity managers for the specified entity type.                                 |
-| `entities.entitiesMap` | [`Map<ID, EntityManager>`](/sdk/types/EntityManager) | A map of entity managers indexed by their respective entity IDs.                                           |
-| `entities.streamed`    | [`Map<ID, EntityManager>`](/sdk/types/EntityManager) | A map of entity managers for entities that are currently being streamed to the player.                     |
-| `entities.events`      | [`EventsManager`](/sdk/types/EntityManager)          | An instance of the `EventsManager` class used to register and manage events for the specified entity type. |
-
-## `NetworkManager`
+| Method           | Description                         |
+| ---------------- | ----------------------------------- | --------------------------------------------------------------------------------------- |
+| `network.server` | [`ServerDto`](/sdk/types/ServerDto) | An object containing information about the server the player is currently connected to. |
 
 ### Methods
 
@@ -286,13 +309,13 @@ Managers in Verza's SDK provide a powerful way to interact with various world el
 | [`network.onScriptEvent`](./network/onScriptEvent)                     | Register a listener function to be called when a script event is emitted.  |
 | [`network.offScriptEvent`](./network/offScriptEvent)                   | Unregister a listener function previously registered with `onScriptEvent`. |
 
+## `ObjectsManager`
+
 ### Properties
 
-| Method           | Description                         |
-| ---------------- | ----------------------------------- | --------------------------------------------------------------------------------------- |
-| `network.server` | [`ServerDto`](/sdk/types/ServerDto) | An object containing information about the server the player is currently connected to. |
-
-## `ObjectsManager`
+| Name                    | Type                                        | Description                                                                                                      |
+| ----------------------- | ------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `objects.editingObject` | [`ObjectManager`](/sdk/types/ObjectManager) | A reference to the object manager for the object currently being edited, or `null` if no object is being edited. |
 
 ### Methods
 
@@ -305,13 +328,43 @@ Managers in Verza's SDK provide a powerful way to interact with various world el
 | [`objects.setEditSnaps`](./objects/setEditSnaps) | Enables or disables snap offset while editing objects.                                           |
 | [`objects.setEditAxes`](./objects/setEditAxes)   | Enables or disables the display of translation, rotation and scaling axes while editing objects. |
 
+## `ObjectManager`
+
 ### Properties
 
-| Name                    | Type                                        | Description                                                                                                      |
-| ----------------------- | ------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `objects.editingObject` | [`ObjectManager`](/sdk/types/ObjectManager) | A reference to the object manager for the object currently being edited, or `null` if no object is being edited. |
-
-## `ObjectManager`
+| Name                         | Type                                                    | Description                                                                          |
+| ---------------------------- | ------------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| `object.id`                  | `string`                                                | The ID of the object.                                                                |
+| `object.visible`             | `string`                                                | Whether the object is visible or not.                                                |
+| `object.objectType`          | [`ObjectType`](/sdk/types/ObjectType)                   | The type of the object.                                                              |
+| `object.location`            | [`Object3D`](/sdk/types/Object3D)                       | The object's position, rotation, and scale.                                          |
+| `object.position`            | [`Vector3`](/sdk/types/Vector3)                         | The object's position.                                                               |
+| `object.rotation`            | [`Quaternion`](/sdk/types/Quaternion)                   | The object's rotation.                                                               |
+| `object.scale`               | [`Vector3`](/sdk/types/Vector3)                         | The object's scale.                                                                  |
+| `object.worldLocation`       | [`Promise<Object3D>`](/sdk/types/Object3D)              | A promise that resolves to the world location of the object.                         |
+| `object.permanent`           | `boolean`                                               | Whether the object is permanent or not.                                              |
+| `object.remote`              | `boolean`                                               | Whether the object is remote or not.                                                 |
+| `object.parentId`            | `string`                                                | The ID of the parent object.                                                         |
+| `object.parent`              | [`ObjectManager`](/sdk/types/ObjectManager)             | The parent object of this object, or `null` if this object has no parent.            |
+| `object.children`            | [`Set<ObjectManager>`](/sdk/types/ObjectManager)        | The child objects of this object, represented as a set of `ObjectManager` instances. |
+| `object.userData`            | [`ObjectUserData`](/sdk/types/ObjectUserData)           | Custom user data attached to the object.                                             |
+| `object.props`               | `ObjectProps`                                           | The properties of the object, based on its type.                                     |
+| `object.data`                | `ObjectData`                                            | The data of the object.                                                              |
+| `object.supportsCollision`   | `boolean`                                               | Whether the object supports collision or not.                                        |
+| `object.collision`           | [`EntityCollisionType`](/sdk/types/EntityCollisionType) | The collision type of the object.                                                    |
+| `object.collider`            | [`EntityColliderType`](/sdk/types/EntityColliderType)   | The collider type of the object.                                                     |
+| `object.supportsShadows`     | `boolean`                                               | Whether the object supports shadows or not.                                          |
+| `object.shadows`             | `boolean`                                               | Whether the object casts shadows or not.                                             |
+| `object.supportsBloom`       | `boolean`                                               | Whether the object supports bloom or not.                                            |
+| `object.bloom`               | `boolean`                                               | Whether the object has bloom or not.                                                 |
+| `object.sensor`              | `boolean`                                               | Whether the object is a sensor or not.                                               |
+| `object.mass`                | `number`                                                | The object's mass, used in physics calculations.                                     |
+| `object.friction`            | `number`                                                | The object's friction, used in physics calculations.                                 |
+| `object.restitution`         | `number`                                                | The object's restitution, used in physics calculations.                              |
+| `object.enabledRotations`    | [`Boolean3Array`](/sdk/types/Boolean3Array)             | Whether the object's rotations are enabled or not.                                   |
+| `object.enabledTranslations` | [`Boolean3Array`](/sdk/types/Boolean3Array)             | Whether the object's translations are enabled or not.                                |
+| `object.sound`               | [`SoundManager`](/sdk/types/SoundManager)               | The object's sound manager when used the `sound` property (React SDK only).          |
+| `object.particles`           | [`ParticlesManager`](/sdk/types/ParticlesManager)       | The object's particles manager when used the `particles` property (React SDK only).  |
 
 ### Methods
 
@@ -347,8 +400,9 @@ Managers in Verza's SDK provide a powerful way to interact with various world el
 | [`object.startTransitions`](./object/startTransitions)                   | Starts all active transitions for the object.                                   |
 | [`object.startTransition`](./object/startTransition)                     | Starts a transition for the object.                                             |
 | [`object.clearTransitions`](./object/clearTransitions)                   | Clears all active transitions for the object.                                   |
-| [`object.setProximityAction`](./object/setProximityAction)               | Sets the proximity action for the object.                                       |
-| [`object.removeProximityAction`](./object/removeProximityAction)         | Removes the proximity action for the object.                                    |
+| [`object.createSound`](./object/createSound)                             | Creates a sound attached to the object.                                         |
+| [`object.createParticles`](./object/createParticles)                     | Creates a particle effect attached to the object.                               |
+| [`object.createProximityAction`](./object/createProximityAction)         | Creates a proximity action attached to the object.                              |
 | [`object.toData`](./object/toData)                                       | Converts an object to its corresponding data representation.                    |
 | [`object.clone`](./object/clone)                                         | Creates a new object by cloning an existing object with the same properties.    |
 | [`object.setHelper`](./object/setHelper)                                 | Enables or disables the helper for the object.                                  |
@@ -357,41 +411,6 @@ Managers in Verza's SDK provide a powerful way to interact with various world el
 | [`object.saveVolatile`](./object/saveVolatile)                           | Same as `object.save` but with a delay.                                         |
 | [`object.delete`](./object/delete)                                       | Destroys and deletes an object from Verza servers (only for permanent objects). |
 | [`object.destroy`](./object/destroy)                                     | Destroys an object.                                                             |
-
-### Properties
-
-| Name                         | Type                                                    | Description                                                                          |
-| ---------------------------- | ------------------------------------------------------- | ------------------------------------------------------------------------------------ |
-| `object.id`                  | `string`                                                | The ID of the object.                                                                |
-| `object.objectType`          | [`ObjectType`](/sdk/types/ObjectType)                   | The type of the object.                                                              |
-| `object.location`            | [`Object3D`](/sdk/types/Object3D)                       | The object's position, rotation, and scale.                                          |
-| `object.position`            | [`Vector3`](/sdk/types/Vector3)                         | The object's position.                                                               |
-| `object.rotation`            | [`Quaternion`](/sdk/types/Quaternion)                   | The object's rotation.                                                               |
-| `object.scale`               | [`Vector3`](/sdk/types/Vector3)                         | The object's scale.                                                                  |
-| `object.worldLocation`       | [`Promise<Object3D>`](/sdk/types/Object3D)              | A promise that resolves to the world location of the object.                         |
-| `object.permanent`           | `boolean`                                               | Whether the object is permanent or not.                                              |
-| `object.remote`              | `boolean`                                               | Whether the object is remote or not.                                                 |
-| `object.parentId`            | `string`                                                | The ID of the parent object.                                                         |
-| `object.parent`              | [`ObjectManager`](/sdk/types/ObjectManager)             | The parent object of this object, or `null` if this object has no parent.            |
-| `object.children`            | [`Set<ObjectManager>`](/sdk/types/ObjectManager)        | The child objects of this object, represented as a set of `ObjectManager` instances. |
-| `object.userData`            | [`ObjectUserData`](/sdk/types/ObjectUserData)           | Custom user data attached to the object.                                             |
-| `object.props`               | `ObjectProps`                                           | The properties of the object, based on its type.                                     |
-| `object.data`                | `ObjectData`                                            | The data of the object.                                                              |
-| `object.supportsCollision`   | `boolean`                                               | Whether the object supports collision or not.                                        |
-| `object.collision`           | [`EntityCollisionType`](/sdk/types/EntityCollisionType) | The collision type of the object.                                                    |
-| `object.collider`            | [`EntityColliderType`](/sdk/types/EntityColliderType)   | The collider type of the object.                                                     |
-| `object.supportsShadows`     | `boolean`                                               | Whether the object supports shadows or not.                                          |
-| `object.shadows`             | `boolean`                                               | Whether the object casts shadows or not.                                             |
-| `object.supportsBloom`       | `boolean`                                               | Whether the object supports bloom or not.                                            |
-| `object.bloom`               | `boolean`                                               | Whether the object has bloom or not.                                                 |
-| `object.sensor`              | `boolean`                                               | Whether the object is a sensor or not.                                               |
-| `object.mass`                | `number`                                                | The object's mass, used in physics calculations.                                     |
-| `object.friction`            | `number`                                                | The object's friction, used in physics calculations.                                 |
-| `object.restitution`         | `number`                                                | The object's restitution, used in physics calculations.                              |
-| `object.enabledRotations`    | [`Boolean3Array`](/sdk/types/Boolean3Array)             | Whether the object's rotations are enabled or not.                                   |
-| `object.enabledTranslations` | [`Boolean3Array`](/sdk/types/Boolean3Array)             | Whether the object's translations are enabled or not.                                |
-| `object.sound`               | [`SoundManager`](/sdk/types/SoundManager)               | The object's sound manager when used the `sound` property (React SDK only).          |
-| `object.particles`           | [`ParticlesManager`](/sdk/types/ParticlesManager)       | The object's particles manager when used the `particles` property (React SDK only).  |
 
 ## `PlayersManager`
 
@@ -405,6 +424,26 @@ Managers in Verza's SDK provide a powerful way to interact with various world el
 | [`players.setStreamerDistance `](./players/setStreamerDistance) | Sets the streamer distance for all players.  |
 
 ## `PlayerManager`
+
+### Properties
+
+| Name                     | Type                                                          | Description                                        |
+| ------------------------ | ------------------------------------------------------------- | -------------------------------------------------- |
+| `player.id`              | `number`                                                      | The player's ID.                                   |
+| `player.visible`         | `string`                                                      | Whether the player is visible or not.              |
+| `player.isAdmin`         | `boolean`                                                     | Whether the player is an admin or not.             |
+| `player.location`        | [`Object3D`](/sdk/types/Object3D)                             | The player's position and rotation.                |
+| `player.position`        | [`Vector3`](/sdk/types/Vector3)                               | The player's position.                             |
+| `player.rotation`        | [`Quaternion`](/sdk/types/Quaternion)                         | The player's rotation.                             |
+| `player.velocity`        | [`Vector3`](/sdk/types/Vector3)                               | The player's velocity vector.                      |
+| `player.name`            | `string`                                                      | The player's name.                                 |
+| `player.state`           | [`PlayerState`](/sdk/types/PlayerState)                       | The player's current state.                        |
+| `player.roles`           | `string[]`                                                    | The roles assigned to the player.                  |
+| `player.controls `       | [`PlayerControls`](/sdk/types/PlayerControls)                 | The player's controls.                             |
+| `player.isMovingControl` | `boolean`                                                     | Whether the player's movement controls are active. |
+| `player.onGround`        | `boolean`                                                     | Whether the player is currently on the ground.     |
+| `player.camera`          | [`PlayerCameraManager`](/sdk/types/PlayerCameraManager)       | The player's camera manager.                       |
+| `player.voicechat`       | [`PlayerVoicechatManager`](/sdk/types/PlayerVoicechatManager) | The player's voicechat manager.                    |
 
 ### Methods
 
@@ -443,6 +482,9 @@ Managers in Verza's SDK provide a powerful way to interact with various world el
 | [`player.getBanStatus`](./player/getBanStatus)                                       | Gets the player's ban status.                                   |
 | [`player.kick`](./player/kick)                                                       | Kicks the player.                                               |
 | [`player.setChatEnabled`](./player/setChatEnabled)                                   | Sets the player's chat enabled status.                          |
+| [`player.createSound`](./player/createSound)                                         | Creates a sound attached to the player.                         |
+| [`player.createParticles`](./player/createParticles)                                 | Creates a particle effect attached to the player.               |
+| [`player.createProximityAction`](./player/createProximityAction)                     | Creates a proximity action attached to the player.              |
 | [`player.camera.setFov`](./player/camera/setFov)                                     | Sets the camera fov for the player.                             |
 | [`player.camera.setMode`](./player/camera/setMode)                                   | Sets the camera mode for the player.                            |
 | [`player.camera.startTransitions`](./player/camera/startTransitions)                 | Starts transitions for the camera.                              |
@@ -454,25 +496,6 @@ Managers in Verza's SDK provide a powerful way to interact with various world el
 | [`player.voicechat.disableChannel`](./player/voicechat/disableChannel)               | Disables a voicechat channel.                                   |
 | [`player.voicechat.setMuted`](./player/voicechat/setMuted)                           | Sets the player's muted status.                                 |
 | [`player.voicechat.setDistance`](./player/voicechat/setDistance)                     | Sets the player's voicechat distance.                           |
-
-### Properties
-
-| Name                     | Type                                                          | Description                                        |
-| ------------------------ | ------------------------------------------------------------- | -------------------------------------------------- |
-| `player.camera`          | [`PlayerCameraManager`](/sdk/types/PlayerCameraManager)       | The player's camera manager.                       |
-| `player.voicechat`       | [`PlayerVoicechatManager`](/sdk/types/PlayerVoicechatManager) | The player's voicechat manager.                    |
-| `player.id`              | `number`                                                      | The player's ID.                                   |
-| `player.isAdmin`         | `boolean`                                                     | Whether the player is an admin or not.             |
-| `player.location`        | [`Object3D`](/sdk/types/Object3D)                             | The player's position and rotation.                |
-| `player.position`        | [`Vector3`](/sdk/types/Vector3)                               | The player's position.                             |
-| `player.rotation`        | [`Quaternion`](/sdk/types/Quaternion)                         | The player's rotation.                             |
-| `player.velocity`        | [`Vector3`](/sdk/types/Vector3)                               | The player's velocity vector.                      |
-| `player.name`            | `string`                                                      | The player's name.                                 |
-| `player.state`           | [`PlayerState`](/sdk/types/PlayerState)                       | The player's current state.                        |
-| `player.roles`           | `string[]`                                                    | The roles assigned to the player.                  |
-| `player.controls `       | [`PlayerControls`](/sdk/types/PlayerControls)                 | The player's controls.                             |
-| `player.isMovingControl` | `boolean`                                                     | Whether the player's movement controls are active. |
-| `player.onGround`        | `boolean`                                                     | Whether the player is currently on the ground.     |
 
 ## `StorageManager`
 
@@ -538,7 +561,8 @@ Managers in Verza's SDK provide a powerful way to interact with various world el
 | [`world.setSkyManualModeEnabled`](./world/setSkyManualModeEnabled)             | Sets whether the sky transitions are manual or automatic according to the time of day. |
 | [`world.setViewportRender`](./world/setViewportRender)                         | Sets the world viewport render mode.                                                   |
 | [`world.createProximityAction`](./world/createProximityAction)                 | Creates a proximity action.                                                            |
-| [`world.deleteProximityAction`](./world/deleteProximityAction)                 | Deletes a proximity action.                                                            |
+| [`world.createPlayerProximityAction`](./world/createPlayerProximityAction)     | Creates a proximity action attached to a player.                                       |
+| [`world.createObjectProximityAction`](./world/createObjectProximityAction)     | Creates a proximity action attached to an object.                                      |
 | [`world.setFogEnabled`](./world/setFogEnabled)                                 | Sets the fog status.                                                                   |
 | [`world.setFogColor`](./world/setFogColor)                                     | Sets the fog color.                                                                    |
 | [`world.setFogDensity`](./world/setFogDensity)                                 | Sets the fog density.                                                                  |

@@ -1,0 +1,13 @@
+```ts
+class ProximityActionManager {
+  id: string;
+
+  on(
+    callback: (event: ProximityActionEvent) => void,
+  ): (event: ProximityActionEvent) => void;
+
+  off(callback: (event: ProximityActionEvent) => void): void;
+
+  destroy(): void;
+}
+```

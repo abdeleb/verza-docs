@@ -4,12 +4,12 @@ hide_table_of_contents: true
 
 import ClientTag from '@site/src/components/tags/ClientTag';
 
-Creates a proximity action.
+Creates a proximity action attached to the object.
 
 ### Syntax
 
 ```js
-engine.world.createProximityAction(action, withId);
+object.createProximityAction(options, withId);
 ```
 
 ### Parameters
@@ -27,14 +27,16 @@ engine.world.createProximityAction(action, withId);
 
 ```js
 // create a proximity action
-const proximityAction = engine.world.createProximityAction({
-  id: 'my-id',
-  position: [3, 2, 3],
-  label: 'Nice music',
-  description: 'Play a sound',
-  key: 'KeyF',
-  distance: 3,
-});
+const proximityAction = object.createProximityAction(
+  {
+    position: [3, 2, 3],
+    label: 'Nice music',
+    description: 'Play a sound',
+    key: 'KeyF',
+    distance: 3,
+  },
+  'my-custom-id',
+);
 
 // listen to the proximity action trigger
 proximityAction.on(event => {

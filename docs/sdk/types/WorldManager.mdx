@@ -44,8 +44,21 @@ class WorldManager {
 
   setViewportRender(type: ViewportRender): void;
 
-  createProximityAction(action: ProximityAction): string;
+  createProximityAction(
+    options?: ProximityActionOptions,
+    withId?: string,
+  ): ProximityActionManager;
 
-  deleteProximityAction(actionId: string): void;
+  createPlayerProximityAction(
+    player: string | PlayerManager,
+    options?: ProximityActionOptions,
+    withId?: string,
+  ): ProximityActionManager;
+
+  createObjectProximityAction(
+    object: string | ObjectManager,
+    options?: ProximityActionOptions,
+    withId?: string,
+  ): ProximityActionManager;
 }
 ```

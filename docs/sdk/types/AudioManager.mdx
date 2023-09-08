@@ -10,6 +10,20 @@ class AudioManager {
     withId?: string,
   ): SoundManager;
 
+  createPlayerSound(
+    player: string | PlayerManager,
+    soundName: string,
+    options?: SoundOptions,
+    withId?: string,
+  ): SoundManager;
+
+  createObjectSound(
+    object: string | ObjectManager,
+    soundName: string,
+    options?: SoundOptions,
+    withId?: string,
+  ): SoundManager;
+
   playSound(
     soundName: string,
     options?: SoundOptions,

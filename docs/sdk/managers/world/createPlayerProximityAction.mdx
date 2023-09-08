@@ -1,0 +1,49 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+
+Creates a proximity action attached to a player.
+
+### Syntax
+
+```js
+engine.world.createPlayerProximityAction(player, action, withId);
+```
+
+### Parameters
+
+| Name                  | Type                                                          | Description                                   |
+| --------------------- | ------------------------------------------------------------- | --------------------------------------------- |
+| `player`              | `number` or [`PlayerManager`](/sdk/types/PlayerManager)       | The player to attach the proximity action to. |
+| `action` _(optional)_ | [`ProximityActionOptions`](/sdk/types/ProximityActionOptions) | The proximity action options.                 |
+| `withId` _(optional)_ | `string`                                                      | The id of the proximity action.               |
+
+### Returns
+
+- [`ProximityActionManager`](/sdk/types/ProximityActionManager) - The proximity action manager.
+
+### Example
+
+```js
+// create a proximity action
+engine.world.createPlayerProximityAction(
+  player,
+  {
+    position: [3, 2, 3],
+    label: 'Nice music',
+    description: 'Play a sound',
+    key: 'KeyF',
+    distance: 3,
+  },
+  'my-custom-id',
+);
+
+// listen for proximity action triggers
+engine.world.on('onProximityActionTriggered', event => {
+  console.log('Proximity action triggered', event);
+});
+```
+
+**Available on:** <ClientTag />
