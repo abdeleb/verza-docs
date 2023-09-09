@@ -135,6 +135,10 @@ const config = {
             label: 'References',
             items: [
               {
+                label: 'Changelog',
+                href: '/changelog',
+              },
+              {
                 label: 'Managers',
                 href: '/sdk/managers',
               },
