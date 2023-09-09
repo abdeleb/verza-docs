@@ -17,10 +17,10 @@ cd verza-docs
 git checkout dev
 
 # install
-yarn install
+npm install
 
 # run
-yarn run dev
+npm run dev
 ```
 
 Open [http://localhost:8081](http://localhost:8081) with your browser.

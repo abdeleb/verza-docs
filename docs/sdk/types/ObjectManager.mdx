@@ -14,6 +14,8 @@ class ObjectManager<OT extends ObjectType = ObjectType> extends EntityManager<
 
   particles: ParticlesManager | null;
 
+  proximityAction: ProximityActionManager | null;
+
   get objectType(): ObjectType;
 
   get worldLocation(): Object3D;

@@ -9,13 +9,14 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-color-primary: #4895ef;
+  --ifm-color-primary-dark: #4361ee;
+  --ifm-color-primary-darker: #1fa588;
+  --ifm-color-primary-darkest: #3f37c9;
+  --ifm-color-primary-light: #4895ef;
+  --ifm-color-primary-lighter: #4895ef;
+  --ifm-color-primary-lightest: #4cc9f0;
+  --ifm-hr-background-color: #6f6f6f;
   --ifm-code-font-size: 90%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 
@@ -27,7 +28,7 @@
 [data-theme='dark'] {
   --ifm-color-primary: #4895ef;
   --ifm-color-primary-dark: #4361ee;
-  --ifm-color-primary-darker: #1fa588;
+  --ifm-color-primary-darker: #02c071;
   --ifm-color-primary-darkest: #3f37c9;
   --ifm-color-primary-light: #4895ef;
   --ifm-color-primary-lighter: #4895ef;
@@ -51,6 +52,51 @@
     --ifm-footer-background-color: #080819;
     border-top: 1px solid #484160;
   }
+}
+
+h1 {
+  font-size: 2rem !important;
+}
+
+h1,
+.markdown > h1 {
+  color: #4895ef;
+}
+
+.markdown {
+  font-size: 1.05em;
+}
+
+@media (max-width: 996px) {
+  .markdown {
+    font-size: 1em;
+  }
+}
+
+.markdown > h2 {
+  display: flex;
+  color: #ffffff;
+  align-items: center;
+
+  &:before {
+    display: flex;
+    content: 'ㅤ';
+    background-color: #0a84ff;
+    margin-right: 10px;
+    width: 5px;
+    height: 32px;
+  }
+}
+
+.markdown > h3 {
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.markdown > h4,
+.markdown > h5 {
+  font-weight: 600;
+  color: #ffffff;
 }
 
 .navbar {

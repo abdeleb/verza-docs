@@ -197,9 +197,9 @@ Managers in Verza's SDK provide a powerful way to interact with various world el
 
 ### Properties
 
-| Name            | Type       | Description                                                   |
-| --------------- | ---------- | ------------------------------------------------------------- |
-| `ui.interfaces` | `string[]` | An array of the available interfaces available to the player. |
+| Name            | Type       | Description                                                    |
+| --------------- | ---------- | -------------------------------------------------------------- |
+| `ui.interfaces` | `string[]` | An array of the interfaces currently being displayed on the UI |
 
 ### Methods
 
@@ -332,39 +332,40 @@ Managers in Verza's SDK provide a powerful way to interact with various world el
 
 ### Properties
 
-| Name                         | Type                                                    | Description                                                                          |
-| ---------------------------- | ------------------------------------------------------- | ------------------------------------------------------------------------------------ |
-| `object.id`                  | `string`                                                | The ID of the object.                                                                |
-| `object.visible`             | `string`                                                | Whether the object is visible or not.                                                |
-| `object.objectType`          | [`ObjectType`](/sdk/types/ObjectType)                   | The type of the object.                                                              |
-| `object.location`            | [`Object3D`](/sdk/types/Object3D)                       | The object's position, rotation, and scale.                                          |
-| `object.position`            | [`Vector3`](/sdk/types/Vector3)                         | The object's position.                                                               |
-| `object.rotation`            | [`Quaternion`](/sdk/types/Quaternion)                   | The object's rotation.                                                               |
-| `object.scale`               | [`Vector3`](/sdk/types/Vector3)                         | The object's scale.                                                                  |
-| `object.worldLocation`       | [`Promise<Object3D>`](/sdk/types/Object3D)              | A promise that resolves to the world location of the object.                         |
-| `object.permanent`           | `boolean`                                               | Whether the object is permanent or not.                                              |
-| `object.remote`              | `boolean`                                               | Whether the object is remote or not.                                                 |
-| `object.parentId`            | `string`                                                | The ID of the parent object.                                                         |
-| `object.parent`              | [`ObjectManager`](/sdk/types/ObjectManager)             | The parent object of this object, or `null` if this object has no parent.            |
-| `object.children`            | [`Set<ObjectManager>`](/sdk/types/ObjectManager)        | The child objects of this object, represented as a set of `ObjectManager` instances. |
-| `object.userData`            | [`ObjectUserData`](/sdk/types/ObjectUserData)           | Custom user data attached to the object.                                             |
-| `object.props`               | `ObjectProps`                                           | The properties of the object, based on its type.                                     |
-| `object.data`                | `ObjectData`                                            | The data of the object.                                                              |
-| `object.supportsCollision`   | `boolean`                                               | Whether the object supports collision or not.                                        |
-| `object.collision`           | [`EntityCollisionType`](/sdk/types/EntityCollisionType) | The collision type of the object.                                                    |
-| `object.collider`            | [`EntityColliderType`](/sdk/types/EntityColliderType)   | The collider type of the object.                                                     |
-| `object.supportsShadows`     | `boolean`                                               | Whether the object supports shadows or not.                                          |
-| `object.shadows`             | `boolean`                                               | Whether the object casts shadows or not.                                             |
-| `object.supportsBloom`       | `boolean`                                               | Whether the object supports bloom or not.                                            |
-| `object.bloom`               | `boolean`                                               | Whether the object has bloom or not.                                                 |
-| `object.sensor`              | `boolean`                                               | Whether the object is a sensor or not.                                               |
-| `object.mass`                | `number`                                                | The object's mass, used in physics calculations.                                     |
-| `object.friction`            | `number`                                                | The object's friction, used in physics calculations.                                 |
-| `object.restitution`         | `number`                                                | The object's restitution, used in physics calculations.                              |
-| `object.enabledRotations`    | [`Boolean3Array`](/sdk/types/Boolean3Array)             | Whether the object's rotations are enabled or not.                                   |
-| `object.enabledTranslations` | [`Boolean3Array`](/sdk/types/Boolean3Array)             | Whether the object's translations are enabled or not.                                |
-| `object.sound`               | [`SoundManager`](/sdk/types/SoundManager)               | The object's sound manager when used the `sound` property (React SDK only).          |
-| `object.particles`           | [`ParticlesManager`](/sdk/types/ParticlesManager)       | The object's particles manager when used the `particles` property (React SDK only).  |
+| Name                         | Type                                                          | Description                                                                                      |
+| ---------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| `object.id`                  | `string`                                                      | The ID of the object.                                                                            |
+| `object.visible`             | `string`                                                      | Whether the object is visible or not.                                                            |
+| `object.objectType`          | [`ObjectType`](/sdk/types/ObjectType)                         | The type of the object.                                                                          |
+| `object.location`            | [`Object3D`](/sdk/types/Object3D)                             | The object's position, rotation, and scale.                                                      |
+| `object.position`            | [`Vector3`](/sdk/types/Vector3)                               | The object's position.                                                                           |
+| `object.rotation`            | [`Quaternion`](/sdk/types/Quaternion)                         | The object's rotation.                                                                           |
+| `object.scale`               | [`Vector3`](/sdk/types/Vector3)                               | The object's scale.                                                                              |
+| `object.worldLocation`       | [`Promise<Object3D>`](/sdk/types/Object3D)                    | A promise that resolves to the world location of the object.                                     |
+| `object.permanent`           | `boolean`                                                     | Whether the object is permanent or not.                                                          |
+| `object.remote`              | `boolean`                                                     | Whether the object is remote or not.                                                             |
+| `object.parentId`            | `string`                                                      | The ID of the parent object.                                                                     |
+| `object.parent`              | [`ObjectManager`](/sdk/types/ObjectManager)                   | The parent object of this object, or `null` if this object has no parent.                        |
+| `object.children`            | [`Set<ObjectManager>`](/sdk/types/ObjectManager)              | The child objects of this object, represented as a set of `ObjectManager` instances.             |
+| `object.userData`            | [`ObjectUserData`](/sdk/types/ObjectUserData)                 | Custom user data attached to the object.                                                         |
+| `object.props`               | `ObjectProps`                                                 | The properties of the object, based on its type.                                                 |
+| `object.data`                | `ObjectData`                                                  | The data of the object.                                                                          |
+| `object.supportsCollision`   | `boolean`                                                     | Whether the object supports collision or not.                                                    |
+| `object.collision`           | [`EntityCollisionType`](/sdk/types/EntityCollisionType)       | The collision type of the object.                                                                |
+| `object.collider`            | [`EntityColliderType`](/sdk/types/EntityColliderType)         | The collider type of the object.                                                                 |
+| `object.supportsShadows`     | `boolean`                                                     | Whether the object supports shadows or not.                                                      |
+| `object.shadows`             | `boolean`                                                     | Whether the object casts shadows or not.                                                         |
+| `object.supportsBloom`       | `boolean`                                                     | Whether the object supports bloom or not.                                                        |
+| `object.bloom`               | `boolean`                                                     | Whether the object has bloom or not.                                                             |
+| `object.sensor`              | `boolean`                                                     | Whether the object is a sensor or not.                                                           |
+| `object.mass`                | `number`                                                      | The object's mass, used in physics calculations.                                                 |
+| `object.friction`            | `number`                                                      | The object's friction, used in physics calculations.                                             |
+| `object.restitution`         | `number`                                                      | The object's restitution, used in physics calculations.                                          |
+| `object.enabledRotations`    | [`Boolean3Array`](/sdk/types/Boolean3Array)                   | Whether the object's rotations are enabled or not.                                               |
+| `object.enabledTranslations` | [`Boolean3Array`](/sdk/types/Boolean3Array)                   | Whether the object's translations are enabled or not.                                            |
+| `object.sound`               | [`SoundManager`](/sdk/types/SoundManager)                     | The object's sound manager when used the `sound` property (React SDK only).                      |
+| `object.particles`           | [`ParticlesManager`](/sdk/types/ParticlesManager)             | The object's particles manager when used the `particles` property (React SDK only).              |
+| `object.proximityAction`     | [`ProximityActionManager`](/sdk/types/ProximityActionManager) | The object's proximity action manager when used the `proximityAction` property. (React SDK only) |
 
 ### Methods
 
