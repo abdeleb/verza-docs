@@ -270,19 +270,14 @@ Managers in Verza's SDK provide a powerful way to interact with various world el
 | `entities.entities`    | [`EntityManager[]`](/sdk/types/EntityManager)        | An array containing all the entity managers for the specified entity type.                                 |
 | `entities.entitiesMap` | [`Map<ID, EntityManager>`](/sdk/types/EntityManager) | A map of entity managers indexed by their respective entity IDs.                                           |
 | `entities.streamed`    | [`Map<ID, EntityManager>`](/sdk/types/EntityManager) | A map of entity managers for entities that are currently being streamed to the player.                     |
-| `entities.events`      | [`EventsManager`](/sdk/types/EntityManager)          | An instance of the `EventsManager` class used to register and manage events for the specified entity type. |
+| `entities.events`      | [`EventsManager`](/sdk/types/EventsManager)          | An instance of the `EventsManager` class used to register and manage events for the specified entity type. |
 
 ### Methods
 
-| Method                                   | Description                                                                                                                                                                                                                                                        |
-| ---------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [`entities.is`](./entities/is)           | Checks whether an entity with the specified ID exists.                                                                                                                                                                                                             |
-| [`entities.get`](./entities/get)         | Retrieves the entity with the specified ID. Returns `null` if the entity does not exist.                                                                                                                                                                           |
-| [`entities.forEach`](./entities/forEach) | Calls a provided function once for each entity, similar to [`Array.forEach`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach).                                                                                      |
-| [`entities.map`](./entities/map)         | Creates a new array with the results of calling a provided function on every entity, similar to [`Array.map`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map).                                                         |
-| [`entities.some`](./entities/some)       | Tests whether at least one entity passes the provided test, similar to [`Array.some`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some).                                                                                |
-| [`entities.filter`](./entities/filter)   | Creates a new array with all entities that pass the provided test, similar to [`Array.filter`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter).                                                                     |
-| [`entities.find`](./entities/find)       | Returns the first entity that satisfies the provided testing function or `null`, similar to [`Array.find`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find). If no entity matches the test, the method returns `null`. |
+| Method                           | Description                                                                              |
+| -------------------------------- | ---------------------------------------------------------------------------------------- |
+| [`entities.is`](./entities/is)   | Checks whether an entity with the specified ID exists.                                   |
+| [`entities.get`](./entities/get) | Retrieves the entity with the specified ID. Returns `null` if the entity does not exist. |
 
 ## `NetworkManager`
 
@@ -313,9 +308,13 @@ Managers in Verza's SDK provide a powerful way to interact with various world el
 
 ### Properties
 
-| Name                    | Type                                        | Description                                                                                                      |
-| ----------------------- | ------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `objects.editingObject` | [`ObjectManager`](/sdk/types/ObjectManager) | A reference to the object manager for the object currently being edited, or `null` if no object is being edited. |
+| Name                    | Type                                                 | Description                                                                                                      |
+| ----------------------- | ---------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `objects.entities`      | [`ObjectManager[]`](/sdk/types/ObjectManager)        | An array containing all the object managers.                                                                     |
+| `objects.entitiesMap`   | [`Map<ID, ObjectManager>`](/sdk/types/ObjectManager) | A map of `ObjectManager` indexed by their respective object IDs.                                                 |
+| `objects.streamed`      | [`Map<ID, ObjectManager>`](/sdk/types/ObjectManager) | A map of `ObjectManager` for entities that are currently being streamed to the player.                           |
+| `objects.events`        | [`EventsManager`](/sdk/types/EventsManager)          | An instance of the `ObjectManager` class used to register and manage events.                                     |
+| `objects.editingObject` | [`ObjectManager`](/sdk/types/ObjectManager)          | A reference to the object manager for the object currently being edited, or `null` if no object is being edited. |
 
 ### Methods
 
@@ -335,6 +334,7 @@ Managers in Verza's SDK provide a powerful way to interact with various world el
 | Name                         | Type                                                          | Description                                                                                      |
 | ---------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
 | `object.id`                  | `string`                                                      | The ID of the object.                                                                            |
+| `object.vars`                | [`Map<string, any>`]                                          | A map of variables that can be used to store local data for the object.                          |
 | `object.visible`             | `string`                                                      | Whether the object is visible or not.                                                            |
 | `object.objectType`          | [`ObjectType`](/sdk/types/ObjectType)                         | The type of the object.                                                                          |
 | `object.location`            | [`Object3D`](/sdk/types/Object3D)                             | The object's position, rotation, and scale.                                                      |
@@ -415,6 +415,15 @@ Managers in Verza's SDK provide a powerful way to interact with various world el
 
 ## `PlayersManager`
 
+### Properties
+
+| Name                  | Type                                                 | Description                                                                           |
+| --------------------- | ---------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `players.entities`    | [`PlayerManager[]`](/sdk/types/PlayerManager)        | An array containing all the player managers.                                          |
+| `players.entitiesMap` | [`Map<ID, PlayerManager>`](/sdk/types/PlayerManager) | A map of `PlayerManager` indexed by their respective player IDs.                      |
+| `players.streamed`    | [`Map<ID, PlayerManager>`](/sdk/types/PlayerManager) | A map of `PlayerManager` for players that are currently being streamed to the player. |
+| `players.events`      | [`EventsManager`](/sdk/types/EventsManager)          | An instance of the `EventsManager` class used to register and manage events.          |
+
 ### Methods
 
 | Method                                                          | Description                                  |
@@ -428,23 +437,24 @@ Managers in Verza's SDK provide a powerful way to interact with various world el
 
 ### Properties
 
-| Name                     | Type                                                          | Description                                        |
-| ------------------------ | ------------------------------------------------------------- | -------------------------------------------------- |
-| `player.id`              | `number`                                                      | The player's ID.                                   |
-| `player.visible`         | `string`                                                      | Whether the player is visible or not.              |
-| `player.isAdmin`         | `boolean`                                                     | Whether the player is an admin or not.             |
-| `player.location`        | [`Object3D`](/sdk/types/Object3D)                             | The player's position and rotation.                |
-| `player.position`        | [`Vector3`](/sdk/types/Vector3)                               | The player's position.                             |
-| `player.rotation`        | [`Quaternion`](/sdk/types/Quaternion)                         | The player's rotation.                             |
-| `player.velocity`        | [`Vector3`](/sdk/types/Vector3)                               | The player's velocity vector.                      |
-| `player.name`            | `string`                                                      | The player's name.                                 |
-| `player.state`           | [`PlayerState`](/sdk/types/PlayerState)                       | The player's current state.                        |
-| `player.roles`           | `string[]`                                                    | The roles assigned to the player.                  |
-| `player.controls `       | [`PlayerControls`](/sdk/types/PlayerControls)                 | The player's controls.                             |
-| `player.isMovingControl` | `boolean`                                                     | Whether the player's movement controls are active. |
-| `player.onGround`        | `boolean`                                                     | Whether the player is currently on the ground.     |
-| `player.camera`          | [`PlayerCameraManager`](/sdk/types/PlayerCameraManager)       | The player's camera manager.                       |
-| `player.voicechat`       | [`PlayerVoicechatManager`](/sdk/types/PlayerVoicechatManager) | The player's voicechat manager.                    |
+| Name                     | Type                                                          | Description                                                             |
+| ------------------------ | ------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| `player.id`              | `number`                                                      | The player's ID.                                                        |
+| `player.vars`            | [`Map<string, any>`]                                          | A map of variables that can be used to store local data for the player. |
+| `player.visible`         | `string`                                                      | Whether the player is visible or not.                                   |
+| `player.isAdmin`         | `boolean`                                                     | Whether the player is an admin or not.                                  |
+| `player.location`        | [`Object3D`](/sdk/types/Object3D)                             | The player's position and rotation.                                     |
+| `player.position`        | [`Vector3`](/sdk/types/Vector3)                               | The player's position.                                                  |
+| `player.rotation`        | [`Quaternion`](/sdk/types/Quaternion)                         | The player's rotation.                                                  |
+| `player.velocity`        | [`Vector3`](/sdk/types/Vector3)                               | The player's velocity vector.                                           |
+| `player.name`            | `string`                                                      | The player's name.                                                      |
+| `player.state`           | [`PlayerState`](/sdk/types/PlayerState)                       | The player's current state.                                             |
+| `player.roles`           | `string[]`                                                    | The roles assigned to the player.                                       |
+| `player.controls `       | [`PlayerControls`](/sdk/types/PlayerControls)                 | The player's controls.                                                  |
+| `player.isMovingControl` | `boolean`                                                     | Whether the player's movement controls are active.                      |
+| `player.onGround`        | `boolean`                                                     | Whether the player is currently on the ground.                          |
+| `player.camera`          | [`PlayerCameraManager`](/sdk/types/PlayerCameraManager)       | The player's camera manager.                                            |
+| `player.voicechat`       | [`PlayerVoicechatManager`](/sdk/types/PlayerVoicechatManager) | The player's voicechat manager.                                         |
 
 ### Methods
 
