@@ -4,6 +4,12 @@ class PlayerManager extends EntityManager<
   PlayerHandleManager,
   PlayerEventMap
 > {
+  id: number;
+
+  visible: boolean;
+
+  vars: Map<string, any>;
+
   chunksIn: Set<`${number}_${number}_${number}_${number}`>;
 
   voicechat: PlayerVoicechatManager;

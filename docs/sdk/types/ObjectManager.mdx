@@ -4,6 +4,12 @@ class ObjectManager<OT extends ObjectType = ObjectType> extends EntityManager<
   ObjectHandleManager,
   ObjectEventMap
 > {
+  id: number;
+
+  visible: boolean;
+
+  vars: Map<string, any>;
+
   parent: ObjectManager | null;
 
   children: Set<ObjectManager>;
