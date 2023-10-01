@@ -1,0 +1,18 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+This event is triggered when the script is destroyed.
+
+### Example
+
+```js
+engine.events.on('onDestroy', () => {
+  console.log('Script destroyed');
+});
+```
+
+**Available on:** <ClientTag /> <ServerTag />

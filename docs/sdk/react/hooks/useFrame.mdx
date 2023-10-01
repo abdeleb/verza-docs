@@ -14,15 +14,15 @@ useFrame(callback);
 
 ### Parameters
 
-| Name       | Type                      | Description                       |
-| ---------- | ------------------------- | --------------------------------- |
-| `callback` | `(delta: number) => void` | The function to call every frame. |
+| Name       | Type                      | Description                                                                                          |
+| ---------- | ------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `callback` | `(delta: number) => void` | The function to call every frame. The `delta` parameter is the time in seconds since the last frame. |
 
 ### Example
 
 ```js
-useFrame(() => {
-  // ...
+useFrame(delta => {
+  // delta...
 });
 ```
 

@@ -7,6 +7,12 @@ import ServerTag from '@site/src/components/tags/ServerTag';
 
 This event is triggered when a script is connected to the server.
 
+:::caution
+This event is trigger at the very beginning of the script, before any other events are triggered and before the script is fully loaded. This means that you cannot use any of the script's functions in this event.
+
+Use `onSynced` instead if you want to be sure that the script is fully loaded.
+:::
+
 ### Example
 
 ```js
