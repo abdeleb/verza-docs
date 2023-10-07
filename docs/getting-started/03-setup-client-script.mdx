@@ -4,8 +4,6 @@
 
 See the [different types of scripts here](/concepts/scripts).
 
-In this section, we'll guide you through setting up a `Client Script`
-
 ## What Are We Building?
 
 By the end of this guide, you'll have a `Client Script` that looks like this with a box that moves from left to right back and forth.
@@ -16,7 +14,7 @@ By the end of this guide, you'll have a `Client Script` that looks like this wit
 
 ## Requirements
 
-- Basic knowledge of JavaScript
+- Basic knowledge of JavaScript and Git
 - [Node.js](https://nodejs.org/en/) (v16 or higher)
 
 ## Verza Create CLI
@@ -25,9 +23,9 @@ By the end of this guide, you'll have a `Client Script` that looks like this wit
 
 You will get out of the box:
 
-- 📜 The template of your choice (`JavaScript`, `TypeScript` and `React`)
+- 📜 The template of your choice (`JavaScript`, `TypeScript` aornd `React`)
 - 🔥 Hot reloading for your scripts.
-- 🚀 Deploy support for `Vercel`, `Netlify` and `Cloudflare Pages`.
+- 🚀 Deploy support for [`Cloudflare Pages`](https://pages.cloudflare.com) or [`Vercel`](https://vercel.com) for `Client` and `WebServer` scripts.
 - 🏷️ Auto-versioning for your scripts when deploying a new change.
 - ⚙️ [Vite](https://vitejs.dev) as the build tool
 
@@ -38,18 +36,30 @@ You will get out of the box:
 **With NPM:**
 
 ```bash
+npm create verza@latest
+
+# or
+
 npm create verza@latest <template> <project-name>
 ```
 
 **With Yarn:**
 
 ```bash
+yarn create verza
+
+# or
+
 yarn create verza <template> <project-name>
 ```
 
 **With PNPM:**
 
 ```bash
+pnpm create verza
+
+# or
+
 pnpm create verza <template> <project-name>
 ```
 
@@ -82,31 +92,52 @@ npm install
 npm run dev
 ```
 
-By default, the server will run on [`http://localhost:5173`](http://localhost:5173). You can change the port and more in the `vite.config.ts` file, check out the [Vite docs](https://vitejs.dev/config/) for more information.
+By default, the server will run on [`http://localhost:8085`](http://localhost:8085). You can change the port and more in the `verza.config.ts` file, check out the [Vite docs](https://vitejs.dev/config/) for more information.
 
-### Top Level Directories
+### Project Structure
 
-| Folder/File | Description                                     |
-| :---------- | :---------------------------------------------- |
-| `/src`      | Contains all the source code for your project.  |
-| `/public`   | Contains all the static files for your project. |
+| Folder/File                         | Description                                                 |
+| :---------------------------------- | :---------------------------------------------------------- |
+| `/public`                           | Contains all the static files for your project.             |
+| `/src`                              | Contains all the source code for your project.              |
+| `/src/client`                       | Contains all the client scripts for your project.           |
+| `/src/server`                       | Contains all the server scripts for your project.           |
+| `.gitignore`                        | Contains the files and folders to be ignored by git.        |
+| `package.json`                      | Contains the dependencies and scripts for your project.     |
+| `.eslintrc.cjs` _(React Only)_      | Contains the configuration for the ESLint linter.           |
+| `tsconfig.json` _(TypeScript Only)_ | Contains the configuration for the TypeScript compiler.     |
+| `verza.config.js`                   | Contains the configuration for the Verza & Vite build tool. |
 
-### Top Level Files
+### Routing
 
-| Folder/File                       | Description                                             |
-| :-------------------------------- | :------------------------------------------------------ |
-| `.gitignore`                      | Contains the files and folders to be ignored by git.    |
-| `tsconfig.json` (TypeScript Only) | Contains the configuration for the TypeScript compiler. |
-| `package.json`                    | Contains the dependencies and scripts for your project. |
-| `vite.config.js`                  | Contains the configuration for the Vite build tool.     |
+Routes is the way to define the URL of your scripts, the verza server will use the route to load the script.
+
+You can define the routes for your scripts by creating a folder with the name of the route in the `src/client/script-name/script.js` format.
+
+For example, if you want to create a script for the `/interactions` route, you will create a folder called `interactions` in the `src/client` folder and inside that folder, you will create a `script.js` file.
+
+```ts
+Script Path: /src/client/interactions/script.js
+Script URL: http://localhost:8085/interactions
+```
+
+The same applies to the `src/server` folder, but usually, you will want to have one script in the `src/server` folder, see the [Setup WebServer Script](/getting-started/setup-websocketserver-script) guide for more information.
+
+### Scripts Versioning
+
+You don't need to worry about versioning your scripts, the Verza build tool will automatically version your scripts when you deploy a new version.
+
+On each new deployment, the Verza build tool will create a version of each script and will add a redirect to the latest version of the script, so you can keep using the same URL (route) for your scripts.
 
 ### Edit Script
 
-In the `src/scripts` folder, you'll find a `script.js` file.
+In the `src/client` folder, you'll find a `script.js` file that contains the code for your script.
 
-You will see a simple script that creates a box in the server like this:
+You will see a simple script that creates a box by default.
 
-```js title="/src/scripts/script.js"
+Let's replace the code with the following that creates a box that moves from left to right back and forth.
+
+```js title="/src/client/script.js"
 import {initEngine} from '@verza/sdk';
 
 export default function script(id) {
@@ -143,14 +174,16 @@ export default function script(id) {
 :::note
 Each script needs a default function that will be called when the script is loaded in the server.
 
-The default function receives the `id` parameter that is used to initialize the engine manager.
+The default function for `Client Scripts` receives the `id` parameter that is used to initialize the engine manager.
 
 This `id` is unique for each script and it's used to identify the script in the server.
 :::
 
 ## Add to Server
 
-To add the Script to your server, go to the **Scripts** tab in your **Server's Settings**. Then, enter the URL of your script and click on `Connect Script`
+To add the Script to your server, go to the **Scripts** tab in your **Server's Settings**. Then, enter the URL of your script and click on `Connect Script`.
+
+By default, the URL of your script in development mode is `http://localhost:8085/script`
 
 <img
   alt="Connect Script"
@@ -158,27 +191,46 @@ To add the Script to your server, go to the **Scripts** tab in your **Server's S
   style={{width: '100%', maxWidth: '600px'}}
 />
 
-## Build
-
-To build your script, run the following command:
-
-```bash
-npm run build
-```
-
-This will create a `dist` folder with your script ready to be deployed to your favorite hosting platform.
-
 ## Deploy
 
-You can deploy your scripts without any extra configuration to the following platforms:
+Verza supports deploying your scripts to different platforms, you can deploy your scripts to:
 
-| Platform                                         | Github Integration | Pricing |
-| :----------------------------------------------- | :----------------- | :------ |
-| [Vercel](https://vercel.com)                     | ✅                 | Free    |
-| [Netlify](https://netlify.com)                   | ✅                 | Free    |
-| [Cloudflare Pages](https://pages.cloudflare.com) | ✅                 | Free    |
+| Platform                                         | Github Integration | Pricing            |
+| :----------------------------------------------- | :----------------- | :----------------- |
+| [Cloudflare Pages](https://pages.cloudflare.com) | ✅                 | Free (Recommended) |
+| [Vercel](https://vercel.com)                     | ✅                 | Free               |
 
-Connect your Github account to the platform of your choice and deploy your script.
+### Deploy to Cloudflare Pages
+
+1. Upload your project to [`Github`](https://github.com) or [`Gitlab`](https://gitlab.com)
+
+2. Connect your `Github` or `Gitlab` account to [`Cloudflare Pages`](https://pages.cloudflare.com/) from `Workers & Pages > Overview > Create Application > Pages -> Connect Git`
+
+3. Select your repository and set the configuration as follows:
+
+![Cloudflare Pages Configuration](https://i.gyazo.com/36b51ffbe01b2892623262af5c998e9f.png)
+
+4. Copy the generated URL from `Cloudflare Pages` and connect it to your server, **for example**:
+
+```bash
+https://YOUR-CLOUDFLARE-PAGES-URL.pages.dev/script
+```
+
+### Deploy to Vercel
+
+1. Upload your project to [`Github`](https://github.com) or [`Gitlab`](https://gitlab.com)
+
+2. Import your repository into [`Vercel`](https://vercel.com/new) from [`Add new -> Project`](https://vercel.com/new)
+
+3. Select your repository and set the configuration as follows:
+
+![Vercel Build Settings](https://i.gyazo.com/fd1c43291967d4cd518383183711cf10.png)
+
+4. Copy the generated URL by `Cloudflare Pages` and connect it to your server, **for example**:
+
+```bash
+https://YOUR-VERCEL-URL.vercel.app/script
+```
 
 ## In-Server Script Editor
 
@@ -189,3 +241,21 @@ To open the `Script Editor`, use `CTRL + SHIFT + J` or go to the **Scripts** tab
 <video controls loop style={{width: '100%', maxWidth: '600px'}}>
   <source src="https://i.gyazo.com/ca8b866a00bffce8922ab84385192254.mp4" />
 </video>
+
+## Manual Build & Deploy (Advanced)
+
+:::caution
+Manual build & deploy not recommended for `Client` and `WebServer` scripts, we suggest to deploy to one of the platforms mentioned above, you don't need any extra configurations with deploying to one of the platforms mentioned above.
+:::
+
+If you're a fearless developer and want to host your script in your own hosting platform, you can do so by building your script manually.
+
+To build your script manually, run the following command:
+
+```bash
+npm run build
+```
+
+This will create a `dist` and `api` folder with your scripts ready to be deployed, the `dist` folder will contain the client scripts and the `api` folder will contain the server scripts.
+
+For the `Client Scripts` you can use any static hosting platform, for the `Server Scripts` you will need to host them in a platform that supports serverless functions or a node http server.
