@@ -22,17 +22,31 @@ class ObjectManager<OT extends ObjectType = ObjectType> extends EntityManager<
 
   proximityAction: ProximityActionManager | null;
 
+  attachedTo: EntityManager | null;
+
+  attachedEntities: Set<EntityManager>;
+
   get objectType(): ObjectType;
 
   get worldLocation(): Object3D;
 
   get worldLocationSync(): Promise<Object3D>;
 
+  get worldPosition(): Vector3;
+
+  get worldPositionSync(): Promise<Vector3>;
+
+  get worldRotation(): Euler;
+
+  get wolrdQuaternion(): Quaternion;
+
   get location(): Object3D;
 
   get position(): Vector3;
 
-  get rotation(): Quaternion;
+  get rotation(): Euler;
+
+  get quaternion(): Quaternion;
 
   get scale(): Vector3;
 
@@ -80,6 +94,12 @@ class ObjectManager<OT extends ObjectType = ObjectType> extends EntityManager<
 
   get enabledTranslations(): Boolean3Array | undefined;
 
+  attach(entity: EntityManager, options?: EntityAttachOptions): void;
+
+  detach(entity: EntityManager): void;
+
+  detachFromParent(): void;
+
   setPosition(position: Vector3 | Vector3Array): void;
 
   setRotation(
@@ -113,10 +133,6 @@ class ObjectManager<OT extends ObjectType = ObjectType> extends EntityManager<
   setRotationFromWorldSpace(
     rotation: Quaternion | Euler | QuaternionArray | EulerArray,
   ): Promise<void>;
-
-  detachFromParent(): void;
-
-  attachToParent(parent: ObjectManager): void;
 
   edit(): void;
 

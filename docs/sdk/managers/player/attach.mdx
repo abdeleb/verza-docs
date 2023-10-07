@@ -1,0 +1,31 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+Attaches any entity to the player.
+
+### Syntax
+
+```js
+player.attach(entity, options);
+```
+
+### Parameters
+
+| Name                   | Type                                                    | Description       |
+| ---------------------- | ------------------------------------------------------- | ----------------- |
+| `entity`               | [`EntityManager`](/sdk/types/EntityManager)             | Entity to attach. |
+| `options` _(optional)_ | [`EntityAttachOptions`](/sdk/types/EntityAttachOptions) | Attach options.   |
+
+### Example
+
+```js
+const box = engine.objects.create('box');
+
+player.attach(box);
+```
+
+**Available on:** <ClientTag /> <ServerTag />

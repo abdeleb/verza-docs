@@ -24,6 +24,10 @@ class PlayerManager extends EntityManager<
 
   onGround: boolean;
 
+  attachedTo: EntityManager | null;
+
+  attachedEntities: Set<EntityManager>;
+
   get state(): PlayerState;
 
   get stateAnimIndex(): number | undefined;
@@ -39,6 +43,24 @@ class PlayerManager extends EntityManager<
   get name(): string;
 
   get roles(): string[];
+
+  get position(): Vector3;
+
+  get rotation(): Euler;
+
+  get quaternion(): Quaternion;
+
+  get worldPosition(): Vector3;
+
+  get worldRotation(): Euler;
+
+  get wolrdQuaternion(): Quaternion;
+
+  attach(entity: EntityManager, options?: EntityAttachOptions): void;
+
+  detach(entity: EntityManager): void;
+
+  detachFromParent(): void;
 
   hasRole(role: string): boolean;
 
