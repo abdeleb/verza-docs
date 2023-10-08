@@ -4,14 +4,13 @@
 
 See the [different types of scripts here](/concepts/scripts).
 
-To enhance your development experience and take advantage of additional features, we recommend using a framework like [Next.js](https://nextjs.org/) or [Remix](https://remix.run/).
-
 :::note
-A WebServer script always requires a client-side script to be connected to it. The client-side script is responsible for sending commands and network events to the web server-side script.
+A `WebServer Script` always requires a `Client Script` to be connected to it. The `Client Script` is responsible for sending commands and network events to the `WebServer Script`.
 :::
 
 ## Requirements
 
+- Basic knowledge of JavaScript and Git
 - [Node.js](https://nodejs.org/en/) (v16 or higher)
 
 ## Obtain your `Access Token`
@@ -24,131 +23,51 @@ To obtain your server's `Access Token`, go to its `Server Settings` and click on
   <source src="https://i.gyazo.com/9a45f515b716c301f4b932e3adfb6146.mp4" />
 </video>
 
-## Using Next.js
+## Create WebServer Script
 
-In this section, we'll guide you through setting up a `WebServer Script` project using [Next.js](https://nextjs.org/) and the api routes feature.
+The following steps assume that you have already created a `Client Script`. If you haven't, please refer to the [Setup Client Script](/getting-started/setup-client-script) guide.
 
-### 1. Install Next.js
+### Edit Client Script
 
-If you haven't already, please [visit the Next.js docs](https://nextjs.org/docs/getting-started) and follow the instructions to install **Next.js**.
+In your `src/client/script.js` file, replace with the following code:
 
-### 2. Install SDK
+```jsx title="src/client/script.js"
+import {initEngine} from '@verza/sdk';
 
-```bash
-npm install @verza/sdk
-```
-
-### 3. Add `Access-Control-Allow-Origin` header
-
-In order to allow the client-side script to connect to the server-side script, you need to add the `Access-Control-Allow-Origin` header to the server-side script.
-
-To do this, open the `next.config.js` file and add the following code:
-
-```js title="next.config.js"
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  //...
-
-  headers() {
-    return [
-      {
-        source: '/:path*',
-        headers: [{key: 'Access-Control-Allow-Origin', value: '*'}],
-      },
-    ];
-  },
-
-  //...
-};
-```
-
-### 4. Create the client script
-
-The URL for this `script` will be `http://localhost:3000/client`
-
-In the `pages` folder, create a new file called `client.js` with the following content:
-
-```jsx title="client.js"
-import {useEffect} from 'react';
-
-import {EngineProvider, useEngine} from '@verza/sdk/react';
-
-const ClientScript = () => {
-  return (
-    <EngineProvider
-      params={{
-        webServer: '/api/server', // specify the URL of your WebServer script
-      }}>
-      <Script />
-    </EngineProvider>
-  );
-};
-
-const Script = () => {
-  const engine = useEngine();
-
-  useEffect(() => {
-    engine.network.emitToServer('onRequestWelcome');
-  }, [engine]);
-
-  return null;
-};
-
-export default ClientScript;
-```
-
-### 5. Create the server script
-
-In the `api` folder, create a new file called `server.js` with the following content:
-
-```jsx title="server.js"
-import {EngineManager} from '@verza/sdk';
-
-export default async function handler(req, res) {
-  // allow only POST packets
-  if (req.method !== 'POST') {
-    res.status(200).json({success: false});
-    return;
-  }
-
-  // create server
-  const engine = createWebServer();
-
-  // handle request
-  const response = await engine.api.handleWebServer(req.body);
-
-  // return response
-  res.status(200).json(response);
-}
-
-export const createWebServer = () => {
-  // init verza engine
-  const engine = new EngineManager({
-    name: 'Web Server',
-
-    accessToken: 'ACCESS_TOKEN', // replace with your server's access token
+export default async function script(id: string) {
+  const engine = await initEngine({
+    id,
+    webServer: new URL(import.meta.url).origin + '/server/script',
   });
 
-  // event listener
+  engine.network.emitToServer('onRequestWelcome');
+}
+```
+
+### Edit WebServer Script
+
+Replace with the following code your `src/server/script.js` file, also replace the `ACCESS_TOKEN` with your server's access token:
+
+```jsx title="src/server/script.js"
+import {initEngine} from '@verza/sdk';
+
+export default async function script() {
+  const engine = await initEngine({
+    accessToken: 'ACCESS_TOKEN',
+  });
+
+  // add custom event
   engine.network.onPlayerEvent('onRequestWelcome', async () => {
     engine.localPlayer.sendMessage(`Message received! Welcome to the server!`);
   });
-
-  return engine;
-};
+}
 ```
 
-### 6. Start the development server
+## Add to Server
 
-Run the following command to start the development server:
+To add the Script to your server, go to the **Scripts** tab in your **Server's Settings**. Then, enter the URL of your script and click on `Connect Script`.
 
-```bash
-npm run dev
-```
-
-## Add the Script to your server
-
-To add the Script to your server, go to the **Scripts** tab in your **Server's Settings**. Then, enter the URL of your script and click on `Connect Script`
+By default, the URL of your script in development mode is `http://localhost:8085/script`
 
 <img
   alt="Connect Script"
@@ -156,8 +75,10 @@ To add the Script to your server, go to the **Scripts** tab in your **Server's S
   style={{width: '100%', maxWidth: '600px'}}
 />
 
-With these steps, you have set up a basic `Webserver Script` project using Next.js and the Verza SDK.
+## Deploy
 
-## Host your Script
+Refer to the [Deploy](/getting-started/setup-client-script#deploy) guide.
 
-To host your `WebServer Script`, you can use a service like [Vercel](https://vercel.com) or [Netlify](https://netlify.com) that allows you to execute serverless functions.
+## Manual Build & Deploy (Advanced)
+
+Refer to the [Manually Build & Deploy (Advanced)](/getting-started/setup-client-script#Manual-build--deploy-advanced) guide.

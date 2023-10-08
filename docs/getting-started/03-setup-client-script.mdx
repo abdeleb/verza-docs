@@ -1,73 +1,148 @@
----
-toc_max_heading_level: 2
----
-
 # Setup Client Script
 
-`Client Scripts` in Verza are HTML files, allowing them to draw UI components over the Verza interface, interacting with players, objects, and much more.
+`Client Scripts` in Verza are JavaScript files, from creating a beatiful UI to animating objects adding interactivity to your server.
 
 See the [different types of scripts here](/concepts/scripts).
 
-In this section, we'll guide you through setting up a `Client Script`
+## What Are We Building?
 
-## What you'll build
-
-By the end of this guide, you'll have a `Client Script` that looks like this with a box that moves back and forth.
+By the end of this guide, you'll have a `Client Script` that looks like this with a box that moves from left to right back and forth.
 
 <video controls loop autoPlay style={{width: '100%', maxWidth: '600px'}}>
   <source src="https://i.gyazo.com/b5966fb2c0116a4c1ade00398b82062e.mp4" />
 </video>
 
-# Requirements
+## Requirements
 
+- Basic knowledge of JavaScript and Git
 - [Node.js](https://nodejs.org/en/) (v16 or higher)
 
-## Using Script Editor
+## Verza Create CLI
 
-### 1. Open the Script Editor
+`Verza Create CLI` is a command-line tool that allows you to create a new project with a `Client Script` or `Server Script` already setup.
 
-To open the `Script Editor`, use `CTRL + SHIFT + J` or go to the **Scripts** tab in your **Server's Settings**. Then, click on `Toggle Script Editor`
+You will get out of the box:
 
-<video controls loop style={{width: '100%', maxWidth: '600px'}}>
-  <source src="https://i.gyazo.com/ca8b866a00bffce8922ab84385192254.mp4" />
-</video>
+- 📜 The template of your choice (`JavaScript`, `TypeScript` aornd `React`)
+- 🔥 Hot reloading for your scripts.
+- 🚀 Deploy support for [`Cloudflare Pages`](https://pages.cloudflare.com) or [`Vercel`](https://vercel.com) for `Client` and `WebServer` scripts.
+- 🏷️ Auto-versioning for your scripts when deploying a new change.
+- ⚙️ [Vite](https://vitejs.dev) as the build tool
 
-## Using Vite (Vanilla)
+:::info
+`Verza Create CLI` uses the powerful and simple [Vite build tool](https://vitejs.dev). Any Vite plugins can be used in your project 🎉.
+:::
 
-### 1. Create a new project
-
-Create a new project using [Vite](https://vitejs.dev/) and select `Vanilla` as the template.
+**With NPM:**
 
 ```bash
-npm create vite@latest
+npm create verza@latest
 
-cd <project-name>
+# or
 
+npm create verza@latest <template> <project-name>
+```
+
+**With Yarn:**
+
+```bash
+yarn create verza
+
+# or
+
+yarn create verza <template> <project-name>
+```
+
+**With PNPM:**
+
+```bash
+pnpm create verza
+
+# or
+
+pnpm create verza <template> <project-name>
+```
+
+### Available Templates
+
+| Template                                                                               | Description               |
+| -------------------------------------------------------------------------------------- | ------------------------- |
+| [`javascript`](https://github.com/verzaio/create-verza/tree/main/templates/vanilla)    | JavaScript template       |
+| [`typescript`](https://github.com/verzaio/create-verza/tree/main/templates/vanilla-ts) | Typescript template       |
+| [`react`](https://github.com/verzaio/create-verza/tree/main/templates/react)           | React JavaScript template |
+| [`react-ts`](https://github.com/verzaio/create-verza/tree/main/templates/react-ts)     | React TypeScript template |
+
+Would you like to see a new template added? [Open an issue](https://github.com/verzaio/create-verza)
+
+## Creating a New Project
+
+### Create a New Project
+
+Create a new project using the `Verza Create CLI`:
+
+```bash
+npm create verza@latest javascript my-project
+cd my-project
 npm install
 ```
 
-### 2. Install SDK
+### Start Development Server
 
 ```bash
-npm install @verza/sdk
+npm run dev
 ```
 
-### 3. Create script
+By default, the server will run on [`http://localhost:8085`](http://localhost:8085). You can change the port and more in the `verza.config.ts` file, check out the [Vite docs](https://vitejs.dev/config/) for more information.
 
-The URL for this `script` will be `http://localhost:5173`
+### Project Structure
 
-Now let's edit the file called `main.js` and replace the contents with the following:
+| Folder/File                         | Description                                                 |
+| :---------------------------------- | :---------------------------------------------------------- |
+| `/public`                           | Contains all the static files for your project.             |
+| `/src`                              | Contains all the source code for your project.              |
+| `/src/client`                       | Contains all the client scripts for your project.           |
+| `/src/server`                       | Contains all the server scripts for your project.           |
+| `.gitignore`                        | Contains the files and folders to be ignored by git.        |
+| `package.json`                      | Contains the dependencies and scripts for your project.     |
+| `.eslintrc.cjs` _(React Only)_      | Contains the configuration for the ESLint linter.           |
+| `tsconfig.json` _(TypeScript Only)_ | Contains the configuration for the TypeScript compiler.     |
+| `verza.config.js`                   | Contains the configuration for the Verza & Vite build tool. |
 
-```jsx title="main.js"
-import {EngineManager} from '@verza/sdk';
+### Routing
 
-const engine = new EngineManager();
+Routes is the way to define the URL of your scripts, the verza server will use the route to load the script.
 
-engine.events.on('onSynced', init);
+You can define the routes for your scripts by creating a folder with the name of the route in the `src/client/script-name/script.js` format.
 
-engine.connectClient();
+For example, if you want to create a script for the `/interactions` route, you will create a folder called `interactions` in the `src/client` folder and inside that folder, you will create a `script.js` file.
 
-function init() {
+```ts
+Script Path: /src/client/interactions/script.js
+Script URL: http://localhost:8085/interactions
+```
+
+The same applies to the `src/server` folder, but usually, you will want to have one script in the `src/server` folder, see the [Setup WebServer Script](/getting-started/setup-websocketserver-script) guide for more information.
+
+### Scripts Versioning
+
+You don't need to worry about versioning your scripts, the Verza build tool will automatically version your scripts when you deploy a new version.
+
+On each new deployment, the Verza build tool will create a version of each script and will add a redirect to the latest version of the script, so you can keep using the same URL (route) for your scripts.
+
+### Edit Script
+
+In the `src/client` folder, you'll find a `script.js` file that contains the code for your script.
+
+You will see a simple script that creates a box by default.
+
+Let's replace the code with the following that creates a box that moves from left to right back and forth.
+
+```js title="/src/client/script.js"
+import {initEngine} from '@verza/sdk';
+
+export default function script(id) {
+  const engine = await initEngine(id);
+
   engine.localPlayer.sendMessage('Welcome to my server!');
 
   const box = engine.objects.create('box', {
@@ -96,188 +171,19 @@ function init() {
 }
 ```
 
-## Using React
+:::note
+Each script needs a default function that will be called when the script is loaded in the server.
 
-### 1. Create script
+The default function for `Client Scripts` receives the `id` parameter that is used to initialize the engine manager.
 
-Create a Component called `ClientScript.jsx` with the following contents:
+This `id` is unique for each script and it's used to identify the script in the server.
+:::
 
-```jsx title="ClientScript.jsx"
-import {useEffect, useRef} from 'react';
+## Add to Server
 
-import {EngineProvider, useEngine, Box} from '@verza/sdk/react';
+To add the Script to your server, go to the **Scripts** tab in your **Server's Settings**. Then, enter the URL of your script and click on `Connect Script`.
 
-const ClientScript = () => {
-  return (
-    <EngineProvider>
-      <Script />
-    </EngineProvider>
-  );
-};
-
-const Script = () => {
-  const engine = useEngine();
-
-  const boxRef = useRef();
-
-  useEffect(() => {
-    engine.localPlayer.sendMessage('Welcome to my server!');
-
-    boxRef.current.startTransitions([
-      {
-        to: [-2, 2, 5],
-        toRotation: [0, 0, 0],
-        duration: 1000,
-        easing: 'easeInOutQuad',
-        loop: true,
-      },
-
-      {
-        to: [2, 2, 5],
-        toRotation: [0, Math.PI, 0],
-        duration: 1000,
-        easing: 'easeInOutQuad',
-        loop: true,
-      },
-    ]);
-  }, [engine]);
-
-  return (
-    <Box ref={boxRef} color="red" position={[-2, 2, 5]} collision="static" />
-  );
-};
-
-export default ClientScript;
-```
-
-## Using Next.js
-
-### 1. Install SDK
-
-```bash
-npm install @verza/sdk
-```
-
-### 2. Create a script
-
-The URL for this `script` will be `http://localhost:3000/client`
-
-In the `pages` folder, create a new file called `client.js` with the following contents:
-
-```jsx title="client.js"
-import {useEffect, useRef} from 'react';
-
-import {EngineProvider, useEngine, Box} from '@verza/sdk/react';
-
-const ClientScript = () => {
-  return (
-    <EngineProvider>
-      <Script />
-    </EngineProvider>
-  );
-};
-
-const Script = () => {
-  const engine = useEngine();
-
-  const boxRef = useRef();
-
-  useEffect(() => {
-    engine.localPlayer.sendMessage('Welcome to my server!');
-
-    boxRef.current.startTransitions([
-      {
-        to: [-2, 2, 5],
-        toRotation: [0, 0, 0],
-        duration: 1000,
-        easing: 'easeInOutQuad',
-        loop: true,
-      },
-
-      {
-        to: [2, 2, 5],
-        toRotation: [0, Math.PI, 0],
-        duration: 1000,
-        easing: 'easeInOutQuad',
-        loop: true,
-      },
-    ]);
-  }, [engine]);
-
-  return (
-    <Box ref={boxRef} color="red" position={[-2, 2, 5]} collision="static" />
-  );
-};
-
-export default ClientScript;
-```
-
-## Using Vanilla JS
-
-### 1. Create script
-
-Create a new file called `client.html` with the following contents:
-
-```html title="client.html"
-<!DOCTYPE html>
-<html>
-  <body>
-    <script type="importmap">
-      {
-        "imports": {
-          "@verza/sdk": "https://unpkg.com/@verza/sdk/dist/index.es.js",
-          "@verza/sdk/utils": "https://unpkg.com/@verza/sdk/dist/utils.es.js"
-        }
-      }
-    </script>
-    <script type="module">
-      import {EngineManager} from '@verza/sdk';
-
-      const engine = new EngineManager();
-
-      engine.events.on('onSynced', init);
-
-      engine.connectClient();
-
-      function init() {
-        engine.localPlayer.sendMessage('Welcome to my server!');
-
-        const box = engine.objects.create('box', {
-          color: 'red',
-          position: [-2, 2, 5],
-          collision: 'static',
-        });
-
-        box.startTransitions([
-          {
-            to: [-2, 2, 5],
-            toRotation: [0, 0, 0],
-            duration: 1000,
-            easing: 'easeInOutQuad',
-            loop: true,
-          },
-
-          {
-            to: [2, 2, 5],
-            toRotation: [0, Math.PI, 0],
-            duration: 1000,
-            easing: 'easeInOutQuad',
-            loop: true,
-          },
-        ]);
-      }
-    </script>
-  </body>
-</html>
-```
-
-### 3. Run your script on localhost
-
-To run your script on localhost, you can use a service like [serve](https://www.npmjs.com/package/serve) or [http-server](https://www.npmjs.com/package/http-server).
-
-## Add the Script to your server
-
-To add the Script to your server, go to the **Scripts** tab in your **Server's Settings**. Then, enter the URL of your script and click on `Connect Script`
+By default, the URL of your script in development mode is `http://localhost:8085/script`
 
 <img
   alt="Connect Script"
@@ -285,6 +191,71 @@ To add the Script to your server, go to the **Scripts** tab in your **Server's S
   style={{width: '100%', maxWidth: '600px'}}
 />
 
-## Host your Script
+## Deploy
 
-To host your `Client Script`, you can use a service like [Vercel](https://vercel.com) or [Netlify](https://netlify.com) that allows you to host static sites for free.
+Verza supports deploying your scripts to different platforms, you can deploy your scripts to:
+
+| Platform                                         | Github Integration | Pricing            |
+| :----------------------------------------------- | :----------------- | :----------------- |
+| [Cloudflare Pages](https://pages.cloudflare.com) | ✅                 | Free (Recommended) |
+| [Vercel](https://vercel.com)                     | ✅                 | Free               |
+
+### Deploy to Cloudflare Pages
+
+1. Upload your project to [`Github`](https://github.com) or [`Gitlab`](https://gitlab.com)
+
+2. Connect your `Github` or `Gitlab` account to [`Cloudflare Pages`](https://pages.cloudflare.com/) from `Workers & Pages > Overview > Create Application > Pages -> Connect Git`
+
+3. Select your repository and set the configuration as follows:
+
+![Cloudflare Pages Configuration](https://i.gyazo.com/36b51ffbe01b2892623262af5c998e9f.png)
+
+4. Copy the generated URL from `Cloudflare Pages` and connect it to your server, **for example**:
+
+```bash
+https://YOUR-CLOUDFLARE-PAGES-URL.pages.dev/script
+```
+
+### Deploy to Vercel
+
+1. Upload your project to [`Github`](https://github.com) or [`Gitlab`](https://gitlab.com)
+
+2. Import your repository into [`Vercel`](https://vercel.com/new) from [`Add new -> Project`](https://vercel.com/new)
+
+3. Select your repository and set the configuration as follows:
+
+![Vercel Build Settings](https://i.gyazo.com/fd1c43291967d4cd518383183711cf10.png)
+
+4. Copy the generated URL by `Cloudflare Pages` and connect it to your server, **for example**:
+
+```bash
+https://YOUR-VERCEL-URL.vercel.app/script
+```
+
+## In-Server Script Editor
+
+For basic scripts, you can use the in-server script editor, it's a lightweight editor that allows you to write and run scripts directly in your server with no need to host or deploy your script.
+
+To open the `Script Editor`, use `CTRL + SHIFT + J` or go to the **Scripts** tab in your **Server's Settings**. Then, click on `Toggle Script Editor`
+
+<video controls loop style={{width: '100%', maxWidth: '600px'}}>
+  <source src="https://i.gyazo.com/ca8b866a00bffce8922ab84385192254.mp4" />
+</video>
+
+## Manual Build & Deploy (Advanced)
+
+:::caution
+Manual build & deploy not recommended for `Client` and `WebServer` scripts, we suggest to deploy to one of the platforms mentioned above, you don't need any extra configurations with deploying to one of the platforms mentioned above.
+:::
+
+If you're a fearless developer and want to host your script in your own hosting platform, you can do so by building your script manually.
+
+To build your script manually, run the following command:
+
+```bash
+npm run build
+```
+
+This will create a `dist` and `api` folder with your scripts ready to be deployed, the `dist` folder will contain the client scripts and the `api` folder will contain the server scripts.
+
+For the `Client Scripts` you can use any static hosting platform, for the `Server Scripts` you will need to host them in a platform that supports serverless functions or a node http server.

@@ -1,0 +1,35 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+Detaches an entity from the player.
+
+### Syntax
+
+```js
+player.detach(entity);
+```
+
+### Parameters
+
+| Name     | Type                                        | Description       |
+| -------- | ------------------------------------------- | ----------------- |
+| `entity` | [`EntityManager`](/sdk/types/EntityManager) | Entity to attach. |
+
+### Example
+
+```js
+const box = engine.objects.create('box');
+
+player.attach(box, {
+  bone: 'head',
+});
+
+// then later
+player.detach(box);
+```
+
+**Available on:** <ClientTag /> <ServerTag />

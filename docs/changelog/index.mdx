@@ -10,13 +10,31 @@ toc_max_heading_level: 2
 
 ### **:bricks: Servers**
 
+- :sparkles: New [`verza-create-cli`](https://docs.verza.io/getting-started/setup-client-script#verza-create-cli) to get into scripts development faster than ever.
+- :sparkles: New methods to attach any entity to a player or object.
 - :sparkles: New methods to attach particles, sounds and proximity actions to Objects and Players.
+- :sparkles: Scripts now runs along with the main verza thread, there is no more delay between the main thread and the scripts.
+- :sparkles: New event [`onFrame`](https://docs.verza.io/sdk/events/engine/onFrame) to run a function every frame.
+- :sparkles: Many performance improvements and fixes under the hood.
+
+### **:new: Properties**
+
+- `player.attachedTo`
+- `player.attachedEntities`
+- `object.attachedTo`
+- `object.attachedEntities`
 
 ### **:new: Methods**
 
+- [`player.attach` ](https://docs.verza.io/sdk/managers/player/attach)
+- [`player.detach`](https://docs.verza.io/sdk/managers/player/detach)
+- [`player.detachFromParent`](https://docs.verza.io/sdk/managers/player/detachFromParent)
 - [`player.createSound` ](https://docs.verza.io/sdk/managers/player/createSound)
 - [`player.createParticles`](https://docs.verza.io/sdk/managers/player/createParticles)
 - [`player.createProximityAction`](https://docs.verza.io/sdk/managers/player/createProximityAction)
+- [`object.attach`](https://docs.verza.io/sdk/managers/object/attach)
+- [`object.detach`](https://docs.verza.io/sdk/managers/object/detach)
+- [`object.detachFromParent`](https://docs.verza.io/sdk/managers/object/detachFromParent)
 - [`object.createSound`](https://docs.verza.io/sdk/managers/object/createSound)
 - [`object.createParticles`](https://docs.verza.io/sdk/managers/object/createParticles)
 - [`object.createProximityAction`](https://docs.verza.io/sdk/managers/object/createProximityAction)

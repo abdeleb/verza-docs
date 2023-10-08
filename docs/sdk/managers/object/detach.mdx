@@ -1,0 +1,34 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+Detaches an entity from the object.
+
+### Syntax
+
+```js
+object.detach(entity);
+```
+
+### Parameters
+
+| Name     | Type                                        | Description       |
+| -------- | ------------------------------------------- | ----------------- |
+| `entity` | [`EntityManager`](/sdk/types/EntityManager) | Entity to attach. |
+
+### Example
+
+```js
+const box1 = engine.objects.create('box');
+const box2 = engine.objects.create('box', {position: [0, 1, 0]});
+
+box1.attach(box2);
+
+// then later
+box1.detach(box2);
+```
+
+**Available on:** <ClientTag /> <ServerTag />

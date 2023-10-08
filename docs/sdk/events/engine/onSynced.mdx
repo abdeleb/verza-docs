@@ -9,7 +9,7 @@ This event is triggered when a script is synced with the server.
 
 Usually when assets, player information, and other data is synced with the server.
 
-If you're using the `EngineProvider` (<ClientTag />) component, you don't need to worry about handling the `onSynced` event. This is because the component internally waits for the `onSynced` event to be triggered before rendering its children.
+If you're using the `initEngine` or `initReactEngine` (<ClientTag />), you don't need to worry about handling the `onSynced` event. This is because the function internally waits for the `onSynced` event to be triggered before resolving the promise.
 
 ### Example
 

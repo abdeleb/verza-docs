@@ -1,0 +1,32 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+Attaches any entity to the object.
+
+### Syntax
+
+```js
+object.attach(entity, options);
+```
+
+### Parameters
+
+| Name                   | Type                                                    | Description       |
+| ---------------------- | ------------------------------------------------------- | ----------------- |
+| `entity`               | [`EntityManager`](/sdk/types/EntityManager)             | Entity to attach. |
+| `options` _(optional)_ | [`EntityAttachOptions`](/sdk/types/EntityAttachOptions) | Attach options.   |
+
+### Example
+
+```js
+const box1 = engine.objects.create('box');
+const box2 = engine.objects.create('box', {position: [0, 1, 0]});
+
+box1.attach(box2);
+```
+
+**Available on:** <ClientTag /> <ServerTag />

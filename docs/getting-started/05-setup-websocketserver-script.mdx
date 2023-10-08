@@ -33,18 +33,21 @@ To obtain your server's `Access Token`, go to its `Server Settings` and click on
 Create a file called `server.js`.
 
 ```jsx title="server.js"
-import {EngineManager} from '@verza/sdk';
-const engine = new EngineManager({
-  name: 'Websocket Server',
+import {initEngine} from '@verza/sdk';
 
-  accessToken: 'ACCESS_TOKEN',
+const engine = await initEngine(
+  {
+    accessToken: 'ACCESS_TOKEN',
+  },
+  true, // set to true to enable websocket mode
+);
+
+// add custom event
+engine.network.onPlayerEvent('onRequestWelcome', () => {
+  engine.localPlayer.sendMessage(`Message received! Welcome to the server!`);
 });
 
-engine.connectServer();
-
-const onSynced = engine.events.on('onSynced', async () => {
-  console.log('Websocket server ready!');
-});
+console.log('Server started');
 ```
 
 ### 4. Start the server:

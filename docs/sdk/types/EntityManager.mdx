@@ -20,6 +20,10 @@ class EntityManager<
 
   chunkIndex: ChunkIndex;
 
+  attachedTo: EntityManager | null;
+
+  attachedEntities: Set<EntityManager>;
+
   get id(): T['id'];
 
   get type(): 'object' | 'player';
@@ -28,13 +32,17 @@ class EntityManager<
 
   set data(data: T['data']);
 
-  get worldPosition(): Vector3;
-
   get location(): Object3D;
 
   get position(): Vector3;
 
   get rotation(): Quaternion;
+
+  get worldPosition(): Vector3;
+
+  get worldRotation(): Euler;
+
+  get worldQuaternion(): Quaternion;
 
   get dimension(): number;
 
@@ -53,5 +61,11 @@ class EntityManager<
   ): void;
 
   restoreData(): void;
+
+  attach(entity: EntityManager, options?: EntityAttachOptions): void;
+
+  detach(entity: EntityManager): void;
+
+  detachFromParent(): void;
 }
 ```

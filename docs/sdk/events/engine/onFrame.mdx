@@ -1,0 +1,24 @@
+---
+hide_table_of_contents: true
+---
+
+import ClientTag from '@site/src/components/tags/ClientTag';
+import ServerTag from '@site/src/components/tags/ServerTag';
+
+This event is triggered every frame.
+
+### Parameters
+
+| Name    | Type     | Description                               |
+| ------- | -------- | ----------------------------------------- |
+| `delta` | `number` | The time in seconds since the last frame. |
+
+### Example
+
+```js
+engine.events.on('onFrame', delta => {
+  console.log('Frame delta:', delta);
+});
+```
+
+**Available on:** <ClientTag /> <ServerTag />
