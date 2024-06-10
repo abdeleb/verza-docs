@@ -140,7 +140,7 @@ Let's replace the code with the following that creates a box that moves from lef
 ```js title="/src/client/script.js"
 import {initEngine} from '@verza/sdk';
 
-export default function script(id) {
+export default async function script(id) {
   const engine = await initEngine(id);
 
   engine.localPlayer.sendMessage('Welcome to my server!');
